@@ -1,0 +1,40 @@
+{
+  "name": "face-sdk",
+  "displayName": "FaceSDK",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install && cordova prepare",
+    "android": "cordova run android",
+    "ios": "cordova run ios"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Regula Forensics Inc.",
+  "license": "commercial",
+  "dependencies": {
+    "@regulaforensics/face-sdk": "6.3.23-beta",
+    "@regulaforensics/cordova-plugin-face-core-basic": "6.3.146",
+    "cordova-android": "12.0.1",
+    "cordova-ios": "7.0.1",
+    "cordova-plugin-add-swift-support": "2.0.2",
+    "cordova-plugin-camera": "7.0.0",
+    "jetifier": "2.0.0",
+    "cordova-plugin-dialogs": "2.0.2",
+    "cordova-plugin-file": "8.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "@regulaforensics/face-sdk": {},
+      "@regulaforensics/cordova-plugin-face-core-basic": {},
+      "cordova-plugin-camera": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-file": {}
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+}

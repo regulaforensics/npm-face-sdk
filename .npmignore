@@ -1,0 +1,9 @@
+.DS_Store
+
+.github
+.git
+.gitignore
+
+ios-ci
+
+update.sh
