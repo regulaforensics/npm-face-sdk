@@ -55,7 +55,7 @@ class RNFaceSDKModule(rc: ReactApplicationContext) : ReactContextBaseJavaModule(
     fun exec(method: String, arguments: ReadableArray, promise: Promise) {
         args = JSONArray(arguments.toArrayList())
         reactContext.currentActivity?.let { activity = it }
-        methodCall(method) { data: Any? -> promise.resolve(data.toSendable()) }
+        methodCall(method) { data -> promise.resolve(data.toSendable()) }
     }
     override fun getName() = "RNFaceSDK"
 }
