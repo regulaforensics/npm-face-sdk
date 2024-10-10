@@ -1,5 +1,6 @@
 package com.regula.plugin.facesdk
 
+import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContext
@@ -7,6 +8,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.modules.core.DeviceEventManagerModule
+import com.facebook.react.uimanager.ViewManager
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -26,6 +28,11 @@ fun <T> argsNullable(index: Int): T? {
     if (value is Double && value % 1 == 0.0) return value.toInt() as T
     if (value.toString() == "null") return null
     return value as T
+}
+
+class RNFaceSDKPackage : ReactPackage {
+    override fun createNativeModules(rc: ReactApplicationContext) = listOf(RNFaceSDKModule(rc))
+    override fun createViewManagers(rc: ReactApplicationContext) = emptyList<ViewManager<*, *>>()
 }
 
 @Suppress("unused", "UNUSED_PARAMETER")

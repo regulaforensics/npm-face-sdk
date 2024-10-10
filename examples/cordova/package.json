@@ -14,8 +14,8 @@
   "author": "Regula Forensics Inc.",
   "license": "commercial",
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.3.29-beta",
-    "@regulaforensics/cordova-plugin-face-core-basic": "6.3.165",
+    "@regulaforensics/face-sdk": "6.3.42-beta",
+    "@regulaforensics/face-core-basic": "6.3.12-beta",
     "cordova-android": "12.0.1",
     "cordova-ios": "7.0.1",
     "cordova-plugin-add-swift-support": "2.0.2",
@@ -27,7 +27,7 @@
   "cordova": {
     "plugins": {
       "@regulaforensics/face-sdk": {},
-      "@regulaforensics/cordova-plugin-face-core-basic": {},
+      "@regulaforensics/face-core-basic": {},
       "cordova-plugin-camera": {},
       "cordova-plugin-dialogs": {},
       "cordova-plugin-file": {}
