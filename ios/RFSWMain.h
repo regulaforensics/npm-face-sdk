@@ -17,7 +17,7 @@ typedef void (^RFSWEventSender)(NSString* _Nonnull event, id _Nullable data);
 
 @end
 
-static NSString* _Nonnull RFSWCameraSwitchEvent = @"cameraSwitchEvent";
-static NSString* _Nonnull RFSWLivenessNotificationEvent = @"livenessNotificationEvent";
-static NSString* _Nonnull RFSWVideoEncoderCompletionEvent = @"video_encoder_completion";
-static NSString* _Nonnull RFSWOnCustomButtonTappedEvent = @"onCustomButtonTappedEvent";
+static NSString* _Nonnull cameraSwitchEvent = @"cameraSwitchEvent";
+static NSString* _Nonnull livenessNotificationEvent = @"livenessNotificationEvent";
+static NSString* _Nonnull videoEncoderCompletionEvent = @"video_encoder_completion";
+static NSString* _Nonnull onCustomButtonTappedEvent = @"onCustomButtonTappedEvent";

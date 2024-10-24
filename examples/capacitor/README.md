@@ -1,27 +1,29 @@
-# How to build demo application
-1. Get the trial license at [client.regulaforensics.com](https://client.regulaforensics.com/) (`regula.license` file). The license creation wizard will guide you through the necessary steps.
-2. Get the trial database at [client.regulaforensics.com/customer/databases](https://client.regulaforensics.com/customer/databases) (`db.dat`)
-3. Download or clone this repository using the command `git clone https://github.com/regulaforensics/DocumentReader-Ionic-Plugin.git`.
-4. Copy the `regula.license` file to the `reactExample/public/assets/` folder.
-5. Copy the `db.dat` file to the `reactExample/android/app/src/main/assets/Regula/` folder.
-6. Copy the `db.dat` file to the `reactExample/ios/App/App/` folder.
-7. Run the following commands in Terminal:
+# Regula Face SDK Capacitor demo application
+
+## How to build demo application
+1. Download or the clone current repository using the command `git clone https://github.com/regulaforensics/npm-face-sdk.git`.
+
+2. Run `npm run setup` within this directory.
+
+3. Run the app: 
+  * Android: use command `ionic cap run android`.
+  * IOS: use command `ionic cap run ios`.
+
+**Note**: this is just one way of running the app. You can also run it directly from Xcode and Android Studio, but in this case make sure to run `ionic cap sync` before building if any changes were make to the project.
+
+
+## How to use offine match
+1. Place a license that supports offline match at `public/assets/regula.license`.
+
+2. Change android and iOS bundle id if required by your license(replace `ANDROID_ID` and `IOS_ID` with actual ids):
+  * Change `applicationId` to `ANDROID_ID` in `android/app/build.gradle`.
+  * Change `Bundle Identifier` to `IOS_ID` in `ios/App/App.xcodeproj` in the `Signing & Capabilities` section.
+
+3. Change core with the following commands:
 ```bash
-$ cd reactExample
-$ npm install
+npm uninstall @regulaforensics/face-core-basic
+npm install @regulaforensics/face-core-match
+ionic cap sync
 ```
 
-8. Android:
-  * Run `npx jetify`, then `ionic cap run android` - this is just one way to run the app. You can also run it directly from within Android Studio.
-
-9. iOS:
-  * Run `ionic cap run ios` - this is just one way to run the app. You can also run it directly from within Xcode.
-
-
-# Troubleshooting license issues
-If you have issues with license verification when running the application, please verify that next is true:
-1. The OS, which you use, is specified in the license (e.g., Android and/or iOS).
-3. The license is valid (not expired).
-4. The date and time on the device, where you run the application, are valid.
-5. You use the latest release version of the Document Reader SDK.
-6. You placed the `license` into the correct folder as described [here](#how-to-build-demo-application).
+4. Turn off the internet and run the app.

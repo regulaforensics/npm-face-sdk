@@ -2,14 +2,9 @@
 
 @implementation RFSWMain
 
-RFSWMain* RFSWSelf;
-RFSWEventSender RFSWSendEvent;
-
-NSDictionary* RFSWheaders;
-
 +(void)methodCall:(NSString*)method :(NSArray*)args :(RFSWCallback)callback :(RFSWEventSender)eventSender {
-    if(!RFSWSelf) RFSWSelf = [RFSWMain new];
-    RFSWSendEvent = eventSender;
+    if(!this) this = [RFSWMain new];
+    sendEvent = eventSender;
     NSDictionary* Switch = @{
         @"getVersion": ^{ [self getVersion :callback]; },
         @"getServiceUrl": ^{ [self getServiceUrl :callback]; },
@@ -52,6 +47,18 @@ NSDictionary* RFSWheaders;
     ((void(^)(void))Switch[method])();
 }
 
+static RFSWMain* this;
+static RFSWEventSender sendEvent;
+
+static NSDictionary* headers;
+
+static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
+    for (UIWindow *window in UIApplication.sharedApplication.windows)
+        if (window.isKeyWindow)
+            return window.rootViewController;
+    return nil;
+};
+
 +(void)getVersion:(RFSWCallback)callback {
     callback([RFSWJSONConstructor generateFaceSDKVersion:RFSFaceSDK.service.version]);
 }
@@ -73,14 +80,14 @@ NSDictionary* RFSWheaders;
 }
 
 +(void)setRequestHeaders:(NSDictionary*)headersDict {
-    RFSWheaders = headersDict;
-    RFSFaceSDK.service.requestInterceptingDelegate = RFSWSelf;
+    headers = headersDict;
+    RFSFaceSDK.service.requestInterceptingDelegate = this;
 }
 
 -(NSURLRequest*)interceptorPrepareRequest:(NSURLRequest*)request {
     NSMutableURLRequest *interceptedRequest = [request mutableCopy];
-    for (NSString* key in RFSWheaders.allKeys)
-        [interceptedRequest addValue:[RFSWheaders valueForKey:key] forHTTPHeaderField:key];
+    for (NSString* key in headers.allKeys)
+        [interceptedRequest addValue:[headers valueForKey:key] forHTTPHeaderField:key];
     return interceptedRequest;
 }
 
@@ -103,7 +110,7 @@ NSDictionary* RFSWheaders;
 
 +(void)startFaceCapture:(NSDictionary*)config :(RFSWCallback)callback {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [RFSFaceSDK.service presentFaceCaptureViewControllerFrom:[UIApplication sharedApplication].windows.lastObject.rootViewController
+        [RFSFaceSDK.service presentFaceCaptureViewControllerFrom:rootViewController()
                                                             animated:true
                                                        configuration:[RFSWConfig faceCaptureConfigFromJSON:config]
                                                            onCapture:[self faceCaptureCompletion:callback]
@@ -117,7 +124,7 @@ NSDictionary* RFSWheaders;
 
 +(void)startLiveness:(NSDictionary*)config :(RFSWCallback)callback {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [RFSFaceSDK.service startLivenessFrom:[UIApplication sharedApplication].windows.lastObject.rootViewController
+        [RFSFaceSDK.service startLivenessFrom:rootViewController()
                                                 animated:true
                                            configuration:[RFSWConfig livenessConfigFromJSON:config]
                                               onLiveness:[self livenessCompletion:callback]
@@ -275,10 +282,10 @@ NSDictionary* RFSWheaders;
 +(RFSInitializationCompletion)initCompletion:(RFSWCallback)callback {
     return ^(BOOL success, NSError* error) {
         RFSFaceSDK.service.customization.configuration = [RFSUIConfiguration defaultConfiguration];
-        [RFSFaceSDK.service setVideoUploadingDelegate:RFSWSelf];
-        [RFSFaceSDK.service setFaceCaptureDelegate:RFSWSelf];
-        [RFSFaceSDK.service setLivenessDelegate:RFSWSelf];
-        RFSFaceSDK.service.customization.actionDelegate = RFSWSelf;
+        [RFSFaceSDK.service setVideoUploadingDelegate:this];
+        [RFSFaceSDK.service setFaceCaptureDelegate:this];
+        [RFSFaceSDK.service setLivenessDelegate:this];
+        RFSFaceSDK.service.customization.actionDelegate = this;
         callback([RFSWJSONConstructor generateInitCompletion:success :error]);
     };
 }
@@ -331,22 +338,22 @@ NSDictionary* RFSWheaders;
 
 // RFSFaceCaptureDelegate & RFSLivenessDelegate
 -(void)cameraPositionChanged:(RFSCameraPosition)cameraPosition {
-    RFSWSendEvent(RFSWCameraSwitchEvent, @(cameraPosition));
+    sendEvent(cameraSwitchEvent, @(cameraPosition));
 }
 
 // RFSLivenessDelegate
 -(void)processStatusChanged:(RFSLivenessProcessStatus)status result:(RFSLivenessResponse*)result {
-    RFSWSendEvent(RFSWLivenessNotificationEvent, [RFSWJSONConstructor generateLivenessNotification:status result:result]);
+    sendEvent(livenessNotificationEvent, [RFSWJSONConstructor generateLivenessNotification:status result:result]);
 }
 
 // RFSVideoUploadingDelegate
 -(void)videoUploadingForTransactionId:(NSString*)transactionId didFinishedWithSuccess:(BOOL)success {
-    RFSWSendEvent(RFSWVideoEncoderCompletionEvent, [RFSWJSONConstructor generateVideoEncoderCompletion:transactionId :success]);
+    sendEvent(videoEncoderCompletionEvent, [RFSWJSONConstructor generateVideoEncoderCompletion:transactionId :success]);
 }
 
 // RFSCustomizationActionDelegate
 -(void)onFaceCustomButtonTappedWithTag:(NSInteger)tag {
-    RFSWSendEvent(RFSWOnCustomButtonTappedEvent, @(tag));
+    sendEvent(onCustomButtonTappedEvent, @(tag));
 }
 
 @end

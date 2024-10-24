@@ -1,16 +1,14 @@
 #import "CVDFaceSDK.h"
 
-CVDFaceSDK* RFSWPlugin;
 @implementation CVDFaceSDK
 
-NSMutableDictionary<NSString*, NSString*>* _RFSWEventCallbackIds = nil;
+static NSMutableDictionary<NSString*, NSString*>* _eventCallbackIds = nil;
 - (NSMutableDictionary<NSString*, NSString*>*)eventCallbackIds {
-    if (_RFSWEventCallbackIds == nil) _RFSWEventCallbackIds = @{}.mutableCopy;
-    return _RFSWEventCallbackIds;
+    if (_eventCallbackIds == nil) _eventCallbackIds = @{}.mutableCopy;
+    return _eventCallbackIds;
 }
 
 - (void) exec:(CDVInvokedUrlCommand*)command {
-    RFSWPlugin = self;
     NSString* method = command.arguments[0];
     NSMutableArray* args = [NSMutableArray new];
     for (int i = 1; i < command.arguments.count; i++) [args addObject:command.arguments[i]];
@@ -20,12 +18,12 @@ NSMutableDictionary<NSString*, NSString*>* _RFSWEventCallbackIds = nil;
     }
     
     RFSWEventSender sendEvent = ^(NSString* callbackId, id data) {
-        NSString* eventId = [RFSWPlugin.eventCallbackIds objectForKey:callbackId];
+        NSString* eventId = [self.eventCallbackIds objectForKey:callbackId];
         if(eventId) callbackId = eventId;
         data = [RFSWJSONConstructor toSendable:data];
         CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:data];
         [result setKeepCallbackAsBool:YES];
-        [RFSWPlugin.commandDelegate sendPluginResult:result callbackId:callbackId];
+        [self.commandDelegate sendPluginResult:result callbackId:callbackId];
     };
     
     [RFSWMain methodCall:method :args :^(id data) { sendEvent(command.callbackId, data); } :sendEvent];

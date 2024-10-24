@@ -4,5 +4,4 @@
 @import UIKit;
 
 @interface RNFaceSDK : RCTEventEmitter <RCTBridgeModule>
-
 @end

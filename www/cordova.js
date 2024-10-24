@@ -628,16 +628,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 class Font {
     name
-    style
     size
+    style
+
+    constructor(name, params) {
+        this.name = name
+        this.size = params?.size
+        this.style = params?.style
+    }
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
         const result = new Font()
 
         result.name = jsonObject["name"]
-        result.style = jsonObject["style"]
         result.size = jsonObject["size"]
+        result.style = jsonObject["style"]
 
         return result
     }
@@ -649,6 +655,7 @@ const FontStyle = {
     ITALIC: 2,
     BOLD_ITALIC: 3,
 }
+
 
 /***/ }),
 

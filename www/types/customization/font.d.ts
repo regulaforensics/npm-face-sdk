@@ -1,7 +1,15 @@
 export class Font {
-    name?: string
-    style?: number
-    size?: number
+    get name(): string
+    get size(): number | null
+    get style(): FontStyle | null
+
+    constructor(
+        name: string,
+        params?: {
+            size?: number,
+            style?: FontStyle
+        }
+    )
 
     static fromJson(jsonObject?: any): Font | null
 }

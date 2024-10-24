@@ -633,7 +633,7 @@ fun generateDetectFacesConfig(input: DetectFacesConfiguration?) = input?.let {
 fun detectFacesRequestFromJSON(input: JSONObject) = input.let {
     val image = it.getString("image").toBitmap()!!
     it.getStringOrNull("scenario")?.let { scenario ->
-        DetectFacesRequest::class.constructor(Bitmap::class, String::class).instantiate(image, scenario)
+        DetectFacesRequest::class.java.getDeclaredConstructor(Bitmap::class.java, String::class.java).instantiate(image, scenario)
     } ?: DetectFacesRequest(
         image,
         detectFacesConfigFromJSON(it.getJSONObjectOrNull("configuration")),

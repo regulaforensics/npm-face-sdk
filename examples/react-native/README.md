@@ -23,8 +23,8 @@ npx react-native-rename@latest "FaceSDK" --androidBundleID "ANDROID_ID" --iosBun
 
 3. Change core with the following commands:
 ```bash
-npm uninstall @regulaforensics/react-native-face-core-basic
-npm install @regulaforensics/react-native-face-core-match
+npm uninstall @regulaforensics/face-core-basic
+npm install @regulaforensics/face-core-match
 npm run setup
 ```
 
