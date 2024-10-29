@@ -88,36 +88,72 @@ import { SearchPerson } from './person_database/search_person'
 
 export { EditGroupPersonsRequest, ImageUpload, PageableItemList, PersonDatabase, PersonGroup, PersonImage, Person, SearchPersonDetection, SearchPersonImage, SearchPersonRequest, SearchPerson }
 
-
+/**
+ * Entry point of the Regula Face SDK.
+ */
 export class FaceSDK {
+    /**
+     * The only instance of singleton class {@link FaceSDK}.
+     */
     static get instance(): FaceSDK
 
+    /**
+     * Information about the SDK.
+     */
     get version(): FaceSDKVersion | null
 
     get serviceUrl(): string | null
     set serviceUrl(val: string | null)
 
+    /**
+     * A localization dictionary to override default localization logic.
+     * Allows to replace any string of FaceSDK with an arbitrary string.
+     * 
+     * To see all the localization keys, look up the `RegulaSDK.strings` file at
+     * `ios/Pods/FaceSDK/FaceSDK.xcframework/ios-arm64/FaceSDK.framework/FaceSDK.bundle/en.lproj/FaceSDK.strings`.
+     */
     get localizationDictionary(): Record<string, string> | null
     set localizationDictionary(val: Record<string, string> | null)
 
+    /**
+     * Immutable property. Use setter instead of editing.
+     */
     get requestHeaders(): Record<string, string> | null
     set requestHeaders(val: Record<string, string> | null)
 
     get customization(): Customization
     set customization(val: Customization)
 
+    /**
+     * Allows user to receive a video file of current session.
+     */
     set videoEncoderCompletion(completion: VideoEncoderCompletion)
 
     get personDatabase(): PersonDatabase
 
+    /**
+     * Checks if FaceSDK is initialized.
+     */
     isInitialized(): Promise<boolean>
 
+    /**
+     * Allows you to initialize FaceSDK.
+     * 
+     * @param params.config - configuration file for FaceSDK initialization.
+     * 
+     * Returns `boolean` indicating success of initialization
+     * and a nullable {@link InitException}.
+     */
     initialize(
         params?: {
             config?: InitConfig
         }
     ): Promise<[boolean, InitException | null]>
 
+    /**
+     * Used to deinitialize FaceSDK and free up RAM as a
+     * consequence of this.
+     */
     deinitialize(): void
 
     startFaceCapture(

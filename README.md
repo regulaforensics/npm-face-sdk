@@ -6,7 +6,7 @@ This plugin makes possible to use it with react-native, cordova and ionic applic
 In the [examples](examples/) folder you can find demo 4 applications:
 * [React-native](examples/react-native)
 * [Cordova](examples/cordova)
-* [Ionic(ionic app with cordova, typescript)](examples/ionic)
+* [Ionic(ionic app with cordova, angular)](examples/ionic)
 * [Capacitor(ionic app with capacitor, react)](examples/capacitor)
 
 Each demo app has its own readme file with instructions on building and installation.

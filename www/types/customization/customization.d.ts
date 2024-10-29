@@ -15,6 +15,9 @@ export class Customization {
     get images(): CustomizationImages
     set images(val: CustomizationImages)
 
+    /**
+     * Immutable property. Use setter instead of editing.
+     */
     get uiCustomizationLayer(): Record<string, any> | null
     set uiCustomizationLayer(val: Record<string, any> | null)
 

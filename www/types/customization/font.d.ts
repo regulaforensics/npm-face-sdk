@@ -6,10 +6,12 @@ export class Font {
      * so you will have to use if condition.
      */
     get name(): string
+
     /** 
      * Font size. 
      */
     get size(): number | null
+    
     /**
      * Font style.
      * 
