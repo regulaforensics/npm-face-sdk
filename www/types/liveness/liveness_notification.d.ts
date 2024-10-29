@@ -7,6 +7,9 @@ export class LivenessNotification {
     private constructor()
 }
 
+/**
+ * Liveness process statuses.
+ */
 export enum LivenessProcessStatus {
     START,
     PREPARING,

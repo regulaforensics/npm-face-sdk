@@ -13,6 +13,12 @@ export class CustomizationImages {
     set processingScreenCloseButton(val: string)
     set successScreenImage(val: string)
 
+    /** 
+     * Allows you to deserialize object. 
+     */
     static fromJson(jsonObject: Record<string, string>): CustomizationImages
+    /** 
+     * Allows you to serialize object. 
+     */
     toJson(): Record<string, string>
 }

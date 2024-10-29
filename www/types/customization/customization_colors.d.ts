@@ -26,6 +26,12 @@ export class CustomizationColors {
     set processingScreenTitleLabel(val: number)
     set successScreenBackground(val: number)
 
+    /** 
+     * Allows you to deserialize object. 
+     */
     static fromJson(jsonObject: Record<string, number>): CustomizationColors
+    /** 
+     * Allows you to serialize object. 
+     */
     toJson(): Record<string, number>
 }

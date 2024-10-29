@@ -7,6 +7,9 @@ import { EditGroupPersonsRequest } from './edit_group_persons_request'
 import { SearchPersonRequest } from './search_person_request'
 import { SearchPerson } from './search_person'
 
+/**
+ * Represents Regula Database layer and is the entry point for Person Database operations.
+ */
 export class PersonDatabase {
     createPerson(
         name: string,

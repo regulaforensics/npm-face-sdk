@@ -8,6 +8,9 @@ export class DetectFacesException {
     private constructor()
 }
 
+/**
+ * Error codes for the {@link DetectFacesResponse} errors.
+ */
 export enum DetectFacesErrorCode {
     IMAGE_EMPTY,
     FR_FACE_NOT_DETECTED,

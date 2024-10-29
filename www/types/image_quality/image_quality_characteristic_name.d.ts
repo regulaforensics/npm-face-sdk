@@ -1,3 +1,6 @@
+/**
+ * Image Quality Characteristic Name.
+ */
 export enum ImageQualityCharacteristicName {
     IMAGE_WIDTH,
     IMAGE_HEIGHT,

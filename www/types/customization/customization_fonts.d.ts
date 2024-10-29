@@ -12,6 +12,12 @@ export class CustomizationFonts {
     set retryScreenHintLabels(val: Font | null)
     set processingScreenLabel(val: Font | null)
 
+    /** 
+     * Allows you to deserialize object. 
+     */
     static fromJson(jsonObject: Record<string, any>): CustomizationFonts
+    /** 
+     * Allows you to serialize object. 
+     */
     toJson(): Record<string, any>
 }

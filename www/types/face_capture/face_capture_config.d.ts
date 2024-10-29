@@ -7,8 +7,17 @@ export class FaceCaptureConfig {
     closeButtonEnabled: boolean
     torchButtonEnabled: boolean
     vibrateOnSteps: boolean
+    /**
+     * Android only.
+     */
     cameraPositionAndroid?: number
+    /**
+     * IOS only.
+     */
     cameraPositionIOS: CameraPosition
+    /**
+     * Android only.
+     */
     screenOrientation?: Array<ScreenOrientation>
     timeout?: number
     holdStillDuration?: number
