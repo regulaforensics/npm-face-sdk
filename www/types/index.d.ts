@@ -5,7 +5,6 @@ import { CustomizationImages } from './customization/customization_images'
 import { Customization, CustomButtonTappedCompletion } from './customization/customization'
 import { Font } from './customization/font'
 import { ScreenOrientation } from './customization/screen_orientation'
-
 export { CameraPosition, CustomizationColors, CustomizationFonts, CustomizationImages, Customization, CustomButtonTappedCompletion, Font, ScreenOrientation }
 
 import { FaceSDKVersion } from './init/face_sdk_version'
@@ -14,7 +13,6 @@ import { InitException } from './init/init_exception'
 import { InitErrorCode } from './init/init_exception'
 import { LicenseException } from './init/license_exception'
 import { LicensingResultCode } from './init/license_exception'
-
 export { FaceSDKVersion, InitConfig, InitException, InitErrorCode, LicenseException, LicensingResultCode }
 
 import { DetectFaceResult } from './detect_faces/detect_face_result'
@@ -26,14 +24,12 @@ import { DetectFacesException, DetectFacesErrorCode } from './detect_faces/detec
 import { DetectFacesRequest } from './detect_faces/detect_faces_request'
 import { DetectFacesResponse } from './detect_faces/detect_faces_response'
 import { DetectFacesScenario } from './detect_faces/detect_faces_scenario'
-
 export { DetectFaceResult, DetectFacesAttributeResult, DetectFacesAttribute, DetectFacesBackendException, DetectFacesBackendErrorCode, DetectFacesConfig, DetectFacesException, DetectFacesErrorCode, DetectFacesRequest, DetectFacesResponse, DetectFacesScenario }
 
 import { FaceCaptureConfig } from './face_capture/face_capture_config'
 import { FaceCaptureException, FaceCaptureErrorCode } from './face_capture/face_capture_exception'
 import { FaceCaptureImage, ImageType } from './face_capture/face_capture_image'
 import { FaceCaptureResponse } from './face_capture/face_capture_response'
-
 export { FaceCaptureConfig, FaceCaptureException, FaceCaptureErrorCode, FaceCaptureImage, ImageType, FaceCaptureResponse }
 
 import { OutputImageCrop, OutputImageCropAspectRatio } from './image_params/output_image_crop'
@@ -41,7 +37,6 @@ import { OutputImageParams } from './image_params/output_image_params'
 import { Point } from './image_params/point'
 import { Rect } from './image_params/rect'
 import { Size } from './image_params/size'
-
 export { OutputImageCrop, OutputImageCropAspectRatio, OutputImageParams, Point, Rect, Size }
 
 import { ImageQualityCharacteristicName } from './image_quality/image_quality_characteristic_name'
@@ -49,7 +44,6 @@ import { ImageQualityCharacteristic } from './image_quality/image_quality_charac
 import { ImageQualityGroup } from './image_quality/image_quality_group'
 import { ImageQualityRange } from './image_quality/image_quality_range'
 import { ImageQualityResult, ImageQualityGroupName, ImageQualityResultStatus } from './image_quality/image_quality_result'
-
 export { ImageQualityCharacteristicName, ImageQualityCharacteristic, ImageQualityGroup, ImageQualityRange, ImageQualityResult, ImageQualityGroupName, ImageQualityResultStatus }
 
 import { LivenessBackendException, LivenessBackendErrorCode } from './liveness/liveness_backend_exception'
@@ -57,7 +51,6 @@ import { LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep } from
 import { LivenessException, LivenessErrorCode } from './liveness/liveness_exception'
 import { LivenessNotification, LivenessProcessStatus, LivenessNotificationCompletion } from './liveness/liveness_notification'
 import { LivenessResponse, LivenessStatus } from './liveness/liveness_response'
-
 export { LivenessBackendException, LivenessBackendErrorCode, LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep, LivenessException, LivenessErrorCode, LivenessNotification, LivenessProcessStatus, LivenessNotificationCompletion, LivenessResponse, LivenessStatus }
 
 import { ComparedFace } from './match_faces/compared_face'
@@ -71,7 +64,6 @@ import { MatchFacesException, MatchFacesErrorCode } from './match_faces/match_fa
 import { MatchFacesImage } from './match_faces/match_faces_image'
 import { MatchFacesRequest } from './match_faces/match_faces_request'
 import { MatchFacesResponse } from './match_faces/match_faces_response'
-
 export { ComparedFace, ComparedFacesPair, ComparedFacesSplit, MatchFacesBackendException, MatchFacesConfig, ProcessingMode, MatchFacesDetectionFace, MatchFacesDetection, MatchFacesException, MatchFacesErrorCode, MatchFacesImage, MatchFacesRequest, MatchFacesResponse }
 
 import { EditGroupPersonsRequest } from './person_database/edit_group_persons_request'
@@ -85,7 +77,6 @@ import { SearchPersonDetection } from './person_database/search_person_detection
 import { SearchPersonImage } from './person_database/search_person_image'
 import { SearchPersonRequest } from './person_database/search_person_request'
 import { SearchPerson } from './person_database/search_person'
-
 export { EditGroupPersonsRequest, ImageUpload, PageableItemList, PersonDatabase, PersonGroup, PersonImage, Person, SearchPersonDetection, SearchPersonImage, SearchPersonRequest, SearchPerson }
 
 /**
@@ -109,8 +100,10 @@ export class FaceSDK {
      * A localization dictionary to override default localization logic.
      * Allows to replace any string of FaceSDK with an arbitrary string.
      * 
-     * To see all the localization keys, look up the `RegulaSDK.strings` file at
-     * `ios/Pods/FaceSDK/FaceSDK.xcframework/ios-arm64/FaceSDK.framework/FaceSDK.bundle/en.lproj/FaceSDK.strings`.
+     * To see all the localization keys, look up the RegulaSDK.strings file at
+     * ios/Pods/FaceSDK/FaceSDK.xcframework/ios-arm64/FaceSDK.framework/FaceSDK.bundle/en.lproj/FaceSDK.strings.
+     * 
+     * Immutable property. Use setter instead of editing.
      */
     get localizationDictionary(): Record<string, string> | null
     set localizationDictionary(val: Record<string, string> | null)
@@ -141,7 +134,7 @@ export class FaceSDK {
      * 
      * @param params.config - configuration file for FaceSDK initialization.
      * 
-     * Returns `boolean` indicating success of initialization
+     * @returns Returns boolean indicating success of initialization
      * and a nullable {@link InitException}.
      */
     initialize(
