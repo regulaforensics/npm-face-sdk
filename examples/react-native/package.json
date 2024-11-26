@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.4.197-beta",
+    "@regulaforensics/face-sdk": "6.4.198-beta",
     "@regulaforensics/face-core-basic": "Beta",
     "react": "18.3.1",
     "react-native": "0.75.4",
