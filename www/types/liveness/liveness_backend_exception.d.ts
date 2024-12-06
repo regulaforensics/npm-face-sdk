@@ -8,6 +8,9 @@ export class LivenessBackendException {
 export enum LivenessBackendErrorCode {
     UNDEFINED,
     NO_LICENSE,
+    NOT_INITIALIZED,
+    COMMAND_IS_NOT_SUPPORTED,
+    PARAMS_READ_ERROR,
     LOW_QUALITY,
     TRACK_BREAK,
     CLOSED_EYES_DETECTED,

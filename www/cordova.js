@@ -2525,6 +2525,9 @@ class LivenessBackendException {
 const LivenessBackendErrorCode = {
     UNDEFINED: -1,
     NO_LICENSE: 200,
+    NOT_INITIALIZED: 201,
+    COMMAND_IS_NOT_SUPPORTED: 202,
+    PARAMS_READ_ERROR: 203,
     LOW_QUALITY: 231,
     TRACK_BREAK: 246,
     CLOSED_EYES_DETECTED: 230,
@@ -3740,7 +3743,7 @@ class SearchPersonRequest {
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
 /******/ 	var __webpack_export_target__ = exports;
-/******/ 	for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
+/******/ 	for(var __webpack_i__ in __webpack_exports__) __webpack_export_target__[__webpack_i__] = __webpack_exports__[__webpack_i__];
 /******/ 	if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ 	
 /******/ })()
