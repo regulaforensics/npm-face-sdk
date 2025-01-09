@@ -15,7 +15,7 @@ async function startLiveness() {
     }
   })
   if (response.image == null) return
-  setImage(response.image, ImageType.LIVE, 1)
+  setImage("data:image/png;base64," + response.image, ImageType.LIVE, 1)
   setLivenessStatus(response.liveness == LivenessStatus.PASSED ? "passed" : "unknown")
 }
 
