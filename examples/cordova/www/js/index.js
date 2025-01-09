@@ -64,12 +64,12 @@ function setImage(base64, type, position) {
   var mfImage = new MatchFacesImage(base64, type)
   if (position == 1) {
     image1 = mfImage
-    setUiImage1("data:image/png;base64," + base64)
+    setUiImage1(base64)
     setLivenessStatus("null")
   }
   if (position == 2) {
     image2 = mfImage
-    setUiImage2("data:image/png;base64," + base64)
+    setUiImage2(base64)
   }
 }
 
@@ -77,7 +77,7 @@ async function useCamera(position) {
   var response = await faceSdk.startFaceCapture()
   if (response.image == null) return
   var image = response.image
-  setImage(image.image, image.imageType, position)
+  setImage("data:image/png;base64," + image.image, image.imageType, position)
 }
 
 function useGallery(position) {
@@ -100,15 +100,15 @@ function pickImage(position) {
 
 async function loadAssetIfExists(path) {
   path = cordova.file.applicationDirectory + "www/" + path
-    return new Promise((resolve, _) => {
-        window.resolveLocalFileSystemURL(path, (fileEntry) => {
-            fileEntry.file((file) => {
-                var reader = new FileReader()
-                reader.onloadend = function(_) { resolve(this.result) }
-                reader.readAsDataURL(file)
-            })
-        }, (_) => resolve(null))
-    })
+  return new Promise((resolve, _) => {
+    window.resolveLocalFileSystemURL(path, (fileEntry) => {
+      fileEntry.file((file) => {
+        var reader = new FileReader()
+        reader.onloadend = function (_) { resolve(this.result) }
+        reader.readAsDataURL(file)
+      })
+    }, (_) => resolve(null))
+  })
 }
 
 async function onDeviceReady() {
