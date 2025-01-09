@@ -14,7 +14,7 @@
         <preference name="orientation" value="portrait" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
         <preference name="android-minSdkVersion" value="23" />
-        <preference name="android-targetSdkVersion" value="34" />
+        <preference name="android-targetSdkVersion" value="35" />
         <allow-intent href="market:*" />
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
