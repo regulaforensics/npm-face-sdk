@@ -306,6 +306,70 @@ export class _Background {
 }
 
 export class ImageQualityGroup {
+    static _image;
+    static get image() {
+      if (!ImageQualityGroup._image) {
+        ImageQualityGroup._image = new _Image();
+      }
+      return ImageQualityGroup._image;
+    }
+
+    static _headSizeAndPosition;
+    static get headSizeAndPosition() {
+      if (!ImageQualityGroup._headSizeAndPosition) {
+        ImageQualityGroup._headSizeAndPosition = new _HeadSizeAndPosition();
+      }
+      return ImageQualityGroup._headSizeAndPosition;
+    }
+
+    static _faceImage;
+    static get faceImage() {
+      if (!ImageQualityGroup._faceImage) {
+        ImageQualityGroup._faceImage = new _FaceImage();
+      }
+      return ImageQualityGroup._faceImage;
+    }
+
+    static _eyes;
+    static get eyes() {
+      if (!ImageQualityGroup._eyes) {
+        ImageQualityGroup._eyes = new _Eyes();
+      }
+      return ImageQualityGroup._eyes;
+    }
+
+    static _shadowsAndLightning;
+    static get shadowsAndLightning() {
+      if (!ImageQualityGroup._shadowsAndLightning) {
+        ImageQualityGroup._shadowsAndLightning = new _ShadowsAndLightning();
+      }
+      return ImageQualityGroup._shadowsAndLightning;
+    }
+
+    static _poseAndExpression;
+    static get poseAndExpression() {
+      if (!ImageQualityGroup._poseAndExpression) {
+        ImageQualityGroup._poseAndExpression = new _PoseAndExpression();
+      }
+      return ImageQualityGroup._poseAndExpression;
+    }
+
+    static _headOcclusion;
+    static get headOcclusion() {
+      if (!ImageQualityGroup._headOcclusion) {
+        ImageQualityGroup._headOcclusion = new _HeadOcclusion();
+      }
+      return ImageQualityGroup._headOcclusion;
+    }
+
+    static _background;
+    static get background() {
+      if (!ImageQualityGroup._background) {
+        ImageQualityGroup._background = new _Background();
+      }
+      return ImageQualityGroup._background;
+    }
+
     static get image() { return ImageQualityGroup._image }
     static _image = new _Image()
 
