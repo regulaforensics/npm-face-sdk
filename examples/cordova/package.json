@@ -14,8 +14,8 @@
   "author": "Regula Forensics Inc.",
   "license": "commercial",
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.5.38-beta",
-    "@regulaforensics/face-core-basic": "6.5.46-beta",
+    "@regulaforensics/face-sdk": "6.5.48-beta",
+    "@regulaforensics/face-core-basic": "6.3.12-beta",
     "cordova-android": "13.0.0",
     "cordova-ios": "7.1.1",
     "cordova-plugin-add-swift-support": "2.0.2",
