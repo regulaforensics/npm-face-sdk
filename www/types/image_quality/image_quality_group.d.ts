@@ -1,50 +1,15 @@
 import { ImageQualityCharacteristic } from './image_quality_characteristic'
 import { ImageQualityRange } from './image_quality_range'
 
-/**
- * Image Quality characteristic group
- */
 export class ImageQualityGroup {
-    /**
-     * The Image characteristics group includes width, height, width to height proportions,
-     * the image RGB channels number, and padding ratio.
-     */
-    static get image(): _Image
-    /**
-     * The Head size and position group includes the position of the "middle point"
-     * relative to the width and height of the image, the head width to the image
-     * width and height ratio, inter-eye distance, yaw, pitch, roll.
-     */
-    static get headSizeAndPosition(): _HeadSizeAndPosition
-    /**
-     * The Face image quality group includes blur and noise levels, unnatural skin tone,
-     * and face dynamic range checks.
-     */
-    static get faceImage(): _FaceImage
-    /**
-     * The Eyes characteristics group checks eyes closure, occlusion, hair coverage,
-     * red eye effect, and whether a person is looking directly at the camera.
-     */
-    static get eyes(): _Eyes
-    /**
-     * The Shadows and lightning characteristics group checks whether a photo
-     * is too dark or overexposed, if there are glares or shadows on the face.
-     */
-    static get shadowsAndLightning(): _ShadowsAndLightning
-    /**
-     * The Pose and expression characteristics group checks the shoulders pose,
-     * face expression, whether there is an open mouth or smile.
-     */
-    static get poseAndExpression(): _PoseAndExpression
-    /**
-     * The Head occlusion group includes checks of glasses, face occlusion, and head coverage.
-     */
-    static get headOcclusion(): _HeadOcclusion
-    /**
-     * The Background characteristics group checks the background uniformity,
-     * shadows on background, and other faces presence on the picture.
-     */
-    static get background(): _Background
+    image: _Image
+    headSizeAndPosition: _HeadSizeAndPosition
+    faceImage: _FaceImage
+    eyes: _Eyes
+    shadowsAndLightning: _ShadowsAndLightning
+    poseAndExpression: _PoseAndExpression
+    headOcclusion: _HeadOcclusion
+    background: _Background
 }
 
 export class _Image {

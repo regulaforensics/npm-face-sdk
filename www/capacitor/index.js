@@ -92,14 +92,6 @@ export { EditGroupPersonsRequest, ImageUpload, PageableItemList, PersonDatabase,
 
 
 export class FaceSDK {
-    static _instance;
-    static get instance() {
-      if (!FaceSDK._instance) {
-        FaceSDK._instance = new FaceSDK();
-      }
-      return FaceSDK._instance;
-    }
-
     get version() { return this._version }
     _version
 

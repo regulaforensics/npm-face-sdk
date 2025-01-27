@@ -84,11 +84,6 @@ export { EditGroupPersonsRequest, ImageUpload, PageableItemList, PersonDatabase,
  */
 export class FaceSDK {
     /**
-     * The only instance of singleton class {@link FaceSDK}.
-     */
-    static get instance(): FaceSDK
-
-    /**
      * Information about the SDK.
      */
     get version(): FaceSDKVersion | null
