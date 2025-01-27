@@ -306,12 +306,27 @@ export class _Background {
 }
 
 export class ImageQualityGroup {
-    image = new _Image()
-    headSizeAndPosition = new _HeadSizeAndPosition()
-    faceImage = new _FaceImage()
-    eyes = new _Eyes()
-    shadowsAndLightning = new _ShadowsAndLightning()
-    poseAndExpression = new _PoseAndExpression()
-    headOcclusion = new _HeadOcclusion()
-    background = new _Background()
+    static get image() { return ImageQualityGroup._image }
+    static _image = new _Image()
+
+    static get headSizeAndPosition() { return ImageQualityGroup._headSizeAndPosition }
+    static _headSizeAndPosition = new _HeadSizeAndPosition()
+
+    static get faceImage() { return ImageQualityGroup._faceImage }
+    static _faceImage = new _FaceImage()
+
+    static get eyes() { return ImageQualityGroup._eyes }
+    static _eyes = new _Eyes()
+
+    static get shadowsAndLightning() { return ImageQualityGroup._shadowsAndLightning }
+    static _shadowsAndLightning = new _ShadowsAndLightning()
+
+    static get poseAndExpression() { return ImageQualityGroup._poseAndExpression }
+    static _poseAndExpression = new _PoseAndExpression()
+
+    static get headOcclusion() { return ImageQualityGroup._headOcclusion }
+    static _headOcclusion = new _HeadOcclusion()
+
+    static get background() { return ImageQualityGroup._background }
+    static _background = new _Background()
 }
