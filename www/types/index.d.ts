@@ -87,6 +87,7 @@ export class FaceSDK {
      * The only instance of singleton class {@link FaceSDK}.
      */
     static get instance(): FaceSDK
+    private constructor()
 
     /**
      * Information about the SDK.
