@@ -4,9 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "setup": "scripts/setup.sh",
-    "ios": "scripts/ios.sh",
-    "android": "scripts/android.sh",
+    "setup": "npm install && ionic cordova prepare",
+    "android": "ionic cordova run android",
+    "ios": "ionic cordova run ios",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -16,7 +16,7 @@
   },
   "private": true,
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.5.64-beta",
+    "@regulaforensics/face-sdk": "6.5.67-beta",
     "@regulaforensics/face-core-basic": "6.3.12-beta",
     "cordova-plugin-camera": "8.0.0",
     "@awesome-cordova-plugins/camera": "6.14.0",

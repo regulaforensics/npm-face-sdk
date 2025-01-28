@@ -3,13 +3,13 @@
 ## How to build demo application
 1. Download or the clone current repository using the command `git clone https://github.com/regulaforensics/npm-face-sdk.git`.
 
-2. Execute `npm run setup` within this directory.
+2. Run `npm run setup` within this directory.
 
 3. Run the app: 
-  * IOS: `npm run ios`.
-  * Android: `npm run android`.
+  * Android: use command `npm run android`.
+  * IOS: use command `npm run ios`.
 
-**Note**: this is just one way of running the app. You can also pass `-o` or `--open` argument to the command, and this will open Xcode/Android Studio, then run the app directly from the IDE. Overall, this is a more consistent way, so if you're having troubles running the app from terminal, try running it from the IDE. Just don't forget to make sure that Metro Bundler is running(`npm start`).
+**Note**: this is just one way of running the app. You can also run it directly from Xcode and Android Studio, but in this case make sure that Metro Bundler is running(`npm start`).
 
 
 ## How to use offine match
