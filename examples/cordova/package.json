@@ -4,17 +4,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install && cordova prepare",
-    "android": "cordova run android",
-    "ios": "cordova run ios"
+    "setup": "scripts/setup.sh",
+    "ios": "scripts/ios.sh",
+    "android": "scripts/android.sh"
   },
-  "keywords": [
-    "ecosystem:cordova"
-  ],
-  "author": "Regula Forensics Inc.",
-  "license": "commercial",
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.5.67-beta",
+    "@regulaforensics/face-sdk": "6.5.70-beta",
     "@regulaforensics/face-core-basic": "6.3.12-beta",
     "cordova-android": "13.0.0",
     "cordova-ios": "7.1.1",

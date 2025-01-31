@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "setup": "npm install && (cd ios && bundle install) && npm run pod-install",
-    "pod-install": "cd ios && RCT_NEW_ARCH_ENABLED=1 bundle exec pod update",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "setup": "scripts/setup.sh",
+    "ios": "scripts/ios.sh",
+    "android": "scripts/android.sh",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.5.67-beta",
+    "@regulaforensics/face-sdk": "6.5.70-beta",
     "@regulaforensics/face-core-basic": "6.3.12-beta",
     "react": "18.3.1",
     "react-native": "0.76.6",
