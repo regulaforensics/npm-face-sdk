@@ -1,0 +1,15 @@
+export const DetectFacesAttribute = {
+    AGE: "Age",
+    EYE_RIGHT: "EyeRight",
+    EYE_LEFT: "EyeLeft",
+    EMOTION: "Emotion",
+    SMILE: "Smile",
+    GLASSES: "Glasses",
+    HEAD_COVERING: "HeadCovering",
+    FOREHEAD_COVERING: "ForeheadCovering",
+    MOUTH: "Mouth",
+    MEDICAL_MASK: "MedicalMask",
+    OCCLUSION: "Occlusion",
+    STRONG_MAKEUP: "StrongMakeup",
+    HEADPHONES: "Headphones",
+}

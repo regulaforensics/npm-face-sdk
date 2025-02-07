@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-packageName="com.regula.faceapi" ios-CFBundleIdentifier="regula.FaceSDKSample" version="1.0.0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>FaceSDK</name>
+    <author email="cordova.support@regulaforensics.com" href="https://mobile.regulaforensics.com">Regula Forensics Inc.</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <preference name="orientation" value="portrait" />
+        <preference name="GradlePluginKotlinEnabled" value="true" />
+        <preference name="android-minSdkVersion" value="23" />
+        <preference name="android-targetSdkVersion" value="35" />
+        <allow-intent href="market:*" />
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+    </platform>
+    <platform name="ios">
+        <preference name="orientation" value="portrait" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>To use camera</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>To pick images</string>
+        </config-file>
+    </platform>
+</widget>
