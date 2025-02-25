@@ -1,7 +1,7 @@
 import { IonPage } from '@ionic/react'
 import React from "react"
 import { File } from '@awesome-cordova-plugins/file'
-import { Dialogs } from '@awesome-cordova-plugins/dialogs'
+import { Dialog } from '@capacitor/dialog'
 import { Camera, DestinationType, MediaType, PictureSourceType } from '@awesome-cordova-plugins/camera'
 import { FaceSDK, MatchFacesRequest, MatchFacesImage, InitConfig, LivenessSkipStep, ImageType, LivenessStatus, LivenessConfig } from '@regulaforensics/face-sdk'
 
@@ -20,7 +20,7 @@ async function startLiveness() {
     }
   })
   if (response.image == null) return
-  setImage(response.image, ImageType.LIVE, 1)
+  setImage("data:image/png;base64," + response.image, ImageType.LIVE, 1)
   setLivenessStatus(response.liveness == LivenessStatus.PASSED ? "passed" : "unknown")
 }
 
@@ -69,12 +69,12 @@ function setImage(base64: string, type: number, position: number) {
   var mfImage = new MatchFacesImage(base64, type)
   if (position == 1) {
     image1 = mfImage
-    setUiImage1("data:image/png;base64," + base64)
+    setUiImage1(base64)
     setLivenessStatus("null")
   }
   if (position == 2) {
     image2 = mfImage
-    setUiImage2("data:image/png;base64," + base64)
+    setUiImage2(base64)
   }
 }
 
@@ -82,22 +82,26 @@ async function useCamera(position: number) {
   var response = await faceSdk.startFaceCapture()
   if (response.image == null) return
   var image = response.image
-  setImage(image.image, image.imageType, position)
+  setImage("data:image/png;base64," + image.image, image.imageType, position)
 }
 
-function useGallery(position: number) {
-  Camera.getPicture({
+async function useGallery(position: number) {
+  var image = await Camera.getPicture({
     destinationType: DestinationType.DATA_URL,
     mediaType: MediaType.PICTURE,
     sourceType: PictureSourceType.PHOTOLIBRARY
-  }).then((result: string) => setImage(result, ImageType.PRINTED, position))
+  })
+  setImage(image, ImageType.PRINTED, position)
 }
 
-function pickImage(position: number) {
-  Dialogs.confirm("", "Select option", ["Use gallery", "Use camera"]).then(button => {
-    if (button == 1) useGallery(position)
-    else useCamera(position)
+async function pickImage(position: number) {
+  var response = await Dialog.confirm({
+    message: "Select option",
+    okButtonTitle: "Use camera",
+    cancelButtonTitle: "Use gallery"
   })
+  if (response.value) useCamera(position)
+  else useGallery(position)
 }
 
 async function loadAssetIfExists(path: string): Promise<string | null> {

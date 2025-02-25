@@ -1,5 +1,6 @@
 package com.regula.plugin.facesdk
 
+import android.content.Context
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
@@ -13,13 +14,16 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 var listenerCount = 0
+
 lateinit var args: JSONArray
-lateinit var reactContext: ReactContext
+lateinit var binding: ReactContext
+val context: Context
+    get() = binding.applicationContext
 
 fun sendEvent(event: String, data: Any? = "") {
     if (listenerCount <= 0) return
     val result = if (data is JSONObject || data is JSONArray) data.toString() else data.toString() + ""
-    reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java).emit(event, result)
+    binding.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java).emit(event, result)
 }
 
 @Suppress("UNCHECKED_CAST")
@@ -30,15 +34,16 @@ fun <T> argsNullable(index: Int): T? {
     return value as T
 }
 
+@Suppress("unused")
 class RNFaceSDKPackage : ReactPackage {
     override fun createNativeModules(rc: ReactApplicationContext) = listOf(RNFaceSDKModule(rc))
     override fun createViewManagers(rc: ReactApplicationContext) = emptyList<ViewManager<*, *>>()
 }
 
 @Suppress("unused", "UNUSED_PARAMETER")
-class RNFaceSDKModule(rc: ReactApplicationContext) : ReactContextBaseJavaModule(rc) {
+class RNFaceSDKModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
     init {
-        reactContext = rc
+        binding = reactContext
     }
 
     @ReactMethod
@@ -54,7 +59,6 @@ class RNFaceSDKModule(rc: ReactApplicationContext) : ReactContextBaseJavaModule(
     @ReactMethod
     fun exec(method: String, arguments: ReadableArray, promise: Promise) {
         args = JSONArray(arguments.toArrayList())
-        reactContext.currentActivity?.let { activity = it }
         methodCall(method) { data -> promise.resolve(data.toSendable()) }
     }
     override fun getName() = "RNFaceSDK"
