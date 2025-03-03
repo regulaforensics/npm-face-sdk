@@ -3,6 +3,6 @@ set -e
 
 npm install
 ionic cordova prepare || {
-    pod update
+    pod repo update
     ionic cordova prepare
 }
