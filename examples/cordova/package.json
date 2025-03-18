@@ -9,7 +9,7 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.5.115-beta",
+    "@regulaforensics/face-sdk": "6.5.116-beta",
     "@regulaforensics/face-core-basic": "6.5.63-beta",
     "cordova-android": "13.0.0",
     "cordova-ios": "7.1.1",
