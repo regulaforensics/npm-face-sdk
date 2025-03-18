@@ -14,7 +14,11 @@ val context: Context
     get() = binding.cordova.context
 
 fun sendEvent(callbackId: String, data: Any? = "") {
-    val pluginResult = PluginResult(PluginResult.Status.OK, data.toSendable() as String?)
+    val pluginResult = when (data) {
+        is Int -> PluginResult(PluginResult.Status.OK, data)
+        is Boolean -> PluginResult(PluginResult.Status.OK, data)
+        else -> PluginResult(PluginResult.Status.OK, data.toSendable() as String?)
+    }
     pluginResult.keepCallback = true
     binding.webView.sendPluginResult(pluginResult, eventCallbackIds[callbackId] ?: callbackId)
 }

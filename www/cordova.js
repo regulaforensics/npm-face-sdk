@@ -1345,6 +1345,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ImageQualityCharacteristic: () => (/* binding */ ImageQualityCharacteristic)
 /* harmony export */ });
+/* harmony import */ var _image_quality_range__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image_quality_range */ "./src/image_quality/image_quality_range.js");
+
+
 class ImageQualityCharacteristic {
     characteristicName
     recommendedRange
@@ -1361,11 +1364,11 @@ class ImageQualityCharacteristic {
     }
 
     withCustomRange(min, max) {
-        this.customRange = new ImageQualityRange(min, max)
+        this.customRange = new _image_quality_range__WEBPACK_IMPORTED_MODULE_0__.ImageQualityRange(min, max)
         return this
     }
     withCustomValue(value) {
-        this.customRange = ImageQualityRange.withValue(value)
+        this.customRange = _image_quality_range__WEBPACK_IMPORTED_MODULE_0__.ImageQualityRange.withValue(value)
         return this
     }
 }
@@ -1461,50 +1464,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   _PoseAndExpression: () => (/* binding */ _PoseAndExpression),
 /* harmony export */   _ShadowsAndLightning: () => (/* binding */ _ShadowsAndLightning)
 /* harmony export */ });
-/* harmony import */ var _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image_quality_characteristic */ "./src/image_quality/image_quality_characteristic.js");
-/* harmony import */ var _image_quality_range__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image_quality_range */ "./src/image_quality/image_quality_range.js");
+/* harmony import */ var _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image_quality_characteristic_name */ "./src/image_quality/image_quality_characteristic_name.js");
+/* harmony import */ var _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image_quality_characteristic */ "./src/image_quality/image_quality_characteristic.js");
+/* harmony import */ var _image_quality_range__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./image_quality_range */ "./src/image_quality/image_quality_range.js");
+
 
 
 
 class _Image {
     imageWidth(range) {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(
-            ImageQualityCharacteristicName.IMAGE_WIDTH,
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(
+            _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.IMAGE_WIDTH,
             { recommended: range }
         )
     }
 
     imageHeight(range) {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(
-            ImageQualityCharacteristicName.IMAGE_HEIGHT,
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(
+            _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.IMAGE_HEIGHT,
             { recommended: range }
         )
     }
 
     imageWidthToHeight(range) {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(
-            ImageQualityCharacteristicName.IMAGE_WIDTH_TO_HEIGHT,
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(
+            _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.IMAGE_WIDTH_TO_HEIGHT,
             { recommended: range }
         )
     }
 
     imageChannelsNumber(channelsNumber) {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(
-            ImageQualityCharacteristicName.IMAGE_CHANNELS_NUMBER,
-            { recommended: _image_quality_range__WEBPACK_IMPORTED_MODULE_1__.ImageQualityRange.withValue(channelsNumber) }
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(
+            _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.IMAGE_CHANNELS_NUMBER,
+            { recommended: _image_quality_range__WEBPACK_IMPORTED_MODULE_2__.ImageQualityRange.withValue(channelsNumber) }
         )
     }
 
     paddingRatio(range) {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(
-            ImageQualityCharacteristicName.PADDING_RATIO,
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(
+            _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.PADDING_RATIO,
             { recommended: range }
         )
     }
 
     artFace() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(
-            ImageQualityCharacteristicName.ART_FACE,
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(
+            _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.ART_FACE,
         )
     }
 
@@ -1515,35 +1520,35 @@ class _Image {
 
 class _HeadSizeAndPosition {
     faceMidPointHorizontalPosition() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.FACE_MID_POINT_HORIZONTAL_POSITION)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.FACE_MID_POINT_HORIZONTAL_POSITION)
     }
 
     faceMidPointVerticalPosition() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.FACE_MID_POINT_VERTICAL_POSITION)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.FACE_MID_POINT_VERTICAL_POSITION)
     }
 
     headWidthRatio() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.HEAD_WIDTH_RATIO)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.HEAD_WIDTH_RATIO)
     }
 
     headHeightRatio() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.HEAD_HEIGHT_RATIO)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.HEAD_HEIGHT_RATIO)
     }
 
     eyesDistance() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYES_DISTANCE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYES_DISTANCE)
     }
 
     yaw() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.YAW)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.YAW)
     }
 
     pitch() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.PITCH)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.PITCH)
     }
 
     roll() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.ROLL)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.ROLL)
     }
 
     allRecommended() {
@@ -1562,19 +1567,19 @@ class _HeadSizeAndPosition {
 
 class _FaceImage {
     blurLevel() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.BLUR_LEVEL)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.BLUR_LEVEL)
     }
 
     noiseLevel() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.NOISE_LEVEL)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.NOISE_LEVEL)
     }
 
     unnaturalSkinTone() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.UNNATURAL_SKIN_TONE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.UNNATURAL_SKIN_TONE)
     }
 
     faceDynamicRange() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.FACE_DYNAMIC_RANGE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.FACE_DYNAMIC_RANGE)
     }
 
     allRecommended() {
@@ -1589,35 +1594,35 @@ class _FaceImage {
 
 class _Eyes {
     eyeRightClosed() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYE_RIGHT_CLOSED)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYE_RIGHT_CLOSED)
     }
 
     eyeLeftClosed() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYE_LEFT_CLOSED)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYE_LEFT_CLOSED)
     }
 
     eyeRightOccluded() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYE_RIGHT_OCCLUDED)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYE_RIGHT_OCCLUDED)
     }
 
     eyeLeftOccluded() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYE_LEFT_OCCLUDED)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYE_LEFT_OCCLUDED)
     }
 
     eyesRed() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYES_RED)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYES_RED)
     }
 
     eyeRightCoveredWithHair() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYE_RIGHT_COVERED_WITH_HAIR)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYE_RIGHT_COVERED_WITH_HAIR)
     }
 
     eyeLeftCoveredWithHair() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EYE_LEFT_COVERED_WITH_HAIR)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EYE_LEFT_COVERED_WITH_HAIR)
     }
 
     offGaze() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.OFF_GAZE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.OFF_GAZE)
     }
 
     allRecommended() {
@@ -1636,19 +1641,19 @@ class _Eyes {
 
 class _ShadowsAndLightning {
     tooDark() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.TOO_DARK)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.TOO_DARK)
     }
 
     tooLight() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.TOO_LIGHT)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.TOO_LIGHT)
     }
 
     faceGlare() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.FACE_GLARE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.FACE_GLARE)
     }
 
     shadowsOnFace() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.SHADOWS_ON_FACE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.SHADOWS_ON_FACE)
     }
 
     allRecommended() {
@@ -1663,19 +1668,19 @@ class _ShadowsAndLightning {
 
 class _PoseAndExpression {
     shouldersPose() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.SHOULDERS_POSE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.SHOULDERS_POSE)
     }
 
     expressionLevel() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.EXPRESSION_LEVEL)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.EXPRESSION_LEVEL)
     }
 
     mouthOpen() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.MOUTH_OPEN)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.MOUTH_OPEN)
     }
 
     smile() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.SMILE)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.SMILE)
     }
 
     allRecommended() {
@@ -1690,39 +1695,39 @@ class _PoseAndExpression {
 
 class _HeadOcclusion {
     darkGlasses() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.DARK_GLASSES)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.DARK_GLASSES)
     }
 
     reflectionOnGlasses() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.REFLECTION_ON_GLASSES)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.REFLECTION_ON_GLASSES)
     }
 
     framesTooHeavy() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.FRAMES_TOO_HEAVY)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.FRAMES_TOO_HEAVY)
     }
 
     faceOccluded() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.FACE_OCCLUDED)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.FACE_OCCLUDED)
     }
 
     headCovering() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.HEAD_COVERING)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.HEAD_COVERING)
     }
 
     foreheadCovering() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.FOREHEAD_COVERING)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.FOREHEAD_COVERING)
     }
 
     strongMakeup() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.STRONG_MAKEUP)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.STRONG_MAKEUP)
     }
 
     headphones() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.HEAD_PHONES)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.HEAD_PHONES)
     }
 
     medicalMask() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.MEDICAL_MASK)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.MEDICAL_MASK)
     }
 
     allRecommended() {
@@ -1742,20 +1747,20 @@ class _HeadOcclusion {
 
 class _Background {
     backgroundUniformity() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.BACKGROUND_UNIFORMITY)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.BACKGROUND_UNIFORMITY)
     }
 
     shadowsOnBackground() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.SHADOWS_ON_BACKGROUND)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.SHADOWS_ON_BACKGROUND)
     }
 
     otherFaces() {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(ImageQualityCharacteristicName.OTHER_FACES)
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.OTHER_FACES)
     }
 
     backgroundColorMatch(params) {
-        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic._create(
-            ImageQualityCharacteristicName.BACKGROUND_COLOR_MATCH,
+        return _image_quality_characteristic__WEBPACK_IMPORTED_MODULE_1__.ImageQualityCharacteristic._create(
+            _image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristicName.BACKGROUND_COLOR_MATCH,
             { color: params?.color }
         )
     }
@@ -2433,10 +2438,11 @@ async function exec(name, params) {
     return RNFaceSDK.exec(name, params)
 }
 
-function _setEvent(id, completion) {
+function _setEvent(id, completion, fromJson) {
     eventManager.removeAllListeners(id)
-    if (completion != null)
-        eventManager.addListener(id, completion)
+    // if no fromJson provided, just call completion
+    if (fromJson == undefined) fromJson = func => func
+    if (completion != undefined) eventManager.addListener(id, fromJson(completion))
 }
 
 function _setCustomButtonTappedCompletion(completion) {
@@ -2444,18 +2450,18 @@ function _setCustomButtonTappedCompletion(completion) {
 }
 
 function _setVideoEncoderCompletion(completion) {
-    _setEvent("video_encoder_completion", (json) => {
+    _setEvent("video_encoder_completion", completion, func => json => {
         var jsonObject = JSON.parse(json)
         var transactionId = jsonObject["transactionId"]
         var success = jsonObject["success"]
-        completion(transactionId, success)
+        func(transactionId, success)
     })
 }
 
 function _setLivenessNotificationCompletion(completion) {
-    _setEvent("livenessNotificationEvent", (json) => {
+    _setEvent("livenessNotificationEvent", completion, func => json => {
         var livenessNotification = _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_0__.LivenessNotification.fromJson(JSON.parse(json))
-        completion(livenessNotification)
+        func(livenessNotification)
     })
 }
 
