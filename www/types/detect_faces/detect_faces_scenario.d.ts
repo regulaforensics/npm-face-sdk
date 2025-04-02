@@ -1,0 +1,10 @@
+export enum DetectFacesScenario {
+    CROP_CENTRAL_FACE,
+    CROP_ALL_FACES,
+    THUMBNAIL,
+    ATTRIBUTES_ALL,
+    QUALITY_FULL,
+    QUALITY_ICAO,
+    QUALITY_VISA_SCHENGEN,
+    QUALITY_VISA_USA
+}

@@ -1,0 +1,7 @@
+{
+  "name": "FaceSDK",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

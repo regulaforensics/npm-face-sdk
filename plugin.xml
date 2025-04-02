@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="@regulaforensics/face-sdk" version="6.5.137-nightly" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>FaceSDK</name>
+  <description>Cordova plugin for Regula Face SDK</description>
+  <license>commercial</license>
+  <keywords>cordova,face,reader,scanner,regula</keywords>
+
+  <js-module name="FaceSDKPlugin" src="www/cordova.js">
+    <clobbers target="FaceSDKPlugin" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="FaceSDK">
+        <param name="ios-package" value="CVDFaceSDK" />
+      </feature>
+      <preference name="deployment-target" value="12.0" />
+    </config-file>
+    <header-file src="ios/CVDFaceSDK.h" />
+    <source-file src="ios/CVDFaceSDK.m" />
+    <header-file src="ios/RFSWMain.h" />
+    <source-file src="ios/RFSWMain.m" />
+    <header-file src="ios/RFSWJSONConstructor.h" />
+    <source-file src="ios/RFSWJSONConstructor.m" />
+    <header-file src="ios/RFSWConfig.h" />
+    <source-file src="ios/RFSWConfig.m" />
+    <podspec>
+      <config>
+        <source url="https://cdn.cocoapods.org/" />
+      </config>
+      <pods>
+        <pod name="FaceSDKNightly" spec="6.4.2460" />
+      </pods>
+    </podspec>
+  </platform>
+
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="FaceSDK">
+        <param name="android-package" value="com.regula.plugin.facesdk.CVDFaceSDK" />
+      </feature>
+    </config-file>
+    <framework src="android/cordova.gradle" custom="true" type="gradleReference" />
+    <source-file src="android/CVDFaceSDK.kt" target-dir="java/com.regula.plugin.facesdk" />
+    <source-file src="android/src/main/java/com/regula/plugin/facesdk/Main.kt" target-dir="java/com.regula.plugin.facesdk" />
+    <source-file src="android/src/main/java/com/regula/plugin/facesdk/JSONConstructor.kt" target-dir="java/com.regula.plugin.facesdk" />
+    <source-file src="android/src/main/java/com/regula/plugin/facesdk/Config.kt" target-dir="java/com.regula.plugin.facesdk" />
+    <source-file src="android/src/main/java/com/regula/plugin/facesdk/Utils.kt" target-dir="java/com.regula.plugin.facesdk" />
+  </platform>
+</plugin>
