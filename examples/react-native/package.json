@@ -11,8 +11,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.5.137-nightly",
-    "@regulaforensics/face-core-basic": "6.5.77-nightly",
+    "@regulaforensics/face-sdk": "6.4.138-nightly",
+    "@regulaforensics/face-core-basic": "6.4.78-nightly",
     "react": "18.3.1",
     "react-native": "0.76.6",
     "react-native-fs": "2.20.0",
