@@ -16,8 +16,8 @@
   },
   "private": true,
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.4.141-nightly",
-    "@regulaforensics/face-core-basic": "6.4.80-nightly",
+    "@regulaforensics/face-sdk": "6.4.146-nightly",
+    "@regulaforensics/face-core-basic": "6.4.85-nightly",
     "cordova-plugin-camera": "8.0.0",
     "@awesome-cordova-plugins/camera": "6.14.0",
     "@awesome-cordova-plugins/core": "6.14.0",
