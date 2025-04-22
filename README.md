@@ -3,7 +3,7 @@ Face SDK is a framework that is used for face matching, recognition and liveness
 This plugin makes possible to use it with react-native, cordova and ionic applications.
 
 ## Demo applications
-In the [examples](examples/) folder you can find 4 demo applications:
+In the [examples](examples/) folder you can find demo 4 applications:
 * [React-native](examples/react-native)
 * [Cordova](examples/cordova)
 * [Ionic(ionic app with cordova, angular)](examples/ionic)

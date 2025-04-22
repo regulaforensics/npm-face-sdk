@@ -1,5 +1,3 @@
-@file:Suppress("EnumValuesSoftDeprecate", "unused")
-
 package com.regula.plugin.facesdk
 
 import android.annotation.SuppressLint

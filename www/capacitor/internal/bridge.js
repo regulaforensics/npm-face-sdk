@@ -8,11 +8,10 @@ export async function exec(name, params) {
     return RNFaceSDK.exec(name, params)
 }
 
-function _setEvent(id, completion, fromJson) {
+function _setEvent(id, completion) {
     eventManager.removeAllListeners(id)
-    // if no fromJson provided, just call completion
-    if (fromJson == undefined) fromJson = func => func
-    if (completion != undefined) eventManager.addListener(id, fromJson(completion))
+    if (completion != null)
+        eventManager.addListener(id, completion)
 }
 
 export function _setCustomButtonTappedCompletion(completion) {
@@ -20,18 +19,18 @@ export function _setCustomButtonTappedCompletion(completion) {
 }
 
 export function _setVideoEncoderCompletion(completion) {
-    _setEvent("video_encoder_completion", completion, func => json => {
+    _setEvent("video_encoder_completion", (json) => {
         var jsonObject = JSON.parse(json)
         var transactionId = jsonObject["transactionId"]
         var success = jsonObject["success"]
-        func(transactionId, success)
+        completion(transactionId, success)
     })
 }
 
 export function _setLivenessNotificationCompletion(completion) {
-    _setEvent("livenessNotificationEvent", completion, func => json => {
+    _setEvent("livenessNotificationEvent", (json) => {
         var livenessNotification = LivenessNotification.fromJson(JSON.parse(json))
-        func(livenessNotification)
+        completion(livenessNotification)
     })
 }
 

@@ -1,4 +1,3 @@
-import { ImageQualityCharacteristicName } from './image_quality_characteristic_name'
 import { ImageQualityCharacteristic } from './image_quality_characteristic'
 import { ImageQualityRange } from './image_quality_range'
 

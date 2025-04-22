@@ -1,5 +1,3 @@
-@file:Suppress("EnumValuesSoftDeprecate")
-
 package com.regula.plugin.facesdk
 
 import com.regula.facesdk.configuration.Customization
@@ -22,7 +20,6 @@ fun setFaceCaptureConfig(builder: FaceCaptureConfiguration.Builder, config: JSON
         "closeButtonEnabled" -> builder.setCloseButtonEnabled(v as Boolean)
         "torchButtonEnabled" -> builder.setTorchButtonEnabled(v as Boolean)
         "vibrateOnSteps" -> builder.setVibrateOnStep(v as Boolean)
-        "detectOcclusion" -> builder.setDetectOcclusion(v as Boolean)
         "cameraPositionAndroid" -> builder.setCameraId(v.toInt())
         "screenOrientation" -> builder.setScreenOrientation(*screenOrientationArrayFromJSON(v as JSONArray))
         "timeout" -> builder.setTimeout(v.toFloat())
@@ -36,7 +33,6 @@ fun getFaceCaptureConfig(input: FaceCaptureConfiguration) = mapOf(
     "closeButtonEnabled" to input.isCloseButtonEnabled,
     "torchButtonEnabled" to input.isTorchButtonEnabled,
     "vibrateOnSteps" to input.isVibrateOnSteps,
-    "detectOcclusion" to input.isDetectOcclusion,
     "cameraPositionAndroid" to input.cameraId,
     "screenOrientation" to generateScreenOrientationArray(input.screenOrientation),
     "timeout" to input.timeout,
@@ -82,13 +78,11 @@ fun getLivenessConfig(input: LivenessConfiguration) = mapOf(
 fun setMatchFacesConfig(builder: MatchFacesConfiguration.Builder, config: JSONObject) = config.forEach { k, v ->
     when (k) {
         "processingMode" -> builder.setProcessingMode(ProcessingMode.values()[v.toInt()])
-        "locationTrackingEnabled" -> builder.setLocationTrackingEnabled(v as Boolean)
     }
 }
 
 fun getMatchFacesConfig(input: MatchFacesConfiguration) = mapOf(
-    "processingMode" to input.processingMode.ordinal,
-    "locationTrackingEnabled" to input.isLocationTrackingEnabled
+    "processingMode" to input.processingMode.ordinal
 ).toJson()
 
 fun setCustomization(input: Customization, config: JSONObject) = config.forEach { key, value ->
