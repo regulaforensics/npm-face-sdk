@@ -5,7 +5,7 @@ source = File.join(__dir__, 'ios')
 
 Pod::Spec.new do |s|
   s.name         = 'RNFaceSDK'
-  s.version      = '6.4.164-rc'
+  s.version      = '7.1.179-rc'
   s.summary      = package['description']
   s.license      = package['license']
 
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.source_files = 'ios/**/*.{h,m}'
   s.exclude_files = [ 'ios/CVDFaceSDK.h', 'ios/CVDFaceSDK.m' ]
-  s.dependency 'FaceSDKStage', '6.4.2489'
+  s.dependency 'FaceSDKBeta', '7.1.2486'
   s.dependency 'React'
 end
