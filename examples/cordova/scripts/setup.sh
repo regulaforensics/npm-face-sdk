@@ -2,4 +2,8 @@
 set -e
 
 npm install
-cordova prepare
+rm -rf platforms plugins
+cordova prepare || {
+    pod repo update
+    cordova prepare
+}

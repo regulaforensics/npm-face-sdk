@@ -2,4 +2,8 @@
 set -e
 
 npm install
-ionic cordova prepare
+rm -rf platforms plugins
+ionic cordova prepare || {
+    pod repo update
+    ionic cordova prepare
+}

@@ -23,7 +23,7 @@
 ```bash
 npm uninstall @regulaforensics/face-core-basic
 npm install @regulaforensics/face-core-match
-ionic cap sync
+npm run setup
 ```
 
 4. Turn off the internet and run the app.
