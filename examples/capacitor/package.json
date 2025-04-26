@@ -15,8 +15,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "7.1.181-rc",
-    "@regulaforensics/face-core-basic": "7.1.99-beta",
+    "@regulaforensics/face-sdk": "7.1.195-rc",
+    "@regulaforensics/face-core-basic": "7.1.112-rc",
     "@awesome-cordova-plugins/camera": "6.6.0",
     "@awesome-cordova-plugins/file": "6.6.0",
     "@awesome-cordova-plugins/dialogs": "6.6.0",
