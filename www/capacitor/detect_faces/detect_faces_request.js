@@ -1,5 +1,3 @@
-import { DetectFacesScenario } from './detect_faces_scenario'
-
 export class DetectFacesRequest {
     image
     configuration

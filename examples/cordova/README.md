@@ -21,7 +21,7 @@
 ```bash
 cordova plugin remove @regulaforensics/face-core-basic
 cordova plugin add @regulaforensics/face-core-match
-npm run setup
+cordova prepare
 ```
 
 4. Turn off the internet and run the app.

@@ -1,5 +1,3 @@
-import { ImageQualityRange } from './image_quality_range'
-
 export class ImageQualityCharacteristic {
     characteristicName
     recommendedRange

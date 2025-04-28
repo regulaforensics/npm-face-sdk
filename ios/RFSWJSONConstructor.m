@@ -311,7 +311,7 @@
 
 +(id)matchFacesImageFromJSON:(NSDictionary*)input {
     bool detectAll = false;
-    if (input[@"detectAll"]) detectAll = [input[@"detectAll"] boolValue];
+    if (input[@"detectAll"]) detectAll = input[@"detectAll"];
     RFSMatchFacesImage* result = [[RFSMatchFacesImage alloc] initWithImage:[self imageWithBase64:input[@"image"]]
                                                                  imageType:[input[@"imageType"] integerValue]
                                                                  detectAll:detectAll];
@@ -762,9 +762,10 @@
 
 +(id)generatePerson:(RFSPerson*)input {
     if (!input) return [NSNull null];
-    NSMutableDictionary* result = @{}.mutableCopy;
-    if (input.updatedAt) result[@"updatedAt"] = [self generateDate:input.updatedAt];
-    if (input.createdAt) result[@"createdAt"] = [self generateDate:input.createdAt];
+    NSMutableDictionary* result = @{
+        @"updatedAt":[self generateDate:input.updatedAt],
+        @"createdAt":[self generateDate:input.createdAt]
+    }.mutableCopy;
     if (input.name) result[@"name"] = input.name;
     if (input.groups) result[@"groups"] = input.groups;
     if (input.itemId) result[@"id"] = input.itemId;
@@ -806,9 +807,9 @@
 +(id)generatePersonImage:(RFSPersonImage*)input {
     if (!input) return [NSNull null];
     NSMutableDictionary* result = @{
-        @"url":[self generateUrl:input.url]
+        @"url":[self generateUrl:input.url],
+        @"createdAt":[self generateDate:input.createdAt]
     }.mutableCopy;
-    if (input.createdAt) result[@"createdAt"] = [self generateDate:input.createdAt];
     if (input.path) result[@"path"] = input.path;
     if (input.contentType) result[@"contentType"] = input.contentType;
     if (input.itemId) result[@"id"] = input.itemId;
@@ -842,8 +843,9 @@
 
 +(id)generatePersonGroup:(RFSPersonGroup*)input {
     if (!input) return [NSNull null];
-    NSMutableDictionary* result = @{}.mutableCopy;
-    if (input.createdAt) result[@"createdAt"] = [self generateDate:input.createdAt];
+    NSMutableDictionary* result = @{
+        @"createdAt":[self generateDate:input.createdAt]
+    }.mutableCopy;
     if (input.name) result[@"name"] = input.name;
     if (input.itemId) result[@"id"] = input.itemId;
     if (input.metadata) result[@"metadata"] = input.metadata;
@@ -874,7 +876,7 @@
                                                                           imageUpload:[self imageUploadFromJSON:input[@"imageUpload"]]];
     result.threshold = input[@"threshold"];
     result.limit = input[@"limit"];
-    if (input[@"detectAll"] && ![input[@"detectAll"] isEqual:[NSNull null]]) result.detectAll = [input[@"detectAll"] boolValue];
+    if (input[@"detectAll"] && ![input[@"detectAll"] isEqual:[NSNull null]]) result.detectAll = input[@"detectAll"];
     result.outputImageParams = [self outputImageParamsFromJSON:input[@"outputImageParams"]];
     return result;
 }
@@ -932,9 +934,9 @@
 
 +(id)generateSearchPersonImage:(RFSSearchPersonImage*)input {
     NSMutableDictionary* result = @{
-        @"url":[self generateUrl:input.url]
+        @"url":[self generateUrl:input.url],
+        @"createdAt":[self generateDate:input.createdAt]
     }.mutableCopy;
-    if (input.createdAt) result[@"createdAt"] = [self generateDate:input.createdAt];
     if (input.path) result[@"similarity"] = input.similarity;
     if (input.path) result[@"distance"] = input.distance;
     if (input.path) result[@"path"] = input.path;
@@ -962,9 +964,9 @@
     NSMutableDictionary* result = @{
         @"detection":[self generateSearchPersonDetection:input.detection],
         @"images":[self generateArray:input.images :@selector(generateSearchPersonImage:)],
+        @"updatedAt":[self generateDate:input.updatedAt],
+        @"createdAt":[self generateDate:input.createdAt]
     }.mutableCopy;
-    if (input.createdAt) result[@"createdAt"] = [self generateDate:input.createdAt];
-    if (input.updatedAt) result[@"updatedAt"] = [self generateDate:input.updatedAt];
     if (input.name) result[@"name"] = input.name;
     if (input.groups) result[@"groups"] = input.groups;
     if (input.itemId) result[@"id"] = input.itemId;

@@ -1,4 +1,4 @@
-@file:Suppress("UNCHECKED_CAST", "EnumValuesSoftDeprecate")
+@file:Suppress("UNCHECKED_CAST")
 
 package com.regula.plugin.facesdk
 

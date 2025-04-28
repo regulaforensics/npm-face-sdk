@@ -38,7 +38,7 @@ export class PersonDatabase {
 
     async getPersonImage(personId, imageId) {
         var response = await exec("getPersonImage", [personId, imageId])
-        return this._itemResponseFromJson(response, data => data)
+        return this._itemResponseFromJson(response, PersonImage.fromJson)
     }
 
     async getPersonImages(personId) {

@@ -21,7 +21,7 @@
 ```bash
 ionic cordova plugin remove @regulaforensics/face-core-basic
 ionic cordova plugin add @regulaforensics/face-core-match
-npm run setup
+ionic cordova prepare
 ```
 
 4. Turn off the internet and run the app.

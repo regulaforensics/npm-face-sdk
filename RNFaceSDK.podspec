@@ -5,7 +5,7 @@ source = File.join(__dir__, 'ios')
 
 Pod::Spec.new do |s|
   s.name         = 'RNFaceSDK'
-  s.version      = '7.1.201-nightly'
+  s.version      = '6.4.205-nightly'
   s.summary      = package['description']
   s.license      = package['license']
 
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://regulaforensics.com'
 
   s.source       = { http: "file:#{source}" }
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '12.0'
   s.source_files = 'ios/**/*.{h,m}'
   s.exclude_files = [ 'ios/CVDFaceSDK.h', 'ios/CVDFaceSDK.m' ]
   s.dependency 'FaceSDKNightly', '7.1.2555'
