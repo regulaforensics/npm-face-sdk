@@ -9,8 +9,8 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "7.1.210-rc",
-    "@regulaforensics/face-core-basic": "7.1.124-rc",
+    "@regulaforensics/face-sdk": "7.1.211-rc",
+    "@regulaforensics/face-core-basic": "7.1.126-rc",
     "cordova-android": "13.0.0",
     "cordova-ios": "7.1.1",
     "cordova-plugin-add-swift-support": "2.0.2",
