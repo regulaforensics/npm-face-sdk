@@ -8,8 +8,8 @@ export class LivenessConfig {
     torchButtonEnabled
     vibrateOnSteps
     cameraPositionIOS
-    screenOrientation
     cameraPositionAndroid
+    screenOrientation
     locationTrackingEnabled
     attemptsCount
     recordingProcess
@@ -25,14 +25,14 @@ export class LivenessConfig {
         this.torchButtonEnabled = params?.torchButtonEnabled ?? true
         this.vibrateOnSteps = params?.vibrateOnSteps ?? true
         this.cameraPositionIOS = params?.cameraPositionIOS ?? CameraPosition.FRONT
+        this.cameraPositionAndroid = params?.cameraPositionAndroid
         this.screenOrientation = params?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
         this.locationTrackingEnabled = params?.locationTrackingEnabled ?? true
         this.attemptsCount = params?.attemptsCount ?? 0
         this.recordingProcess = params?.recordingProcess ?? RecordingProcess.ASYNCHRONOUS_UPLOAD
         this.livenessType = params?.livenessType ?? LivenessType.ACTIVE
-        this.skipStep = params?.skipStep ?? []
-        this.cameraPositionAndroid = params?.cameraPositionAndroid
         this.tag = params?.tag
+        this.skipStep = params?.skipStep ?? []
         this.metadata = params?.metadata
     }
 }

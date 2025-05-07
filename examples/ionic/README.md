@@ -12,16 +12,13 @@
 **Note**: this is just one way of running the app. You can also pass `-o` or `--open` argument to the command, and this will open Xcode/Android Studio, then run the app directly from the IDE. Overall, this is a more consistent way, so if you're having troubles running the app from terminal, try running it from the IDE.
 
 
-## How to use offine match
+## How to use offline match
 1. Place a license that supports offline match at `src/assets/regula.license`.
 
-2. Change `android-packageName` and `ios-CFBundleIdentifier` in `config.xml` if required by your license.
-
-3. Change core with the following commands:
+2. Change core with the following commands:
 ```bash
 ionic cordova plugin remove @regulaforensics/face-core-basic
 ionic cordova plugin add @regulaforensics/face-core-match
-ionic cordova prepare
 ```
 
-4. Turn off the internet and run the app.
+3. Turn off the internet and run the app.

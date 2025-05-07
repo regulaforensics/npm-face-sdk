@@ -1,0 +1,11 @@
+<meta name="viewport" content="initial-scale=1, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" href="src/main.css">
+
+<div id="content" style="height: 100%"></div>
+
+<script>
+    fetch("src/main.html")
+        .then(response => response.text())
+        .then(html => document.getElementById("content").innerHTML = html)
+        .then(_ => window.ReactNativeWebView.postMessage(`{"id": "ready"}`))
+</script>

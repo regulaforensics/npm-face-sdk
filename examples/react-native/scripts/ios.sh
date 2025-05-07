@@ -2,7 +2,11 @@
 set -e
 
 if [[ $npm_config_o || $npm_config_open ]]; then
-    open ios/FaceSDK.xcworkspace
+    open ios/App.xcworkspace
+    # check if metro is already running
+    if ! pgrep -f "react-native start" > /dev/null; then
+        npm start
+    fi
 else
     react-native run-ios
 fi
