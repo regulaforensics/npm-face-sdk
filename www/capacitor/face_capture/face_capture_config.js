@@ -7,9 +7,11 @@ export class FaceCaptureConfig {
     closeButtonEnabled
     torchButtonEnabled
     vibrateOnSteps
+    detectOcclusion
+    showFaceAnimation
     cameraPositionIOS
-    screenOrientation
     cameraPositionAndroid
+    screenOrientation
     timeout
     holdStillDuration
 
@@ -19,9 +21,11 @@ export class FaceCaptureConfig {
         this.closeButtonEnabled = params?.closeButtonEnabled ?? true
         this.torchButtonEnabled = params?.torchButtonEnabled ?? true
         this.vibrateOnSteps = params?.vibrateOnSteps ?? true
+        this.detectOcclusion = params?.detectOcclusion ?? true
+        this.showFaceAnimation = params?.showFaceAnimation ?? true
         this.cameraPositionIOS = params?.cameraPositionIOS ?? CameraPosition.FRONT
-        this.screenOrientation = params?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
         this.cameraPositionAndroid = params?.cameraPositionAndroid
+        this.screenOrientation = params?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
         this.timeout = params?.timeout
         this.holdStillDuration = params?.holdStillDuration
     }

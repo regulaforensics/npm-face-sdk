@@ -43,7 +43,7 @@ export class LivenessConfig {
     cameraPositionIOS: CameraPosition
 
     /**
-     * Android only.
+     * Allows you to specify an orientation of the camera view controller.
      */
     screenOrientation?: Array<ScreenOrientation>
 
