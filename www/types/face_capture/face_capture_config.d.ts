@@ -8,6 +8,10 @@ export class FaceCaptureConfig {
     torchButtonEnabled: boolean
     vibrateOnSteps: boolean
     /**
+     * Enables global face hint animation.
+     */
+    showFaceAnimation: boolean
+    /**
      * Android only.
      */
     cameraPositionAndroid?: number
@@ -16,7 +20,7 @@ export class FaceCaptureConfig {
      */
     cameraPositionIOS: CameraPosition
     /**
-     * Android only.
+     * Allows you to specify an orientation of the camera view controller.
      */
     screenOrientation?: Array<ScreenOrientation>
     timeout?: number
@@ -29,6 +33,7 @@ export class FaceCaptureConfig {
             closeButtonEnabled?: boolean
             torchButtonEnabled?: boolean
             vibrateOnSteps?: boolean
+            showFaceAnimation?: boolean
             cameraPositionAndroid?: number
             cameraPositionIOS?: CameraPosition
             screenOrientation?: Array<ScreenOrientation>

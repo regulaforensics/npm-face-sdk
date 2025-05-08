@@ -38,7 +38,7 @@ export class PersonDatabase {
     getPersonImage(
         personId: string,
         imageId: string
-    ): Promise<[PersonImage | null, string | null]>
+    ): Promise<[string | null, string | null]>
 
     getPersonImages(personId: string): Promise<[PageableItemList<PersonImage>, string | null]>
 
