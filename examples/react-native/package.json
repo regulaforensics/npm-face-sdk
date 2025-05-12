@@ -8,8 +8,8 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "6.4.260-nightly",
-    "@regulaforensics/face-core-basic": "6.4.132-nightly",
+    "@regulaforensics/face-sdk": "6.4.261-nightly",
+    "@regulaforensics/face-core-basic": "6.4.133-nightly",
     "react-native-fs": "2.20.0",
     "react-native-image-picker": "8.2.0",
     "react": "19.1.0",
