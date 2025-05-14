@@ -1,37 +1,18 @@
 {
   "expo": {
-    "name": "DocumentReader",
+    "name": "FaceSDK",
     "orientation": "portrait",
     "icon": "./images/icon/icon.png",
     "ios": {
-      "bundleIdentifier": "regula.DocumentReader",
+      "bundleIdentifier": "com.regula.documentreader.qa",
       "infoPlist": {
         "NSCameraUsageDescription": "To use camera",
-        "NSPhotoLibraryUsageDescription": "To use gallery",
-        "NFCReaderUsageDescription": "To use NFC",
-        "NSBluetoothAlwaysUsageDescription": "To use bluetooth",
-        "com.apple.developer.nfc.readersession.iso7816.select-identifiers": [
-          "A0000002471001",
-          "E80704007F00070302",
-          "A000000167455349474E",
-          "A0000002480100",
-          "A0000002480200",
-          "A0000002480300",
-          "A00000045645444C2D3031"
-        ]
-      },
-      "entitlements": {
-        "com.apple.developer.nfc.readersession.formats": [
-          "TAG"
-        ]
+        "NSPhotoLibraryUsageDescription": "To use gallery"
       },
       "appleTeamId": ""
     },
     "android": {
-      "package": "com.regula.dr.fullauthrfid",
-      "permissions": [
-        "android.permission.BLUETOOTH_CONNECT"
-      ],
+      "package": "com.regula.documentreader.api.androidtest",
       "adaptiveIcon": {
         "foregroundImage": "./images/icon/adaptive-icon.png",
         "backgroundColor": "#ffffff"
