@@ -1,4 +1,5 @@
 #import "RFSWMain.h"
+#import <React/RCTUtils.h>
 
 @implementation RFSWMain
 
@@ -53,10 +54,7 @@ static RFSWEventSender sendEvent;
 static NSDictionary* headers;
 
 static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
-    for (UIWindow *window in UIApplication.sharedApplication.windows)
-        if (window.isKeyWindow)
-            return window.rootViewController;
-    return nil;
+    return RCTPresentedViewController();
 };
 
 +(void)getVersion:(RFSWCallback)callback {
