@@ -67,6 +67,10 @@ static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
             if (result) break;
         }
     }
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    if (!result) return UIApplication.sharedApplication.windows.firstObject.rootViewController;
+    #pragma clang diagnostic pop "-Wdeprecated-declarations"
     return result;
 };
 
