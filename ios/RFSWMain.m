@@ -53,10 +53,21 @@ static RFSWEventSender sendEvent;
 static NSDictionary* headers;
 
 static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
-    for (UIWindow *window in UIApplication.sharedApplication.windows)
-        if (window.isKeyWindow)
-            return window.rootViewController;
-    return nil;
+    UIViewController* result = nil;
+    NSSet<UIScene*>* connectedScenes = UIApplication.sharedApplication.connectedScenes;
+    for (UIScene* scene in connectedScenes) {
+        if ([scene isKindOfClass:[UIWindowScene class]]) {
+            UIWindowScene* windowScene = (UIWindowScene*)scene;
+            for (UIWindow* window in windowScene.windows) {
+                if (window.isKeyWindow) {
+                    result = window.rootViewController;
+                    break;
+                }
+            }
+            if (result) break;
+        }
+    }
+    return result;
 };
 
 +(void)getVersion:(RFSWCallback)callback {
