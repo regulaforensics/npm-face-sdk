@@ -1,4 +1,5 @@
 #import "RFSWMain.h"
+#import <React/RCTUtils.h>
 
 @implementation RFSWMain
 
@@ -53,25 +54,7 @@ static RFSWEventSender sendEvent;
 static NSDictionary* headers;
 
 static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
-    UIViewController* result = nil;
-    NSSet<UIScene*>* connectedScenes = UIApplication.sharedApplication.connectedScenes;
-    for (UIScene* scene in connectedScenes) {
-        if ([scene isKindOfClass:[UIWindowScene class]]) {
-            UIWindowScene* windowScene = (UIWindowScene*)scene;
-            for (UIWindow* window in windowScene.windows) {
-                if (window.isKeyWindow) {
-                    result = window.rootViewController;
-                    break;
-                }
-            }
-            if (result) break;
-        }
-    }
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    if (!result) return UIApplication.sharedApplication.windows.firstObject.rootViewController;
-    #pragma clang diagnostic pop "-Wdeprecated-declarations"
-    return result;
+    return RCTPresentedViewController();
 };
 
 +(void)getVersion:(RFSWCallback)callback {
