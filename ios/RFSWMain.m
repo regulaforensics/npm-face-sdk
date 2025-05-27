@@ -1,5 +1,4 @@
 #import "RFSWMain.h"
-#import <React/RCTUtils.h>
 
 @implementation RFSWMain
 
@@ -50,12 +49,7 @@
 
 static RFSWMain* this;
 static RFSWEventSender sendEvent;
-
 static NSDictionary* headers;
-
-static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
-    return RCTPresentedViewController();
-};
 
 +(void)getVersion:(RFSWCallback)callback {
     callback([RFSWJSONConstructor generateFaceSDKVersion:RFSFaceSDK.service.version]);

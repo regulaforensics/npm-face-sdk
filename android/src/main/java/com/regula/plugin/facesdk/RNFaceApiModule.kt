@@ -37,8 +37,8 @@ fun <T> argsNullable(index: Int): T? {
 
 @Suppress("unused")
 class RNFaceSDKPackage : ReactPackage {
-    override fun createNativeModules(rc: ReactApplicationContext) = listOf(RNFaceSDKModule(rc))
-    override fun createViewManagers(rc: ReactApplicationContext) = emptyList<ViewManager<*, *>>()
+    override fun createNativeModules(reactContext: ReactApplicationContext) = listOf(RNFaceSDKModule(reactContext))
+    override fun createViewManagers(reactContext: ReactApplicationContext) = emptyList<ViewManager<*, *>>()
 }
 
 @Suppress("unused", "UNUSED_PARAMETER")
