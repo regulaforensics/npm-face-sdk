@@ -8,13 +8,6 @@ static NSMutableDictionary<NSString*, NSString*>* _eventCallbackIds = nil;
     return _eventCallbackIds;
 }
 
-UIViewController*(^rootViewController)(void) = ^UIViewController*(){
-    for (UIWindow *window in UIApplication.sharedApplication.windows)
-        if (window.isKeyWindow)
-            return window.rootViewController;
-    return nil;
-};
-
 - (void) exec:(CDVInvokedUrlCommand*)command {
     NSString* method = command.arguments[0];
     NSMutableArray* args = [NSMutableArray new];

@@ -20,10 +20,6 @@ static bool hasListeners;
 - (void)startObserving { hasListeners = YES; }
 - (void)stopObserving { hasListeners = NO; }
 
-UIViewController*(^rootViewController)(void) = ^UIViewController*(){
-    return RCTPresentedViewController();
-};
-
 RCT_EXPORT_METHOD(exec:(NSString*)method:(NSArray*)args:(RCTPromiseResolveBlock)resolve:(RCTPromiseRejectBlock)reject) {
     RFSWCallback callback = ^(id _Nullable data) {
         if ([self.firedCallbacks containsObject:resolve]) return;

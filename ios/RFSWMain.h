@@ -3,7 +3,6 @@
 
 typedef void (^RFSWCallback)(id _Nullable response);
 typedef void (^RFSWEventSender)(NSString* _Nonnull event, id _Nullable data);
-extern UIViewController*_Nonnull(^ _Nonnull rootViewController)(void);
 
 @interface RFSWMain: NSObject<RFSURLRequestInterceptingDelegate,
                               RFSVideoUploadingDelegate,
