@@ -1,0 +1,18 @@
+android {
+    aaptOptions {
+        noCompress "Regula/faceSdkResource.dat"
+    }
+}
+
+repositories {
+    maven {
+        url "https://maven.regulaforensics.com/RegulaDocumentReader"
+    }
+}
+
+dependencies {
+    //noinspection GradleDependency
+    implementation('com.regula.face:api:7.1.3784'){
+        transitive = true
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "include": [
+    "*.ts"
+  ],
+  "compilerOptions": {
+    "types": [],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "target": "es2022"
+  }
+}

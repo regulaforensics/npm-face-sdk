@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-packageName="com.regula.documentreader.api.androidtest" ios-CFBundleIdentifier="com.regula.documentreader.qa" version="1.0.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>FaceSDK</name>
+    <icon src="src/images/icon.png" />
+    <platform name="android">
+        <preference name="orientation" value="portrait" />
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+        <preference name="android-minSdkVersion" value="24" />
+        <preference name="android-targetSdkVersion" value="35" />
+        <preference name="GradlePluginKotlinEnabled" value="true" />
+    </platform>
+    <platform name="ios">
+        <preference name="orientation" value="portrait" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>To use camera</string>
+        </config-file>
+        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+            <string>To pick images</string>
+        </config-file>
+    </platform>
+</widget>
