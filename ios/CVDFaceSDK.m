@@ -8,7 +8,7 @@ static NSMutableDictionary<NSString*, NSString*>* _eventCallbackIds = nil;
     return _eventCallbackIds;
 }
 
-UIViewController*(^rootViewController)(void) = ^UIViewController*(){
+UIViewController*(^RFSWRootViewController)(void) = ^UIViewController*(){
     for (UIWindow *window in UIApplication.sharedApplication.windows)
         if (window.isKeyWindow)
             return window.rootViewController;
