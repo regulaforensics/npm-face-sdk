@@ -20,7 +20,7 @@ static bool hasListeners;
 - (void)startObserving { hasListeners = YES; }
 - (void)stopObserving { hasListeners = NO; }
 
-UIViewController*(^rootViewController)(void) = ^UIViewController*(){
+UIViewController*(^RFSWRootViewController)(void) = ^UIViewController*(){
     return RCTPresentedViewController();
 };
 
