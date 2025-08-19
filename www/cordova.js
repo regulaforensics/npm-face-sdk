@@ -3742,6 +3742,7 @@ class SearchPersonRequest {
     groupIdsForSearch
     threshold
     limit
+    tag
     detectAll
     outputImageParams
 
@@ -3750,6 +3751,7 @@ class SearchPersonRequest {
         this.groupIdsForSearch = params?.groupIdsForSearch
         this.threshold = params?.threshold
         this.limit = params?.limit
+        this.tag = params?.tag
         this.detectAll = params?.detectAll ?? false
         this.outputImageParams = params?.outputImageParams
     }

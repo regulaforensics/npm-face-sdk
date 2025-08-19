@@ -203,17 +203,7 @@
     return result;
 }
 
-+(id)faceSDKVersionFromJSON:(NSDictionary*)input {
-    if (!input || [input isEqual:[NSNull null]])  return nil;
-    RFSFaceSDKVersion* result = [RFSFaceSDKVersion new];
-    
-    [result setValue:input[@"api"] forKey:@"api"];
-    [result setValue:input[@"core"] forKey:@"core"];
-    [result setValue:input[@"coreMode"] forKey:@"coreMode"];
-    
-    return result;
-}
-
+// No fromJSON and no tests for FaceSDKVersion because of its implementation.
 +(id)generateFaceSDKVersion:(RFSFaceSDKVersion*)input {
     if (!input) return [NSNull null];
     NSMutableDictionary* result = @{}.mutableCopy;
@@ -892,6 +882,7 @@
                                                                           imageUpload:[self imageUploadFromJSON:input[@"imageUpload"]]];
     result.threshold = input[@"threshold"];
     result.limit = input[@"limit"];
+    result.tag = input[@"tag"];
     if (input[@"detectAll"] && ![input[@"detectAll"] isEqual:[NSNull null]]) result.detectAll = [input[@"detectAll"] boolValue];
     result.outputImageParams = [self outputImageParamsFromJSON:input[@"outputImageParams"]];
     return result;
@@ -905,6 +896,7 @@
     }.mutableCopy;
     if (input.threshold) result[@"threshold"] = input.threshold;
     if (input.limit) result[@"limit"] = input.limit;
+    if (input.tag) result[@"tag"] = input.tag;
     if (input.groupIdsForSearch) result[@"groupIdsForSearch"] = input.groupIdsForSearch;
     if (input.outputImageParams) result[@"outputImageParams"] = [self generateOutputImageParams:input.outputImageParams];
     return result;
