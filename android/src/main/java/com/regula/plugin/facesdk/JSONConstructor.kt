@@ -314,7 +314,7 @@ fun faceCaptureImageFromJSON(input: JSONObject?) = input?.let {
     Image(
         it.getInt("imageType").toImageType(),
         it.getStringOrNull("tag"),
-        it.getString("image").toBitmap(),
+        it.getString("image").toBitmap()!!,
     )
 }
 
@@ -378,7 +378,7 @@ fun generateLivenessNotification(it: LivenessNotification) = mapOf(
 
 fun matchFacesImageFromJSON(input: JSONObject?) = input?.let {
     val result = MatchFacesImage(
-        it.getString("image").toBitmap(),
+        it.getString("image").toBitmap()!!,
         it.getInt("imageType").toImageType(),
         it.optBoolean("detectAll", false)
     )
@@ -676,7 +676,7 @@ fun detectFacesAttributeResultFromJSON(it: JSONObject) = DetectFacesAttributeRes
 )
 
 fun generateDetectFacesAttributeResult(it: DetectFacesAttributeResult) = mapOf(
-    "attribute" to it.attribute.value,
+    "attribute" to it.attribute?.value,
     "value" to it.value,
     "confidence" to it.confidence,
     "range" to generateImageQualityRange(it.range)
@@ -833,6 +833,7 @@ fun searchPersonRequestFromJSON(it: JSONObject) = object : SearchPersonRequest()
     groupIdsForSearch = it.getJSONArrayOrNull("groupIdsForSearch").toArray()
     threshold = it.getDoubleOrNull("threshold")?.toFloat()
     limit = it.getIntOrNull("limit")
+    tag = it.getStringOrNull("tag")
     imageUpload = imageUploadFromJSON(it.getJSONObjectOrNull("imageUpload"))
     isDetectAll = it.optBoolean("detectAll", false)
     outputImageParams = outputImageParamsFromJSON(it.getJSONObjectOrNull("outputImageParams"))
@@ -843,6 +844,7 @@ fun generateSearchPersonRequest(it: SearchPersonRequest) = mapOf(
     "groupIdsForSearch" to it.groupIdsForSearch.toJson(),
     "threshold" to it.threshold,
     "limit" to it.limit,
+    "tag" to it.tag,
     "imageUpload" to generateImageUpload(it.imageUpload),
     "detectAll" to it.isDetectAll,
     "outputImageParams" to generateOutputImageParams(it.outputImageParams)

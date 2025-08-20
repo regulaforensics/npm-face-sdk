@@ -1,5 +1,4 @@
 #import "RFSWMain.h"
-#import <React/RCTUtils.h>
 
 @implementation RFSWMain
 
@@ -10,6 +9,12 @@
         @"getVersion": ^{ [self getVersion :callback]; },
         @"getServiceUrl": ^{ [self getServiceUrl :callback]; },
         @"setServiceUrl": ^{ [self setServiceUrl :args[0] :callback]; },
+        @"getTenant": ^{ [self getTenant :callback]; },
+        @"setTenant": ^{ [self setTenant :args[0]]; },
+        @"getEnv": ^{ [self getEnv :callback]; },
+        @"setEnv": ^{ [self setEnv :args[0]]; },
+        @"getLocale": ^{ [self getLocale :callback]; },
+        @"setLocale": ^{ [self setLocale :args[0]]; },
         @"setLocalizationDictionary": ^{ [self setLocalizationDictionary :args[0]]; },
         @"setRequestHeaders": ^{ [self setRequestHeaders :args[0]]; },
         @"setCustomization": ^{ [self setCustomization :args[0]]; },
@@ -50,12 +55,7 @@
 
 static RFSWMain* this;
 static RFSWEventSender sendEvent;
-
 static NSDictionary* headers;
-
-static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
-    return RCTPresentedViewController();
-};
 
 +(void)getVersion:(RFSWCallback)callback {
     callback([RFSWJSONConstructor generateFaceSDKVersion:RFSFaceSDK.service.version]);
@@ -68,6 +68,30 @@ static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
 +(void)setServiceUrl:(NSString*)url :(RFSWCallback)callback {
     [RFSFaceSDK.service setServiceURL:url];
     callback(@"");
+}
+
++(void)getTenant:(RFSWCallback)callback {
+    callback([RFSFaceSDK.service tenant]);
+}
+
++(void)setTenant:(NSString*)tag {
+    [RFSFaceSDK.service setTenant:tag];
+}
+
++(void)getEnv:(RFSWCallback)callback {
+    callback([RFSFaceSDK.service env]);
+}
+
++(void)setEnv:(NSString*)tag {
+    [RFSFaceSDK.service setEnv:tag];
+}
+
++(void)getLocale:(RFSWCallback)callback {
+    callback([RFSFaceSDK.service languageLocaleCode]);
+}
+
++(void)setLocale:(NSString*)locale {
+    [RFSFaceSDK.service setLanguageLocaleCode:locale];
 }
 
 +(void)setLocalizationDictionary:(NSDictionary*)dictionary {
@@ -108,7 +132,7 @@ static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
 
 +(void)startFaceCapture:(NSDictionary*)config :(RFSWCallback)callback {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [RFSFaceSDK.service presentFaceCaptureViewControllerFrom:rootViewController()
+        [RFSFaceSDK.service presentFaceCaptureViewControllerFrom:RFSWRootViewController()
                                                             animated:true
                                                        configuration:[RFSWConfig faceCaptureConfigFromJSON:config]
                                                            onCapture:[self faceCaptureCompletion:callback]
@@ -122,7 +146,7 @@ static UIViewController*(^rootViewController)(void) = ^UIViewController*(){
 
 +(void)startLiveness:(NSDictionary*)config :(RFSWCallback)callback {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [RFSFaceSDK.service startLivenessFrom:rootViewController()
+        [RFSFaceSDK.service startLivenessFrom:RFSWRootViewController()
                                                 animated:true
                                            configuration:[RFSWConfig livenessConfigFromJSON:config]
                                               onLiveness:[self livenessCompletion:callback]

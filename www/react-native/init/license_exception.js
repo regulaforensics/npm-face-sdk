@@ -11,6 +11,13 @@ export class LicenseException {
 
         return result
     }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+        }
+    }
 }
 
 export const LicensingResultCode = {

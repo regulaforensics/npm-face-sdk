@@ -11,4 +11,11 @@ export class Point {
 
         return result
     }
+
+    toJson() {
+        return {
+            "x": this.x,
+            "y": this.y,
+        }
+    }
 }

@@ -13,4 +13,12 @@ export class FaceSDKVersion {
 
         return result
     }
+
+    toJson() {
+        return {
+            "api": this.api,
+            "core": this.core,
+            "coreMode": this.coreMode,
+        }
+    }
 }

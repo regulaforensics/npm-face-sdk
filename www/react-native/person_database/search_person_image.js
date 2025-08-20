@@ -1,3 +1,5 @@
+import { dateToString } from '../internal/bridge'
+
 export class SearchPersonImage {
     similarity
     distance
@@ -22,5 +24,18 @@ export class SearchPersonImage {
         result.createdAt = new Date(jsonObject["createdAt"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "similarity": this.similarity,
+            "distance": this.distance,
+            "path": this.path,
+            "url": this.url,
+            "contentType": this.contentType,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": dateToString(this.createdAt),
+        }
     }
 }
