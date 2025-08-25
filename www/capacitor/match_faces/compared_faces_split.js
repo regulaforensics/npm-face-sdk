@@ -19,11 +19,4 @@ export class ComparedFacesSplit {
 
         return result
     }
-
-    toJson() {
-        return {
-            "matchedFaces": this.matchedFaces?.map(e => e.toJson()),
-            "unmatchedFaces": this.unmatchedFaces?.map(e => e.toJson()),
-        }
-    }
 }

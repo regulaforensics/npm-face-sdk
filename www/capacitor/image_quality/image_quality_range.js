@@ -23,11 +23,4 @@ export class ImageQualityRange {
 
         return result
     }
-
-    toJson() {
-        return {
-            "min": this.min,
-            "max": this.max,
-        }
-    }
 }

@@ -1,10 +1,11 @@
 # Regula Face SDK plugin
 Face SDK is a framework that is used for face matching, recognition and liveness detection.
-This plugin makes possible to use it with react-native, cordova and capacitor applications.
+This plugin makes possible to use it with react-native, cordova and ionic applications.
 
 ## Demo applications
-In the [examples](examples/) folder you can find 3 demo applications:
+In the [examples](examples/) folder you can find 4 demo applications:
 * [React-native](examples/react_native)
+* [Cordova](examples/cordova)
 * [Ionic(ionic app with cordova, angular)](examples/ionic)
 * [Capacitor(ionic app with capacitor, react)](examples/capacitor)
 

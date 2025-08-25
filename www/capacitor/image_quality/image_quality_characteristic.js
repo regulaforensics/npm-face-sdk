@@ -23,26 +23,4 @@ export class ImageQualityCharacteristic {
         this.customRange = ImageQualityRange.withValue(value)
         return this
     }
-
-    static fromJson(jsonObject) {
-        if (jsonObject == null) return null
-
-        return ImageQualityCharacteristic._create(
-            jsonObject["characteristicName"],
-            {
-                recommended: ImageQualityRange.fromJson(jsonObject["recommendedRange"]),
-                custom: ImageQualityRange.fromJson(jsonObject["customRange"]),
-                color: jsonObject["color"],
-            }
-        )
-    }
-
-    toJson() {
-        return {
-            "characteristicName": this.characteristicName,
-            "recommendedRange": this.recommendedRange?.toJson(),
-            "customRange": this.customRange?.toJson(),
-            "color": this.color,
-        }
-    }
 }

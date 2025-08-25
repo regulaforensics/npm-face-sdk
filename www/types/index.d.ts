@@ -97,18 +97,6 @@ export class FaceSDK {
     get serviceUrl(): string | null
     set serviceUrl(val: string | null)
 
-    /** Customer name. */
-    tenant: string | null;
-
-    /** Environment type. */
-    env: string | null;
-
-    /** 
-     * Custom language locale code of DocumentReaderSDK.
-     * If empty or doesn't exist - app language is used. Format "en-US" or "en".
-     */
-    locale: string | null;
-
     /**
      * A localization dictionary to override default localization logic.
      * Allows to replace any string of FaceSDK with an arbitrary string.

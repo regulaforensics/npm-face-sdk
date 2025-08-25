@@ -11,13 +11,6 @@ export class DetectFacesBackendException {
 
         return result
     }
-
-    toJson() {
-        return {
-            "code": this.code,
-            "message": this.message,
-        }
-    }
 }
 
 export const DetectFacesBackendErrorCode = {

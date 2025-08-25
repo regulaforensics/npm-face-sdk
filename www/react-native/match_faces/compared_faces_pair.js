@@ -20,14 +20,4 @@ export class ComparedFacesPair {
 
         return result
     }
-
-    toJson() {
-        return {
-            "first": this.first?.toJson(),
-            "second": this.second?.toJson(),
-            "similarity": this.similarity,
-            "score": this.score,
-            "error": this.error?.toJson(),
-        }
-    }
 }

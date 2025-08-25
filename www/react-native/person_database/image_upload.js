@@ -13,21 +13,4 @@ export class ImageUpload {
         result.imageUrl = imageUrl
         return result
     }
-
-    static fromJson(jsonObject) {
-        if (jsonObject == null) return null
-        var result = new ImageUpload()
-
-        result.imageData = jsonObject["imageData"]
-        result.imageUrl = jsonObject["imageUrl"]
-
-        return result
-    }
-
-    toJson() {
-        return {
-            "imageData": this.imageData,
-            "imageUrl": this.imageUrl,
-        }
-    }
 }

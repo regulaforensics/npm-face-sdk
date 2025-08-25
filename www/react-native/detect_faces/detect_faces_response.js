@@ -21,13 +21,4 @@ export class DetectFacesResponse {
 
         return result
     }
-
-    toJson() {
-        return {
-            "detection": this.detection?.toJson(),
-            "allDetections": this.allDetections?.map(e => e.toJson()),
-            "scenario": this.scenario,
-            "error": this.error?.toJson(),
-        }
-    }
 }

@@ -14,11 +14,4 @@ export class FaceCaptureResponse {
 
         return result
     }
-
-    toJson() {
-        return {
-            "image": this.image?.toJson(),
-            "error": this.error?.toJson(),
-        }
-    }
 }

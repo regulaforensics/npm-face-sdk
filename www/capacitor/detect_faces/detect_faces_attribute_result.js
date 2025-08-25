@@ -17,13 +17,4 @@ export class DetectFacesAttributeResult {
 
         return result
     }
-
-    toJson() {
-        return {
-            "attribute": this.attribute,
-            "value": this.value,
-            "range": this.range?.toJson(),
-            "confidence": this.confidence,
-        }
-    }
 }

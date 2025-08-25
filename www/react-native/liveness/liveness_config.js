@@ -35,49 +35,6 @@ export class LivenessConfig {
         this.skipStep = params?.skipStep ?? []
         this.metadata = params?.metadata
     }
-
-    static fromJson(jsonObject) {
-        if (jsonObject == null) return null
-        const result = new LivenessConfig()
-
-        result.copyright = jsonObject["copyright"]
-        result.cameraSwitchEnabled = jsonObject["cameraSwitchEnabled"]
-        result.closeButtonEnabled = jsonObject["closeButtonEnabled"]
-        result.torchButtonEnabled = jsonObject["torchButtonEnabled"]
-        result.vibrateOnSteps = jsonObject["vibrateOnSteps"]
-        result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
-        result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
-        result.screenOrientation = jsonObject["screenOrientation"]
-        result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
-        result.attemptsCount = jsonObject["attemptsCount"]
-        result.recordingProcess = jsonObject["recordingProcess"]
-        result.livenessType = jsonObject["livenessType"]
-        result.tag = jsonObject["tag"]
-        result.skipStep = jsonObject["skipStep"]
-        result.metadata = jsonObject["metadata"]
-
-        return result
-    }
-
-    toJson() {
-        return {
-            "copyright": this.copyright,
-            "cameraSwitchEnabled": this.cameraSwitchEnabled,
-            "closeButtonEnabled": this.closeButtonEnabled,
-            "torchButtonEnabled": this.torchButtonEnabled,
-            "vibrateOnSteps": this.vibrateOnSteps,
-            "cameraPositionAndroid": this.cameraPositionAndroid,
-            "cameraPositionIOS": this.cameraPositionIOS,
-            "screenOrientation": this.screenOrientation,
-            "locationTrackingEnabled": this.locationTrackingEnabled,
-            "attemptsCount": this.attemptsCount,
-            "recordingProcess": this.recordingProcess,
-            "livenessType": this.livenessType,
-            "tag": this.tag,
-            "skipStep": this.skipStep,
-            "metadata": this.metadata,
-        }
-    }
 }
 
 export const RecordingProcess = {

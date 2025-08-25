@@ -124,6 +124,6 @@ export class CustomizationImages {
     }
 
     _apply() {
-        this._set(this.toJson())
+        this._set(toJson())
     }
 }

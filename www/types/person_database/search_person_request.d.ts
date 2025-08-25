@@ -20,9 +20,6 @@ export class SearchPersonRequest {
      * @param params.limit - The number of returned Persons limit. 
      * Default: 100.
      * 
-     * @param tag - Defines tag that can be used in search request.
-     * Default: null.
-     * 
      * @param params.detectAll - Whether to process only the one face on the image or all the faces. 
      * Default: `false`.
      * 
@@ -35,7 +32,6 @@ export class SearchPersonRequest {
             groupIdsForSearch?: string[],
             threshold?: number,
             limit?: number,
-            tag?: string,
             detectAll?: boolean,
             outputImageParams?: OutputImageParams
         }

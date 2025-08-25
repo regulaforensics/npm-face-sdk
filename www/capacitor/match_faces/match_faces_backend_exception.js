@@ -11,11 +11,4 @@ export class MatchFacesBackendException {
 
         return result
     }
-
-    toJson() {
-        return {
-            "code": this.code,
-            "message": this.message,
-        }
-    }
 }

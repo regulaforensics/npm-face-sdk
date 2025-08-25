@@ -1,5 +1,3 @@
-import { dateToString } from '../internal/bridge'
-
 export class PersonImage {
     path
     url
@@ -20,16 +18,5 @@ export class PersonImage {
         result.createdAt = new Date(jsonObject["createdAt"])
 
         return result
-    }
-
-    toJson() {
-        return {
-            "path": this.path,
-            "url": this.url,
-            "contentType": this.contentType,
-            "id": this.id,
-            "metadata": this.metadata,
-            "createdAt": dateToString(this.createdAt),
-        }
     }
 }

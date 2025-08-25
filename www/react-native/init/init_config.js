@@ -14,23 +14,4 @@ export class InitConfig {
         this.licenseUpdate = params?.licenseUpdate
         this.useBleDevice = false
     }
-
-    static fromJson(jsonObject) {
-        if (jsonObject == null) return null
-        const result = new InitConfig()
-
-        result.license = jsonObject["license"]
-        result.licenseUpdate = jsonObject["licenseUpdate"]
-        result.useBleDevice = jsonObject["useBleDevice"]
-
-        return result
-    }
-
-    toJson() {
-        return {
-            "license": this.license,
-            "licenseUpdate": this.licenseUpdate,
-            "useBleDevice": this.useBleDevice,
-        }
-    }
 }

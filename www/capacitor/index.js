@@ -105,27 +105,6 @@ export class FaceSDK {
         this._setServiceUrl(val)
     }
 
-    get tenant() { return this._tenant }
-    _tenant = null
-    set tenant(val) {
-        this._tenant = val;
-        this._setTenant(val);
-    }
-
-    get env() { return this._env }
-    _env = null
-    set env(val) {
-        this._env = val;
-        this._setEnv(val);
-    }
-
-    get locale() { return this._locale }
-    _locale = null
-    set locale(val) {
-        this._locale = val;
-        this._setLocale(val);
-    }
-
     get localizationDictionary() { return this._localizationDictionary }
     _localizationDictionary
     set localizationDictionary(val) {
@@ -217,9 +196,6 @@ export class FaceSDK {
     async _onInit() {
         this._version = await this._getVersion()
         this._serviceUrl = await this._getServiceUrl()
-        this._tenant = await this._getTenant();
-        this._env = await this._getEnv();
-        this._locale = await this._getLocale();
     }
 
     async _getVersion() {
@@ -233,30 +209,6 @@ export class FaceSDK {
 
     _setServiceUrl(url) {
         exec("setServiceUrl", [url])
-    }
-
-    async _getTenant() {
-        return await exec("getTenant", []);
-    }
-
-    _setTenant(tenant) {
-        exec("setTenant", [tenant]);
-    }
-
-    async _getEnv() {
-        return await exec("getEnv", []);
-    }
-
-    _setEnv(env) {
-        exec("setEnv", [env]);
-    }
-
-    async _getLocale() {
-        return await exec("getLocale", []);
-    }
-
-    _setLocale(locale) {
-        exec("setLocale", [locale]);
     }
 
     _setLocalizationDictionary(dictionary) {

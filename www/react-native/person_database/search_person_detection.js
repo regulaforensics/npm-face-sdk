@@ -19,13 +19,4 @@ export class SearchPersonDetection {
 
         return result
     }
-
-    toJson() {
-        return {
-            "landmarks": this.landmarks?.map(e => e.toJson()),
-            "rect": this.rect?.toJson(),
-            "crop": this.crop,
-            "rotationAngle": this.rotationAngle,
-        }
-    }
 }

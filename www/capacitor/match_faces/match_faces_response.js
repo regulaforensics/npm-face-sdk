@@ -25,13 +25,4 @@ export class MatchFacesResponse {
 
         return result
     }
-
-    toJson() {
-        return {
-            "results": this.results?.map(e => e.toJson()),
-            "detections": this.detections?.map(e => e.toJson()),
-            "tag": this.tag,
-            "error": this.error?.toJson(),
-        }
-    }
 }

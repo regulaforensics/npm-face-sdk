@@ -13,14 +13,6 @@ export class FaceCaptureImage {
 
         return result
     }
-
-    toJson() {
-        return {
-            "imageType": this.imageType,
-            "image": this.image,
-            "tag": this.tag,
-        }
-    }
 }
 
 export const ImageType = {

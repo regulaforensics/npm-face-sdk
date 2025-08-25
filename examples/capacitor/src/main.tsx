@@ -1,19 +1,15 @@
+import '@ionic/react/css/core.css'
+import './main.css'
+import { setupIonicReact } from '@ionic/react'
+import { StatusBar, Style } from '@capacitor/status-bar'
+import { File } from '@awesome-cordova-plugins/file'
+import { Dialog } from '@capacitor/dialog'
+import { Camera, DestinationType, MediaType, PictureSourceType } from '@awesome-cordova-plugins/camera'
 import { FaceSDK, MatchFacesRequest, MatchFacesImage, InitConfig, LivenessSkipStep, ImageType, LivenessStatus, LivenessConfig } from '@regulaforensics/face-sdk'
-import { loadAssetIfExists, chooseOption, pickImage } from '../index'
-
-var faceSdk = FaceSDK.instance
-var image1: MatchFacesImage | null
-var image2: MatchFacesImage | null
 
 async function init() {
   if (!await initializeReader()) return
   setStatus("Ready")
-}
-
-async function startFaceCapture(position: number) {
-  var image = (await faceSdk.startFaceCapture()).image
-  if (image == null) return
-  setImage("data:image/png;base64," + image.image, image.imageType, position)
 }
 
 async function startLiveness() {
@@ -46,15 +42,30 @@ async function matchFaces() {
   setStatus("Ready")
 }
 
-async function getImage(position: number) {
-  var source = await chooseOption()
-  if (source == null) return
-  if (source) startFaceCapture(position)
-  else {
-    var image = await pickImage()
-    if (image == null) return
-    setImage(image, ImageType.PRINTED, position)
+function clearResults() {
+  setStatus("Ready")
+  setSimilarityStatus("null")
+  setLivenessStatus("null")
+  resetImages()
+  image1 = null
+  image2 = null
+}
+
+// If 'regula.license' exists, init using license(enables offline match)
+// otherwise init without license.
+async function initializeReader() {
+  setStatus("Initializing...")
+
+  var license = await loadAssetIfExists("regula.license")
+  var config: InitConfig | undefined
+  if (license != null) config = new InitConfig(license)
+  var [success, error] = await faceSdk.initialize({ config: config })
+
+  if (!success && error != null) {
+    setStatus(error.message)
+    console.log(error.code + ": " + error.message)
   }
+  return success
 }
 
 function setImage(base64: string, type: number, position: number) {
@@ -71,46 +82,71 @@ function setImage(base64: string, type: number, position: number) {
   }
 }
 
-// If 'regula.license' exists, init using license(enables offline match)
-// otherwise init without license.
-async function initializeReader() {
-  setStatus("Initializing...")
+async function useCamera(position: number) {
+  var response = await faceSdk.startFaceCapture()
+  if (response.image == null) return
+  var image = response.image
+  setImage("data:image/png;base64," + image.image, image.imageType, position)
+}
 
-  var license = await loadAssetIfExists("regula.license")
-  var config: InitConfig | undefined
-  if (license != null) config = new InitConfig(license)
-  var [success, error] = await faceSdk.initialize({ config: config })
+async function useGallery(position: number) {
+  var image = await Camera.getPicture({
+    destinationType: DestinationType.DATA_URL,
+    mediaType: MediaType.PICTURE,
+    sourceType: PictureSourceType.PHOTOLIBRARY
+  })
+  setImage(image, ImageType.PRINTED, position)
+}
 
-  if (error != null) {
-    setStatus(error.message)
-    console.log(error.code + ": " + error.message)
+async function pickImage(position: number) {
+  var response = await Dialog.confirm({
+    message: "Select option",
+    okButtonTitle: "Use camera",
+    cancelButtonTitle: "Use gallery"
+  })
+  if (response.value) useCamera(position)
+  else useGallery(position)
+}
+
+async function loadAssetIfExists(path: string): Promise<string | null> {
+  try {
+    var dir = await File.resolveDirectoryUrl(File.applicationDirectory + "public/assets")
+    var fileEntry = await File.getFile(dir, path, null)
+    var result = await new Promise<string | null>((resolve, _) => {
+      fileEntry.file(file => {
+        var reader = new FileReader()
+        reader.onloadend = (_) => resolve(reader.result as string)
+        reader.readAsDataURL(file)
+      }, _ => resolve(null))
+    })
+    return result
+  } catch (_) {
+    return null
   }
-  return success
 }
 
-// --------------------------------------------------------------------------------------------------------------------
+var faceSdk = FaceSDK.instance
+var image1: MatchFacesImage | null
+var image2: MatchFacesImage | null
 
-export function main() {
-  document.getElementById("first-image")!.onclick = () => getImage(1)
-  document.getElementById("second-image")!.onclick = () => getImage(2)
-  document.getElementById("match-faces")!.onclick = () => matchFaces()
-  document.getElementById("start-liveness")!.onclick = () => startLiveness()
-  document.getElementById("clear-results")!.onclick = () => clearResults()
-
-  init()
-}
-
-var setStatus = (data: string) => document.getElementById("status")!.innerHTML = data
-var setLivenessStatus = (data: string) => document.getElementById("liveness-status")!.innerHTML = data
-var setSimilarityStatus = (data: string) => document.getElementById("similarity-status")!.innerHTML = data
+var setStatus = (data: string) => document.getElementById("status").innerHTML = data
+var setLivenessStatus = (data: string) => document.getElementById("liveness-status").innerHTML = data
+var setSimilarityStatus = (data: string) => document.getElementById("similarity-status").innerHTML = data
 var setUiImage1 = (data: string) => (document.getElementById("first-image") as HTMLImageElement).src = data
 var setUiImage2 = (data: string) => (document.getElementById("second-image") as HTMLImageElement).src = data
-var clearResults = () => {
-  setStatus("Ready")
-  setSimilarityStatus("null")
-  setLivenessStatus("null")
+var resetImages = () => {
   setUiImage1("images/portrait.png")
   setUiImage2("images/portrait.png")
-  image1 = null
-  image2 = null
 }
+
+setupIonicReact()
+StatusBar.setStyle({ style: Style.Light })
+document.addEventListener('deviceready', () => {
+  document.getElementById("first-image").onclick = () => pickImage(1)
+  document.getElementById("second-image").onclick = () => pickImage(2)
+  document.getElementById("match-faces").onclick = () => matchFaces()
+  document.getElementById("start-liveness").onclick = () => startLiveness()
+  document.getElementById("clear-results").onclick = () => clearResults()
+
+  init()
+})

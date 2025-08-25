@@ -18,13 +18,4 @@ export class ComparedFace {
 
         return result
     }
-
-    toJson() {
-        return {
-            "imageIndex": this.imageIndex,
-            "image": this.image?.toJson(),
-            "faceIndex": this.faceIndex,
-            "face": this.face?.toJson(),
-        }
-    }
 }
