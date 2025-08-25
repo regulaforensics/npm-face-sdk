@@ -7,7 +7,8 @@ import { FaceSDK, MatchFacesRequest, MatchFacesImage, InitConfig, LivenessSkipSt
 async function init() {
   if (!await initialize()) return
   setStatus("Ready")
-  FaceSDK.instance.serviceUrl = 'http://localhost:41101/'
+  // DO NOT USE 'localhost', use a valid address of your server.
+  FaceSDK.instance.serviceUrl = 'http://192.168.0.31:41101/'
 }
 
 async function startLiveness() {
