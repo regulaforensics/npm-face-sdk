@@ -6,7 +6,7 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "7.2.425-beta",
+    "@regulaforensics/face-sdk": "7.2.429-beta",
     "@regulaforensics/face-core-basic": "7.1.202",
     "@awesome-cordova-plugins/file": "6.6.0",
     "@awesome-cordova-plugins/camera": "6.6.0",
@@ -21,7 +21,7 @@
     "@capacitor/dialog": "7.0.1",
     "@ionic/react": "8.4.3",
     "@vitejs/plugin-react": "4.3.4",
-    "vite-plugin-static-copy": "2.3.1",
+    "vite-plugin-static-copy": "3.1.2",
     "@types/react-router-dom": "5.3.3"
   }
 }
