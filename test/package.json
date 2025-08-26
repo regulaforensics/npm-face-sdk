@@ -1,0 +1,9 @@
+{
+  "name": "test-runner",
+  "type": "module",
+  "devDependencies": {
+    "@regulaforensics/face-sdk": "file:../",
+    "@types/node": "24.3.0",
+    "tsx": "4.20.4"
+  }
+}
