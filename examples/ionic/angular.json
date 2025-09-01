@@ -11,17 +11,17 @@
           "options": {
             "outputPath": "www",
             "index": "index.html",
-            "main": "index.ts",
+            "main": "index.tsx",
             "tsConfig": "tsconfig.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets",
+                "input": "assets",
                 "output": "assets"
               },
               {
                 "glob": "**/*",
-                "input": "src/images",
+                "input": "images",
                 "output": "images"
               }
             ]

@@ -13,6 +13,13 @@ export class LivenessNotification {
 
         return result
     }
+
+    toJson() {
+        return {
+            "status": this.status,
+            "response": this.response?.toJson(),
+        }
+    }
 }
 
 export const LivenessProcessStatus = {

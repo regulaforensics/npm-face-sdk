@@ -13,7 +13,7 @@
 
 
 ## How to use offline match
-1. Place a license that supports offline match at `src/assets/regula.license`.
+1. Place a license that supports offline match at `assets/regula.license`.
 
 2. Change core with the following commands:
 ```bash

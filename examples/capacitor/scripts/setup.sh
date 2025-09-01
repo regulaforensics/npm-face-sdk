@@ -2,5 +2,7 @@
 set -e
 
 npm install
-cd ios/App
-pod install || pod update
+ionic cap sync ios || {
+    cd ios/App
+    pod update
+}

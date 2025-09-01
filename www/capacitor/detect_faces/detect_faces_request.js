@@ -1,4 +1,5 @@
 import { DetectFacesScenario } from './detect_faces_scenario'
+import { DetectFacesConfig } from './detect_faces_config'
 
 export class DetectFacesRequest {
     image
@@ -65,5 +66,26 @@ export class DetectFacesRequest {
         result.image = image
         result.scenario = DetectFacesScenario.ATTRIBUTES_ALL
         return result
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new DetectFacesRequest()
+
+        result.tag = jsonObject["tag"]
+        result.scenario = jsonObject["scenario"]
+        result.image = jsonObject["image"]
+        result.configuration = DetectFacesConfig.fromJson(jsonObject["configuration"])
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "tag": this.tag,
+            "scenario": this.scenario,
+            "image": this.image,
+            "configuration": this.configuration?.toJson(),
+        }
     }
 }

@@ -1,3 +1,5 @@
+import { dateToString } from '../internal/bridge'
+
 export class PersonGroup {
     name
     id
@@ -14,5 +16,14 @@ export class PersonGroup {
         result.createdAt = new Date(jsonObject["createdAt"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "name": this.name,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": dateToString(this.createdAt),
+        }
     }
 }
