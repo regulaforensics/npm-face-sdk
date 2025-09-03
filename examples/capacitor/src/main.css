@@ -1,15 +1,19 @@
 html,
 body {
-    width: 99%;
+    margin: 0;
+    width: 100%;
     height: 99vh;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
 }
 
-.page {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+/* Prevent text selection */
+* {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
 }
 
 .column {
@@ -52,10 +56,14 @@ body {
     margin-top: 13px;
 }
 
+.scroll {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
 .no-scroll {
     flex-grow: 1;
     overflow-y: hidden;
-    overflow-x: hidden;
 }
 
 .button {
@@ -67,6 +75,7 @@ body {
     color: white;
     border: none;
     padding: 10px 20px;
+    justify-content: center;
     font-size: 16px;
     border-radius: 100px;
     cursor: pointer;
@@ -80,4 +89,49 @@ body {
 .button:active {
     position: relative;
     top: 1px;
+}
+
+.text-button {
+    background: none;
+    border: none;
+    color: #2196f3;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.text-button:active {
+    position: relative;
+    top: 1px;
+}
+
+.radio {
+    align-items: baseline;
+    padding: 15px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 75%;
+    padding: 3px;
+    margin-top: 40px;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#progress {
+    width: 0%;
+    height: 20px;
+    background-color: #4285F4;
+    border-radius: 5px;
 }

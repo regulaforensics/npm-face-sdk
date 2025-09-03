@@ -19,6 +19,7 @@
 ```bash
 npm uninstall @regulaforensics/face-core-basic
 npm install @regulaforensics/face-core-match
+(cd ios && pod install)
 npm run setup
 ```
 

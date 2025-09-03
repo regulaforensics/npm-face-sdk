@@ -22,4 +22,13 @@ export class MatchFacesDetection {
 
         return result
     }
+
+    toJson() {
+        return {
+            "imageIndex": this.imageIndex,
+            "image": this.image?.toJson(),
+            "faces": this.faces?.map(e => e.toJson()),
+            "error": this.error?.toJson(),
+        }
+    }
 }

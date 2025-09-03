@@ -22,6 +22,17 @@ export class LivenessResponse {
 
         return result
     }
+
+    toJson() {
+        return {
+            "image": this.image,
+            "liveness": this.liveness,
+            "tag": this.tag,
+            "transactionId": this.transactionId,
+            "estimatedAge": this.estimatedAge,
+            "error": this.error?.toJson(),
+        }
+    }
 }
 
 export const LivenessStatus = {

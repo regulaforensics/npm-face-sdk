@@ -35,4 +35,16 @@ export class DetectFaceResult {
 
         return result
     }
+
+    toJson() {
+        return {
+            "quality": this.quality?.map(e => e.toJson()),
+            "crop": this.crop,
+            "attributes": this.attributes?.map(e => e.toJson()),
+            "landmarks": this.landmarks?.map(e => e.toJson()),
+            "faceRect": this.faceRect?.toJson(),
+            "originalRect": this.originalRect?.toJson(),
+            "isQualityCompliant": this.isQualityCompliant,
+        }
+    }
 }

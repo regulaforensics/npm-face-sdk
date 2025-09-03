@@ -15,6 +15,14 @@ export class MatchFacesException {
 
         return result
     }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+            "underlyingError": this.underlyingError?.toJson(),
+        }
+    }
 }
 
 export const MatchFacesErrorCode = {

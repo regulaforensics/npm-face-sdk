@@ -1,3 +1,4 @@
+import { dateToString } from '../internal/bridge'
 import { SearchPersonImage } from './search_person_image'
 import { SearchPersonDetection } from './search_person_detection'
 
@@ -27,5 +28,18 @@ export class SearchPerson {
         result.createdAt = new Date(jsonObject["createdAt"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "images": this.images?.map(e => e.toJson()),
+            "detection": this.detection?.toJson(),
+            "name": this.name,
+            "updatedAt": dateToString(this.updatedAt),
+            "groups": this.groups,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": dateToString(this.createdAt),
+        }
     }
 }
