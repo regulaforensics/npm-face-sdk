@@ -19,6 +19,16 @@ export class ImageQualityResult {
 
         return result
     }
+
+    toJson() {
+        return {
+            "group": this.group,
+            "name": this.name,
+            "status": this.status,
+            "value": this.value,
+            "range": this.range?.toJson(),
+        }
+    }
 }
 
 export const ImageQualityGroupName = {

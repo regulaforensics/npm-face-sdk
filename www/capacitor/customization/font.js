@@ -19,6 +19,14 @@ export class Font {
 
         return result
     }
+
+    toJson() {
+        return {
+            "name": this.name,
+            "size": this.size,
+            "style": this.style,
+        }
+    }
 }
 
 export const FontStyle = {

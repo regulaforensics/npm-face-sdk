@@ -465,7 +465,7 @@ class CustomizationFonts {
     }
 
     _apply() {
-        this._set(toJson())
+        this._set(this.toJson())
     }
 }
 
@@ -608,7 +608,7 @@ class CustomizationImages {
     }
 
     _apply() {
-        this._set(toJson())
+        this._set(this.toJson())
     }
 }
 
@@ -646,6 +646,14 @@ class Font {
         result.style = jsonObject["style"]
 
         return result
+    }
+
+    toJson() {
+        return {
+            "name": this.name,
+            "size": this.size,
+            "style": this.style,
+        }
     }
 }
 
@@ -727,6 +735,18 @@ class DetectFaceResult {
 
         return result
     }
+
+    toJson() {
+        return {
+            "quality": this.quality?.map(e => e.toJson()),
+            "crop": this.crop,
+            "attributes": this.attributes?.map(e => e.toJson()),
+            "landmarks": this.landmarks?.map(e => e.toJson()),
+            "faceRect": this.faceRect?.toJson(),
+            "originalRect": this.originalRect?.toJson(),
+            "isQualityCompliant": this.isQualityCompliant,
+        }
+    }
 }
 
 /***/ }),
@@ -789,6 +809,15 @@ class DetectFacesAttributeResult {
 
         return result
     }
+
+    toJson() {
+        return {
+            "attribute": this.attribute,
+            "value": this.value,
+            "range": this.range?.toJson(),
+            "confidence": this.confidence,
+        }
+    }
 }
 
 /***/ }),
@@ -817,6 +846,13 @@ class DetectFacesBackendException {
 
         return result
     }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+        }
+    }
 }
 
 const DetectFacesBackendErrorCode = {
@@ -840,6 +876,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DetectFacesConfig: () => (/* binding */ DetectFacesConfig)
 /* harmony export */ });
+/* harmony import */ var _image_quality_image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../image_quality/image_quality_characteristic */ "./src/image_quality/image_quality_characteristic.js");
+/* harmony import */ var _image_params_output_image_params__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../image_params/output_image_params */ "./src/image_params/output_image_params.js");
+
+
+
 class DetectFacesConfig {
     attributes
     customQuality
@@ -852,6 +893,37 @@ class DetectFacesConfig {
         this.customQuality = params?.customQuality
         this.outputImageParams = params?.outputImageParams
         this.onlyCentralFace = params?.onlyCentralFace ?? this.onlyCentralFace
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new DetectFacesConfig()
+
+        if (jsonObject["attributes"] != null) {
+            result.attributes = []
+            for (const item of jsonObject["attributes"]) {
+                result.attributes.push(item)
+            }
+        }
+        if (jsonObject["customQuality"] != null) {
+            result.customQuality = []
+            for (const item of jsonObject["customQuality"]) {
+                result.customQuality.push(_image_quality_image_quality_characteristic__WEBPACK_IMPORTED_MODULE_0__.ImageQualityCharacteristic.fromJson(item))
+            }
+        }
+        result.outputImageParams = _image_params_output_image_params__WEBPACK_IMPORTED_MODULE_1__.OutputImageParams.fromJson(jsonObject["outputImageParams"])
+        result.onlyCentralFace = jsonObject["onlyCentralFace"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "attributes": this.attributes?.map(e => e),
+            "customQuality": this.customQuality?.map(e => e.toJson()),
+            "outputImageParams": this.outputImageParams?.toJson(),
+            "onlyCentralFace": this.onlyCentralFace,
+        }
     }
 }
 
@@ -886,6 +958,14 @@ class DetectFacesException {
 
         return result
     }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+            "underlyingError": this.underlyingError?.toJson(),
+        }
+    }
 }
 
 const DetectFacesErrorCode = {
@@ -913,6 +993,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DetectFacesRequest: () => (/* binding */ DetectFacesRequest)
 /* harmony export */ });
 /* harmony import */ var _detect_faces_scenario__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./detect_faces_scenario */ "./src/detect_faces/detect_faces_scenario.js");
+/* harmony import */ var _detect_faces_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./detect_faces_config */ "./src/detect_faces/detect_faces_config.js");
+
 
 
 class DetectFacesRequest {
@@ -981,6 +1063,27 @@ class DetectFacesRequest {
         result.scenario = _detect_faces_scenario__WEBPACK_IMPORTED_MODULE_0__.DetectFacesScenario.ATTRIBUTES_ALL
         return result
     }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new DetectFacesRequest()
+
+        result.tag = jsonObject["tag"]
+        result.scenario = jsonObject["scenario"]
+        result.image = jsonObject["image"]
+        result.configuration = _detect_faces_config__WEBPACK_IMPORTED_MODULE_1__.DetectFacesConfig.fromJson(jsonObject["configuration"])
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "tag": this.tag,
+            "scenario": this.scenario,
+            "image": this.image,
+            "configuration": this.configuration?.toJson(),
+        }
+    }
 }
 
 /***/ }),
@@ -1019,6 +1122,15 @@ class DetectFacesResponse {
                 result.allDetections.push(_detect_face_result__WEBPACK_IMPORTED_MODULE_0__.DetectFaceResult.fromJson(item))
 
         return result
+    }
+
+    toJson() {
+        return {
+            "detection": this.detection?.toJson(),
+            "allDetections": this.allDetections?.map(e => e.toJson()),
+            "scenario": this.scenario,
+            "error": this.error?.toJson(),
+        }
     }
 }
 
@@ -1090,6 +1202,43 @@ class FaceCaptureConfig {
         this.timeout = params?.timeout
         this.holdStillDuration = params?.holdStillDuration
     }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new FaceCaptureConfig()
+
+        result.copyright = jsonObject["copyright"]
+        result.cameraSwitchEnabled = jsonObject["cameraSwitchEnabled"]
+        result.closeButtonEnabled = jsonObject["closeButtonEnabled"]
+        result.torchButtonEnabled = jsonObject["torchButtonEnabled"]
+        result.vibrateOnSteps = jsonObject["vibrateOnSteps"]
+        result.detectOcclusion = jsonObject["detectOcclusion"]
+        result.showFaceAnimation = jsonObject["showFaceAnimation"]
+        result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
+        result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
+        result.screenOrientation = jsonObject["screenOrientation"]
+        result.timeout = jsonObject["timeout"]
+        result.holdStillDuration = jsonObject["holdStillDuration"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "copyright": this.copyright,
+            "cameraSwitchEnabled": this.cameraSwitchEnabled,
+            "closeButtonEnabled": this.closeButtonEnabled,
+            "torchButtonEnabled": this.torchButtonEnabled,
+            "vibrateOnSteps": this.vibrateOnSteps,
+            "detectOcclusion": this.detectOcclusion,
+            "showFaceAnimation": this.showFaceAnimation,
+            "cameraPositionAndroid": this.cameraPositionAndroid,
+            "cameraPositionIOS": this.cameraPositionIOS,
+            "screenOrientation": this.screenOrientation,
+            "timeout": this.timeout,
+            "holdStillDuration": this.holdStillDuration,
+        }
+    }
 }
 
 /***/ }),
@@ -1117,6 +1266,13 @@ class FaceCaptureException {
         result.message = jsonObject["message"] ?? ""
 
         return result
+    }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+        }
     }
 }
 
@@ -1158,6 +1314,14 @@ class FaceCaptureImage {
         result.tag = jsonObject["tag"]
 
         return result
+    }
+
+    toJson() {
+        return {
+            "imageType": this.imageType,
+            "image": this.image,
+            "tag": this.tag,
+        }
     }
 }
 
@@ -1201,6 +1365,13 @@ class FaceCaptureResponse {
 
         return result
     }
+
+    toJson() {
+        return {
+            "image": this.image?.toJson(),
+            "error": this.error?.toJson(),
+        }
+    }
 }
 
 /***/ }),
@@ -1216,6 +1387,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   OutputImageCrop: () => (/* binding */ OutputImageCrop),
 /* harmony export */   OutputImageCropAspectRatio: () => (/* binding */ OutputImageCropAspectRatio)
 /* harmony export */ });
+/* harmony import */ var _size__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./size */ "./src/image_params/size.js");
+
+
 class OutputImageCrop {
     type
     size
@@ -1227,6 +1401,27 @@ class OutputImageCrop {
         this.size = params?.size
         this.padColor = params?.padColor
         this.returnOriginalRect = params?.returnOriginalRect ?? false
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        return new OutputImageCrop(
+            jsonObject["type"],
+            {
+                size: _size__WEBPACK_IMPORTED_MODULE_0__.Size.fromJson(jsonObject["size"]),
+                padColor: jsonObject["padColor"],
+                returnOriginalRect: jsonObject["returnOriginalRect"],
+            }
+        )
+    }
+
+    toJson() {
+        return {
+            "type": this.type,
+            "size": this.size?.toJson(),
+            "padColor": this.padColor,
+            "returnOriginalRect": this.returnOriginalRect,
+        }
     }
 }
 
@@ -1250,6 +1445,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   OutputImageParams: () => (/* binding */ OutputImageParams)
 /* harmony export */ });
+/* harmony import */ var _output_image_crop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./output_image_crop */ "./src/image_params/output_image_crop.js");
+
+
 class OutputImageParams {
     crop
     backgroundColor
@@ -1257,6 +1455,23 @@ class OutputImageParams {
     constructor(params) {
         this.crop = params?.crop
         this.backgroundColor = params?.backgroundColor
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new OutputImageParams()
+
+        result.crop = _output_image_crop__WEBPACK_IMPORTED_MODULE_0__.OutputImageCrop.fromJson(jsonObject["crop"])
+        result.backgroundColor = jsonObject["backgroundColor"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "crop": this.crop?.toJson(),
+            "backgroundColor": this.backgroundColor,
+        }
     }
 }
 
@@ -1284,6 +1499,13 @@ class Point {
         result.y = jsonObject["y"]
 
         return result
+    }
+
+    toJson() {
+        return {
+            "x": this.x,
+            "y": this.y,
+        }
     }
 }
 
@@ -1316,6 +1538,15 @@ class Rect {
 
         return result
     }
+
+    toJson() {
+        return {
+            "left": this.left,
+            "top": this.top,
+            "right": this.right,
+            "bottom": this.bottom,
+        }
+    }
 }
 
 /***/ }),
@@ -1337,6 +1568,18 @@ class Size {
     constructor(width, height) {
         this.width = width
         this.height = height
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        return new Size(jsonObject["width"], jsonObject["height"])    
+    }
+
+    toJson() {
+        return {
+            "width": this.width,
+            "height": this.height,
+        }
     }
 }
 
@@ -1377,6 +1620,28 @@ class ImageQualityCharacteristic {
     withCustomValue(value) {
         this.customRange = _image_quality_range__WEBPACK_IMPORTED_MODULE_0__.ImageQualityRange.withValue(value)
         return this
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+
+        return ImageQualityCharacteristic._create(
+            jsonObject["characteristicName"],
+            {
+                recommended: _image_quality_range__WEBPACK_IMPORTED_MODULE_0__.ImageQualityRange.fromJson(jsonObject["recommendedRange"]),
+                custom: _image_quality_range__WEBPACK_IMPORTED_MODULE_0__.ImageQualityRange.fromJson(jsonObject["customRange"]),
+                color: jsonObject["color"],
+            }
+        )
+    }
+
+    toJson() {
+        return {
+            "characteristicName": this.characteristicName,
+            "recommendedRange": this.recommendedRange?.toJson(),
+            "customRange": this.customRange?.toJson(),
+            "color": this.color,
+        }
     }
 }
 
@@ -1845,6 +2110,13 @@ class ImageQualityRange {
 
         return result
     }
+
+    toJson() {
+        return {
+            "min": this.min,
+            "max": this.max,
+        }
+    }
 }
 
 /***/ }),
@@ -1882,6 +2154,16 @@ class ImageQualityResult {
         result.value = jsonObject["value"]
 
         return result
+    }
+
+    toJson() {
+        return {
+            "group": this.group,
+            "name": this.name,
+            "status": this.status,
+            "value": this.value,
+            "range": this.range?.toJson(),
+        }
     }
 }
 
@@ -2163,6 +2445,27 @@ class FaceSDK {
         this._setServiceUrl(val)
     }
 
+    get tenant() { return this._tenant }
+    _tenant = null
+    set tenant(val) {
+        this._tenant = val;
+        this._setTenant(val);
+    }
+
+    get env() { return this._env }
+    _env = null
+    set env(val) {
+        this._env = val;
+        this._setEnv(val);
+    }
+
+    get locale() { return this._locale }
+    _locale = null
+    set locale(val) {
+        this._locale = val;
+        this._setLocale(val);
+    }
+
     get localizationDictionary() { return this._localizationDictionary }
     _localizationDictionary
     set localizationDictionary(val) {
@@ -2254,6 +2557,9 @@ class FaceSDK {
     async _onInit() {
         this._version = await this._getVersion()
         this._serviceUrl = await this._getServiceUrl()
+        this._tenant = await this._getTenant();
+        this._env = await this._getEnv();
+        this._locale = await this._getLocale();
     }
 
     async _getVersion() {
@@ -2267,6 +2573,30 @@ class FaceSDK {
 
     _setServiceUrl(url) {
         (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setServiceUrl", [url])
+    }
+
+    async _getTenant() {
+        return await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("getTenant", []);
+    }
+
+    _setTenant(tenant) {
+        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setTenant", [tenant]);
+    }
+
+    async _getEnv() {
+        return await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("getEnv", []);
+    }
+
+    _setEnv(env) {
+        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setEnv", [env]);
+    }
+
+    async _getLocale() {
+        return await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("getLocale", []);
+    }
+
+    _setLocale(locale) {
+        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setLocale", [locale]);
     }
 
     _setLocalizationDictionary(dictionary) {
@@ -2306,6 +2636,14 @@ class FaceSDKVersion {
 
         return result
     }
+
+    toJson() {
+        return {
+            "api": this.api,
+            "core": this.core,
+            "coreMode": this.coreMode,
+        }
+    }
 }
 
 /***/ }),
@@ -2335,6 +2673,25 @@ class InitConfig {
         this.license = license
         this.licenseUpdate = params?.licenseUpdate
         this.useBleDevice = false
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new InitConfig()
+
+        result.license = jsonObject["license"]
+        result.licenseUpdate = jsonObject["licenseUpdate"]
+        result.useBleDevice = jsonObject["useBleDevice"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "license": this.license,
+            "licenseUpdate": this.licenseUpdate,
+            "useBleDevice": this.useBleDevice,
+        }
     }
 }
 
@@ -2368,6 +2725,14 @@ class InitException {
         result.underlyingError = _license_exception__WEBPACK_IMPORTED_MODULE_0__.LicenseException.fromJson(jsonObject["underlyingError"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+            "underlyingError": this.underlyingError?.toJson(),
+        }
     }
 }
 
@@ -2408,6 +2773,13 @@ class LicenseException {
 
         return result
     }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+        }
+    }
 }
 
 const LicensingResultCode = {
@@ -2439,6 +2811,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   _setCustomButtonTappedCompletion: () => (/* binding */ _setCustomButtonTappedCompletion),
 /* harmony export */   _setLivenessNotificationCompletion: () => (/* binding */ _setLivenessNotificationCompletion),
 /* harmony export */   _setVideoEncoderCompletion: () => (/* binding */ _setVideoEncoderCompletion),
+/* harmony export */   dateToString: () => (/* binding */ dateToString),
 /* harmony export */   exec: () => (/* binding */ exec)
 /* harmony export */ });
 /* harmony import */ var _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../liveness/liveness_notification */ "./src/liveness/liveness_notification.js");
@@ -2483,6 +2856,26 @@ function _setLivenessNotificationCompletion(completion) {
 function _setCameraSwitchCallback(completion) {
     _setEvent("cameraSwitchEvent", completion)
 }
+
+function dateToString(date) {
+    if (date == null) return null
+    const fmt = new Intl.DateTimeFormat('en', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        fractionalSecondDigits: 3,
+        hour12: false
+    });
+
+    const parts = fmt.formatToParts(date);
+    const get = (t) => parts.find(p => p.type === t)?.value ?? '';
+
+    return `${get('year')}-${get('month')}-${get('day')} ${get('hour')}:${get('minute')}:${get('second')}.${get('fractionalSecond')}`;
+}
+
 
 /***/ }),
 
@@ -2540,6 +2933,13 @@ class LivenessBackendException {
         result.message = jsonObject["message"] ?? ""
 
         return result
+    }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+        }
     }
 }
 
@@ -2632,6 +3032,49 @@ class LivenessConfig {
         this.skipStep = params?.skipStep ?? []
         this.metadata = params?.metadata
     }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new LivenessConfig()
+
+        result.copyright = jsonObject["copyright"]
+        result.cameraSwitchEnabled = jsonObject["cameraSwitchEnabled"]
+        result.closeButtonEnabled = jsonObject["closeButtonEnabled"]
+        result.torchButtonEnabled = jsonObject["torchButtonEnabled"]
+        result.vibrateOnSteps = jsonObject["vibrateOnSteps"]
+        result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
+        result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
+        result.screenOrientation = jsonObject["screenOrientation"]
+        result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
+        result.attemptsCount = jsonObject["attemptsCount"]
+        result.recordingProcess = jsonObject["recordingProcess"]
+        result.livenessType = jsonObject["livenessType"]
+        result.tag = jsonObject["tag"]
+        result.skipStep = jsonObject["skipStep"]
+        result.metadata = jsonObject["metadata"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "copyright": this.copyright,
+            "cameraSwitchEnabled": this.cameraSwitchEnabled,
+            "closeButtonEnabled": this.closeButtonEnabled,
+            "torchButtonEnabled": this.torchButtonEnabled,
+            "vibrateOnSteps": this.vibrateOnSteps,
+            "cameraPositionAndroid": this.cameraPositionAndroid,
+            "cameraPositionIOS": this.cameraPositionIOS,
+            "screenOrientation": this.screenOrientation,
+            "locationTrackingEnabled": this.locationTrackingEnabled,
+            "attemptsCount": this.attemptsCount,
+            "recordingProcess": this.recordingProcess,
+            "livenessType": this.livenessType,
+            "tag": this.tag,
+            "skipStep": this.skipStep,
+            "metadata": this.metadata,
+        }
+    }
 }
 
 const RecordingProcess = {
@@ -2681,6 +3124,14 @@ class LivenessException {
 
         return result
     }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+            "underlyingError": this.underlyingError?.toJson(),
+        }
+    }
 }
 
 const LivenessErrorCode = {
@@ -2728,6 +3179,13 @@ class LivenessNotification {
         result.response = _liveness_response__WEBPACK_IMPORTED_MODULE_0__.LivenessResponse.fromJson(jsonObject["response"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "status": this.status,
+            "response": this.response?.toJson(),
+        }
     }
 }
 
@@ -2787,6 +3245,17 @@ class LivenessResponse {
 
         return result
     }
+
+    toJson() {
+        return {
+            "image": this.image,
+            "liveness": this.liveness,
+            "tag": this.tag,
+            "transactionId": this.transactionId,
+            "estimatedAge": this.estimatedAge,
+            "error": this.error?.toJson(),
+        }
+    }
 }
 
 const LivenessStatus = {
@@ -2828,6 +3297,15 @@ class ComparedFace {
 
         return result
     }
+
+    toJson() {
+        return {
+            "imageIndex": this.imageIndex,
+            "image": this.image?.toJson(),
+            "faceIndex": this.faceIndex,
+            "face": this.face?.toJson(),
+        }
+    }
 }
 
 /***/ }),
@@ -2866,6 +3344,16 @@ class ComparedFacesPair {
 
         return result
     }
+
+    toJson() {
+        return {
+            "first": this.first?.toJson(),
+            "second": this.second?.toJson(),
+            "similarity": this.similarity,
+            "score": this.score,
+            "error": this.error?.toJson(),
+        }
+    }
 }
 
 /***/ }),
@@ -2902,6 +3390,13 @@ class ComparedFacesSplit {
 
         return result
     }
+
+    toJson() {
+        return {
+            "matchedFaces": this.matchedFaces?.map(e => e.toJson()),
+            "unmatchedFaces": this.unmatchedFaces?.map(e => e.toJson()),
+        }
+    }
 }
 
 /***/ }),
@@ -2929,6 +3424,13 @@ class MatchFacesBackendException {
 
         return result
     }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+        }
+    }
 }
 
 /***/ }),
@@ -2946,9 +3448,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 class MatchFacesConfig {
     processingMode
+    locationTrackingEnabled
 
     constructor(params) {
         this.processingMode = params?.processingMode ?? ProcessingMode.ONLINE
+        this.locationTrackingEnabled = params?.locationTrackingEnabled ?? true
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new MatchFacesConfig()
+
+        result.processingMode = jsonObject["processingMode"]
+        result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "processingMode": this.processingMode,
+            "locationTrackingEnabled": this.locationTrackingEnabled,
+        }
     }
 }
 
@@ -2996,6 +3517,15 @@ class MatchFacesDetection {
 
         return result
     }
+
+    toJson() {
+        return {
+            "imageIndex": this.imageIndex,
+            "image": this.image?.toJson(),
+            "faces": this.faces?.map(e => e.toJson()),
+            "error": this.error?.toJson(),
+        }
+    }
 }
 
 /***/ }),
@@ -3039,6 +3569,17 @@ class MatchFacesDetectionFace {
 
         return result
     }
+
+    toJson() {
+        return {
+            "faceIndex": this.faceIndex,
+            "landmarks": this.landmarks?.map(e => e.toJson()),
+            "faceRect": this.faceRect?.toJson(),
+            "rotationAngle": this.rotationAngle,
+            "originalRect": this.originalRect?.toJson(),
+            "crop": this.crop,
+        }
+    }
 }
 
 /***/ }),
@@ -3071,6 +3612,14 @@ class MatchFacesException {
         result.underlyingError = _match_faces_backend_exception__WEBPACK_IMPORTED_MODULE_0__.MatchFacesBackendException.fromJson(jsonObject["underlyingError"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "code": this.code,
+            "message": this.message,
+            "underlyingError": this.underlyingError?.toJson(),
+        }
     }
 }
 
@@ -3122,6 +3671,15 @@ class MatchFacesImage {
 
         return result
     }
+
+    toJson() {
+        return {
+            "image": this.image,
+            "imageType": this.imageType,
+            "detectAll": this.detectAll,
+            "identifier": this.identifier,
+        }
+    }
 }
 
 /***/ }),
@@ -3136,6 +3694,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MatchFacesRequest: () => (/* binding */ MatchFacesRequest)
 /* harmony export */ });
+/* harmony import */ var _image_params_output_image_params__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../image_params/output_image_params */ "./src/image_params/output_image_params.js");
+/* harmony import */ var _match_faces_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./match_faces_image */ "./src/match_faces/match_faces_image.js");
+
+
+
 class MatchFacesRequest {
     images
     outputImageParams
@@ -3147,6 +3710,30 @@ class MatchFacesRequest {
         this.outputImageParams = params?.outputImageParams
         this.tag = params?.tag
         this.metadata = params?.metadata
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+
+        const images = []
+        for (const item of jsonObject["images"]) {
+            images.push(_match_faces_image__WEBPACK_IMPORTED_MODULE_1__.MatchFacesImage.fromJson(item))
+        }
+
+        return new MatchFacesRequest(images, {
+            outputImageParams: _image_params_output_image_params__WEBPACK_IMPORTED_MODULE_0__.OutputImageParams.fromJson(jsonObject["outputImageParams"]),
+            tag: jsonObject["tag"],
+            metadata: jsonObject["metadata"],
+        })
+    }
+
+    toJson() {
+        return {
+            "images": this.images?.map(e => e.toJson()),
+            "outputImageParams": this.outputImageParams?.toJson(),
+            "tag": this.tag,
+            "metadata": this.metadata,
+        }
     }
 }
 
@@ -3192,6 +3779,15 @@ class MatchFacesResponse {
 
         return result
     }
+
+    toJson() {
+        return {
+            "results": this.results?.map(e => e.toJson()),
+            "detections": this.detections?.map(e => e.toJson()),
+            "tag": this.tag,
+            "error": this.error?.toJson(),
+        }
+    }
 }
 
 /***/ }),
@@ -3213,6 +3809,21 @@ class EditGroupPersonsRequest {
     constructor(params) {
         this.personIdsToAdd = params?.personIdsToAdd
         this.personIdsToRemove = params?.personIdsToRemove
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        return new EditGroupPersonsRequest({
+            personIdsToAdd: jsonObject["personIdsToAdd"],
+            personIdsToRemove: jsonObject["personIdsToRemove"],
+        })
+    }
+
+    toJson() {
+        return {
+            "personIdsToAdd": this.personIdsToAdd,
+            "personIdsToRemove": this.personIdsToRemove,
+        }
     }
 }
 
@@ -3243,6 +3854,23 @@ class ImageUpload {
         var result = new ImageUpload()
         result.imageUrl = imageUrl
         return result
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        var result = new ImageUpload()
+
+        result.imageData = jsonObject["imageData"]
+        result.imageUrl = jsonObject["imageUrl"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "imageData": this.imageData,
+            "imageUrl": this.imageUrl,
+        }
     }
 }
 
@@ -3280,6 +3908,14 @@ class PageableItemList {
 
         return result
     }
+
+    toJson() {
+        return {
+            "items": this.items?.map(e => e.toJson()),
+            "page": this.page,
+            "totalPages": this.totalPages,
+        }
+    }
 }
 
 
@@ -3295,6 +3931,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Person: () => (/* binding */ Person)
 /* harmony export */ });
+/* harmony import */ var _internal_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../internal/bridge */ "./src/internal/bridge.js");
+
+
 class Person {
     name
     updatedAt
@@ -3315,6 +3954,17 @@ class Person {
         result.createdAt = new Date(jsonObject["createdAt"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "name": this.name,
+            "updatedAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.updatedAt),
+            "groups": this.groups,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
+        }
     }
 }
 
@@ -3496,6 +4146,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   PersonGroup: () => (/* binding */ PersonGroup)
 /* harmony export */ });
+/* harmony import */ var _internal_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../internal/bridge */ "./src/internal/bridge.js");
+
+
 class PersonGroup {
     name
     id
@@ -3513,6 +4166,15 @@ class PersonGroup {
 
         return result
     }
+
+    toJson() {
+        return {
+            "name": this.name,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
+        }
+    }
 }
 
 
@@ -3528,6 +4190,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   PersonImage: () => (/* binding */ PersonImage)
 /* harmony export */ });
+/* harmony import */ var _internal_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../internal/bridge */ "./src/internal/bridge.js");
+
+
 class PersonImage {
     path
     url
@@ -3549,6 +4214,17 @@ class PersonImage {
 
         return result
     }
+
+    toJson() {
+        return {
+            "path": this.path,
+            "url": this.url,
+            "contentType": this.contentType,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
+        }
+    }
 }
 
 
@@ -3564,8 +4240,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SearchPerson: () => (/* binding */ SearchPerson)
 /* harmony export */ });
-/* harmony import */ var _search_person_image__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./search_person_image */ "./src/person_database/search_person_image.js");
-/* harmony import */ var _search_person_detection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_person_detection */ "./src/person_database/search_person_detection.js");
+/* harmony import */ var _internal_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../internal/bridge */ "./src/internal/bridge.js");
+/* harmony import */ var _search_person_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_person_image */ "./src/person_database/search_person_image.js");
+/* harmony import */ var _search_person_detection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search_person_detection */ "./src/person_database/search_person_detection.js");
+
 
 
 
@@ -3585,8 +4263,8 @@ class SearchPerson {
 
         if (jsonObject["images"] != null)
             for (var item of jsonObject["images"])
-                result.images.push(_search_person_image__WEBPACK_IMPORTED_MODULE_0__.SearchPersonImage.fromJson(item))
-        result.detection = _search_person_detection__WEBPACK_IMPORTED_MODULE_1__.SearchPersonDetection.fromJson(jsonObject["detection"])
+                result.images.push(_search_person_image__WEBPACK_IMPORTED_MODULE_1__.SearchPersonImage.fromJson(item))
+        result.detection = _search_person_detection__WEBPACK_IMPORTED_MODULE_2__.SearchPersonDetection.fromJson(jsonObject["detection"])
         result.name = jsonObject["name"]
         result.updatedAt = new Date(jsonObject["updatedAt"])
         result.groups = jsonObject["groups"]
@@ -3595,6 +4273,19 @@ class SearchPerson {
         result.createdAt = new Date(jsonObject["createdAt"])
 
         return result
+    }
+
+    toJson() {
+        return {
+            "images": this.images?.map(e => e.toJson()),
+            "detection": this.detection?.toJson(),
+            "name": this.name,
+            "updatedAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.updatedAt),
+            "groups": this.groups,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
+        }
     }
 }
 
@@ -3634,6 +4325,15 @@ class SearchPersonDetection {
 
         return result
     }
+
+    toJson() {
+        return {
+            "landmarks": this.landmarks?.map(e => e.toJson()),
+            "rect": this.rect?.toJson(),
+            "crop": this.crop,
+            "rotationAngle": this.rotationAngle,
+        }
+    }
 }
 
 
@@ -3649,6 +4349,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SearchPersonImage: () => (/* binding */ SearchPersonImage)
 /* harmony export */ });
+/* harmony import */ var _internal_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../internal/bridge */ "./src/internal/bridge.js");
+
+
 class SearchPersonImage {
     similarity
     distance
@@ -3674,6 +4377,19 @@ class SearchPersonImage {
 
         return result
     }
+
+    toJson() {
+        return {
+            "similarity": this.similarity,
+            "distance": this.distance,
+            "path": this.path,
+            "url": this.url,
+            "contentType": this.contentType,
+            "id": this.id,
+            "metadata": this.metadata,
+            "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
+        }
+    }
 }
 
 
@@ -3689,11 +4405,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SearchPersonRequest: () => (/* binding */ SearchPersonRequest)
 /* harmony export */ });
+/* harmony import */ var _image_params_output_image_params__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../image_params/output_image_params */ "./src/image_params/output_image_params.js");
+/* harmony import */ var _image_upload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image_upload */ "./src/person_database/image_upload.js");
+
+
+
 class SearchPersonRequest {
     imageUpload
     groupIdsForSearch
     threshold
     limit
+    tag
     detectAll
     outputImageParams
 
@@ -3702,8 +4424,33 @@ class SearchPersonRequest {
         this.groupIdsForSearch = params?.groupIdsForSearch
         this.threshold = params?.threshold
         this.limit = params?.limit
+        this.tag = params?.tag
         this.detectAll = params?.detectAll ?? false
         this.outputImageParams = params?.outputImageParams
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        return new SearchPersonRequest(_image_upload__WEBPACK_IMPORTED_MODULE_1__.ImageUpload.fromJson(jsonObject["imageUpload"]), {
+            groupIdsForSearch: jsonObject["groupIdsForSearch"],
+            threshold: jsonObject["threshold"],
+            limit: jsonObject["limit"],
+            tag: jsonObject["tag"],
+            detectAll: jsonObject["detectAll"],
+            outputImageParams: _image_params_output_image_params__WEBPACK_IMPORTED_MODULE_0__.OutputImageParams.fromJson(jsonObject["outputImageParams"]),
+        })
+    }
+
+    toJson() {
+        return {
+            "imageUpload": this.imageUpload?.toJson(),
+            "groupIdsForSearch": this.groupIdsForSearch,
+            "threshold": this.threshold,
+            "limit": this.limit,
+            "tag": this.tag,
+            "detectAll": this.detectAll,
+            "outputImageParams": this.outputImageParams?.toJson(),
+        }
     }
 }
 

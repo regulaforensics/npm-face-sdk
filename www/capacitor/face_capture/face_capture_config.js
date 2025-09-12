@@ -29,4 +29,41 @@ export class FaceCaptureConfig {
         this.timeout = params?.timeout
         this.holdStillDuration = params?.holdStillDuration
     }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new FaceCaptureConfig()
+
+        result.copyright = jsonObject["copyright"]
+        result.cameraSwitchEnabled = jsonObject["cameraSwitchEnabled"]
+        result.closeButtonEnabled = jsonObject["closeButtonEnabled"]
+        result.torchButtonEnabled = jsonObject["torchButtonEnabled"]
+        result.vibrateOnSteps = jsonObject["vibrateOnSteps"]
+        result.detectOcclusion = jsonObject["detectOcclusion"]
+        result.showFaceAnimation = jsonObject["showFaceAnimation"]
+        result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
+        result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
+        result.screenOrientation = jsonObject["screenOrientation"]
+        result.timeout = jsonObject["timeout"]
+        result.holdStillDuration = jsonObject["holdStillDuration"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "copyright": this.copyright,
+            "cameraSwitchEnabled": this.cameraSwitchEnabled,
+            "closeButtonEnabled": this.closeButtonEnabled,
+            "torchButtonEnabled": this.torchButtonEnabled,
+            "vibrateOnSteps": this.vibrateOnSteps,
+            "detectOcclusion": this.detectOcclusion,
+            "showFaceAnimation": this.showFaceAnimation,
+            "cameraPositionAndroid": this.cameraPositionAndroid,
+            "cameraPositionIOS": this.cameraPositionIOS,
+            "screenOrientation": this.screenOrientation,
+            "timeout": this.timeout,
+            "holdStillDuration": this.holdStillDuration,
+        }
+    }
 }

@@ -15,4 +15,13 @@ export class Rect {
 
         return result
     }
+
+    toJson() {
+        return {
+            "left": this.left,
+            "top": this.top,
+            "right": this.right,
+            "bottom": this.bottom,
+        }
+    }
 }

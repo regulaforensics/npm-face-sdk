@@ -6,8 +6,8 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "7.1.378",
-    "@regulaforensics/face-core-basic": "7.1.202",
+    "@regulaforensics/face-sdk": "7.2.448",
+    "@regulaforensics/face-core-basic": "7.2.265",
     "@awesome-cordova-plugins/file": "6.16.0",
     "@awesome-cordova-plugins/camera": "6.16.0",
     "@awesome-cordova-plugins/dialogs": "6.16.0",
@@ -24,7 +24,7 @@
     "@angular/compiler-cli": "19.2.9",
     "@angular/router": "19.2.9",
     "@angular/platform-browser-dynamic": "19.2.9",
-    "@angular-devkit/build-angular": "19.2.10",
+    "@angular-devkit/build-angular": "19.2.15",
     "@ionic/angular": "8.5.6",
     "@ionic/cordova-builders": "12.2.0"
   },

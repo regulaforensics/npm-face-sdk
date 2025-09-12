@@ -19,4 +19,12 @@ export class PageableItemList {
 
         return result
     }
+
+    toJson() {
+        return {
+            "items": this.items?.map(e => e.toJson()),
+            "page": this.page,
+            "totalPages": this.totalPages,
+        }
+    }
 }

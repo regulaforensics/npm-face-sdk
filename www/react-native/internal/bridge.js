@@ -38,3 +38,22 @@ export function _setLivenessNotificationCompletion(completion) {
 export function _setCameraSwitchCallback(completion) {
     _setEvent("cameraSwitchEvent", completion)
 }
+
+export function dateToString(date) {
+    if (date == null) return null
+    const fmt = new Intl.DateTimeFormat('en', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        fractionalSecondDigits: 3,
+        hour12: false
+    });
+
+    const parts = fmt.formatToParts(date);
+    const get = (t) => parts.find(p => p.type === t)?.value ?? '';
+
+    return `${get('year')}-${get('month')}-${get('day')} ${get('hour')}:${get('minute')}:${get('second')}.${get('fractionalSecond')}`;
+}

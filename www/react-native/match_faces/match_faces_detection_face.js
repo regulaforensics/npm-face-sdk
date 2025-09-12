@@ -25,4 +25,15 @@ export class MatchFacesDetectionFace {
 
         return result
     }
+
+    toJson() {
+        return {
+            "faceIndex": this.faceIndex,
+            "landmarks": this.landmarks?.map(e => e.toJson()),
+            "faceRect": this.faceRect?.toJson(),
+            "rotationAngle": this.rotationAngle,
+            "originalRect": this.originalRect?.toJson(),
+            "crop": this.crop,
+        }
+    }
 }
