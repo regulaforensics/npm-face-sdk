@@ -32,9 +32,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
           { url: 'https://maven.regulaforensics.com/RegulaDocumentReader/Nightly' },
           { url: 'https://maven.regulaforensics.com/RegulaDocumentReader/Stage' }
         ]
-      },
-      // This fixes a bug in expo v53. https://github.com/expo/expo/issues/36908
-      ios: { networkInspector: false }
+      }
     }]
   ]
 })

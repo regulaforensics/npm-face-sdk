@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="@regulaforensics/face-sdk" version="7.2.453-beta" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="@regulaforensics/face-sdk" version="7.2.454-beta" xmlns="http://apache.org/cordova/ns/plugins/1.0">
   <name>FaceSDK</name>
   <description>Cordova plugin for Regula Face SDK</description>
   <license>commercial</license>
