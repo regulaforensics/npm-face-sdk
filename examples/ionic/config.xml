@@ -1,16 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-packageName="com.regula.documentreader.api.androidtest" ios-CFBundleIdentifier="com.regula.documentreader.qa" version="1.0.0"
+<widget android-packageName="com.regula.example.face.ionic" ios-CFBundleIdentifier="com.regula.example.face.ionic" version="1.0.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>FaceSDK</name>
+    <name>Face</name>
     <icon src="images/icon.png" />
     <platform name="android">
         <preference name="orientation" value="portrait" />
+        <preference name="AndroidEdgeToEdge" value="true" />
+        <preference name="GradlePluginKotlinEnabled" value="true" />
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
         </edit-config>
-        <preference name="android-minSdkVersion" value="24" />
-        <preference name="android-targetSdkVersion" value="35" />
-        <preference name="GradlePluginKotlinEnabled" value="true" />
     </platform>
     <platform name="ios">
         <preference name="deployment-target" value="14.0" />

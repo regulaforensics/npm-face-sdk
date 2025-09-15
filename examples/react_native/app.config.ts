@@ -3,11 +3,11 @@ import { ExpoConfig, ConfigContext } from 'expo/config'
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   slug: 'face-sdk',
-  name: 'FaceSDK',
+  name: 'Face',
   orientation: 'portrait',
   icon: './images/icon/icon.png',
   ios: {
-    bundleIdentifier: 'com.regula.documentreader.qa',
+    bundleIdentifier: 'com.regula.example.face.react',
     infoPlist: {
       NSCameraUsageDescription: 'To use camera',
       NSPhotoLibraryUsageDescription: 'To use gallery'
@@ -15,7 +15,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     appleTeamId: ''
   },
   android: {
-    package: 'com.regula.documentreader.api.androidtest',
+    package: 'com.regula.example.face.react',
     adaptiveIcon: {
       foregroundImage: './images/icon/adaptive-icon.png',
       backgroundColor: '#ffffff'
