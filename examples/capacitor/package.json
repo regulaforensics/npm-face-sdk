@@ -6,8 +6,8 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "7.2.455-beta",
-    "@regulaforensics/face-core-basic": "7.2.265",
+    "@regulaforensics/face-sdk": "7.3.478-beta",
+    "@regulaforensics/face-core-basic": "7.3.280-beta",
     "@awesome-cordova-plugins/file": "6.6.0",
     "@awesome-cordova-plugins/camera": "6.6.0",
     "cordova-plugin-file": "8.1.3",

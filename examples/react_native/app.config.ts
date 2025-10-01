@@ -5,7 +5,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: 'face-sdk',
   name: 'Face',
   orientation: 'portrait',
-  icon: './images/icon/icon.png',
+  icon: 'images/icon.png',
   ios: {
     bundleIdentifier: 'com.regula.example.face.react',
     infoPlist: {
@@ -16,10 +16,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     package: 'com.regula.example.face.react',
-    adaptiveIcon: {
-      foregroundImage: './images/icon/adaptive-icon.png',
-      backgroundColor: '#ffffff'
-    },
     edgeToEdgeEnabled: true
   },
   plugins: [

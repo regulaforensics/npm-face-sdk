@@ -6,6 +6,8 @@
     <platform name="android">
         <preference name="orientation" value="portrait" />
         <preference name="AndroidEdgeToEdge" value="true" />
+        <preference name="android-minSdkVersion" value="24" />
+        <preference name="android-targetSdkVersion" value="36" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
