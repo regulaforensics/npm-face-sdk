@@ -4,8 +4,9 @@
 <div id="content" style="height: 100%"></div>
 
 <script>
-    fetch("src/main.html")
-        .then(response => response.text())
-        .then(html => document.getElementById("content").innerHTML = html)
-        .then(_ => window.ReactNativeWebView.postMessage(`{"id": "ready"}`))
+    (async () => {
+        document.getElementById("content").innerHTML = await fetch("src/main.html").then(r => r.text())
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+        window.ReactNativeWebView.postMessage(JSON.stringify({ id: "ready" }))
+    })()
 </script>
