@@ -52,9 +52,13 @@ var dialogsInstance: Dialogs
 })
 class Main {
     constructor(platform: Platform, camera: Camera, dialogs: Dialogs) {
-        cameraInstance = camera
-        dialogsInstance = dialogs
-        platform.ready().then(main)
+        (async () => {
+            cameraInstance = camera
+            dialogsInstance = dialogs
+            await platform.ready()
+            await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+            main()
+        })()
     }
 }
 
