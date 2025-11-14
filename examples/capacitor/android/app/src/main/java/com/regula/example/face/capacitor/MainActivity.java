@@ -1,4 +1,4 @@
-package com.regula.documentreader.api.androidtest;
+package com.regula.example.face.capacitor;
 
 import com.getcapacitor.BridgeActivity;
 
