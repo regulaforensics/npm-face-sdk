@@ -1,5 +1,6 @@
 package com.regula.plugin.facesdk
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
 import org.apache.cordova.CallbackContext
@@ -13,6 +14,8 @@ lateinit var args: JSONArray
 lateinit var binding: CordovaPlugin
 val context: Context
     get() = binding.cordova.context
+val activity: Activity
+    get() = binding.cordova.activity
 
 fun sendEvent(callbackId: String, data: Any? = "") {
     val pluginResult = when (data) {
