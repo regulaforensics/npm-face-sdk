@@ -19,7 +19,7 @@
     "@awesome-cordova-plugins/file": "^8.1.0",
     "@ionic/angular": "^8.7.3",
     "@ionic/cordova-builders": "^12.3.0",
-    "@regulaforensics/face-sdk": "7.2.625-rc",
+    "@regulaforensics/face-sdk": "7.2.628-rc",
     "@regulaforensics/face-core-basic": "8.1.300-rc",
     "cordova-android": "^14.0.1",
     "cordova-ios": "^7.1.1",
