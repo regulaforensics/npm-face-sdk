@@ -2,11 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/customization/camera_position.js":
+/***/ "./src/customization/camera_position.js"
 /*!**********************************************!*\
   !*** ./src/customization/camera_position.js ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -17,13 +17,13 @@ const CameraPosition = {
     BACK: 1,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/customization/customization.js":
+/***/ "./src/customization/customization.js"
 /*!********************************************!*\
   !*** ./src/customization/customization.js ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -101,13 +101,13 @@ class Customization {
     _apply() { this._set(toJson()) }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/customization/customization_colors.js":
+/***/ "./src/customization/customization_colors.js"
 /*!***************************************************!*\
   !*** ./src/customization/customization_colors.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -348,13 +348,13 @@ class CustomizationColors {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/customization/customization_fonts.js":
+/***/ "./src/customization/customization_fonts.js"
 /*!**************************************************!*\
   !*** ./src/customization/customization_fonts.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -469,13 +469,13 @@ class CustomizationFonts {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/customization/customization_images.js":
+/***/ "./src/customization/customization_images.js"
 /*!***************************************************!*\
   !*** ./src/customization/customization_images.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -613,13 +613,13 @@ class CustomizationImages {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/customization/font.js":
+/***/ "./src/customization/font.js"
 /*!***********************************!*\
   !*** ./src/customization/font.js ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -665,13 +665,13 @@ const FontStyle = {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/customization/screen_orientation.js":
+/***/ "./src/customization/screen_orientation.js"
 /*!*************************************************!*\
   !*** ./src/customization/screen_orientation.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -682,13 +682,13 @@ const ScreenOrientation = {
     LANDSCAPE: 1,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_face_result.js":
+/***/ "./src/detect_faces/detect_face_result.js"
 /*!************************************************!*\
   !*** ./src/detect_faces/detect_face_result.js ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -749,13 +749,13 @@ class DetectFaceResult {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_attribute.js":
+/***/ "./src/detect_faces/detect_faces_attribute.js"
 /*!****************************************************!*\
   !*** ./src/detect_faces/detect_faces_attribute.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -777,13 +777,13 @@ const DetectFacesAttribute = {
     HEADPHONES: "Headphones",
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_attribute_result.js":
+/***/ "./src/detect_faces/detect_faces_attribute_result.js"
 /*!***********************************************************!*\
   !*** ./src/detect_faces/detect_faces_attribute_result.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -820,13 +820,13 @@ class DetectFacesAttributeResult {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_backend_exception.js":
+/***/ "./src/detect_faces/detect_faces_backend_exception.js"
 /*!************************************************************!*\
   !*** ./src/detect_faces/detect_faces_backend_exception.js ***!
   \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -864,13 +864,13 @@ const DetectFacesBackendErrorCode = {
     UNDEFINED: -1,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_config.js":
+/***/ "./src/detect_faces/detect_faces_config.js"
 /*!*************************************************!*\
   !*** ./src/detect_faces/detect_faces_config.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -927,13 +927,13 @@ class DetectFacesConfig {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_exception.js":
+/***/ "./src/detect_faces/detect_faces_exception.js"
 /*!****************************************************!*\
   !*** ./src/detect_faces/detect_faces_exception.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -980,13 +980,13 @@ const DetectFacesErrorCode = {
     API_CALL_FAILED: 8,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_request.js":
+/***/ "./src/detect_faces/detect_faces_request.js"
 /*!**************************************************!*\
   !*** ./src/detect_faces/detect_faces_request.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1086,13 +1086,13 @@ class DetectFacesRequest {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_response.js":
+/***/ "./src/detect_faces/detect_faces_response.js"
 /*!***************************************************!*\
   !*** ./src/detect_faces/detect_faces_response.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1134,13 +1134,13 @@ class DetectFacesResponse {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/detect_faces/detect_faces_scenario.js":
+/***/ "./src/detect_faces/detect_faces_scenario.js"
 /*!***************************************************!*\
   !*** ./src/detect_faces/detect_faces_scenario.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1157,13 +1157,13 @@ const DetectFacesScenario = {
     QUALITY_VISA_USA: "QualityVisaUSA",
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/face_capture/face_capture_config.js":
+/***/ "./src/face_capture/face_capture_config.js"
 /*!*************************************************!*\
   !*** ./src/face_capture/face_capture_config.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1241,13 +1241,13 @@ class FaceCaptureConfig {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/face_capture/face_capture_exception.js":
+/***/ "./src/face_capture/face_capture_exception.js"
 /*!****************************************************!*\
   !*** ./src/face_capture/face_capture_exception.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1287,13 +1287,13 @@ const FaceCaptureErrorCode = {
     CONTEXT_IS_NULL: 7,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/face_capture/face_capture_image.js":
+/***/ "./src/face_capture/face_capture_image.js"
 /*!************************************************!*\
   !*** ./src/face_capture/face_capture_image.js ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1335,13 +1335,13 @@ const ImageType = {
     BARCODE: 7,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/face_capture/face_capture_response.js":
+/***/ "./src/face_capture/face_capture_response.js"
 /*!***************************************************!*\
   !*** ./src/face_capture/face_capture_response.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1374,13 +1374,13 @@ class FaceCaptureResponse {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_params/output_image_crop.js":
+/***/ "./src/image_params/output_image_crop.js"
 /*!***********************************************!*\
   !*** ./src/image_params/output_image_crop.js ***!
   \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1433,13 +1433,13 @@ const OutputImageCropAspectRatio = {
     RATIO_7X9: 4,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_params/output_image_params.js":
+/***/ "./src/image_params/output_image_params.js"
 /*!*************************************************!*\
   !*** ./src/image_params/output_image_params.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1475,13 +1475,13 @@ class OutputImageParams {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_params/point.js":
+/***/ "./src/image_params/point.js"
 /*!***********************************!*\
   !*** ./src/image_params/point.js ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1509,13 +1509,13 @@ class Point {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_params/rect.js":
+/***/ "./src/image_params/rect.js"
 /*!**********************************!*\
   !*** ./src/image_params/rect.js ***!
   \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1549,13 +1549,13 @@ class Rect {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_params/size.js":
+/***/ "./src/image_params/size.js"
 /*!**********************************!*\
   !*** ./src/image_params/size.js ***!
   \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1583,13 +1583,13 @@ class Size {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_quality/image_quality_characteristic.js":
+/***/ "./src/image_quality/image_quality_characteristic.js"
 /*!***********************************************************!*\
   !*** ./src/image_quality/image_quality_characteristic.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1645,13 +1645,13 @@ class ImageQualityCharacteristic {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_quality/image_quality_characteristic_name.js":
+/***/ "./src/image_quality/image_quality_characteristic_name.js"
 /*!****************************************************************!*\
   !*** ./src/image_quality/image_quality_characteristic_name.js ***!
   \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1716,13 +1716,13 @@ const ImageQualityCharacteristicName = {
     QUALITY_BACKGROUND_ALL_RECOMMENDED: "QualityBackground",
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_quality/image_quality_group.js":
+/***/ "./src/image_quality/image_quality_group.js"
 /*!**************************************************!*\
   !*** ./src/image_quality/image_quality_group.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2073,13 +2073,13 @@ class ImageQualityGroup {
     static _background = new _Background()
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_quality/image_quality_range.js":
+/***/ "./src/image_quality/image_quality_range.js"
 /*!**************************************************!*\
   !*** ./src/image_quality/image_quality_range.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2119,13 +2119,13 @@ class ImageQualityRange {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/image_quality/image_quality_result.js":
+/***/ "./src/image_quality/image_quality_result.js"
 /*!***************************************************!*\
   !*** ./src/image_quality/image_quality_result.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2185,13 +2185,13 @@ const ImageQualityResultStatus = {
     UNDETERMINED: 2,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/index.js":
+/***/ "./src/index.js"
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2609,13 +2609,13 @@ class FaceSDK {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/init/face_sdk_version.js":
+/***/ "./src/init/face_sdk_version.js"
 /*!**************************************!*\
   !*** ./src/init/face_sdk_version.js ***!
   \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2646,13 +2646,13 @@ class FaceSDKVersion {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/init/init_config.js":
+/***/ "./src/init/init_config.js"
 /*!*********************************!*\
   !*** ./src/init/init_config.js ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2695,13 +2695,13 @@ class InitConfig {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/init/init_exception.js":
+/***/ "./src/init/init_exception.js"
 /*!************************************!*\
   !*** ./src/init/init_exception.js ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2747,13 +2747,13 @@ const InitErrorCode = {
     LICENSE_IS_NULL: 102,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/init/license_exception.js":
+/***/ "./src/init/license_exception.js"
 /*!***************************************!*\
   !*** ./src/init/license_exception.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2797,13 +2797,13 @@ const LicensingResultCode = {
     DATABASE_INCORRECT: 11,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/internal/bridge.js":
+/***/ "./src/internal/bridge.js"
 /*!********************************!*\
   !*** ./src/internal/bridge.js ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2877,13 +2877,13 @@ function dateToString(date) {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/internal/cordova.js":
+/***/ "./src/internal/cordova.js"
 /*!*********************************!*\
   !*** ./src/internal/cordova.js ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2908,13 +2908,13 @@ class NativeEventEmitter {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/liveness/liveness_backend_exception.js":
+/***/ "./src/liveness/liveness_backend_exception.js"
 /*!****************************************************!*\
   !*** ./src/liveness/liveness_backend_exception.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2978,13 +2978,13 @@ const LivenessBackendErrorCode = {
     CORRUPTED_REQUEST: 257,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/liveness/liveness_config.js":
+/***/ "./src/liveness/liveness_config.js"
 /*!*****************************************!*\
   !*** ./src/liveness/liveness_config.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3093,13 +3093,13 @@ const LivenessSkipStep = {
     SUCCESS_STEP: 1,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/liveness/liveness_exception.js":
+/***/ "./src/liveness/liveness_exception.js"
 /*!********************************************!*\
   !*** ./src/liveness/liveness_exception.js ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3151,13 +3151,13 @@ const LivenessErrorCode = {
     CAMERA_NOT_AVAILABLE: 13,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/liveness/liveness_notification.js":
+/***/ "./src/liveness/liveness_notification.js"
 /*!***********************************************!*\
   !*** ./src/liveness/liveness_notification.js ***!
   \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3207,13 +3207,13 @@ const LivenessProcessStatus = {
     SUCCESS: 14,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/liveness/liveness_response.js":
+/***/ "./src/liveness/liveness_response.js"
 /*!*******************************************!*\
   !*** ./src/liveness/liveness_response.js ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3263,13 +3263,13 @@ const LivenessStatus = {
     UNKNOWN: 1,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/compared_face.js":
+/***/ "./src/match_faces/compared_face.js"
 /*!******************************************!*\
   !*** ./src/match_faces/compared_face.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3308,13 +3308,13 @@ class ComparedFace {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/compared_faces_pair.js":
+/***/ "./src/match_faces/compared_faces_pair.js"
 /*!************************************************!*\
   !*** ./src/match_faces/compared_faces_pair.js ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3356,13 +3356,13 @@ class ComparedFacesPair {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/compared_faces_split.js":
+/***/ "./src/match_faces/compared_faces_split.js"
 /*!*************************************************!*\
   !*** ./src/match_faces/compared_faces_split.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3399,13 +3399,13 @@ class ComparedFacesSplit {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_backend_exception.js":
+/***/ "./src/match_faces/match_faces_backend_exception.js"
 /*!**********************************************************!*\
   !*** ./src/match_faces/match_faces_backend_exception.js ***!
   \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3433,13 +3433,13 @@ class MatchFacesBackendException {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_config.js":
+/***/ "./src/match_faces/match_faces_config.js"
 /*!***********************************************!*\
   !*** ./src/match_faces/match_faces_config.js ***!
   \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3478,13 +3478,13 @@ const ProcessingMode = {
     OFFLINE: 1,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_detection.js":
+/***/ "./src/match_faces/match_faces_detection.js"
 /*!**************************************************!*\
   !*** ./src/match_faces/match_faces_detection.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3528,13 +3528,13 @@ class MatchFacesDetection {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_detection_face.js":
+/***/ "./src/match_faces/match_faces_detection_face.js"
 /*!*******************************************************!*\
   !*** ./src/match_faces/match_faces_detection_face.js ***!
   \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3582,13 +3582,13 @@ class MatchFacesDetectionFace {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_exception.js":
+/***/ "./src/match_faces/match_faces_exception.js"
 /*!**************************************************!*\
   !*** ./src/match_faces/match_faces_exception.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3635,13 +3635,13 @@ const MatchFacesErrorCode = {
     NO_LICENSE: 8,
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_image.js":
+/***/ "./src/match_faces/match_faces_image.js"
 /*!**********************************************!*\
   !*** ./src/match_faces/match_faces_image.js ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3682,13 +3682,13 @@ class MatchFacesImage {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_request.js":
+/***/ "./src/match_faces/match_faces_request.js"
 /*!************************************************!*\
   !*** ./src/match_faces/match_faces_request.js ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3737,13 +3737,13 @@ class MatchFacesRequest {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/match_faces/match_faces_response.js":
+/***/ "./src/match_faces/match_faces_response.js"
 /*!*************************************************!*\
   !*** ./src/match_faces/match_faces_response.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3790,13 +3790,13 @@ class MatchFacesResponse {
     }
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/edit_group_persons_request.js":
+/***/ "./src/person_database/edit_group_persons_request.js"
 /*!***********************************************************!*\
   !*** ./src/person_database/edit_group_persons_request.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3828,13 +3828,13 @@ class EditGroupPersonsRequest {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/image_upload.js":
+/***/ "./src/person_database/image_upload.js"
 /*!*********************************************!*\
   !*** ./src/person_database/image_upload.js ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3875,13 +3875,13 @@ class ImageUpload {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/pageable_item_list.js":
+/***/ "./src/person_database/pageable_item_list.js"
 /*!***************************************************!*\
   !*** ./src/person_database/pageable_item_list.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3919,13 +3919,13 @@ class PageableItemList {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/person.js":
+/***/ "./src/person_database/person.js"
 /*!***************************************!*\
   !*** ./src/person_database/person.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3969,13 +3969,13 @@ class Person {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/person_database.js":
+/***/ "./src/person_database/person_database.js"
 /*!************************************************!*\
   !*** ./src/person_database/person_database.js ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4134,13 +4134,13 @@ class PersonDatabase {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/person_group.js":
+/***/ "./src/person_database/person_group.js"
 /*!*********************************************!*\
   !*** ./src/person_database/person_group.js ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4178,13 +4178,13 @@ class PersonGroup {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/person_image.js":
+/***/ "./src/person_database/person_image.js"
 /*!*********************************************!*\
   !*** ./src/person_database/person_image.js ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4228,13 +4228,13 @@ class PersonImage {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/search_person.js":
+/***/ "./src/person_database/search_person.js"
 /*!**********************************************!*\
   !*** ./src/person_database/search_person.js ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4290,13 +4290,13 @@ class SearchPerson {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/search_person_detection.js":
+/***/ "./src/person_database/search_person_detection.js"
 /*!********************************************************!*\
   !*** ./src/person_database/search_person_detection.js ***!
   \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4337,13 +4337,13 @@ class SearchPersonDetection {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/search_person_image.js":
+/***/ "./src/person_database/search_person_image.js"
 /*!****************************************************!*\
   !*** ./src/person_database/search_person_image.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4393,13 +4393,13 @@ class SearchPersonImage {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/person_database/search_person_request.js":
+/***/ "./src/person_database/search_person_request.js"
 /*!******************************************************!*\
   !*** ./src/person_database/search_person_request.js ***!
   \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4455,7 +4455,7 @@ class SearchPersonRequest {
 }
 
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -4468,6 +4468,12 @@ class SearchPersonRequest {
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
