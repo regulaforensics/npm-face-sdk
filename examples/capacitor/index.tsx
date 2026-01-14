@@ -7,11 +7,11 @@ import { Camera, DestinationType, MediaType, PictureSourceType } from '@awesome-
 import { main } from './src/main'
 import { Dialog } from '@capacitor/dialog'
 
-document.addEventListener('deviceready', () => fetch("main.html")
-    .then(response => response.text())
-    .then(html => document.getElementById("content").innerHTML = html)
-    .then(_ => document.dispatchEvent(new Event('ready')))
-)
+document.addEventListener('deviceready', async () => {
+    document.getElementById("content").innerHTML = await fetch("main.html").then(r => r.text())
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+    document.dispatchEvent(new Event('ready'))
+})
 
 export async function loadAssetIfExists(path: string): Promise<string | null> {
     try {

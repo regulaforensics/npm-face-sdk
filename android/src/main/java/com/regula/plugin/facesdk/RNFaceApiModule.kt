@@ -1,5 +1,6 @@
 package com.regula.plugin.facesdk
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
 import com.facebook.react.ReactPackage
@@ -20,6 +21,8 @@ lateinit var args: JSONArray
 lateinit var binding: ReactContext
 val context: Context
     get() = binding.applicationContext
+val activity: Activity
+    get() = binding.currentActivity!!
 
 fun sendEvent(event: String, data: Any? = "") {
     if (listenerCount <= 0) return
