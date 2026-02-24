@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="@regulaforensics/face-sdk" version="8.1.718-beta" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="@regulaforensics/face-sdk" version="8.2.812-beta" xmlns="http://apache.org/cordova/ns/plugins/1.0">
   <name>FaceSDK</name>
   <description>Cordova plugin for Regula Face SDK</description>
   <license>commercial</license>
@@ -12,24 +12,22 @@
   <platform name="ios">
     <config-file target="config.xml" parent="/widget">
       <feature name="FaceSDK">
-        <param name="ios-package" value="CVDFaceSDK" />
+        <param name="ios-package" value="CDVFaceSDK" />
       </feature>
       <preference name="deployment-target" value="13.0" />
+      <preference name="SwiftVersion" value="5" />
     </config-file>
-    <header-file src="ios/CVDFaceSDK.h" />
-    <source-file src="ios/CVDFaceSDK.m" />
-    <header-file src="ios/RFSWMain.h" />
-    <source-file src="ios/RFSWMain.m" />
-    <header-file src="ios/RFSWJSONConstructor.h" />
-    <source-file src="ios/RFSWJSONConstructor.m" />
-    <header-file src="ios/RFSWConfig.h" />
-    <source-file src="ios/RFSWConfig.m" />
+    <source-file src="ios/CDVFaceSDK.swift" />
+    <source-file src="ios/Main.swift" />
+    <source-file src="ios/Decoder.swift" />
+    <source-file src="ios/Config.swift" />
+    <source-file src="ios/Utils.swift" />
     <podspec>
       <config>
         <source url="https://github.com/CocoaPods/Specs.git" />
       </config>
       <pods>
-        <pod name="FaceSDK" spec="7.2.3526" />
+        <pod name="FaceSDK" spec="8.1.3731" />
       </pods>
     </podspec>
   </platform>
@@ -37,11 +35,11 @@
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="FaceSDK">
-        <param name="android-package" value="com.regula.plugin.facesdk.CVDFaceSDK" />
+        <param name="android-package" value="com.regula.plugin.facesdk.CDVFaceSDK" />
       </feature>
     </config-file>
     <framework src="android/cordova.gradle" custom="true" type="gradleReference" />
-    <source-file src="android/CVDFaceSDK.kt" target-dir="java/com.regula.plugin.facesdk" />
+    <source-file src="android/CDVFaceSDK.kt" target-dir="java/com.regula.plugin.facesdk" />
     <source-file src="android/src/main/java/com/regula/plugin/facesdk/Main.kt" target-dir="java/com.regula.plugin.facesdk" />
     <source-file src="android/src/main/java/com/regula/plugin/facesdk/JSONConstructor.kt" target-dir="java/com.regula.plugin.facesdk" />
     <source-file src="android/src/main/java/com/regula/plugin/facesdk/Config.kt" target-dir="java/com.regula.plugin.facesdk" />

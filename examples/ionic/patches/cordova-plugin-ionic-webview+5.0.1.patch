@@ -1,0 +1,23 @@
+diff --git a/node_modules/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewEngine.m b/node_modules/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewEngine.m
+index 2acb99b..900a04c 100644
+--- a/node_modules/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewEngine.m
++++ b/node_modules/cordova-plugin-ionic-webview/src/ios/CDVWKWebViewEngine.m
+@@ -731,6 +731,18 @@ - (BOOL)defaultResourcePolicyForURL:(NSURL*)url
+         return YES;
+     }
+ 
++    // Allow internal local-server navigation even when no plugin overrides the request.
++    NSURL *localServerUrl = [NSURL URLWithString:self.CDV_LOCAL_SERVER];
++    if (localServerUrl != nil && url != nil) {
++        NSString *localScheme = localServerUrl.scheme.lowercaseString;
++        NSString *localHost = localServerUrl.host.lowercaseString;
++        NSString *urlScheme = url.scheme.lowercaseString;
++        NSString *urlHost = url.host.lowercaseString;
++        if ([localScheme isEqualToString:urlScheme] && [localHost isEqualToString:urlHost]) {
++            return YES;
++        }
++    }
++
+     return NO;
+ }
+ 
