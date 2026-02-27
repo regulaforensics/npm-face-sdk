@@ -8,7 +8,7 @@
     "start": "expo start"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.2.818-nightly",
+    "@regulaforensics/face-sdk": "8.1.821-nightly",
     "@regulaforensics/face-core-basic": "8.2.431-nightly",
     "react-native": "^0.81.4",
     "react-native-fs": "^2.20.0",
