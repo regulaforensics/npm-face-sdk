@@ -1,0 +1,7 @@
+.DS_Store
+
+examples/cordova/jsconfig.json
+examples/cordova/typings/cordova-typings.d.ts
+examples/cordova/.vscode/typings/cordova/cordova.d.ts
+
+examples/ionic/typings/cordova-typings.d.ts
