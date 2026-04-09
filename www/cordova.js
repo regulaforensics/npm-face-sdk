@@ -488,116 +488,124 @@ class CustomizationImages {
     _onboardingScreenCloseButton
     set onboardingScreenCloseButton(val) {
         this._onboardingScreenCloseButton = val
-        this._set({ "100": val })
+        this._set({ "onboardingScreenCloseButton": val })
     }
 
     _onboardingScreenIllumination
     set onboardingScreenIllumination(val) {
         this._onboardingScreenIllumination = val
-        this._set({ "101": val })
+        this._set({ "onboardingScreenIllumination": val })
     }
 
     _onboardingScreenAccessories
     set onboardingScreenAccessories(val) {
         this._onboardingScreenAccessories = val
-        this._set({ "102": val })
+        this._set({ "onboardingScreenAccessories": val })
     }
 
     _onboardingScreenCameraLevel
     set onboardingScreenCameraLevel(val) {
         this._onboardingScreenCameraLevel = val
-        this._set({ "103": val })
+        this._set({ "onboardingScreenCameraLevel": val })
     }
 
     _cameraScreenCloseButton
     set cameraScreenCloseButton(val) {
         this._cameraScreenCloseButton = val
-        this._set({ "200": val })
+        this._set({ "cameraScreenCloseButton": val })
     }
 
     _cameraScreenLightOnButton
     set cameraScreenLightOnButton(val) {
         this._cameraScreenLightOnButton = val
-        this._set({ "201": val })
+        this._set({ "cameraScreenLightOnButton": val })
     }
 
     _cameraScreenLightOffButton
     set cameraScreenLightOffButton(val) {
         this._cameraScreenLightOffButton = val
-        this._set({ "202": val })
+        this._set({ "cameraScreenLightOffButton": val })
     }
 
     _cameraScreenSwitchButton
     set cameraScreenSwitchButton(val) {
         this._cameraScreenSwitchButton = val
-        this._set({ "203": val })
+        this._set({ "cameraScreenSwitchButton": val })
     }
 
     _retryScreenCloseButton
     set retryScreenCloseButton(val) {
         this._retryScreenCloseButton = val
-        this._set({ "300": val })
+        this._set({ "retryScreenCloseButton": val })
     }
 
     _retryScreenHintEnvironment
     set retryScreenHintEnvironment(val) {
         this._retryScreenHintEnvironment = val
-        this._set({ "301": val })
+        this._set({ "retryScreenHintEnvironment": val })
     }
 
     _retryScreenHintSubject
     set retryScreenHintSubject(val) {
         this._retryScreenHintSubject = val
-        this._set({ "302": val })
+        this._set({ "retryScreenHintSubject": val })
+    }
+
+    _retryScreenHintGeo
+    set retryScreenHintGeo(val) {
+        this._retryScreenHintGeo = val
+        this._set({ "retryScreenHintGeo": val })
     }
 
     _processingScreenCloseButton
     set processingScreenCloseButton(val) {
         this._processingScreenCloseButton = val
-        this._set({ "400": val })
+        this._set({ "processingScreenCloseButton": val })
     }
 
     _successScreenImage
     set successScreenImage(val) {
         this._successScreenImage = val
-        this._set({ "500": val })
+        this._set({ "successScreenImage": val })
     }
 
     static fromJson(jsonObject) {
         var result = new CustomizationImages()
 
-        result._onboardingScreenCloseButton = jsonObject["100"]
-        result._onboardingScreenIllumination = jsonObject["101"]
-        result._onboardingScreenAccessories = jsonObject["102"]
-        result._onboardingScreenCameraLevel = jsonObject["103"]
-        result._cameraScreenCloseButton = jsonObject["200"]
-        result._cameraScreenLightOnButton = jsonObject["201"]
-        result._cameraScreenLightOffButton = jsonObject["202"]
-        result._cameraScreenSwitchButton = jsonObject["203"]
-        result._retryScreenCloseButton = jsonObject["300"]
-        result._retryScreenHintEnvironment = jsonObject["301"]
-        result._retryScreenHintSubject = jsonObject["302"]
-        result._processingScreenCloseButton = jsonObject["400"]
-        result._successScreenImage = jsonObject["500"]
+        result._onboardingScreenCloseButton = jsonObject["onboardingScreenCloseButton"]
+        result._onboardingScreenIllumination = jsonObject["onboardingScreenIllumination"]
+        result._onboardingScreenAccessories = jsonObject["onboardingScreenAccessories"]
+        result._onboardingScreenCameraLevel = jsonObject["onboardingScreenCameraLevel"]
+        result._cameraScreenCloseButton = jsonObject["cameraScreenCloseButton"]
+        result._cameraScreenLightOnButton = jsonObject["cameraScreenLightOnButton"]
+        result._cameraScreenLightOffButton = jsonObject["cameraScreenLightOffButton"]
+        result._cameraScreenSwitchButton = jsonObject["cameraScreenSwitchButton"]
+        result._retryScreenCloseButton = jsonObject["retryScreenCloseButton"]
+        result._retryScreenHintEnvironment = jsonObject["retryScreenHintEnvironment"]
+        result._retryScreenHintSubject = jsonObject["retryScreenHintSubject"]
+        result._retryScreenHintGeo = jsonObject["retryScreenHintGeo"]
+        result._processingScreenCloseButton = jsonObject["processingScreenCloseButton"]
+        result._successScreenImage = jsonObject["successScreenImage"]
 
         return result
     }
 
     toJson() {
         return {
-            "100": this._onboardingScreenCloseButton,
-            "101": this._onboardingScreenIllumination,
-            "102": this._onboardingScreenAccessories,
-            "103": this._onboardingScreenCameraLevel,
-            "200": this._cameraScreenCloseButton,
-            "201": this._cameraScreenLightOnButton,
-            "202": this._cameraScreenLightOffButton,
-            "203": this._cameraScreenSwitchButton,
-            "300": this._retryScreenCloseButton,
-            "301": this._retryScreenHintEnvironment,
-            "302": this._retryScreenHintSubject,
-            "400": this._processingScreenCloseButton,
-            "500": this._successScreenImage,
+            "onboardingScreenCloseButton": this._onboardingScreenCloseButton,
+            "onboardingScreenIllumination": this._onboardingScreenIllumination,
+            "onboardingScreenAccessories": this._onboardingScreenAccessories,
+            "onboardingScreenCameraLevel": this._onboardingScreenCameraLevel,
+            "cameraScreenCloseButton": this._cameraScreenCloseButton,
+            "cameraScreenLightOnButton": this._cameraScreenLightOnButton,
+            "cameraScreenLightOffButton": this._cameraScreenLightOffButton,
+            "cameraScreenSwitchButton": this._cameraScreenSwitchButton,
+            "retryScreenCloseButton": this._retryScreenCloseButton,
+            "retryScreenHintEnvironment": this._retryScreenHintEnvironment,
+            "retryScreenHintSubject": this._retryScreenHintSubject,
+            "retryScreenHintGeo": this._retryScreenHintGeo,
+            "processingScreenCloseButton": this._processingScreenCloseButton,
+            "successScreenImage": this._successScreenImage,
         }
     }
 
@@ -1182,6 +1190,7 @@ class FaceCaptureConfig {
     vibrateOnSteps
     detectOcclusion
     showFaceAnimation
+    preventScreenRecording
     cameraPositionIOS
     cameraPositionAndroid
     screenOrientation
@@ -1196,6 +1205,7 @@ class FaceCaptureConfig {
         this.vibrateOnSteps = params?.vibrateOnSteps ?? true
         this.detectOcclusion = params?.detectOcclusion ?? true
         this.showFaceAnimation = params?.showFaceAnimation ?? true
+        this.preventScreenRecording = params?.preventScreenRecording ?? false
         this.cameraPositionIOS = params?.cameraPositionIOS ?? _customization_camera_position__WEBPACK_IMPORTED_MODULE_0__.CameraPosition.FRONT
         this.cameraPositionAndroid = params?.cameraPositionAndroid
         this.screenOrientation = params?.screenOrientation ?? [_customization_screen_orientation__WEBPACK_IMPORTED_MODULE_1__.ScreenOrientation.PORTRAIT]
@@ -1214,6 +1224,7 @@ class FaceCaptureConfig {
         result.vibrateOnSteps = jsonObject["vibrateOnSteps"]
         result.detectOcclusion = jsonObject["detectOcclusion"]
         result.showFaceAnimation = jsonObject["showFaceAnimation"]
+        result.preventScreenRecording = jsonObject["preventScreenRecording"]
         result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
         result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
         result.screenOrientation = jsonObject["screenOrientation"]
@@ -1232,6 +1243,7 @@ class FaceCaptureConfig {
             "vibrateOnSteps": this.vibrateOnSteps,
             "detectOcclusion": this.detectOcclusion,
             "showFaceAnimation": this.showFaceAnimation,
+            "preventScreenRecording": this.preventScreenRecording,
             "cameraPositionAndroid": this.cameraPositionAndroid,
             "cameraPositionIOS": this.cameraPositionIOS,
             "screenOrientation": this.screenOrientation,
@@ -3008,6 +3020,7 @@ class LivenessConfig {
     cameraPositionAndroid
     screenOrientation
     locationTrackingEnabled
+    preventScreenRecording
     attemptsCount
     recordingProcess
     livenessType
@@ -3025,6 +3038,7 @@ class LivenessConfig {
         this.cameraPositionAndroid = params?.cameraPositionAndroid
         this.screenOrientation = params?.screenOrientation ?? [_customization_screen_orientation__WEBPACK_IMPORTED_MODULE_1__.ScreenOrientation.PORTRAIT]
         this.locationTrackingEnabled = params?.locationTrackingEnabled ?? true
+        this.preventScreenRecording = params?.preventScreenRecording ?? false
         this.attemptsCount = params?.attemptsCount ?? 0
         this.recordingProcess = params?.recordingProcess ?? RecordingProcess.ASYNCHRONOUS_UPLOAD
         this.livenessType = params?.livenessType ?? LivenessType.ACTIVE
@@ -3046,6 +3060,7 @@ class LivenessConfig {
         result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
         result.screenOrientation = jsonObject["screenOrientation"]
         result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
+        result.preventScreenRecording = jsonObject["preventScreenRecording"]
         result.attemptsCount = jsonObject["attemptsCount"]
         result.recordingProcess = jsonObject["recordingProcess"]
         result.livenessType = jsonObject["livenessType"]
@@ -3067,6 +3082,7 @@ class LivenessConfig {
             "cameraPositionIOS": this.cameraPositionIOS,
             "screenOrientation": this.screenOrientation,
             "locationTrackingEnabled": this.locationTrackingEnabled,
+            "preventScreenRecording": this.preventScreenRecording,
             "attemptsCount": this.attemptsCount,
             "recordingProcess": this.recordingProcess,
             "livenessType": this.livenessType,
@@ -4469,12 +4485,6 @@ class SearchPersonRequest {
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
-/******/ 		// Check if module exists (development only)
-/******/ 		if (__webpack_modules__[moduleId] === undefined) {
-/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
-/******/ 			e.code = 'MODULE_NOT_FOUND';
-/******/ 			throw e;
-/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			// no module.id needed
@@ -4483,6 +4493,12 @@ class SearchPersonRequest {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module

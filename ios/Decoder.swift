@@ -95,7 +95,7 @@ public extension FaceCaptureResponse {
             Any?, Any?) -> Unmanaged<AnyObject>?).self, { f in f(
                 alloc, sel,
                 Image.decode(it["image"]),
-                nil,
+                nil
             )})
     }
     func encode() -> [String: Any?] {
@@ -122,7 +122,7 @@ public extension LivenessResponse {
                 it["estimatedAge"],
                 it["liveness"] as! Int,
                 UIImage.decode(it["image"]),
-                nil,
+                nil
             )})
     }
     func encode() -> [String: Any?] {
@@ -304,7 +304,7 @@ public extension MatchFacesDetection {
                 it["imageIndex"],
                 MatchFacesImage.decode(it["image"]),
                 (it["faces"] as? [Any])?.map { MatchFacesDetectionFace.decode($0) },
-                nil,
+                nil
             )})
     }
     func encode() -> [String: Any?] {
@@ -366,7 +366,7 @@ public extension MatchFacesResponse {
                 alloc, sel,
                 (it["results"] as? [Any])?.map { MatchFacesComparedFacesPair.decode($0) },
                 (it["detections"] as? [Any])?.map { MatchFacesDetection.decode($0) },
-                nil,
+                nil
             )}) as MatchFacesResponse
         result.setValue(it["tag"] as? String, forKey: "tag")
         return result
@@ -564,7 +564,7 @@ public extension ImageQualityResult {
                 it["group"] as! Int,
                 it["status"] as! Int,
                 it["value"] as! NSNumber,
-                ImageQualityRange.decode(it["range"])!,
+                ImageQualityRange.decode(it["range"])!
             )})
     }
     func encode() -> [String: Any?] {
@@ -590,7 +590,7 @@ public extension DetectFacesAttributeResult {
                 it["attribute"],
                 it["confidence"],
                 it["value"],
-                ImageQualityRange.decode(it["range"])?.asList(),
+                ImageQualityRange.decode(it["range"])?.asList()
             )})
     }
     func encode() -> [String: Any?] {
@@ -617,7 +617,7 @@ public extension DetectFaceResult {
                 it["crop"],
                 CGRect.decode(it["faceRect"]),
                 (it["landmarks"] as? [Any])?.map{ Point.decode($0) },
-                CGRect.decode(it["originalRect"]),
+                CGRect.decode(it["originalRect"])
             )})
     }
     func encode() -> [String: Any?] {
@@ -644,7 +644,7 @@ public extension DetectFacesResponse {
                 alloc, sel,
                 (it["allDetections"] as? [Any])?.map { DetectFaceResult.decode($0) },
                 it["scenario"],
-                nil,
+                nil
             )})
     }
     func encode() -> [String: Any?] {
@@ -864,7 +864,7 @@ public extension PersonDatabase.SearchPersonDetection {
                 CGRect.decode(it["rect"]),
                 (it["landmarks"] as? [Any])?.map { Point.decode($0) },
                 UIImage.decode(it["crop"]),
-                it["rotationAngle"],
+                it["rotationAngle"]
             )})
     }
     func encode() -> [String: Any?] {

@@ -1,16 +1,5 @@
 import React
 
-func sendEvent(_ event: String, _ data: Any? = nil) {
-    guard let plugin = this, hasListeners else { return }
-    DispatchQueue.main.async {
-        plugin.sendEvent(withName: event, body: data.toSendable())
-    }
-}
-
-private var firedCallbacks: [RCTResponseSenderBlock] = []
-private var hasListeners: Bool = false
-private var this: RNFaceSDK?
-
 @objc(RNFaceSDK)
 public class RNFaceSDK: RCTEventEmitter {
     override public func startObserving() { hasListeners = true }
@@ -36,6 +25,17 @@ public class RNFaceSDK: RCTEventEmitter {
             firedCallbacks.append(resolve)
             resolve(data.toSendable())
         })
+    }
+}
+
+private var firedCallbacks: [RCTResponseSenderBlock] = []
+private var hasListeners: Bool = false
+private var this: RNFaceSDK?
+
+func sendEvent(_ event: String, _ data: Any? = nil) {
+    guard let plugin = this, hasListeners else { return }
+    DispatchQueue.main.async {
+        plugin.sendEvent(withName: event, body: data.toSendable())
     }
 }
 
