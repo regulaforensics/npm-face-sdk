@@ -20,7 +20,7 @@
     "@awesome-cordova-plugins/camera": "^8.1.0",
     "@awesome-cordova-plugins/dialogs": "^8.1.0",
     "@awesome-cordova-plugins/file": "^8.1.0",
-    "@regulaforensics/face-sdk": "8.2.921-nightly",
+    "@regulaforensics/face-sdk": "8.1.924-nightly",
     "@regulaforensics/face-core-basic": "8.2.500-nightly",
     "cordova-android": "^14.0.1",
     "cordova-ios": "^8.0.0",
@@ -29,6 +29,13 @@
     "cordova-plugin-file": "^8.1.3",
     "cordova-plugin-ionic-webview": "^5.0.1",
     "patch-package": "^8.0.1"
+  },
+  "overrides": {
+    "ajv": "^8.18.0",
+    "serialize-javascript": "^7.0.4",
+    "@angular/compiler": "^21.2.4",
+    "undici": "^7.24.0",
+    "picomatch": "^4.0.4"
   },
   "cordova": {
     "plugins": {

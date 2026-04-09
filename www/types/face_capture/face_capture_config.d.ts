@@ -12,6 +12,11 @@ export class FaceCaptureConfig {
      */
     showFaceAnimation: boolean
     /**
+     * Prevents screenshots and screen recording while FaceCapture camera screen is displayed.
+     * Defaults to `false`.
+     */
+    preventScreenRecording: boolean
+    /**
      * Android only.
      */
     cameraPositionAndroid?: number
@@ -34,6 +39,7 @@ export class FaceCaptureConfig {
             torchButtonEnabled?: boolean
             vibrateOnSteps?: boolean
             showFaceAnimation?: boolean
+            preventScreenRecording?: boolean
             cameraPositionAndroid?: number
             cameraPositionIOS?: CameraPosition
             screenOrientation?: Array<ScreenOrientation>

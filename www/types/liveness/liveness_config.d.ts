@@ -56,6 +56,12 @@ export class LivenessConfig {
     locationTrackingEnabled: boolean
 
     /**
+     * Prevents screenshots and screen recording while FaceCapture camera screen is displayed.
+     * Defaults to `false`.
+     */
+    preventScreenRecording: boolean
+
+    /**
      * The number of attempts to pass the Liveness before completing with error. Defaults to `0`.
      * When set to `0`  the Liveness will always ask to retry on error.
      */
@@ -95,6 +101,7 @@ export class LivenessConfig {
             cameraPositionIOS?: CameraPosition
             screenOrientation?: Array<ScreenOrientation>
             locationTrackingEnabled?: boolean
+            preventScreenRecording?: boolean
             attemptsCount?: number
             recordingProcess?: RecordingProcess
             livenessType?: LivenessType
