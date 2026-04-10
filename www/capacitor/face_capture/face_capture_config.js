@@ -9,6 +9,7 @@ export class FaceCaptureConfig {
     vibrateOnSteps
     detectOcclusion
     showFaceAnimation
+    preventScreenRecording
     cameraPositionIOS
     cameraPositionAndroid
     screenOrientation
@@ -23,6 +24,7 @@ export class FaceCaptureConfig {
         this.vibrateOnSteps = params?.vibrateOnSteps ?? true
         this.detectOcclusion = params?.detectOcclusion ?? true
         this.showFaceAnimation = params?.showFaceAnimation ?? true
+        this.preventScreenRecording = params?.preventScreenRecording ?? false
         this.cameraPositionIOS = params?.cameraPositionIOS ?? CameraPosition.FRONT
         this.cameraPositionAndroid = params?.cameraPositionAndroid
         this.screenOrientation = params?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
@@ -41,6 +43,7 @@ export class FaceCaptureConfig {
         result.vibrateOnSteps = jsonObject["vibrateOnSteps"]
         result.detectOcclusion = jsonObject["detectOcclusion"]
         result.showFaceAnimation = jsonObject["showFaceAnimation"]
+        result.preventScreenRecording = jsonObject["preventScreenRecording"]
         result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
         result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
         result.screenOrientation = jsonObject["screenOrientation"]
@@ -59,6 +62,7 @@ export class FaceCaptureConfig {
             "vibrateOnSteps": this.vibrateOnSteps,
             "detectOcclusion": this.detectOcclusion,
             "showFaceAnimation": this.showFaceAnimation,
+            "preventScreenRecording": this.preventScreenRecording,
             "cameraPositionAndroid": this.cameraPositionAndroid,
             "cameraPositionIOS": this.cameraPositionIOS,
             "screenOrientation": this.screenOrientation,

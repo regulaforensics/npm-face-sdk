@@ -1,14 +1,14 @@
 PODS:
-  - Capacitor (7.0.1):
+  - Capacitor (8.0.2):
     - CapacitorCordova
-  - CapacitorApp (7.0.0):
+  - CapacitorApp (8.0.0):
     - Capacitor
-  - CapacitorCordova (7.0.1)
-  - CapacitorDialog (7.0.1):
+  - CapacitorCordova (8.0.2)
+  - CapacitorDialog (8.0.0):
     - Capacitor
-  - CapacitorStatusBar (7.0.0):
+  - CapacitorStatusBar (8.0.0):
     - Capacitor
-  - CordovaPlugins (7.0.1):
+  - CordovaPlugins (8.0.2):
     - CapacitorCordova
   - CordovaPluginsResources (0.0.105)
 
@@ -44,14 +44,14 @@ EXTERNAL SOURCES:
     :path: "../capacitor-cordova-ios-plugins"
 
 SPEC CHECKSUMS:
-  Capacitor: de199cba6c8b20995428ad0b7cb0bc6ca625ffd4
-  CapacitorApp: 9cb31064a6c6bb2b1438583733a7bf45557fc1da
-  CapacitorCordova: 63d476958d5022d76f197031e8b7ea3519988c64
-  CapacitorDialog: 0e09f242f6c3f5e82e4dc76b20f2a056be57a579
-  CapacitorStatusBar: a8c4c83ed2e973bdafb979e80e4b00d027832cb7
-  CordovaPlugins: 7a995cd39544bde0fb388160f67dd5719766cf84
-  CordovaPluginsResources: 0c211f770ed91763a179ebcd9b9346e120b70662
+  Capacitor: 2b79172ad27f3be2d103cce88b8eb9803fdcc744
+  CapacitorApp: 3963a84197280757b84f126afd1520a85ae3b092
+  CapacitorCordova: 921bdb690ebe82421b24fce45552fd3dea2ae43a
+  CapacitorDialog: 3721e40dd075f590328166c29b4e982dbeedeb56
+  CapacitorStatusBar: 312e2e67928dfe9514c4a8916a1fd610552f5f35
+  CordovaPlugins: abfe2fc4dd659536d5a76f896dd6f4a5276c976d
+  CordovaPluginsResources: da93847212bf7b16ba770e4d6c3e7dba820174c7
 
-PODFILE CHECKSUM: 43f42e9c9dcf86574f59ab411de6b6382347ed1b
+PODFILE CHECKSUM: 33138b6aebc6e5be89605d3f182bfe1360db615f
 
 COCOAPODS: 1.16.2

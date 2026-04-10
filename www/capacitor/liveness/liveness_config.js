@@ -11,6 +11,7 @@ export class LivenessConfig {
     cameraPositionAndroid
     screenOrientation
     locationTrackingEnabled
+    preventScreenRecording
     attemptsCount
     recordingProcess
     livenessType
@@ -28,6 +29,7 @@ export class LivenessConfig {
         this.cameraPositionAndroid = params?.cameraPositionAndroid
         this.screenOrientation = params?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
         this.locationTrackingEnabled = params?.locationTrackingEnabled ?? true
+        this.preventScreenRecording = params?.preventScreenRecording ?? false
         this.attemptsCount = params?.attemptsCount ?? 0
         this.recordingProcess = params?.recordingProcess ?? RecordingProcess.ASYNCHRONOUS_UPLOAD
         this.livenessType = params?.livenessType ?? LivenessType.ACTIVE
@@ -49,6 +51,7 @@ export class LivenessConfig {
         result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
         result.screenOrientation = jsonObject["screenOrientation"]
         result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
+        result.preventScreenRecording = jsonObject["preventScreenRecording"]
         result.attemptsCount = jsonObject["attemptsCount"]
         result.recordingProcess = jsonObject["recordingProcess"]
         result.livenessType = jsonObject["livenessType"]
@@ -70,6 +73,7 @@ export class LivenessConfig {
             "cameraPositionIOS": this.cameraPositionIOS,
             "screenOrientation": this.screenOrientation,
             "locationTrackingEnabled": this.locationTrackingEnabled,
+            "preventScreenRecording": this.preventScreenRecording,
             "attemptsCount": this.attemptsCount,
             "recordingProcess": this.recordingProcess,
             "livenessType": this.livenessType,

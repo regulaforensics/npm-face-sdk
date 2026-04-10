@@ -10,6 +10,7 @@ export class CustomizationImages {
     set retryScreenCloseButton(val: string)
     set retryScreenHintEnvironment(val: string)
     set retryScreenHintSubject(val: string)
+    set retryScreenHintGeo(val: string)
     set processingScreenCloseButton(val: string)
     set successScreenImage(val: string)
 
