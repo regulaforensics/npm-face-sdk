@@ -1,6 +1,14 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+ios/capacitor-cordova-ios-plugins
 ios/App/App.xcodeproj/xcuserdata
 ios/App/App.xcworkspace/xcuserdata
+ios/App/Pods
+ios/App/App/public
+ios/App/App/capacitor.config.json
+ios/App/App/config.xml
+
+www
 
 # dependencies
 /node_modules
