@@ -8,7 +8,7 @@
     "start": "expo start"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.2.984",
+    "@regulaforensics/face-sdk": "8.2.1005",
     "@regulaforensics/face-core-basic": "8.2.521",
     "react-native": "^0.81.4",
     "react-native-fs": "^2.20.0",
@@ -22,5 +22,9 @@
     "expo-custom-assets": "^1.5.0",
     "expo-build-properties": "^1.0.8",
     "typescript": "5.9.2"
+  },
+  "overrides": {
+    "postcss": "^8.5.10",
+    "uuid": "^14.0.0"
   }
 }
