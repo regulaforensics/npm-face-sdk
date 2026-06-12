@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     //noinspection GradleDependency
-    implementation('com.regula.face:api:8.3.4961'){
+    implementation('com.regula.face:api:8.3.4975'){
         transitive = true
     }
 }
