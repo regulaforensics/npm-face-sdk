@@ -11,6 +11,11 @@ export class CustomizationImages {
     set retryScreenHintEnvironment(val: string)
     set retryScreenHintSubject(val: string)
     set retryScreenHintGeo(val: string)
+    set retryScreenHintBadSelfieQuality(val: string)
+    set retryScreenHintCleanLens(val: string)
+    set retryScreenHintAddIllumination(val: string)
+    set retryScreenHintChangeBackground(val: string)
+    set retryScreenHintFaceOcclusions(val: string)
     set processingScreenCloseButton(val: string)
     set successScreenImage(val: string)
 

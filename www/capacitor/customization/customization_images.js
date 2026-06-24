@@ -73,6 +73,36 @@ export class CustomizationImages {
         this._set({ "retryScreenHintGeo": val })
     }
 
+    _retryScreenHintBadSelfieQuality
+    set retryScreenHintBadSelfieQuality(val) {
+        this._retryScreenHintBadSelfieQuality = val
+        this._set({ "retryScreenHintBadSelfieQuality": val })
+    }
+
+    _retryScreenHintCleanLens
+    set retryScreenHintCleanLens(val) {
+        this._retryScreenHintCleanLens = val
+        this._set({ "retryScreenHintCleanLens": val })
+    }
+
+    _retryScreenHintAddIllumination
+    set retryScreenHintAddIllumination(val) {
+        this._retryScreenHintAddIllumination = val
+        this._set({ "retryScreenHintAddIllumination": val })
+    }
+
+    _retryScreenHintChangeBackground
+    set retryScreenHintChangeBackground(val) {
+        this._retryScreenHintChangeBackground = val
+        this._set({ "retryScreenHintChangeBackground": val })
+    }
+
+    _retryScreenHintFaceOcclusions
+    set retryScreenHintFaceOcclusions(val) {
+        this._retryScreenHintFaceOcclusions = val
+        this._set({ "retryScreenHintFaceOcclusions": val })
+    }
+
     _processingScreenCloseButton
     set processingScreenCloseButton(val) {
         this._processingScreenCloseButton = val
@@ -100,6 +130,11 @@ export class CustomizationImages {
         result._retryScreenHintEnvironment = jsonObject["retryScreenHintEnvironment"]
         result._retryScreenHintSubject = jsonObject["retryScreenHintSubject"]
         result._retryScreenHintGeo = jsonObject["retryScreenHintGeo"]
+        result._retryScreenHintBadSelfieQuality = jsonObject["retryScreenHintBadSelfieQuality"]
+        result._retryScreenHintCleanLens = jsonObject["retryScreenHintCleanLens"]
+        result._retryScreenHintAddIllumination = jsonObject["retryScreenHintAddIllumination"]
+        result._retryScreenHintChangeBackground = jsonObject["retryScreenHintChangeBackground"]
+        result._retryScreenHintFaceOcclusions = jsonObject["retryScreenHintFaceOcclusions"]
         result._processingScreenCloseButton = jsonObject["processingScreenCloseButton"]
         result._successScreenImage = jsonObject["successScreenImage"]
 
@@ -120,6 +155,11 @@ export class CustomizationImages {
             "retryScreenHintEnvironment": this._retryScreenHintEnvironment,
             "retryScreenHintSubject": this._retryScreenHintSubject,
             "retryScreenHintGeo": this._retryScreenHintGeo,
+            "retryScreenHintBadSelfieQuality": this._retryScreenHintBadSelfieQuality,
+            "retryScreenHintCleanLens": this._retryScreenHintCleanLens,
+            "retryScreenHintAddIllumination": this._retryScreenHintAddIllumination,
+            "retryScreenHintChangeBackground": this._retryScreenHintChangeBackground,
+            "retryScreenHintFaceOcclusions": this._retryScreenHintFaceOcclusions,
             "processingScreenCloseButton": this._processingScreenCloseButton,
             "successScreenImage": this._successScreenImage,
         }

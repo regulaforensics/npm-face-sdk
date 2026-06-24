@@ -46,12 +46,19 @@ import { ImageQualityRange } from './image_quality/image_quality_range'
 import { ImageQualityResult, ImageQualityGroupName, ImageQualityResultStatus } from './image_quality/image_quality_result'
 export { ImageQualityCharacteristicName, ImageQualityCharacteristic, ImageQualityGroup, ImageQualityRange, ImageQualityResult, ImageQualityGroupName, ImageQualityResultStatus }
 
-import { LivenessBackendException, LivenessBackendErrorCode } from './liveness/liveness_backend_exception'
 import { LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep } from './liveness/liveness_config'
+import { EnrollmentConfig } from './liveness/enrollment_config'
+import { EnrollmentRequest } from './liveness/enrollment_request'
+import { VerificationConfig } from './liveness/verification_config'
+import { LivenessBackendException, LivenessBackendErrorCode } from './liveness/liveness_backend_exception'
 import { LivenessException, LivenessErrorCode } from './liveness/liveness_exception'
-import { LivenessNotification, LivenessProcessStatus, LivenessNotificationCompletion } from './liveness/liveness_notification'
 import { LivenessResponse, LivenessStatus } from './liveness/liveness_response'
-export { LivenessBackendException, LivenessBackendErrorCode, LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep, LivenessException, LivenessErrorCode, LivenessNotification, LivenessProcessStatus, LivenessNotificationCompletion, LivenessResponse, LivenessStatus }
+import { LivenessNotification, LivenessProcessStatus, LivenessNotificationCompletion } from './liveness/liveness_notification'
+import { ErrorResponse } from './liveness/error_response'
+import { EnrollmentResponse } from './liveness/enrollment_response'
+import { VerifyMatchResponse } from './liveness/verify_match_response'
+import { VerificationResponse } from './liveness/verification_response'
+export { LivenessBackendException, LivenessBackendErrorCode, LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep, LivenessException, LivenessErrorCode, LivenessNotification, LivenessProcessStatus, LivenessNotificationCompletion, LivenessResponse, LivenessStatus, EnrollmentConfig, EnrollmentRequest, VerificationConfig, ErrorResponse, EnrollmentResponse, VerifyMatchResponse, VerificationResponse }
 
 import { ComparedFace } from './match_faces/compared_face'
 import { ComparedFacesPair } from './match_faces/compared_faces_pair'
@@ -178,6 +185,24 @@ export class FaceSDK {
             cameraSwitchCallback?: CameraSwitchCallback,
         }
     ): Promise<LivenessResponse>
+
+    startEnrollment(
+        config: EnrollmentConfig,
+        params?: {
+            notificationCompletion?: LivenessNotificationCompletion,
+            cameraSwitchCallback?: CameraSwitchCallback,
+        }
+    ): Promise<[LivenessResponse, EnrollmentResponse | null]>
+
+    startVerification(
+        config: VerificationConfig,
+        params?: {
+            notificationCompletion?: LivenessNotificationCompletion,
+            cameraSwitchCallback?: CameraSwitchCallback,
+        }
+    ): Promise<[LivenessResponse, VerificationResponse | null]>
+
+    enrollWithTrustedPhoto(request: EnrollmentRequest): Promise<EnrollmentResponse>
 
     stopLiveness(): void
 

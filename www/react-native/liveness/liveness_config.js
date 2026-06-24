@@ -93,6 +93,7 @@ export const RecordingProcess = {
 export const LivenessType = {
     ACTIVE: 0,
     PASSIVE: 1,
+    PASSIVE_WITH_BLINK: 2,
 }
 
 export const LivenessSkipStep = {
