@@ -19,6 +19,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     edgeToEdgeEnabled: true
   },
   plugins: [
+    '@regulaforensics/face-sdk',
     ['expo-custom-assets', { assetsPaths: ['./assets'] }],
     ['expo-build-properties', {
       android: {
