@@ -121,7 +121,6 @@ export enum RecordingProcess {
 export enum LivenessType {
     ACTIVE,
     PASSIVE,
-    PASSIVE_WITH_BLINK,
 }
 
 export enum LivenessSkipStep {

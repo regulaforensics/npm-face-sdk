@@ -15,6 +15,7 @@ import com.regula.common.ble.BLEWrapper
 import com.regula.facesdk.configuration.Customization
 import com.regula.facesdk.enums.CustomizationColor
 import com.regula.facesdk.enums.CustomizationFont
+import com.regula.facesdk.enums.CustomizationImage
 import com.regula.facesdk.enums.ImageType
 import com.regula.facesdk.enums.InitErrorCode
 import com.regula.facesdk.enums.OutputImageCropAspectRatio

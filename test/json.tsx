@@ -2,11 +2,10 @@ var img1 = 'data1'
 var img2 = 'data2'
 var img3 = 'data3'
 
-var customJson = {"test1": true, "test2": 1, "test3": "test"};
+export var customJson = {"test1": true, "test2": 1, "test3": "test"}
 
-var font1 = {"name": "AppleSDGothicNeo-Thin", "size": 10, "style": 2};
-var font2 = {"name": "Copperplate-Light", "size": 20, "style": 1};
-
+export var font1 = {"name": "AppleSDGothicNeo-Thin", "size": 10, "style": 2}
+export var font2 = {"name": "Copperplate-Light", "size": 20, "style": 1}
 export var customizationColors = {
   "100": 0xff000000,
   "101": 0xff000001,
@@ -34,7 +33,7 @@ export var customizationColors = {
   "401": 0xff000023,
   "402": 0xff000024,
   "500": 0xff000025,
-};
+}
 export var customizationFonts = {
   "100": font1,
   "101": font2,
@@ -46,7 +45,7 @@ export var customizationFonts = {
   "302": font2,
   "303": font1,
   "400": font2,
-};
+}
 export var customizationImages = {
   "onboardingScreenCloseButton": img1,
   "onboardingScreenIllumination": img2,
@@ -60,68 +59,63 @@ export var customizationImages = {
   "retryScreenHintEnvironment": img1,
   "retryScreenHintSubject": img2,
   "retryScreenHintGeo": img3,
-  "retryScreenHintBadSelfieQuality": img1,
-  "retryScreenHintCleanLens": img2,
-  "retryScreenHintAddIllumination": img3,
-  "retryScreenHintChangeBackground": img1,
-  "retryScreenHintFaceOcclusions": img2,
   "processingScreenCloseButton": img1,
   "successScreenImage": img2,
-};
+}
 export var customization = {
   "colors": customizationColors,
   "fonts": customizationFonts,
   "images": customizationImages,
   "uiCustomizationLayer": customJson
-};
+}
 
 export var point = {
   "x": 0,
   "y": 1,
-};
+}
 export var rect = {
   "left": 0,
   "top": 1,
   "right": 2,
   "bottom": 3,
-};
+}
 export var size = {
   "width": 68,
   "height": 91,
-};
+}
 export var outputImageCrop = {
   "type": 0,
   "size": size,
   "padColor": 0xff000000,
   "returnOriginalRect": true
-};
+}
 export var outputImageParams = {
   "crop": outputImageCrop,
   "backgroundColor": 0xff000000,
-};
+}
 
 export var imageQualityRange = {
   "min": 0.45,
   "max": 0.55,
-};
+}
 export var imageQualityResult = {
   "group": 1,
   "name": "ImageWidth",
   "status": 0,
   "value": 0.5,
   "range": imageQualityRange,
-};
+}
 export var imageQualityCharacteristic = {
   "characteristicName": "FaceMidPointHorizontalPosition",
   "recommendedRange": imageQualityRange,
-};
+}
 
 export var detectFacesAttributeResult = {
   "attribute": "Age",
   "confidence": 0.5,
   "value": "test",
   "range": imageQualityRange,
-};
+}
 export var detectFaceResult = {
   "quality": [imageQualityResult, imageQualityResult, imageQualityResult],
   "crop": img1,
@@ -134,7 +128,7 @@ export var detectFaceResult = {
   "faceRect": rect,
   "originalRect": rect,
   "isQualityCompliant": false,
-};
+}
 export var detectFacesConfig = {
   "attributes": ["Age", "EyeRight", "EyeLeft"],
   "customQuality": [
@@ -144,28 +138,28 @@ export var detectFacesConfig = {
   ],
   "outputImageParams": outputImageParams,
   "onlyCentralFace": true,
-};
+}
 export var detectFacesRequest = {
   "tag": "test",
-  "scenario": "CropCentralFace",
+  // "scenario": "CropCentralFace",
   "image": img1,
-  // "configuration": detectFacesConfig,
-};
+  "configuration": detectFacesConfig,
+}
 export var detectFacesBackendException = {
   "code": 2,
   "message": "test",
-};
+}
 export var detectFacesException = {
   "code": 0,
   "message": "In process already.",
   "underlyingError": detectFacesBackendException
-};
+}
 export var detectFacesResponse = {
   "detection": detectFaceResult,
   "allDetections": [detectFaceResult, detectFaceResult, detectFaceResult],
   "scenario": "CropCentralFace",
   "error": detectFacesException,
-};
+}
 
 export var faceCaptureConfig = {
   "copyright": true,
@@ -181,40 +175,40 @@ export var faceCaptureConfig = {
   "screenOrientation": [0, 1],
   "timeout": 0.5,
   "holdStillDuration": 1.5,
-};
+}
 export var faceCaptureImage = {
   "image": img1,
   "imageType": 1,
   "tag": "test",
-};
+}
 export var faceCaptureException = {
   "code": 0,
   "message": "Cancelled by user.",
-};
+}
 export var faceCaptureResponse = {
   "image": faceCaptureImage,
   "error": faceCaptureException,
-};
+}
 
 export var faceSDKVersion = {
   "api": "test1",
   "core": "test2",
   "coreMode": "test3",
-};
+}
 export var initConfig = {
   "license": img1,
   "licenseUpdate": true,
   "useBleDevice": false,
-};
+}
 export var licenseException = {
   "code": 0,
   "message": "",
-};
+}
 export var initException = {
   "code": 0,
   "message": "In process already.",
   "underlyingError": licenseException
-};
+}
 
 export var livenessConfig = {
   "copyright": true,
@@ -233,69 +227,16 @@ export var livenessConfig = {
   "tag": "test",
   "skipStep": [0, 1],
   "metadata": customJson,
-};
-export var enrollmentConfig = {
-  "copyright": true,
-  "cameraSwitchEnabled": false,
-  "closeButtonEnabled": true,
-  "torchButtonEnabled": false,
-  "vibrateOnSteps": true,
-  "cameraPositionAndroid": -1,
-  "cameraPositionIOS": 1,
-  "screenOrientation": [0, 1],
-  "locationTrackingEnabled": true,
-  "preventScreenRecording": false,
-  "attemptsCount": 2,
-  "recordingProcess": 0,
-  "livenessType": 1,
-  "tag": "test",
-  "skipStep": [0, 1],
-  "metadata": customJson,
-  "externalId": "test0",
-  "groupId": "test1",
-  "checkDuplicatesEnabled": true,
-  "duplicatesThreshold": 0.5,
-};
-export var verificationConfig = {
-  "copyright": true,
-  "cameraSwitchEnabled": false,
-  "closeButtonEnabled": true,
-  "torchButtonEnabled": false,
-  "vibrateOnSteps": true,
-  "cameraPositionAndroid": -1,
-  "cameraPositionIOS": 1,
-  "screenOrientation": [0, 1],
-  "locationTrackingEnabled": true,
-  "preventScreenRecording": false,
-  "attemptsCount": 2,
-  "recordingProcess": 0,
-  "livenessType": 1,
-  "tag": "test",
-  "skipStep": [0, 1],
-  "metadata": customJson,
-  "personId": "test0",
-  "groupId": "test1",
-  "threshold": 0.5,
-};
-export var enrollmentRequest = {
-  "externalId": "test0",
-  "groupId": "test1",
-  "trustedImage": img1,
-};
-export var enrollmentRequest2 = {
-  "externalId": "test0",
-  "groupId": "test1",
-  "trustedImageUrl": "test2",
-};
+}
 export var livenessBackendException = {
   "code": 200,
   "message": "No license",
-};
+}
 export var livenessException = {
   "code": 0,
   "message": "FaceSDK Core is not initialized",
   "underlyingError": livenessBackendException
-};
+}
 export var livenessResponse = {
   "image": img1,
   "liveness": 0,
@@ -303,46 +244,28 @@ export var livenessResponse = {
   "transactionId": "test1",
   "estimatedAge": 1,
   "error": livenessException,
-};
+}
 export var livenessNotification = {
   "status": 0,
   "response": livenessResponse,
-};
-export var errorResponse = {
-  "code": 0,
-  "message": "test0",
-};
-export var enrollmentResponse = {
-  "personId": "test0",
-  "externalId": "test1",
-  "error": errorResponse,
-};
-export var verifyMatchResponse = {
-  "passed": true,
-  "similarity": 0.5,
-};
-export var verificationResponse = {
-  "passed": true,
-  "match": verifyMatchResponse,
-  "error": errorResponse,
-};
+}
 
 export var matchFacesConfig = {
   "processingMode": 0,
   "locationTrackingEnabled": false,
-};
+}
 export var matchFacesImage = {
   "image": img1,
   "imageType": 1,
   "detectAll": true,
   "identifier": "test"
-};
+}
 export var matchFacesRequest = {
   "images": [matchFacesImage, matchFacesImage, matchFacesImage],
   "outputImageParams": outputImageParams,
   "tag": "test",
   "metadata": customJson,
-};
+}
 export var matchFacesDetectionFace = {
   "faceIndex": 0,
   "landmarks": [point, point, point],
@@ -350,13 +273,13 @@ export var matchFacesDetectionFace = {
   "rotationAngle": 0.5,
   "originalRect": rect,
   "crop": img1,
-};
-export var matchFacesBackendException = {"code": 0, "message": "Image is empty."};
+}
+export var matchFacesBackendException = {"code": 0, "message": "Image is empty."}
 export var matchFacesException = {
   "code": 0,
   "message": "Image is empty.",
   "underlyingError": matchFacesBackendException,
-};
+}
 export var matchFacesDetection = {
   "imageIndex": 0,
   "image": matchFacesImage,
@@ -366,36 +289,36 @@ export var matchFacesDetection = {
     matchFacesDetectionFace
   ],
   "error": matchFacesException,
-};
+}
 export var comparedFace = {
   "imageIndex": 0,
   "image": matchFacesImage,
   "faceIndex": 1,
   "face": matchFacesDetectionFace,
-};
+}
 export var comparedFacesPair = {
   "first": comparedFace,
   "second": comparedFace,
   "similarity": 0.5,
   "score": 1.5,
   "error": matchFacesException,
-};
+}
 export var matchFacesResponse = {
   "results": [comparedFacesPair, comparedFacesPair, comparedFacesPair],
   "detections": [matchFacesDetection, matchFacesDetection, matchFacesDetection],
   "tag": "test",
   "error": matchFacesException,
-};
+}
 export var comparedFacesSplit = {
   "matchedFaces": [comparedFacesPair, comparedFacesPair, comparedFacesPair],
   "unmatchedFaces": [comparedFacesPair, comparedFacesPair, comparedFacesPair],
-};
+}
 
 export var editGroupPersonsRequest = {
   "personIdsToAdd": ["test1", "test2", "test3"],
   "personIdsToRemove": ["test4", "test5", "test6"],
-};
-export var imageUpload = {"imageData": img1};
+}
+export var imageUpload = {"imageData": img1}
 export var person = {
   "name": "test1",
   "updatedAt": "1969-07-20 20:18:04.000",
@@ -403,13 +326,13 @@ export var person = {
   "id": "test3",
   "metadata": customJson,
   "createdAt": "1969-07-20 20:18:05.000",
-};
+}
 export var personGroup = {
   "name": "test1",
   "id": "test3",
   "metadata": customJson,
   "createdAt": "1969-07-20 20:18:04.000",
-};
+}
 export var personImage = {
   "path": "test",
   "url": "test1",
@@ -417,13 +340,13 @@ export var personImage = {
   "id": "test3",
   "metadata": customJson,
   "createdAt": "1969-07-20 20:18:04.000",
-};
+}
 export var searchPersonDetection = {
   "landmarks": [point, point, point],
   "rect": rect,
   "crop": img1,
   "rotationAngle": 0.5,
-};
+}
 export var searchPersonImage = {
   "similarity": 0.5,
   "distance": 1.5,
@@ -433,7 +356,7 @@ export var searchPersonImage = {
   "id": "test3",
   "metadata": customJson,
   "createdAt": "1969-07-20 20:18:04.000",
-};
+}
 export var searchPerson = {
   "images": [searchPersonImage, searchPersonImage, searchPersonImage],
   "detection": searchPersonDetection,
@@ -443,7 +366,7 @@ export var searchPerson = {
   "id": "test3",
   "metadata": customJson,
   "createdAt": "1969-07-20 20:18:05.000",
-};
+}
 export var searchPersonRequest = {
   "imageUpload": imageUpload,
   "groupIdsForSearch": ["test1", "test2", "test3"],
@@ -452,4 +375,4 @@ export var searchPersonRequest = {
   "tag": "test",
   "detectAll": true,
   "outputImageParams": outputImageParams,
-};
+}

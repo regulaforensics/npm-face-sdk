@@ -7,6 +7,7 @@ import { CustomizationImages } from './customization/customization_images'
 import { Customization } from './customization/customization'
 import { Font } from './customization/font'
 import { ScreenOrientation } from './customization/screen_orientation'
+
 export { CameraPosition, CustomizationColors, CustomizationFonts, CustomizationImages, Customization, Font, ScreenOrientation }
 
 import { FaceSDKVersion } from './init/face_sdk_version'
@@ -15,6 +16,7 @@ import { InitException } from './init/init_exception'
 import { InitErrorCode } from './init/init_exception'
 import { LicenseException } from './init/license_exception'
 import { LicensingResultCode } from './init/license_exception'
+
 export { FaceSDKVersion, InitConfig, InitException, InitErrorCode, LicenseException, LicensingResultCode }
 
 import { DetectFaceResult } from './detect_faces/detect_face_result'
@@ -26,12 +28,14 @@ import { DetectFacesException, DetectFacesErrorCode } from './detect_faces/detec
 import { DetectFacesRequest } from './detect_faces/detect_faces_request'
 import { DetectFacesResponse } from './detect_faces/detect_faces_response'
 import { DetectFacesScenario } from './detect_faces/detect_faces_scenario'
+
 export { DetectFaceResult, DetectFacesAttributeResult, DetectFacesAttribute, DetectFacesBackendException, DetectFacesBackendErrorCode, DetectFacesConfig, DetectFacesException, DetectFacesErrorCode, DetectFacesRequest, DetectFacesResponse, DetectFacesScenario }
 
 import { FaceCaptureConfig } from './face_capture/face_capture_config'
 import { FaceCaptureException, FaceCaptureErrorCode } from './face_capture/face_capture_exception'
 import { FaceCaptureImage, ImageType } from './face_capture/face_capture_image'
 import { FaceCaptureResponse } from './face_capture/face_capture_response'
+
 export { FaceCaptureConfig, FaceCaptureException, FaceCaptureErrorCode, FaceCaptureImage, ImageType, FaceCaptureResponse }
 
 import { OutputImageCrop, OutputImageCropAspectRatio } from './image_params/output_image_crop'
@@ -39,6 +43,7 @@ import { OutputImageParams } from './image_params/output_image_params'
 import { Point } from './image_params/point'
 import { Rect } from './image_params/rect'
 import { Size } from './image_params/size'
+
 export { OutputImageCrop, OutputImageCropAspectRatio, OutputImageParams, Point, Rect, Size }
 
 import { ImageQualityCharacteristicName } from './image_quality/image_quality_characteristic_name'
@@ -46,21 +51,16 @@ import { ImageQualityCharacteristic } from './image_quality/image_quality_charac
 import { ImageQualityGroup } from './image_quality/image_quality_group'
 import { ImageQualityRange } from './image_quality/image_quality_range'
 import { ImageQualityResult, ImageQualityGroupName, ImageQualityResultStatus } from './image_quality/image_quality_result'
+
 export { ImageQualityCharacteristicName, ImageQualityCharacteristic, ImageQualityGroup, ImageQualityRange, ImageQualityResult, ImageQualityGroupName, ImageQualityResultStatus }
 
-import { LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep } from './liveness/liveness_config'
-import { EnrollmentConfig } from './liveness/enrollment_config'
-import { EnrollmentRequest } from './liveness/enrollment_request'
-import { VerificationConfig } from './liveness/verification_config'
 import { LivenessBackendException, LivenessBackendErrorCode } from './liveness/liveness_backend_exception'
+import { LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep } from './liveness/liveness_config'
 import { LivenessException, LivenessErrorCode } from './liveness/liveness_exception'
-import { LivenessResponse, LivenessStatus } from './liveness/liveness_response'
 import { LivenessNotification, LivenessProcessStatus } from './liveness/liveness_notification'
-import { ErrorResponse } from './liveness/error_response'
-import { EnrollmentResponse } from './liveness/enrollment_response'
-import { VerifyMatchResponse } from './liveness/verify_match_response'
-import { VerificationResponse } from './liveness/verification_response'
-export { LivenessBackendException, LivenessBackendErrorCode, LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep, LivenessException, LivenessErrorCode, LivenessNotification, LivenessProcessStatus, LivenessResponse, LivenessStatus, EnrollmentConfig, EnrollmentRequest, VerificationConfig, ErrorResponse, EnrollmentResponse, VerifyMatchResponse, VerificationResponse }
+import { LivenessResponse, LivenessStatus } from './liveness/liveness_response'
+
+export { LivenessBackendException, LivenessBackendErrorCode, LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep, LivenessException, LivenessErrorCode, LivenessNotification, LivenessProcessStatus, LivenessResponse, LivenessStatus }
 
 import { ComparedFace } from './match_faces/compared_face'
 import { ComparedFacesPair } from './match_faces/compared_faces_pair'
@@ -73,6 +73,7 @@ import { MatchFacesException, MatchFacesErrorCode } from './match_faces/match_fa
 import { MatchFacesImage } from './match_faces/match_faces_image'
 import { MatchFacesRequest } from './match_faces/match_faces_request'
 import { MatchFacesResponse } from './match_faces/match_faces_response'
+
 export { ComparedFace, ComparedFacesPair, ComparedFacesSplit, MatchFacesBackendException, MatchFacesConfig, ProcessingMode, MatchFacesDetectionFace, MatchFacesDetection, MatchFacesException, MatchFacesErrorCode, MatchFacesImage, MatchFacesRequest, MatchFacesResponse }
 
 import { EditGroupPersonsRequest } from './person_database/edit_group_persons_request'
@@ -86,6 +87,7 @@ import { SearchPersonDetection } from './person_database/search_person_detection
 import { SearchPersonImage } from './person_database/search_person_image'
 import { SearchPersonRequest } from './person_database/search_person_request'
 import { SearchPerson } from './person_database/search_person'
+
 export { EditGroupPersonsRequest, ImageUpload, PageableItemList, PersonDatabase, PersonGroup, PersonImage, Person, SearchPersonDetection, SearchPersonImage, SearchPersonRequest, SearchPerson }
 
 
@@ -191,29 +193,6 @@ export class FaceSDK {
         _setLivenessNotificationCompletion(params?.notificationCompletion)
         var response = await exec("startLiveness", [params?.config])
         return LivenessResponse.fromJson(JSON.parse(response))
-    }
-
-    async startEnrollment(params) {
-        _setCameraSwitchCallback(params?.cameraSwitchCallback)
-        _setLivenessNotificationCompletion(params?.notificationCompletion)
-        var response = JSON.parse(await exec("startEnrollment", [params.config]))
-        var lr = LivenessResponse.fromJson(response["livenessResponse"]);
-        var er = EnrollmentResponse.fromJson(response["enrollmentResponse"]);
-        return [lr, er];
-    }
-
-    async startVerification(params) {
-        _setCameraSwitchCallback(params?.cameraSwitchCallback)
-        _setLivenessNotificationCompletion(params?.notificationCompletion)
-        var response = JSON.parse(await exec("startVerification", [params.config]))
-        var lr = LivenessResponse.fromJson(response["livenessResponse"]);
-        var er = VerificationResponse.fromJson(response["verificationResponse"]);
-        return [lr, er];
-    }
-
-    async enrollWithTrustedPhoto(request) {
-        var response = await exec("enrollWithTrustedPhoto", [request])
-        return EnrollmentResponse.fromJson(JSON.parse(response));
     }
 
     stopLiveness() {
