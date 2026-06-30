@@ -6,7 +6,7 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.2.1117",
+    "@regulaforensics/face-sdk": "8.2.1118",
     "@regulaforensics/face-core-basic": "8.2.521",
     "@awesome-cordova-plugins/file": "^8.1.0",
     "@awesome-cordova-plugins/camera": "^8.1.0",
@@ -23,5 +23,8 @@
     "@vitejs/plugin-react": "^5.1.2",
     "vite-plugin-static-copy": "^3.2.0",
     "@types/react-router-dom": "^5.3.3"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
   }
 }

@@ -7,20 +7,20 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@angular-devkit/build-angular": "^21.1.4",
-    "@angular/cli": "^21.1.4",
-    "@angular/common": "^21.1.5",
-    "@angular/compiler-cli": "^21.1.5",
-    "@angular/core": "^21.1.5",
-    "@angular/forms": "^21.1.5",
-    "@angular/platform-browser-dynamic": "^21.1.5",
-    "@angular/router": "^21.1.5",
-    "@ionic/angular": "^8.7.17",
+    "@angular-devkit/build-angular": "^21.2.16",
+    "@angular/cli": "^21.2.16",
+    "@angular/common": "^21.2.17",
+    "@angular/compiler-cli": "^21.2.17",
+    "@angular/core": "^21.2.17",
+    "@angular/forms": "^21.2.17",
+    "@angular/platform-browser-dynamic": "^21.2.17",
+    "@angular/router": "^21.2.17",
+    "@ionic/angular": "^8.8.11",
     "@ionic/cordova-builders": "^12.3.0",
     "@awesome-cordova-plugins/camera": "^8.1.0",
     "@awesome-cordova-plugins/dialogs": "^8.1.0",
     "@awesome-cordova-plugins/file": "^8.1.0",
-    "@regulaforensics/face-sdk": "8.2.1117",
+    "@regulaforensics/face-sdk": "8.2.1118",
     "@regulaforensics/face-core-basic": "8.2.521",
     "cordova-android": "^14.0.1",
     "cordova-ios": "^8.0.0",
@@ -33,20 +33,24 @@
   "overrides": {
     "ajv": "^8.18.0",
     "serialize-javascript": "^7.0.4",
-    "@angular/compiler": "^21.2.4",
     "undici": "^7.24.0",
     "picomatch": "^4.0.4",
     "postcss": "^8.5.10",
     "uuid": "^14.0.0",
-    "vite": "^7.3.2"
+    "vite": "^7.3.2",
+    "webpack-dev-server": "^5.2.4",
+    "@babel/core": "^7.29.0",
+    "esbuild": "^0.28.1",
+    "http-proxy-middleware": "^3.0.7",
+    "piscina": "^5.2.0"
   },
   "cordova": {
     "plugins": {
       "@regulaforensics/face-sdk": {},
       "@regulaforensics/face-core-basic": {},
-      "cordova-plugin-file": {},
       "cordova-plugin-camera": {},
       "cordova-plugin-dialogs": {},
+      "cordova-plugin-file": {},
       "cordova-plugin-ionic-webview": {}
     },
     "platforms": [
