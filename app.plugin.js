@@ -4,7 +4,6 @@ const { withPodfile } = createRequire(process.cwd() + '/package.json')('@expo/co
 const SOURCES = [
   'https://github.com/CocoaPods/Specs.git',
   'https://github.com/regulaforensics/podspecs.git',
-  'https://gitlab.regula.work/mobile-sdk/podspecs.git',
 ];
 
 module.exports = function withRegulaPodSources(config) {
