@@ -4,8 +4,8 @@ import { NativeModules, NativeEventEmitter } from 'react-native'
 const { RNFaceSDK } = NativeModules
 var eventManager = new NativeEventEmitter(RNFaceSDK)
 
-export async function exec(name, params) {
-    return RNFaceSDK.exec(name, params)
+export async function exec(name, options) {
+    return RNFaceSDK.exec(name, options)
 }
 
 function _setEvent(id, completion, fromJson) {

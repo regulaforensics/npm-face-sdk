@@ -406,7 +406,7 @@ export class _Background {
      * Default color is white (RGB(255,255,255) or hex #FFFFFF)
      * The range is from 0 to 1 where 1 is full background color match.
      */
-    backgroundColorMatch(params?: { color?: number }): ImageQualityCharacteristic
+    backgroundColorMatch(options?: { color?: number }): ImageQualityCharacteristic
 
     /**
      * Whether the background color matches the required color.

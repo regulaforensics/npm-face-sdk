@@ -16,7 +16,7 @@ export class InitConfig {
      */
     constructor(
         license: string,
-        params?: {
+        options?: {
             licenseUpdate?: boolean
         })
 }

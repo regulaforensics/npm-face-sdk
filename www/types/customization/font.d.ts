@@ -21,7 +21,7 @@ export class Font {
 
     constructor(
         name: string,
-        params?: {
+        options?: {
             size?: number,
             style?: FontStyle
         }

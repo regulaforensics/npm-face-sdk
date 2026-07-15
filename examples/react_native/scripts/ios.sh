@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
+set -e
 
-if [[ $npm_config_o || $npm_config_open ]]; then
+if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
     open ios/Face.xcworkspace
     # check if metro is already running
-    if ! pgrep -f "expo start" > /dev/null; then
-        watchman shutdown-server # fix potential errors
-        npm start
-    fi
+    [[ -z $(pgrep -f 'expo start') ]] && npm start
 else
     npx expo run:ios  --device
 fi
+
+exit 0

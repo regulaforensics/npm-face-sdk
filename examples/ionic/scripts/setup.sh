@@ -6,3 +6,5 @@ ionic cordova prepare || {
     pod repo update
     ionic cordova prepare
 }
+
+exit 0

@@ -3,7 +3,7 @@ export class MatchFacesConfig {
     locationTrackingEnabled: boolean
 
     constructor(
-        params?: {
+        options?: {
             processingMode?: ProcessingMode
             locationTrackingEnabled?: boolean
         }

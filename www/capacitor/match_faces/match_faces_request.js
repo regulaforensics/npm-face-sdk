@@ -7,11 +7,11 @@ export class MatchFacesRequest {
     tag
     metadata
 
-    constructor(images, params) {
+    constructor(images, options) {
         this.images = images
-        this.outputImageParams = params?.outputImageParams
-        this.tag = params?.tag
-        this.metadata = params?.metadata
+        this.outputImageParams = options?.outputImageParams
+        this.tag = options?.tag
+        this.metadata = options?.metadata
     }
 
     static fromJson(jsonObject) {

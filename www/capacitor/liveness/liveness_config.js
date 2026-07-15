@@ -19,23 +19,23 @@ export class LivenessConfig {
     skipStep
     metadata
 
-    constructor(params) {
-        this.copyright = params?.copyright ?? true
-        this.cameraSwitchEnabled = params?.cameraSwitchEnabled ?? false
-        this.closeButtonEnabled = params?.closeButtonEnabled ?? true
-        this.torchButtonEnabled = params?.torchButtonEnabled ?? true
-        this.vibrateOnSteps = params?.vibrateOnSteps ?? true
-        this.cameraPositionIOS = params?.cameraPositionIOS ?? CameraPosition.FRONT
-        this.cameraPositionAndroid = params?.cameraPositionAndroid
-        this.screenOrientation = params?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
-        this.locationTrackingEnabled = params?.locationTrackingEnabled ?? true
-        this.preventScreenRecording = params?.preventScreenRecording ?? false
-        this.attemptsCount = params?.attemptsCount ?? 0
-        this.recordingProcess = params?.recordingProcess ?? RecordingProcess.ASYNCHRONOUS_UPLOAD
-        this.livenessType = params?.livenessType ?? LivenessType.ACTIVE
-        this.tag = params?.tag
-        this.skipStep = params?.skipStep ?? []
-        this.metadata = params?.metadata
+    constructor(options) {
+        this.copyright = options?.copyright ?? true
+        this.cameraSwitchEnabled = options?.cameraSwitchEnabled ?? false
+        this.closeButtonEnabled = options?.closeButtonEnabled ?? true
+        this.torchButtonEnabled = options?.torchButtonEnabled ?? true
+        this.vibrateOnSteps = options?.vibrateOnSteps ?? true
+        this.cameraPositionIOS = options?.cameraPositionIOS ?? CameraPosition.FRONT
+        this.cameraPositionAndroid = options?.cameraPositionAndroid
+        this.screenOrientation = options?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
+        this.locationTrackingEnabled = options?.locationTrackingEnabled ?? true
+        this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.attemptsCount = options?.attemptsCount ?? 0
+        this.recordingProcess = options?.recordingProcess ?? RecordingProcess.ASYNCHRONOUS_UPLOAD
+        this.livenessType = options?.livenessType ?? LivenessType.ACTIVE
+        this.tag = options?.tag
+        this.skipStep = options?.skipStep ?? []
+        this.metadata = options?.metadata
     }
 
     static fromJson(jsonObject) {
@@ -93,6 +93,7 @@ export const RecordingProcess = {
 export const LivenessType = {
     ACTIVE: 0,
     PASSIVE: 1,
+    PASSIVE_WITH_BLINK: 2,
 }
 
 export const LivenessSkipStep = {

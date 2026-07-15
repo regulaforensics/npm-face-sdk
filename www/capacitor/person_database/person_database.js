@@ -6,8 +6,8 @@ import { PersonGroup } from './person_group'
 import { SearchPerson } from './search_person'
 
 export class PersonDatabase {
-    async createPerson(name, params) {
-        var response = await exec("createPerson", [name, params?.groupIds, params?.metadata])
+    async createPerson(name, options) {
+        var response = await exec("createPerson", [name, options?.groupIds, options?.metadata])
         return this._itemResponseFromJson(response, Person.fromJson)
     }
 
@@ -51,8 +51,8 @@ export class PersonDatabase {
         return this._listResponseFromJson(response, PersonImage.fromJson)
     }
 
-    async createGroup(name, params) {
-        var response = await exec("createGroup", [name, params?.metadata])
+    async createGroup(name, options) {
+        var response = await exec("createGroup", [name, options?.metadata])
         return this._itemResponseFromJson(response, PersonGroup.fromJson)
     }
 

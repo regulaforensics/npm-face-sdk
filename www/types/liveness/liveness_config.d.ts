@@ -91,7 +91,7 @@ export class LivenessConfig {
     metadata?: Record<string, any>
 
     constructor(
-        params?: {
+        options?: {
             copyright?: boolean
             cameraSwitchEnabled?: boolean
             closeButtonEnabled?: boolean
@@ -121,6 +121,7 @@ export enum RecordingProcess {
 export enum LivenessType {
     ACTIVE,
     PASSIVE,
+    PASSIVE_WITH_BLINK,
 }
 
 export enum LivenessSkipStep {

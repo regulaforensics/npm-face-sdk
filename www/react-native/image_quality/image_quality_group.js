@@ -289,10 +289,10 @@ export class _Background {
         return ImageQualityCharacteristic._create(ImageQualityCharacteristicName.OTHER_FACES)
     }
 
-    backgroundColorMatch(params) {
+    backgroundColorMatch(options) {
         return ImageQualityCharacteristic._create(
             ImageQualityCharacteristicName.BACKGROUND_COLOR_MATCH,
-            { color: params?.color }
+            { color: options?.color }
         )
     }
 

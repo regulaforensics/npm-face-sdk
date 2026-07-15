@@ -5,7 +5,7 @@
   "compilerOptions": {
     "types": [],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "target": "es2022",
     "jsx": "react-jsx",

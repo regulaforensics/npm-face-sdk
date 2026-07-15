@@ -17,7 +17,7 @@ export class DetectFacesRequest {
     constructor(
         image: string,
         config: DetectFacesConfig,
-        params?: {
+        options?: {
             tag?: string,
         }
     )

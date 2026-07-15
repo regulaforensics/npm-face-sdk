@@ -32,7 +32,7 @@ export class FaceCaptureConfig {
     holdStillDuration?: number
 
     constructor(
-        params?: {
+        options?: {
             copyright?: boolean
             cameraSwitchEnabled?: boolean
             closeButtonEnabled?: boolean
