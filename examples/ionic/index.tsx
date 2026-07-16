@@ -14,7 +14,7 @@ import { main } from './src/main'
 export async function loadAssetIfExists(path: string): Promise<string | null> {
     try {
         var dir = await File.resolveDirectoryUrl(File.applicationDirectory + "www/assets")
-        var fileEntry = await File.getFile(dir, path, null)
+        var fileEntry = await File.getFile(dir, path, {})
         var result = await new Promise<string | null>((resolve, _) => {
             fileEntry.file(file => {
                 var reader = new FileReader()

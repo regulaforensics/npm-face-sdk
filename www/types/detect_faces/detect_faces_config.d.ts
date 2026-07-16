@@ -27,7 +27,7 @@ export class DetectFacesConfig {
     onlyCentralFace: boolean
 
     constructor(
-        params?: {
+        options?: {
             attributes?: Array<DetectFacesAttribute>,
             customQuality?: Array<ImageQualityCharacteristic>,
             outputImageParams?: OutputImageParams,

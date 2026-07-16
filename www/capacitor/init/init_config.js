@@ -9,9 +9,9 @@ export class InitConfig {
         return result
      }
 
-    constructor(license, params) {
+    constructor(license, options) {
         this.license = license
-        this.licenseUpdate = params?.licenseUpdate
+        this.licenseUpdate = options?.licenseUpdate
         this.useBleDevice = false
     }
 

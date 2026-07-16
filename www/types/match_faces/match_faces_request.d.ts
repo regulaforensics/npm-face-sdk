@@ -25,7 +25,7 @@ export class MatchFacesRequest {
 
     constructor(
         images: Array<MatchFacesImage>,
-        params?: {
+        options?: {
             outputImageParams?: OutputImageParams
             tag?: string
             metadata?: Record<string, any>

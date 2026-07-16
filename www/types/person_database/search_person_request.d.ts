@@ -31,7 +31,7 @@ export class SearchPersonRequest {
 
     constructor(
         image: ImageUpload,
-        params?: {
+        options?: {
             groupIdsForSearch?: string[],
             threshold?: number,
             limit?: number,

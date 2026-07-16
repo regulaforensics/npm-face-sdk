@@ -4,9 +4,9 @@ export class OutputImageParams {
     crop
     backgroundColor
 
-    constructor(params) {
-        this.crop = params?.crop
-        this.backgroundColor = params?.backgroundColor
+    constructor(options) {
+        this.crop = options?.crop
+        this.backgroundColor = options?.backgroundColor
     }
 
     static fromJson(jsonObject) {

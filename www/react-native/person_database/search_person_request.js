@@ -10,14 +10,14 @@ export class SearchPersonRequest {
     detectAll
     outputImageParams
 
-    constructor(image, params) {
+    constructor(image, options) {
         this.imageUpload = image
-        this.groupIdsForSearch = params?.groupIdsForSearch
-        this.threshold = params?.threshold
-        this.limit = params?.limit
-        this.tag = params?.tag
-        this.detectAll = params?.detectAll ?? false
-        this.outputImageParams = params?.outputImageParams
+        this.groupIdsForSearch = options?.groupIdsForSearch
+        this.threshold = options?.threshold
+        this.limit = options?.limit
+        this.tag = options?.tag
+        this.detectAll = options?.detectAll ?? false
+        this.outputImageParams = options?.outputImageParams
     }
 
     static fromJson(jsonObject) {

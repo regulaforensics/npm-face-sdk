@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-if [[ $npm_config_o || $npm_config_open ]]; then
+if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
     ionic cap run ios --open
 else
     ionic cap run ios
 fi
+
+exit 0
