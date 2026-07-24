@@ -69,7 +69,7 @@ class Customization {
     }
 
     set onCustomButtonTapped(completion) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_3__._setCustomButtonTappedCompletion)(completion)
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_3__._setCustomButtonTappedCompletion)(completion)
     }
 
     static fromJson(jsonObject) {
@@ -2564,7 +2564,7 @@ class FaceSDK {
     }
 
     set videoEncoderCompletion(completion) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setVideoEncoderCompletion)(completion)
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setVideoEncoderCompletion)(completion)
     }
 
     get personDatabase() { return this._personDatabase }
@@ -2587,28 +2587,28 @@ class FaceSDK {
     }
 
     deinitialize() {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("deinitialize", [])
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("deinitialize", [])
     }
 
     async startFaceCapture(options) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startFaceCapture", [options?.config])
         return _face_capture_face_capture_response__WEBPACK_IMPORTED_MODULE_24__.FaceCaptureResponse.fromJson(JSON.parse(response))
     }
 
     stopFaceCapture() {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("stopFaceCapture", [])
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("stopFaceCapture", [])
     }
 
     async startLiveness(options) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
         var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startLiveness", [options?.config])
         return _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessResponse.fromJson(JSON.parse(response))
     }
 
     async startEnrollment(config, options) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
         var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startEnrollment", [config]))
         var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessResponse.fromJson(response["livenessResponse"]);
@@ -2617,7 +2617,7 @@ class FaceSDK {
     }
 
     async startVerification(config, options) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
         var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startVerification", [config]))
         var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessResponse.fromJson(response["livenessResponse"]);
@@ -2631,7 +2631,7 @@ class FaceSDK {
     }
 
     stopLiveness() {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("stopLiveness", [])
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("stopLiveness", [])
     }
 
     async matchFaces(request, options) {
@@ -2667,7 +2667,7 @@ class FaceSDK {
     }
 
     _setServiceUrl(url) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setServiceUrl", [url])
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setServiceUrl", [url])
     }
 
     async _getTenant() {
@@ -2675,7 +2675,7 @@ class FaceSDK {
     }
 
     _setTenant(tenant) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setTenant", [tenant]);
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setTenant", [tenant]);
     }
 
     async _getEnv() {
@@ -2683,7 +2683,7 @@ class FaceSDK {
     }
 
     _setEnv(env) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setEnv", [env]);
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setEnv", [env]);
     }
 
     async _getLocale() {
@@ -2691,15 +2691,15 @@ class FaceSDK {
     }
 
     _setLocale(locale) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setLocale", [locale]);
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setLocale", [locale]);
     }
 
     _setLocalizationDictionary(dictionary) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setLocalizationDictionary", [dictionary])
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setLocalizationDictionary", [dictionary])
     }
 
     _setRequestHeaders(dictionary) {
-        (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setRequestHeaders", [dictionary])
+        ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("setRequestHeaders", [dictionary])
     }
 }
 
