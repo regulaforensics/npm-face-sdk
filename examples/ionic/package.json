@@ -20,7 +20,7 @@
     "@awesome-cordova-plugins/camera": "^9.2.0",
     "@awesome-cordova-plugins/dialogs": "^9.2.0",
     "@awesome-cordova-plugins/file": "^9.2.0",
-    "@regulaforensics/face-sdk": "8.3.1209-rc",
+    "@regulaforensics/face-sdk": "8.3.1210-rc",
     "@regulaforensics/face-core-basic": "8.3.657-rc",
     "cordova-android": "^15.0.0",
     "cordova-ios": "^8.1.1",
@@ -38,7 +38,9 @@
     "picomatch": "^4.0.4",
     "serialize-javascript": "^7.0.4",
     "uuid": "^14.0.0",
-    "webpack-dev-server": "^5.2.4"
+    "webpack-dev-server": "^5.2.4",
+    "@hono/node-server": "^2.0.5",
+    "postcss": "^8.5.17"
   },
   "cordova": {
     "plugins": {
