@@ -20,7 +20,7 @@
     "@awesome-cordova-plugins/camera": "^9.2.0",
     "@awesome-cordova-plugins/dialogs": "^9.2.0",
     "@awesome-cordova-plugins/file": "^9.2.0",
-    "@regulaforensics/face-sdk": "8.2.1223-nightly",
+    "@regulaforensics/face-sdk": "8.2.1224-nightly",
     "@regulaforensics/face-core-basic": "8.3.666-nightly",
     "cordova-android": "^15.0.0",
     "cordova-ios": "^8.1.1",
