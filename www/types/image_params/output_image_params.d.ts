@@ -20,7 +20,7 @@ export class OutputImageParams {
     get backgroundColor(): number | null
 
     constructor(
-        params?: {
+        options?: {
             crop?: OutputImageCrop,
             backgroundColor?: number,
         }

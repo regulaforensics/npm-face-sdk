@@ -6,11 +6,11 @@ export class OutputImageCrop {
     padColor
     returnOriginalRect
 
-    constructor(type, params) {
+    constructor(type, options) {
         this.type = type
-        this.size = params?.size
-        this.padColor = params?.padColor
-        this.returnOriginalRect = params?.returnOriginalRect ?? false
+        this.size = options?.size
+        this.padColor = options?.padColor
+        this.returnOriginalRect = options?.returnOriginalRect ?? false
     }
 
     static fromJson(jsonObject) {

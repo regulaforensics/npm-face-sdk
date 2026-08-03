@@ -13,7 +13,7 @@ import { SearchPerson } from './search_person'
 export class PersonDatabase {
     createPerson(
         name: string,
-        params?: {
+        options?: {
             groupIds?: string[],
             metadata?: any,
         }
@@ -50,7 +50,7 @@ export class PersonDatabase {
 
     createGroup(
         name: string,
-        params?: {
+        options?: {
             metadata?: any,
         }
     ): Promise<[PersonGroup | null, string | null]>

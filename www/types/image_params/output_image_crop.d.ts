@@ -29,7 +29,7 @@ export class OutputImageCrop {
 
     constructor(
         type: OutputImageCropAspectRatio,
-        params?: {
+        options?: {
             size?: Size,
             padColor?: number,
             returnOriginalRect?: boolean,
