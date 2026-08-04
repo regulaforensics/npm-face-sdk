@@ -8,8 +8,8 @@
     "start": "expo start"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.3.1243",
-    "@regulaforensics/face-core-basic": "8.3.681",
+    "@regulaforensics/face-sdk": "8.3.1244",
+    "@regulaforensics/face-core-basic": "8.3.683",
     "react-native": "^0.81.4",
     "react-native-fs": "^2.20.0",
     "react-native-image-picker": "^8.2.1",
