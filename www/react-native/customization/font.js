@@ -3,10 +3,10 @@ export class Font {
     size
     style
 
-    constructor(name, params) {
+    constructor(name, options) {
         this.name = name
-        this.size = params?.size
-        this.style = params?.style
+        this.size = options?.size
+        this.style = options?.style
     }
 
     static fromJson(jsonObject) {

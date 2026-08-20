@@ -6,12 +6,12 @@ export class ImageQualityCharacteristic {
     customRange
     color
 
-    static _create(name, params) {
+    static _create(name, options) {
         var result = new ImageQualityCharacteristic()
         result.characteristicName = name
-        result.recommendedRange = params?.recommended
-        result.customRange = params?.custom
-        result.color = params?.color
+        result.recommendedRange = options?.recommended
+        result.customRange = options?.custom
+        result.color = options?.color
         return result
     }
 

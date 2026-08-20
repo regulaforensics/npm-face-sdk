@@ -7,12 +7,12 @@ export class DetectFacesConfig {
     outputImageParams
     onlyCentralFace
 
-    constructor(params) {
+    constructor(options) {
         this.onlyCentralFace = false
-        this.attributes = params?.attributes
-        this.customQuality = params?.customQuality
-        this.outputImageParams = params?.outputImageParams
-        this.onlyCentralFace = params?.onlyCentralFace ?? this.onlyCentralFace
+        this.attributes = options?.attributes
+        this.customQuality = options?.customQuality
+        this.outputImageParams = options?.outputImageParams
+        this.onlyCentralFace = options?.onlyCentralFace ?? this.onlyCentralFace
     }
 
     static fromJson(jsonObject) {

@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+set -e
 
-if [[ $npm_config_o || $npm_config_open ]]; then
+if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
     ionic cordova prepare ios
     open platforms/ios/App.xcworkspace
 else
     ionic cordova run ios
 fi
+
+exit 0

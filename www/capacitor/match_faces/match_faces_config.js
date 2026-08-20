@@ -2,9 +2,9 @@ export class MatchFacesConfig {
     processingMode
     locationTrackingEnabled
 
-    constructor(params) {
-        this.processingMode = params?.processingMode ?? ProcessingMode.ONLINE
-        this.locationTrackingEnabled = params?.locationTrackingEnabled ?? true
+    constructor(options) {
+        this.processingMode = options?.processingMode ?? ProcessingMode.ONLINE
+        this.locationTrackingEnabled = options?.locationTrackingEnabled ?? true
     }
 
     static fromJson(jsonObject) {

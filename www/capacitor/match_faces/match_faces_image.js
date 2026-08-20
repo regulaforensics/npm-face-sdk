@@ -4,10 +4,10 @@ export class MatchFacesImage {
     detectAll
     identifier
 
-    constructor(image, imageType, params) {
+    constructor(image, imageType, options) {
         this.image = image
         this.imageType = imageType
-        this.detectAll = params?.detectAll ?? false
+        this.detectAll = options?.detectAll ?? false
         this.identifier = ""
     }
 

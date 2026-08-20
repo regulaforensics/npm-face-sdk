@@ -1,6 +1,6 @@
 export class EditGroupPersonsRequest {
     constructor(
-        params: {
+        options: {
             personIdsToAdd?: string[],
             personIdsToRemove?: string[],
         }

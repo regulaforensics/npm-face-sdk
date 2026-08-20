@@ -6,10 +6,10 @@ export class DetectFacesRequest {
     configuration
     tag
 
-    constructor(image, configuration, params) {
+    constructor(image, configuration, options) {
         this.image = image
         this.configuration = configuration
-        this.tag = params?.tag
+        this.tag = options?.tag
     }
 
     static qualityFull(image) {

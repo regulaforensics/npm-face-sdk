@@ -27,7 +27,7 @@ export class MatchFacesImage {
     constructor(
         image: string,
         imageType: ImageType,
-        params?: {
+        options?: {
             detectAll?: boolean
         }
     )

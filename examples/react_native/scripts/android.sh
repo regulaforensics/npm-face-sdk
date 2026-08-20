@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
+set -e
 
 adb reverse tcp:8081 tcp:8081 >/dev/null || :
-if [[ $npm_config_o || $npm_config_open ]]; then
-    studio android || open -a 'Android Studio' android
+if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
+    open -a 'Android Studio' android
     # check if metro is already running
-    if ! pgrep -f "expo start" >/dev/null; then
-        watchman shutdown-server # fix potential errors
-        npm start
-    fi
+    [[ -z $(pgrep -f 'expo start') ]] && npm start
 else
     expo run:android --device
 fi
+
+exit 0

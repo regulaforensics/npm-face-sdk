@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+set -e
 
-if [[ $npm_config_o || $npm_config_open ]]; then
+if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
     ionic cordova build android
-    studio platforms/android || open -a 'Android Studio' platforms/android
+    open -a 'Android Studio' platforms/android
 else
     ionic cordova run android
 fi
+
+exit 0

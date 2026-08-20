@@ -16,20 +16,20 @@ export class FaceCaptureConfig {
     timeout
     holdStillDuration
 
-    constructor(params) {
-        this.copyright = params?.copyright ?? true
-        this.cameraSwitchEnabled = params?.cameraSwitchEnabled ?? false
-        this.closeButtonEnabled = params?.closeButtonEnabled ?? true
-        this.torchButtonEnabled = params?.torchButtonEnabled ?? true
-        this.vibrateOnSteps = params?.vibrateOnSteps ?? true
-        this.detectOcclusion = params?.detectOcclusion ?? true
-        this.showFaceAnimation = params?.showFaceAnimation ?? true
-        this.preventScreenRecording = params?.preventScreenRecording ?? false
-        this.cameraPositionIOS = params?.cameraPositionIOS ?? CameraPosition.FRONT
-        this.cameraPositionAndroid = params?.cameraPositionAndroid
-        this.screenOrientation = params?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
-        this.timeout = params?.timeout
-        this.holdStillDuration = params?.holdStillDuration
+    constructor(options) {
+        this.copyright = options?.copyright ?? true
+        this.cameraSwitchEnabled = options?.cameraSwitchEnabled ?? false
+        this.closeButtonEnabled = options?.closeButtonEnabled ?? true
+        this.torchButtonEnabled = options?.torchButtonEnabled ?? true
+        this.vibrateOnSteps = options?.vibrateOnSteps ?? true
+        this.detectOcclusion = options?.detectOcclusion ?? true
+        this.showFaceAnimation = options?.showFaceAnimation ?? true
+        this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.cameraPositionIOS = options?.cameraPositionIOS ?? CameraPosition.FRONT
+        this.cameraPositionAndroid = options?.cameraPositionAndroid
+        this.screenOrientation = options?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
+        this.timeout = options?.timeout
+        this.holdStillDuration = options?.holdStillDuration
     }
 
     static fromJson(jsonObject) {
