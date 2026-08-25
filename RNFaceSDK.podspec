@@ -5,7 +5,7 @@ source = File.join(__dir__, 'ios')
 
 Pod::Spec.new do |s|
   s.name         = 'RNFaceSDK'
-  s.version      = '8.4.1284-beta'
+  s.version      = '8.4.1289-beta'
   s.summary      = package['description']
   s.license      = package['license']
 
