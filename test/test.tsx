@@ -49,13 +49,13 @@ import {
     SearchPersonImage,
     SearchPersonRequest,
     Size,
-    // EnrollmentConfig,
-    // VerificationConfig,
-    // EnrollmentRequest,
-    // ErrorResponse,
-    // EnrollmentResponse,
-    // VerifyMatchResponse,
-    // VerificationResponse,
+    EnrollmentConfig,
+    VerificationConfig,
+    EnrollmentRequest,
+    ErrorResponse,
+    EnrollmentResponse,
+    VerifyMatchResponse,
+    VerificationResponse,
 } from '@regulaforensics/face-sdk/www/capacitor'
 import {
     comparedFace,
@@ -148,18 +148,18 @@ compare('faceCaptureException', faceCaptureException, FaceCaptureException.fromJ
 compare('faceCaptureResponse', faceCaptureResponse, FaceCaptureResponse.fromJson);
 
 compare('livenessConfig', livenessConfig, LivenessConfig.fromJson);
-// compare('enrollmentConfig', enrollmentConfig, EnrollmentConfig.fromJson);
-// compare('verificationConfig', verificationConfig, VerificationConfig.fromJson);
-// compare('enrollmentRequest', enrollmentRequest, EnrollmentRequest.fromJson);
-// compare('enrollmentRequest2', enrollmentRequest2, EnrollmentRequest.fromJson);
+compare('enrollmentConfig', enrollmentConfig, EnrollmentConfig.fromJson);
+compare('verificationConfig', verificationConfig, VerificationConfig.fromJson);
+compare('enrollmentRequest', enrollmentRequest, EnrollmentRequest.fromJson);
+compare('enrollmentRequest2', enrollmentRequest2, EnrollmentRequest.fromJson);
 compare('livenessBackendException', livenessBackendException, LivenessBackendException.fromJson);
 compare('livenessException', livenessException, LivenessException.fromJson);
 compare('livenessResponse', livenessResponse, LivenessResponse.fromJson);
 compare('livenessNotification', livenessNotification, LivenessNotification.fromJson);
-// compare('errorResponse', errorResponse, ErrorResponse.fromJson);
-// compare('enrollmentResponse', enrollmentResponse, EnrollmentResponse.fromJson);
-// compare('verifyMatchResponse', verifyMatchResponse, VerifyMatchResponse.fromJson);
-// compare('verificationResponse', verificationResponse, VerificationResponse.fromJson);
+compare('errorResponse', errorResponse, ErrorResponse.fromJson);
+compare('enrollmentResponse', enrollmentResponse, EnrollmentResponse.fromJson);
+compare('verifyMatchResponse', verifyMatchResponse, VerifyMatchResponse.fromJson);
+compare('verificationResponse', verificationResponse, VerificationResponse.fromJson);
 
 compare('matchFacesConfig', matchFacesConfig, MatchFacesConfig.fromJson);
 compare('matchFacesImage', matchFacesImage, MatchFacesImage.fromJson);

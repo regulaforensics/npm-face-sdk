@@ -8,8 +8,8 @@
     "start": "expo start"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.4.1272-rc",
-    "@regulaforensics/face-core-basic": "8.4.702-rc",
+    "@regulaforensics/face-sdk": "8.3.1302-rc",
+    "@regulaforensics/face-core-basic": "8.3.795-rc",
     "react-native": "^0.81.4",
     "react-native-fs": "^2.20.0",
     "react-native-image-picker": "^8.2.1",
@@ -26,10 +26,7 @@
   "overrides": {
     "postcss": "^8.5.10",
     "uuid": "^14.0.0",
-    "js-yaml": "^4.1.1",
-    "brace-expansion": "5.0.8",
-    "glob@7.2.3": {
-      "minimatch": "10.2.5"
-    }
+    "image-size": "npm:image-size-next@2.1.1",
+    "js-yaml": "^4.1.1"
   }
 }
