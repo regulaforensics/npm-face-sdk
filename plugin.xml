@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="@regulaforensics/face-sdk" version="8.3.1307-nightly" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="@regulaforensics/face-sdk" version="8.4.1308-nightly" xmlns="http://apache.org/cordova/ns/plugins/1.0">
   <name>FaceSDK</name>
   <description>Cordova plugin for Regula Face SDK</description>
   <license>commercial</license>
@@ -27,7 +27,7 @@
         <source url="https://github.com/regulaforensics/podspecs.git" />
       </config>
       <pods>
-        <pod name="FaceSDKNightly" spec="8.4.4810" />
+        <pod name="FaceSDKNightly" spec="8.4.4813" />
       </pods>
     </podspec>
   </platform>
