@@ -8,7 +8,7 @@
     "start": "expo start"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.4.1300-beta",
+    "@regulaforensics/face-sdk": "8.4.1322-beta",
     "@regulaforensics/face-core-basic": "8.3.683",
     "react-native": "^0.81.4",
     "react-native-fs": "^2.20.0",
@@ -21,12 +21,13 @@
     "expo-dev-client": "^6.0.12",
     "expo-custom-assets": "^1.5.0",
     "expo-build-properties": "^1.0.8",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "image-size": "file:vendor/image-size-metro-compat"
   },
   "overrides": {
     "postcss": "^8.5.10",
     "uuid": "^14.0.0",
-    "image-size": "npm:image-size-next@2.1.1",
+    "image-size": "$image-size",
     "js-yaml": "^4.1.1"
   }
 }
