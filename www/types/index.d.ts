@@ -122,13 +122,13 @@ export {
     LivenessNotificationCompletion,
     LivenessResponse,
     LivenessStatus,
-    // EnrollmentConfig,
-    // EnrollmentRequest,
-    // VerificationConfig,
-    // ErrorResponse,
-    // EnrollmentResponse,
-    // VerifyMatchResponse,
-    // VerificationResponse,
+    EnrollmentConfig,
+    EnrollmentRequest,
+    VerificationConfig,
+    ErrorResponse,
+    EnrollmentResponse,
+    VerifyMatchResponse,
+    VerificationResponse,
 }
 
 import { ComparedFace } from './match_faces/compared_face'
@@ -283,23 +283,23 @@ export class FaceSDK {
         }
     ): Promise<LivenessResponse>
 
-    // startEnrollment(
-    //     config: EnrollmentConfig,
-    //     options?: {
-    //         notificationCompletion?: LivenessNotificationCompletion,
-    //         cameraSwitchCallback?: CameraSwitchCallback,
-    //     }
-    // ): Promise<[LivenessResponse, EnrollmentResponse | null]>
+    startEnrollment(
+        config: EnrollmentConfig,
+        options?: {
+            notificationCompletion?: LivenessNotificationCompletion,
+            cameraSwitchCallback?: CameraSwitchCallback,
+        }
+    ): Promise<[LivenessResponse, EnrollmentResponse | null]>
 
-    // startVerification(
-    //     config: VerificationConfig,
-    //     options?: {
-    //         notificationCompletion?: LivenessNotificationCompletion,
-    //         cameraSwitchCallback?: CameraSwitchCallback,
-    //     }
-    // ): Promise<[LivenessResponse, VerificationResponse | null]>
+    startVerification(
+        config: VerificationConfig,
+        options?: {
+            notificationCompletion?: LivenessNotificationCompletion,
+            cameraSwitchCallback?: CameraSwitchCallback,
+        }
+    ): Promise<[LivenessResponse, VerificationResponse | null]>
 
-    // enrollWithTrustedPhoto(request: EnrollmentRequest): Promise<EnrollmentResponse>
+    enrollWithTrustedPhoto(request: EnrollmentRequest): Promise<EnrollmentResponse>
 
     stopLiveness(): void
 
