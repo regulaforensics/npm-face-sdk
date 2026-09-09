@@ -29,12 +29,12 @@ export enum LivenessErrorCode {
     APPLICATION_INACTIVE,
     /** Processing finished by bad face quality. */
     BAD_FACE_QUALITY,
-    /** Processing finished by bad frame size. */
-    BAD_FRAME_SIZE,
     /** Device has no available camera. */
     CAMERA_NOT_AVAILABLE,
     /** Application does not have camera permission. */
     CAMERA_NO_PERMISSION,
+    /** Processing finished by bad frame size. */
+    BAD_FRAME_SIZE,
     /**
      * Application context is null.
      * 

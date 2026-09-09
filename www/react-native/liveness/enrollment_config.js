@@ -1,6 +1,8 @@
 import { CameraPosition } from '../customization/camera_position'
 import { ScreenOrientation } from '../customization/screen_orientation'
 import { RecordingProcess, LivenessType, LivenessSkipStep } from './liveness_config'
+import { Person } from '../person_database/person'
+import { SearchPersonFilter } from '../person_database/search_person_filter'
 
 export class EnrollmentConfig {
     copyright
@@ -19,10 +21,8 @@ export class EnrollmentConfig {
     tag
     skipStep
     metadata
-    externalId
-    groupId
-    checkDuplicatesEnabled
-    duplicatesThreshold
+    person
+    searchFilter
 
     constructor(options) {
         this.copyright = options?.copyright ?? true
@@ -41,10 +41,8 @@ export class EnrollmentConfig {
         this.tag = options?.tag
         this.skipStep = options?.skipStep ?? []
         this.metadata = options?.metadata
-        this.externalId = options?.externalId
-        this.groupId = options?.groupId
-        this.checkDuplicatesEnabled = options?.checkDuplicatesEnabled
-        this.duplicatesThreshold = options?.duplicatesThreshold
+        this.person = Person.fromJson(options?.person)
+        this.searchFilter = SearchPersonFilter.fromJson(options?.searchFilter)
     }
 
     static fromJson(jsonObject) {
@@ -67,10 +65,8 @@ export class EnrollmentConfig {
         result.tag = jsonObject["tag"]
         result.skipStep = jsonObject["skipStep"]
         result.metadata = jsonObject["metadata"]
-        result.externalId = jsonObject["externalId"]
-        result.groupId = jsonObject["groupId"]
-        result.checkDuplicatesEnabled = jsonObject["checkDuplicatesEnabled"]
-        result.duplicatesThreshold = jsonObject["duplicatesThreshold"]
+        result.person = Person.fromJson(jsonObject["person"])
+        result.searchFilter = SearchPersonFilter.fromJson(jsonObject["searchFilter"])
 
         return result
     }
@@ -93,10 +89,8 @@ export class EnrollmentConfig {
             "tag": this.tag,
             "skipStep": this.skipStep,
             "metadata": this.metadata,
-            "externalId": this.externalId,
-            "groupId": this.groupId,
-            "checkDuplicatesEnabled": this.checkDuplicatesEnabled,
-            "duplicatesThreshold": this.duplicatesThreshold,
+            "person": this.person?.toJson(),
+            "searchFilter": this.searchFilter?.toJson(),
         }
     }
 }

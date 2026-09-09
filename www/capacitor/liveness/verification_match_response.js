@@ -1,12 +1,12 @@
-export class VerifyMatchResponse {
-    passed
+export class VerificationMatchResponse {
+    verified
     similarity
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
-        const result = new VerifyMatchResponse()
+        const result = new VerificationMatchResponse()
 
-        result.passed = jsonObject["passed"]
+        result.verified = jsonObject["verified"]
         result.similarity = jsonObject["similarity"]
 
         return result
@@ -14,7 +14,7 @@ export class VerifyMatchResponse {
 
     toJson() {
         return {
-            "passed": this.passed,
+            "verified": this.verified,
             "similarity": this.similarity,
         }
     }

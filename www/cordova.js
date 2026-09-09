@@ -2256,9 +2256,9 @@ const ImageQualityResultStatus = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CameraPosition: () => (/* reexport safe */ _customization_camera_position__WEBPACK_IMPORTED_MODULE_1__.CameraPosition),
-/* harmony export */   ComparedFace: () => (/* reexport safe */ _match_faces_compared_face__WEBPACK_IMPORTED_MODULE_47__.ComparedFace),
-/* harmony export */   ComparedFacesPair: () => (/* reexport safe */ _match_faces_compared_faces_pair__WEBPACK_IMPORTED_MODULE_48__.ComparedFacesPair),
-/* harmony export */   ComparedFacesSplit: () => (/* reexport safe */ _match_faces_compared_faces_split__WEBPACK_IMPORTED_MODULE_49__.ComparedFacesSplit),
+/* harmony export */   ComparedFace: () => (/* reexport safe */ _match_faces_compared_face__WEBPACK_IMPORTED_MODULE_45__.ComparedFace),
+/* harmony export */   ComparedFacesPair: () => (/* reexport safe */ _match_faces_compared_faces_pair__WEBPACK_IMPORTED_MODULE_46__.ComparedFacesPair),
+/* harmony export */   ComparedFacesSplit: () => (/* reexport safe */ _match_faces_compared_faces_split__WEBPACK_IMPORTED_MODULE_47__.ComparedFacesSplit),
 /* harmony export */   Customization: () => (/* reexport safe */ _customization_customization__WEBPACK_IMPORTED_MODULE_5__.Customization),
 /* harmony export */   CustomizationColors: () => (/* reexport safe */ _customization_customization_colors__WEBPACK_IMPORTED_MODULE_2__.CustomizationColors),
 /* harmony export */   CustomizationFonts: () => (/* reexport safe */ _customization_customization_fonts__WEBPACK_IMPORTED_MODULE_3__.CustomizationFonts),
@@ -2274,11 +2274,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   DetectFacesRequest: () => (/* reexport safe */ _detect_faces_detect_faces_request__WEBPACK_IMPORTED_MODULE_18__.DetectFacesRequest),
 /* harmony export */   DetectFacesResponse: () => (/* reexport safe */ _detect_faces_detect_faces_response__WEBPACK_IMPORTED_MODULE_19__.DetectFacesResponse),
 /* harmony export */   DetectFacesScenario: () => (/* reexport safe */ _detect_faces_detect_faces_scenario__WEBPACK_IMPORTED_MODULE_20__.DetectFacesScenario),
-/* harmony export */   EditGroupPersonsRequest: () => (/* reexport safe */ _person_database_edit_group_persons_request__WEBPACK_IMPORTED_MODULE_58__.EditGroupPersonsRequest),
+/* harmony export */   EditGroupPersonsRequest: () => (/* reexport safe */ _person_database_edit_group_persons_request__WEBPACK_IMPORTED_MODULE_56__.EditGroupPersonsRequest),
 /* harmony export */   EnrollmentConfig: () => (/* reexport safe */ _liveness_enrollment_config__WEBPACK_IMPORTED_MODULE_36__.EnrollmentConfig),
-/* harmony export */   EnrollmentRequest: () => (/* reexport safe */ _liveness_enrollment_request__WEBPACK_IMPORTED_MODULE_37__.EnrollmentRequest),
-/* harmony export */   EnrollmentResponse: () => (/* reexport safe */ _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_44__.EnrollmentResponse),
-/* harmony export */   ErrorResponse: () => (/* reexport safe */ _liveness_error_response__WEBPACK_IMPORTED_MODULE_43__.ErrorResponse),
+/* harmony export */   EnrollmentResponse: () => (/* reexport safe */ _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_42__.EnrollmentResponse),
 /* harmony export */   FaceCaptureConfig: () => (/* reexport safe */ _face_capture_face_capture_config__WEBPACK_IMPORTED_MODULE_21__.FaceCaptureConfig),
 /* harmony export */   FaceCaptureErrorCode: () => (/* reexport safe */ _face_capture_face_capture_exception__WEBPACK_IMPORTED_MODULE_22__.FaceCaptureErrorCode),
 /* harmony export */   FaceCaptureException: () => (/* reexport safe */ _face_capture_face_capture_exception__WEBPACK_IMPORTED_MODULE_22__.FaceCaptureException),
@@ -2295,53 +2293,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   ImageQualityResult: () => (/* reexport safe */ _image_quality_image_quality_result__WEBPACK_IMPORTED_MODULE_34__.ImageQualityResult),
 /* harmony export */   ImageQualityResultStatus: () => (/* reexport safe */ _image_quality_image_quality_result__WEBPACK_IMPORTED_MODULE_34__.ImageQualityResultStatus),
 /* harmony export */   ImageType: () => (/* reexport safe */ _face_capture_face_capture_image__WEBPACK_IMPORTED_MODULE_23__.ImageType),
-/* harmony export */   ImageUpload: () => (/* reexport safe */ _person_database_image_upload__WEBPACK_IMPORTED_MODULE_59__.ImageUpload),
+/* harmony export */   ImageUpload: () => (/* reexport safe */ _person_database_image_upload__WEBPACK_IMPORTED_MODULE_57__.ImageUpload),
 /* harmony export */   InitConfig: () => (/* reexport safe */ _init_init_config__WEBPACK_IMPORTED_MODULE_9__.InitConfig),
 /* harmony export */   InitErrorCode: () => (/* reexport safe */ _init_init_exception__WEBPACK_IMPORTED_MODULE_10__.InitErrorCode),
 /* harmony export */   InitException: () => (/* reexport safe */ _init_init_exception__WEBPACK_IMPORTED_MODULE_10__.InitException),
 /* harmony export */   LicenseException: () => (/* reexport safe */ _init_license_exception__WEBPACK_IMPORTED_MODULE_11__.LicenseException),
 /* harmony export */   LicensingResultCode: () => (/* reexport safe */ _init_license_exception__WEBPACK_IMPORTED_MODULE_11__.LicensingResultCode),
-/* harmony export */   LivenessBackendErrorCode: () => (/* reexport safe */ _liveness_liveness_backend_exception__WEBPACK_IMPORTED_MODULE_39__.LivenessBackendErrorCode),
-/* harmony export */   LivenessBackendException: () => (/* reexport safe */ _liveness_liveness_backend_exception__WEBPACK_IMPORTED_MODULE_39__.LivenessBackendException),
+/* harmony export */   LivenessBackendErrorCode: () => (/* reexport safe */ _liveness_liveness_backend_exception__WEBPACK_IMPORTED_MODULE_38__.LivenessBackendErrorCode),
+/* harmony export */   LivenessBackendException: () => (/* reexport safe */ _liveness_liveness_backend_exception__WEBPACK_IMPORTED_MODULE_38__.LivenessBackendException),
 /* harmony export */   LivenessConfig: () => (/* reexport safe */ _liveness_liveness_config__WEBPACK_IMPORTED_MODULE_35__.LivenessConfig),
-/* harmony export */   LivenessErrorCode: () => (/* reexport safe */ _liveness_liveness_exception__WEBPACK_IMPORTED_MODULE_40__.LivenessErrorCode),
-/* harmony export */   LivenessException: () => (/* reexport safe */ _liveness_liveness_exception__WEBPACK_IMPORTED_MODULE_40__.LivenessException),
-/* harmony export */   LivenessNotification: () => (/* reexport safe */ _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_42__.LivenessNotification),
-/* harmony export */   LivenessProcessStatus: () => (/* reexport safe */ _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_42__.LivenessProcessStatus),
-/* harmony export */   LivenessResponse: () => (/* reexport safe */ _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessResponse),
+/* harmony export */   LivenessErrorCode: () => (/* reexport safe */ _liveness_liveness_exception__WEBPACK_IMPORTED_MODULE_39__.LivenessErrorCode),
+/* harmony export */   LivenessException: () => (/* reexport safe */ _liveness_liveness_exception__WEBPACK_IMPORTED_MODULE_39__.LivenessException),
+/* harmony export */   LivenessNotification: () => (/* reexport safe */ _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_41__.LivenessNotification),
+/* harmony export */   LivenessProcessStatus: () => (/* reexport safe */ _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_41__.LivenessProcessStatus),
+/* harmony export */   LivenessResponse: () => (/* reexport safe */ _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessResponse),
 /* harmony export */   LivenessSkipStep: () => (/* reexport safe */ _liveness_liveness_config__WEBPACK_IMPORTED_MODULE_35__.LivenessSkipStep),
-/* harmony export */   LivenessStatus: () => (/* reexport safe */ _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessStatus),
+/* harmony export */   LivenessStatus: () => (/* reexport safe */ _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessStatus),
 /* harmony export */   LivenessType: () => (/* reexport safe */ _liveness_liveness_config__WEBPACK_IMPORTED_MODULE_35__.LivenessType),
-/* harmony export */   MatchFacesBackendException: () => (/* reexport safe */ _match_faces_match_faces_backend_exception__WEBPACK_IMPORTED_MODULE_50__.MatchFacesBackendException),
-/* harmony export */   MatchFacesConfig: () => (/* reexport safe */ _match_faces_match_faces_config__WEBPACK_IMPORTED_MODULE_51__.MatchFacesConfig),
-/* harmony export */   MatchFacesDetection: () => (/* reexport safe */ _match_faces_match_faces_detection__WEBPACK_IMPORTED_MODULE_53__.MatchFacesDetection),
-/* harmony export */   MatchFacesDetectionFace: () => (/* reexport safe */ _match_faces_match_faces_detection_face__WEBPACK_IMPORTED_MODULE_52__.MatchFacesDetectionFace),
-/* harmony export */   MatchFacesErrorCode: () => (/* reexport safe */ _match_faces_match_faces_exception__WEBPACK_IMPORTED_MODULE_54__.MatchFacesErrorCode),
-/* harmony export */   MatchFacesException: () => (/* reexport safe */ _match_faces_match_faces_exception__WEBPACK_IMPORTED_MODULE_54__.MatchFacesException),
-/* harmony export */   MatchFacesImage: () => (/* reexport safe */ _match_faces_match_faces_image__WEBPACK_IMPORTED_MODULE_55__.MatchFacesImage),
-/* harmony export */   MatchFacesRequest: () => (/* reexport safe */ _match_faces_match_faces_request__WEBPACK_IMPORTED_MODULE_56__.MatchFacesRequest),
-/* harmony export */   MatchFacesResponse: () => (/* reexport safe */ _match_faces_match_faces_response__WEBPACK_IMPORTED_MODULE_57__.MatchFacesResponse),
+/* harmony export */   MatchFacesBackendException: () => (/* reexport safe */ _match_faces_match_faces_backend_exception__WEBPACK_IMPORTED_MODULE_48__.MatchFacesBackendException),
+/* harmony export */   MatchFacesConfig: () => (/* reexport safe */ _match_faces_match_faces_config__WEBPACK_IMPORTED_MODULE_49__.MatchFacesConfig),
+/* harmony export */   MatchFacesDetection: () => (/* reexport safe */ _match_faces_match_faces_detection__WEBPACK_IMPORTED_MODULE_51__.MatchFacesDetection),
+/* harmony export */   MatchFacesDetectionFace: () => (/* reexport safe */ _match_faces_match_faces_detection_face__WEBPACK_IMPORTED_MODULE_50__.MatchFacesDetectionFace),
+/* harmony export */   MatchFacesErrorCode: () => (/* reexport safe */ _match_faces_match_faces_exception__WEBPACK_IMPORTED_MODULE_52__.MatchFacesErrorCode),
+/* harmony export */   MatchFacesException: () => (/* reexport safe */ _match_faces_match_faces_exception__WEBPACK_IMPORTED_MODULE_52__.MatchFacesException),
+/* harmony export */   MatchFacesImage: () => (/* reexport safe */ _match_faces_match_faces_image__WEBPACK_IMPORTED_MODULE_53__.MatchFacesImage),
+/* harmony export */   MatchFacesRequest: () => (/* reexport safe */ _match_faces_match_faces_request__WEBPACK_IMPORTED_MODULE_54__.MatchFacesRequest),
+/* harmony export */   MatchFacesResponse: () => (/* reexport safe */ _match_faces_match_faces_response__WEBPACK_IMPORTED_MODULE_55__.MatchFacesResponse),
 /* harmony export */   OutputImageCrop: () => (/* reexport safe */ _image_params_output_image_crop__WEBPACK_IMPORTED_MODULE_25__.OutputImageCrop),
 /* harmony export */   OutputImageCropAspectRatio: () => (/* reexport safe */ _image_params_output_image_crop__WEBPACK_IMPORTED_MODULE_25__.OutputImageCropAspectRatio),
 /* harmony export */   OutputImageParams: () => (/* reexport safe */ _image_params_output_image_params__WEBPACK_IMPORTED_MODULE_26__.OutputImageParams),
-/* harmony export */   PageableItemList: () => (/* reexport safe */ _person_database_pageable_item_list__WEBPACK_IMPORTED_MODULE_60__.PageableItemList),
-/* harmony export */   Person: () => (/* reexport safe */ _person_database_person__WEBPACK_IMPORTED_MODULE_64__.Person),
-/* harmony export */   PersonDatabase: () => (/* reexport safe */ _person_database_person_database__WEBPACK_IMPORTED_MODULE_61__.PersonDatabase),
-/* harmony export */   PersonGroup: () => (/* reexport safe */ _person_database_person_group__WEBPACK_IMPORTED_MODULE_62__.PersonGroup),
-/* harmony export */   PersonImage: () => (/* reexport safe */ _person_database_person_image__WEBPACK_IMPORTED_MODULE_63__.PersonImage),
+/* harmony export */   PageableItemList: () => (/* reexport safe */ _person_database_pageable_item_list__WEBPACK_IMPORTED_MODULE_58__.PageableItemList),
+/* harmony export */   Person: () => (/* reexport safe */ _person_database_person__WEBPACK_IMPORTED_MODULE_62__.Person),
+/* harmony export */   PersonDatabase: () => (/* reexport safe */ _person_database_person_database__WEBPACK_IMPORTED_MODULE_59__.PersonDatabase),
+/* harmony export */   PersonGroup: () => (/* reexport safe */ _person_database_person_group__WEBPACK_IMPORTED_MODULE_60__.PersonGroup),
+/* harmony export */   PersonImage: () => (/* reexport safe */ _person_database_person_image__WEBPACK_IMPORTED_MODULE_61__.PersonImage),
 /* harmony export */   Point: () => (/* reexport safe */ _image_params_point__WEBPACK_IMPORTED_MODULE_27__.Point),
-/* harmony export */   ProcessingMode: () => (/* reexport safe */ _match_faces_match_faces_config__WEBPACK_IMPORTED_MODULE_51__.ProcessingMode),
+/* harmony export */   ProcessingMode: () => (/* reexport safe */ _match_faces_match_faces_config__WEBPACK_IMPORTED_MODULE_49__.ProcessingMode),
 /* harmony export */   RecordingProcess: () => (/* reexport safe */ _liveness_liveness_config__WEBPACK_IMPORTED_MODULE_35__.RecordingProcess),
 /* harmony export */   Rect: () => (/* reexport safe */ _image_params_rect__WEBPACK_IMPORTED_MODULE_28__.Rect),
 /* harmony export */   ScreenOrientation: () => (/* reexport safe */ _customization_screen_orientation__WEBPACK_IMPORTED_MODULE_7__.ScreenOrientation),
-/* harmony export */   SearchPerson: () => (/* reexport safe */ _person_database_search_person__WEBPACK_IMPORTED_MODULE_68__.SearchPerson),
-/* harmony export */   SearchPersonDetection: () => (/* reexport safe */ _person_database_search_person_detection__WEBPACK_IMPORTED_MODULE_65__.SearchPersonDetection),
-/* harmony export */   SearchPersonImage: () => (/* reexport safe */ _person_database_search_person_image__WEBPACK_IMPORTED_MODULE_66__.SearchPersonImage),
-/* harmony export */   SearchPersonRequest: () => (/* reexport safe */ _person_database_search_person_request__WEBPACK_IMPORTED_MODULE_67__.SearchPersonRequest),
+/* harmony export */   SearchPerson: () => (/* reexport safe */ _person_database_search_person__WEBPACK_IMPORTED_MODULE_67__.SearchPerson),
+/* harmony export */   SearchPersonDetection: () => (/* reexport safe */ _person_database_search_person_detection__WEBPACK_IMPORTED_MODULE_63__.SearchPersonDetection),
+/* harmony export */   SearchPersonFilter: () => (/* reexport safe */ _person_database_search_person_filter__WEBPACK_IMPORTED_MODULE_66__.SearchPersonFilter),
+/* harmony export */   SearchPersonImage: () => (/* reexport safe */ _person_database_search_person_image__WEBPACK_IMPORTED_MODULE_64__.SearchPersonImage),
+/* harmony export */   SearchPersonRequest: () => (/* reexport safe */ _person_database_search_person_request__WEBPACK_IMPORTED_MODULE_65__.SearchPersonRequest),
 /* harmony export */   Size: () => (/* reexport safe */ _image_params_size__WEBPACK_IMPORTED_MODULE_29__.Size),
-/* harmony export */   VerificationConfig: () => (/* reexport safe */ _liveness_verification_config__WEBPACK_IMPORTED_MODULE_38__.VerificationConfig),
-/* harmony export */   VerificationResponse: () => (/* reexport safe */ _liveness_verification_response__WEBPACK_IMPORTED_MODULE_46__.VerificationResponse),
-/* harmony export */   VerifyMatchResponse: () => (/* reexport safe */ _liveness_verify_match_response__WEBPACK_IMPORTED_MODULE_45__.VerifyMatchResponse)
+/* harmony export */   VerificationConfig: () => (/* reexport safe */ _liveness_verification_config__WEBPACK_IMPORTED_MODULE_37__.VerificationConfig),
+/* harmony export */   VerificationMatchResponse: () => (/* reexport safe */ _liveness_verification_match_response__WEBPACK_IMPORTED_MODULE_43__.VerificationMatchResponse),
+/* harmony export */   VerificationResponse: () => (/* reexport safe */ _liveness_verification_response__WEBPACK_IMPORTED_MODULE_44__.VerificationResponse)
 /* harmony export */ });
 /* harmony import */ var _internal_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./internal/bridge */ "./src/internal/bridge.js");
 /* harmony import */ var _customization_camera_position__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./customization/camera_position */ "./src/customization/camera_position.js");
@@ -2380,38 +2379,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _image_quality_image_quality_result__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./image_quality/image_quality_result */ "./src/image_quality/image_quality_result.js");
 /* harmony import */ var _liveness_liveness_config__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./liveness/liveness_config */ "./src/liveness/liveness_config.js");
 /* harmony import */ var _liveness_enrollment_config__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./liveness/enrollment_config */ "./src/liveness/enrollment_config.js");
-/* harmony import */ var _liveness_enrollment_request__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./liveness/enrollment_request */ "./src/liveness/enrollment_request.js");
-/* harmony import */ var _liveness_verification_config__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./liveness/verification_config */ "./src/liveness/verification_config.js");
-/* harmony import */ var _liveness_liveness_backend_exception__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./liveness/liveness_backend_exception */ "./src/liveness/liveness_backend_exception.js");
-/* harmony import */ var _liveness_liveness_exception__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./liveness/liveness_exception */ "./src/liveness/liveness_exception.js");
-/* harmony import */ var _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./liveness/liveness_response */ "./src/liveness/liveness_response.js");
-/* harmony import */ var _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./liveness/liveness_notification */ "./src/liveness/liveness_notification.js");
-/* harmony import */ var _liveness_error_response__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./liveness/error_response */ "./src/liveness/error_response.js");
-/* harmony import */ var _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./liveness/enrollment_response */ "./src/liveness/enrollment_response.js");
-/* harmony import */ var _liveness_verify_match_response__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./liveness/verify_match_response */ "./src/liveness/verify_match_response.js");
-/* harmony import */ var _liveness_verification_response__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./liveness/verification_response */ "./src/liveness/verification_response.js");
-/* harmony import */ var _match_faces_compared_face__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./match_faces/compared_face */ "./src/match_faces/compared_face.js");
-/* harmony import */ var _match_faces_compared_faces_pair__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./match_faces/compared_faces_pair */ "./src/match_faces/compared_faces_pair.js");
-/* harmony import */ var _match_faces_compared_faces_split__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./match_faces/compared_faces_split */ "./src/match_faces/compared_faces_split.js");
-/* harmony import */ var _match_faces_match_faces_backend_exception__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./match_faces/match_faces_backend_exception */ "./src/match_faces/match_faces_backend_exception.js");
-/* harmony import */ var _match_faces_match_faces_config__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./match_faces/match_faces_config */ "./src/match_faces/match_faces_config.js");
-/* harmony import */ var _match_faces_match_faces_detection_face__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./match_faces/match_faces_detection_face */ "./src/match_faces/match_faces_detection_face.js");
-/* harmony import */ var _match_faces_match_faces_detection__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./match_faces/match_faces_detection */ "./src/match_faces/match_faces_detection.js");
-/* harmony import */ var _match_faces_match_faces_exception__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./match_faces/match_faces_exception */ "./src/match_faces/match_faces_exception.js");
-/* harmony import */ var _match_faces_match_faces_image__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./match_faces/match_faces_image */ "./src/match_faces/match_faces_image.js");
-/* harmony import */ var _match_faces_match_faces_request__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./match_faces/match_faces_request */ "./src/match_faces/match_faces_request.js");
-/* harmony import */ var _match_faces_match_faces_response__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./match_faces/match_faces_response */ "./src/match_faces/match_faces_response.js");
-/* harmony import */ var _person_database_edit_group_persons_request__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./person_database/edit_group_persons_request */ "./src/person_database/edit_group_persons_request.js");
-/* harmony import */ var _person_database_image_upload__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./person_database/image_upload */ "./src/person_database/image_upload.js");
-/* harmony import */ var _person_database_pageable_item_list__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./person_database/pageable_item_list */ "./src/person_database/pageable_item_list.js");
-/* harmony import */ var _person_database_person_database__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./person_database/person_database */ "./src/person_database/person_database.js");
-/* harmony import */ var _person_database_person_group__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./person_database/person_group */ "./src/person_database/person_group.js");
-/* harmony import */ var _person_database_person_image__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./person_database/person_image */ "./src/person_database/person_image.js");
-/* harmony import */ var _person_database_person__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./person_database/person */ "./src/person_database/person.js");
-/* harmony import */ var _person_database_search_person_detection__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./person_database/search_person_detection */ "./src/person_database/search_person_detection.js");
-/* harmony import */ var _person_database_search_person_image__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./person_database/search_person_image */ "./src/person_database/search_person_image.js");
-/* harmony import */ var _person_database_search_person_request__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ./person_database/search_person_request */ "./src/person_database/search_person_request.js");
-/* harmony import */ var _person_database_search_person__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! ./person_database/search_person */ "./src/person_database/search_person.js");
+/* harmony import */ var _liveness_verification_config__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./liveness/verification_config */ "./src/liveness/verification_config.js");
+/* harmony import */ var _liveness_liveness_backend_exception__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./liveness/liveness_backend_exception */ "./src/liveness/liveness_backend_exception.js");
+/* harmony import */ var _liveness_liveness_exception__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./liveness/liveness_exception */ "./src/liveness/liveness_exception.js");
+/* harmony import */ var _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./liveness/liveness_response */ "./src/liveness/liveness_response.js");
+/* harmony import */ var _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./liveness/liveness_notification */ "./src/liveness/liveness_notification.js");
+/* harmony import */ var _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./liveness/enrollment_response */ "./src/liveness/enrollment_response.js");
+/* harmony import */ var _liveness_verification_match_response__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./liveness/verification_match_response */ "./src/liveness/verification_match_response.js");
+/* harmony import */ var _liveness_verification_response__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./liveness/verification_response */ "./src/liveness/verification_response.js");
+/* harmony import */ var _match_faces_compared_face__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./match_faces/compared_face */ "./src/match_faces/compared_face.js");
+/* harmony import */ var _match_faces_compared_faces_pair__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./match_faces/compared_faces_pair */ "./src/match_faces/compared_faces_pair.js");
+/* harmony import */ var _match_faces_compared_faces_split__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./match_faces/compared_faces_split */ "./src/match_faces/compared_faces_split.js");
+/* harmony import */ var _match_faces_match_faces_backend_exception__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./match_faces/match_faces_backend_exception */ "./src/match_faces/match_faces_backend_exception.js");
+/* harmony import */ var _match_faces_match_faces_config__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./match_faces/match_faces_config */ "./src/match_faces/match_faces_config.js");
+/* harmony import */ var _match_faces_match_faces_detection_face__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./match_faces/match_faces_detection_face */ "./src/match_faces/match_faces_detection_face.js");
+/* harmony import */ var _match_faces_match_faces_detection__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./match_faces/match_faces_detection */ "./src/match_faces/match_faces_detection.js");
+/* harmony import */ var _match_faces_match_faces_exception__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./match_faces/match_faces_exception */ "./src/match_faces/match_faces_exception.js");
+/* harmony import */ var _match_faces_match_faces_image__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./match_faces/match_faces_image */ "./src/match_faces/match_faces_image.js");
+/* harmony import */ var _match_faces_match_faces_request__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./match_faces/match_faces_request */ "./src/match_faces/match_faces_request.js");
+/* harmony import */ var _match_faces_match_faces_response__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./match_faces/match_faces_response */ "./src/match_faces/match_faces_response.js");
+/* harmony import */ var _person_database_edit_group_persons_request__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./person_database/edit_group_persons_request */ "./src/person_database/edit_group_persons_request.js");
+/* harmony import */ var _person_database_image_upload__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./person_database/image_upload */ "./src/person_database/image_upload.js");
+/* harmony import */ var _person_database_pageable_item_list__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./person_database/pageable_item_list */ "./src/person_database/pageable_item_list.js");
+/* harmony import */ var _person_database_person_database__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./person_database/person_database */ "./src/person_database/person_database.js");
+/* harmony import */ var _person_database_person_group__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./person_database/person_group */ "./src/person_database/person_group.js");
+/* harmony import */ var _person_database_person_image__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./person_database/person_image */ "./src/person_database/person_image.js");
+/* harmony import */ var _person_database_person__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./person_database/person */ "./src/person_database/person.js");
+/* harmony import */ var _person_database_search_person_detection__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./person_database/search_person_detection */ "./src/person_database/search_person_detection.js");
+/* harmony import */ var _person_database_search_person_image__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./person_database/search_person_image */ "./src/person_database/search_person_image.js");
+/* harmony import */ var _person_database_search_person_request__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./person_database/search_person_request */ "./src/person_database/search_person_request.js");
+/* harmony import */ var _person_database_search_person_filter__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./person_database/search_person_filter */ "./src/person_database/search_person_filter.js");
+/* harmony import */ var _person_database_search_person__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ./person_database/search_person */ "./src/person_database/search_person.js");
 
 
 
@@ -2474,8 +2472,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 ;
 
 
@@ -2490,6 +2486,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 ;
+
 
 
 
@@ -2568,7 +2565,7 @@ class FaceSDK {
     }
 
     get personDatabase() { return this._personDatabase }
-    _personDatabase = new _person_database_person_database__WEBPACK_IMPORTED_MODULE_61__.PersonDatabase()
+    _personDatabase = new _person_database_person_database__WEBPACK_IMPORTED_MODULE_59__.PersonDatabase()
 
     async isInitialized() {
         return await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("isInitialized", [])
@@ -2604,15 +2601,15 @@ class FaceSDK {
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
         var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startLiveness", [options?.config])
-        return _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessResponse.fromJson(JSON.parse(response))
+        return _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessResponse.fromJson(JSON.parse(response))
     }
 
     async startEnrollment(config, options) {
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
         var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startEnrollment", [config]))
-        var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessResponse.fromJson(response["livenessResponse"]);
-        var er = _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_44__.EnrollmentResponse.fromJson(response["enrollmentResponse"]);
+        var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessResponse.fromJson(response["livenessResponse"]);
+        var er = _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_42__.EnrollmentResponse.fromJson(response["enrollmentResponse"]);
         return [lr, er];
     }
 
@@ -2620,14 +2617,9 @@ class FaceSDK {
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
         var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startVerification", [config]))
-        var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_41__.LivenessResponse.fromJson(response["livenessResponse"]);
-        var er = _liveness_verification_response__WEBPACK_IMPORTED_MODULE_46__.VerificationResponse.fromJson(response["verificationResponse"]);
+        var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessResponse.fromJson(response["livenessResponse"]);
+        var er = _liveness_verification_response__WEBPACK_IMPORTED_MODULE_44__.VerificationResponse.fromJson(response["verificationResponse"]);
         return [lr, er];
-    }
-
-    async enrollWithTrustedPhoto(request) {
-        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("enrollWithTrustedPhoto", [request])
-        return _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_44__.EnrollmentResponse.fromJson(JSON.parse(response));
     }
 
     stopLiveness() {
@@ -2636,12 +2628,12 @@ class FaceSDK {
 
     async matchFaces(request, options) {
         var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("matchFaces", [request, options?.config])
-        return _match_faces_match_faces_response__WEBPACK_IMPORTED_MODULE_57__.MatchFacesResponse.fromJson(JSON.parse(response))
+        return _match_faces_match_faces_response__WEBPACK_IMPORTED_MODULE_55__.MatchFacesResponse.fromJson(JSON.parse(response))
     }
 
     async splitComparedFaces(facesPairs, similarityThreshold) {
         var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("splitComparedFaces", [facesPairs, similarityThreshold])
-        return _match_faces_compared_faces_split__WEBPACK_IMPORTED_MODULE_49__.ComparedFacesSplit.fromJson(JSON.parse(response))
+        return _match_faces_compared_faces_split__WEBPACK_IMPORTED_MODULE_47__.ComparedFacesSplit.fromJson(JSON.parse(response))
     }
 
     async detectFaces(request) {
@@ -3018,6 +3010,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _customization_camera_position__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../customization/camera_position */ "./src/customization/camera_position.js");
 /* harmony import */ var _customization_screen_orientation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../customization/screen_orientation */ "./src/customization/screen_orientation.js");
 /* harmony import */ var _liveness_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./liveness_config */ "./src/liveness/liveness_config.js");
+/* harmony import */ var _person_database_person__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../person_database/person */ "./src/person_database/person.js");
+/* harmony import */ var _person_database_search_person_filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../person_database/search_person_filter */ "./src/person_database/search_person_filter.js");
+
+
 
 
 
@@ -3039,10 +3035,8 @@ class EnrollmentConfig {
     tag
     skipStep
     metadata
-    externalId
-    groupId
-    checkDuplicatesEnabled
-    duplicatesThreshold
+    person
+    searchFilter
 
     constructor(options) {
         this.copyright = options?.copyright ?? true
@@ -3061,10 +3055,8 @@ class EnrollmentConfig {
         this.tag = options?.tag
         this.skipStep = options?.skipStep ?? []
         this.metadata = options?.metadata
-        this.externalId = options?.externalId
-        this.groupId = options?.groupId
-        this.checkDuplicatesEnabled = options?.checkDuplicatesEnabled
-        this.duplicatesThreshold = options?.duplicatesThreshold
+        this.person = _person_database_person__WEBPACK_IMPORTED_MODULE_3__.Person.fromJson(options?.person)
+        this.searchFilter = _person_database_search_person_filter__WEBPACK_IMPORTED_MODULE_4__.SearchPersonFilter.fromJson(options?.searchFilter)
     }
 
     static fromJson(jsonObject) {
@@ -3087,10 +3079,8 @@ class EnrollmentConfig {
         result.tag = jsonObject["tag"]
         result.skipStep = jsonObject["skipStep"]
         result.metadata = jsonObject["metadata"]
-        result.externalId = jsonObject["externalId"]
-        result.groupId = jsonObject["groupId"]
-        result.checkDuplicatesEnabled = jsonObject["checkDuplicatesEnabled"]
-        result.duplicatesThreshold = jsonObject["duplicatesThreshold"]
+        result.person = _person_database_person__WEBPACK_IMPORTED_MODULE_3__.Person.fromJson(jsonObject["person"])
+        result.searchFilter = _person_database_search_person_filter__WEBPACK_IMPORTED_MODULE_4__.SearchPersonFilter.fromJson(jsonObject["searchFilter"])
 
         return result
     }
@@ -3113,63 +3103,8 @@ class EnrollmentConfig {
             "tag": this.tag,
             "skipStep": this.skipStep,
             "metadata": this.metadata,
-            "externalId": this.externalId,
-            "groupId": this.groupId,
-            "checkDuplicatesEnabled": this.checkDuplicatesEnabled,
-            "duplicatesThreshold": this.duplicatesThreshold,
-        }
-    }
-}
-
-
-/***/ },
-
-/***/ "./src/liveness/enrollment_request.js"
-/*!********************************************!*\
-  !*** ./src/liveness/enrollment_request.js ***!
-  \********************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   EnrollmentRequest: () => (/* binding */ EnrollmentRequest)
-/* harmony export */ });
-class EnrollmentRequest {
-    externalId
-    groupId
-    trustedImage
-    trustedImageUrl
-
-    static withImage(externalId, trustedImage, options) {
-        this.externalId = externalId
-        this.trustedImage = trustedImage
-        this.groupId = options?.groupId
-    }
-
-    static withImageUrl(externalId, trustedImageUrl, options) {
-        this.externalId = externalId
-        this.trustedImageUrl = trustedImageUrl
-        this.groupId = options?.groupId
-    }
-
-    static fromJson(jsonObject) {
-        if (jsonObject == null) return null
-        const result = new EnrollmentRequest()
-
-        result.externalId = jsonObject["externalId"]
-        result.groupId = jsonObject["groupId"]
-        result.trustedImage = jsonObject["trustedImage"]
-        result.trustedImageUrl = jsonObject["trustedImageUrl"]
-
-        return result
-    }
-
-    toJson() {
-        return {
-            "externalId": this.externalId,
-            "groupId": this.groupId,
-            "trustedImage": this.trustedImage,
-            "trustedImageUrl": this.trustedImageUrl,
+            "person": this.person?.toJson(),
+            "searchFilter": this.searchFilter?.toJson(),
         }
     }
 }
@@ -3187,65 +3122,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   EnrollmentResponse: () => (/* binding */ EnrollmentResponse)
 /* harmony export */ });
-/* harmony import */ var _error_response__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./error_response */ "./src/liveness/error_response.js");
+/* harmony import */ var _person_database_person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../person_database/person */ "./src/person_database/person.js");
+/* harmony import */ var _person_database_search_person__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../person_database/search_person */ "./src/person_database/search_person.js");
+
 
 
 class EnrollmentResponse {
-    personId
-    externalId
-    error
+    enrolled
+    person
+    searchPersons
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
         const result = new EnrollmentResponse()
 
-        result.personId = jsonObject["personId"]
-        result.externalId = jsonObject["externalId"]
-        result.error = _error_response__WEBPACK_IMPORTED_MODULE_0__.ErrorResponse.fromJson(jsonObject["error"])
+        result.enrolled = jsonObject["enrolled"]
+        result.person = _person_database_person__WEBPACK_IMPORTED_MODULE_0__.Person.fromJson(jsonObject["person"])
+        result.searchPersons = []
+        if (jsonObject["searchPersons"] != null)
+            for (const item of jsonObject["searchPersons"])
+                result.searchPersons.push(_person_database_search_person__WEBPACK_IMPORTED_MODULE_1__.SearchPerson.fromJson(item))
 
         return result
     }
 
     toJson() {
         return {
-            "personId": this.personId,
-            "externalId": this.externalId,
-            "error": this.error?.toJson(),
-        }
-    }
-}
-
-
-/***/ },
-
-/***/ "./src/liveness/error_response.js"
-/*!****************************************!*\
-  !*** ./src/liveness/error_response.js ***!
-  \****************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ErrorResponse: () => (/* binding */ ErrorResponse)
-/* harmony export */ });
-class ErrorResponse {
-    code
-    message
-
-    static fromJson(jsonObject) {
-        if (jsonObject == null) return null
-        const result = new ErrorResponse()
-
-        result.code = jsonObject["code"]
-        result.message = jsonObject["message"]
-
-        return result
-    }
-
-    toJson() {
-        return {
-            "code": this.code,
-            "message": this.message,
+            "enrolled": this.enrolled,
+            "person": this.person?.toJson(),
+            "searchPersons": this.searchPersons?.map(e => e.toJson()),
         }
     }
 }
@@ -3493,9 +3398,9 @@ const LivenessErrorCode = {
     PROCESSING_FRAME_FAILED: 7,
     APPLICATION_INACTIVE: 8,
     BAD_FACE_QUALITY: 9,
-    BAD_FRAME_SIZE: 10,
-    CAMERA_NOT_AVAILABLE: 11,
-    CAMERA_NO_PERMISSION: 12,
+    CAMERA_NOT_AVAILABLE: 10,
+    CAMERA_NO_PERMISSION: 11,
+    BAD_FRAME_SIZE: 12,
     CONTEXT_IS_NULL: 13,
     IN_PROGRESS_ALREADY: 14,
     ZOOM_NOT_SUPPORTED: 15,
@@ -3653,7 +3558,7 @@ class VerificationConfig {
     skipStep
     metadata
     personId
-    groupId
+    externalId
     threshold
 
     constructor(options) {
@@ -3674,8 +3579,20 @@ class VerificationConfig {
         this.skipStep = options?.skipStep ?? []
         this.metadata = options?.metadata
         this.personId = options?.personId
-        this.groupId = options?.groupId
+        this.externalId = options?.externalId
         this.threshold = options?.threshold
+    }
+
+    static withPersonId(personId, options) {
+        const result = new VerificationConfig(options)
+        result.personId = personId
+        return result
+    }
+
+    static withExternalId(externalId, options) {
+        const result = new VerificationConfig(options)
+        result.externalId = externalId
+        return result
     }
 
     static fromJson(jsonObject) {
@@ -3699,7 +3616,7 @@ class VerificationConfig {
         result.skipStep = jsonObject["skipStep"]
         result.metadata = jsonObject["metadata"]
         result.personId = jsonObject["personId"]
-        result.groupId = jsonObject["groupId"]
+        result.externalId = jsonObject["externalId"]
         result.threshold = jsonObject["threshold"]
 
         return result
@@ -3724,8 +3641,43 @@ class VerificationConfig {
             "skipStep": this.skipStep,
             "metadata": this.metadata,
             "personId": this.personId,
-            "groupId": this.groupId,
+            "externalId": this.externalId,
             "threshold": this.threshold,
+        }
+    }
+}
+
+
+/***/ },
+
+/***/ "./src/liveness/verification_match_response.js"
+/*!*****************************************************!*\
+  !*** ./src/liveness/verification_match_response.js ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   VerificationMatchResponse: () => (/* binding */ VerificationMatchResponse)
+/* harmony export */ });
+class VerificationMatchResponse {
+    verified
+    similarity
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        const result = new VerificationMatchResponse()
+
+        result.verified = jsonObject["verified"]
+        result.similarity = jsonObject["similarity"]
+
+        return result
+    }
+
+    toJson() {
+        return {
+            "verified": this.verified,
+            "similarity": this.similarity,
         }
     }
 }
@@ -3743,67 +3695,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   VerificationResponse: () => (/* binding */ VerificationResponse)
 /* harmony export */ });
-/* harmony import */ var _verify_match_response__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./verify_match_response */ "./src/liveness/verify_match_response.js");
-/* harmony import */ var _error_response__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./error_response */ "./src/liveness/error_response.js");
+/* harmony import */ var _verification_match_response__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./verification_match_response */ "./src/liveness/verification_match_response.js");
+/* harmony import */ var _person_database_person__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../person_database/person */ "./src/person_database/person.js");
 
 
 
 class VerificationResponse {
-    passed
+    verified
+    person
     match
-    error
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
         const result = new VerificationResponse()
 
-        result.passed = jsonObject["passed"]
-        result.match = _verify_match_response__WEBPACK_IMPORTED_MODULE_0__.VerifyMatchResponse.fromJson(jsonObject["match"])
-        result.error = _error_response__WEBPACK_IMPORTED_MODULE_1__.ErrorResponse.fromJson(jsonObject["error"])
+        result.verified = jsonObject["verified"]
+        result.person = _person_database_person__WEBPACK_IMPORTED_MODULE_1__.Person.fromJson(jsonObject["person"])
+        result.match = _verification_match_response__WEBPACK_IMPORTED_MODULE_0__.VerificationMatchResponse.fromJson(jsonObject["match"])
 
         return result
     }
 
     toJson() {
         return {
-            "passed": this.passed,
+            "verified": this.verified,
+            "person": this.person?.toJson(),
             "match": this.match?.toJson(),
-            "error": this.error?.toJson(),
-        }
-    }
-}
-
-
-/***/ },
-
-/***/ "./src/liveness/verify_match_response.js"
-/*!***********************************************!*\
-  !*** ./src/liveness/verify_match_response.js ***!
-  \***********************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   VerifyMatchResponse: () => (/* binding */ VerifyMatchResponse)
-/* harmony export */ });
-class VerifyMatchResponse {
-    passed
-    similarity
-
-    static fromJson(jsonObject) {
-        if (jsonObject == null) return null
-        const result = new VerifyMatchResponse()
-
-        result.passed = jsonObject["passed"]
-        result.similarity = jsonObject["similarity"]
-
-        return result
-    }
-
-    toJson() {
-        return {
-            "passed": this.passed,
-            "similarity": this.similarity,
         }
     }
 }
@@ -4481,35 +4398,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Person {
+    id
+    createdAt
     name
     updatedAt
     groups
-    id
     metadata
-    createdAt
+    externalId
+    expireAt
+    ttl
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
         var result = new Person()
 
-        result.name = jsonObject["name"]
-        result.updatedAt = new Date(jsonObject["updatedAt"])
-        result.groups = jsonObject["groups"]
         result.id = jsonObject["id"]
+        result.createdAt = jsonObject["createdAt"] === null ? null : new Date(jsonObject["createdAt"]);
+        result.name = jsonObject["name"]
+        result.updatedAt = jsonObject["updatedAt"] === null ? null : new Date(jsonObject["updatedAt"]);
+        result.groups = jsonObject["groups"]
         result.metadata = jsonObject["metadata"]
-        result.createdAt = new Date(jsonObject["createdAt"])
+        result.externalId = jsonObject["externalId"]
+        result.expireAt = jsonObject["expireAt"] === null ? null : new Date(jsonObject["expireAt"]);
+        result.ttl = jsonObject["ttl"]
 
         return result
     }
 
     toJson() {
         return {
+            "id": this.id,
+            "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
             "name": this.name,
             "updatedAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.updatedAt),
             "groups": this.groups,
-            "id": this.id,
             "metadata": this.metadata,
-            "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
+            "externalId": this.externalId,
+            "expireAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.expireAt),
+            "ttl": this.ttl,
         }
     }
 }
@@ -4802,6 +4728,9 @@ class SearchPerson {
     id
     metadata
     createdAt
+    externalId
+    expireAt
+    ttl
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
@@ -4817,6 +4746,9 @@ class SearchPerson {
         result.id = jsonObject["id"]
         result.metadata = jsonObject["metadata"]
         result.createdAt = new Date(jsonObject["createdAt"])
+        result.externalId = jsonObject["externalId"]
+        result.expireAt = new Date(jsonObject["expireAt"])
+        result.ttl = jsonObject["ttl"]
 
         return result
     }
@@ -4831,6 +4763,9 @@ class SearchPerson {
             "id": this.id,
             "metadata": this.metadata,
             "createdAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.createdAt),
+            "externalId": this.externalId,
+            "expireAt": (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.dateToString)(this.expireAt),
+            "ttl": this.ttl,
         }
     }
 }
@@ -4878,6 +4813,64 @@ class SearchPersonDetection {
             "rect": this.rect?.toJson(),
             "crop": this.crop,
             "rotationAngle": this.rotationAngle,
+        }
+    }
+}
+
+
+/***/ },
+
+/***/ "./src/person_database/search_person_filter.js"
+/*!*****************************************************!*\
+  !*** ./src/person_database/search_person_filter.js ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SearchPersonFilter: () => (/* binding */ SearchPersonFilter)
+/* harmony export */ });
+class SearchPersonFilter {
+    groups
+    threshold
+    limit
+    fieldName
+    fieldValues
+    exclude
+
+    constructor(options) {
+        this.groups = options?.groups ?? []
+        this.threshold = options?.threshold ?? 0
+        this.limit = options?.limit ?? 1
+    }
+
+    filterField(fieldName, fieldValues, options) {
+        this.fieldName = fieldName
+        this.fieldValues = fieldValues
+        this.exclude = options?.exclude ?? false
+    }
+
+    static fromJson(jsonObject) {
+        if (jsonObject == null) return null
+        var result = new SearchPersonFilter({
+            groups: jsonObject["groups"],
+            threshold: jsonObject["threshold"],
+            limit: jsonObject["limit"]
+        })
+        result.fieldName = jsonObject["fieldName"];
+        result.fieldValues = jsonObject["fieldValues"];
+        result.exclude = jsonObject["exclude"];
+        return result
+    }
+
+    toJson() {
+        return {
+            "groups": this.groups,
+            "threshold": this.threshold,
+            "limit": this.limit,
+            "fieldName": this.fieldName,
+            "fieldValues": this.fieldValues,
+            "exclude": this.exclude,
         }
     }
 }
