@@ -3,31 +3,35 @@
  * A Person Database object that represents Person.
  */
 export class Person {
+    id?: string | null
+
+    get createdAt(): Date | null
+
     /**
      * Person name.
      * Updatable field.
      */
-    name: string
+    name?: string | null
 
     /**
      * Person update date.
      */
-    get updatedAt(): Date
+    updatedAt?: Date | null
 
     /**
      * Array if Group IDs Person belongs to.
      */
-    get groups(): string[]
-
-    get id(): string
+    groups?: string[] | null
 
     /**
      * A free-form object containing Person extended attributes.
      * Updatable field.
      */
-    metadata: any
+    metadata?: any | null
 
-    get createdAt(): Date
+    externalId?: string | null
 
-    private constructor()
+    expireAt?: Date | null
+
+    ttl?: number | null
 }

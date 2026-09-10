@@ -11,6 +11,9 @@ export class SearchPerson {
     id
     metadata
     createdAt
+    externalId
+    expireAt
+    ttl
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
@@ -26,6 +29,9 @@ export class SearchPerson {
         result.id = jsonObject["id"]
         result.metadata = jsonObject["metadata"]
         result.createdAt = new Date(jsonObject["createdAt"])
+        result.externalId = jsonObject["externalId"]
+        result.expireAt = new Date(jsonObject["expireAt"])
+        result.ttl = jsonObject["ttl"]
 
         return result
     }
@@ -40,6 +46,9 @@ export class SearchPerson {
             "id": this.id,
             "metadata": this.metadata,
             "createdAt": dateToString(this.createdAt),
+            "externalId": this.externalId,
+            "expireAt": dateToString(this.expireAt),
+            "ttl": this.ttl,
         }
     }
 }

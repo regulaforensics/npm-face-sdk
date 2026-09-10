@@ -1,6 +1,8 @@
 import { CameraPosition } from '../customization/camera_position'
 import { ScreenOrientation } from '../customization/screen_orientation'
 import { RecordingProcess, LivenessType, LivenessSkipStep } from './liveness_config'
+import { Person } from '../person_database/person'
+import { SearchPersonFilter } from '../person_database/search_person_filter'
 
 export interface EnrollmentConfig {
     /**
@@ -87,11 +89,7 @@ export interface EnrollmentConfig {
 
     metadata?: Record<string, any>
 
-    externalId: string
+    person?: Person
 
-    groupId?: string
-
-    checkDuplicatesEnabled?: boolean
-
-    duplicatesThreshold?: number
+    searchFilter?: SearchPersonFilter
 }

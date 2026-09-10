@@ -1,27 +1,27 @@
-import { VerifyMatchResponse } from './verify_match_response'
-import { ErrorResponse } from './error_response'
+import { VerificationMatchResponse } from './verification_match_response'
+import { Person } from '../person_database/person'
 
 export class VerificationResponse {
-    passed
+    verified
+    person
     match
-    error
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
         const result = new VerificationResponse()
 
-        result.passed = jsonObject["passed"]
-        result.match = VerifyMatchResponse.fromJson(jsonObject["match"])
-        result.error = ErrorResponse.fromJson(jsonObject["error"])
+        result.verified = jsonObject["verified"]
+        result.person = Person.fromJson(jsonObject["person"])
+        result.match = VerificationMatchResponse.fromJson(jsonObject["match"])
 
         return result
     }
 
     toJson() {
         return {
-            "passed": this.passed,
+            "verified": this.verified,
+            "person": this.person?.toJson(),
             "match": this.match?.toJson(),
-            "error": this.error?.toJson(),
         }
     }
 }

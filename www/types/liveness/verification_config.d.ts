@@ -2,7 +2,7 @@ import { CameraPosition } from '../customization/camera_position'
 import { ScreenOrientation } from '../customization/screen_orientation'
 import { RecordingProcess, LivenessType, LivenessSkipStep } from './liveness_config'
 
-export interface VerificationConfig {
+export class VerificationConfig {
     /**
      * Defines, whether the logo is visible on the bottom of Liveness UI screens. Defaults to `true`.
      */
@@ -87,9 +87,53 @@ export interface VerificationConfig {
 
     metadata?: Record<string, any>
 
-    personId: string
-
-    groupId?: string
-
     threshold?: number
+
+    private constructor();
+
+    static withPersonId(
+        personId: string,
+        options?: {
+            copyright?: boolean
+            cameraSwitchEnabled?: boolean
+            closeButtonEnabled?: boolean
+            torchButtonEnabled?: boolean
+            vibrateOnSteps?: boolean
+            cameraPositionAndroid?: number
+            cameraPositionIOS?: CameraPosition
+            screenOrientation?: Array<ScreenOrientation>
+            locationTrackingEnabled?: boolean
+            preventScreenRecording?: boolean
+            attemptsCount?: number
+            recordingProcess?: RecordingProcess
+            livenessType?: LivenessType
+            tag?: string
+            skipStep?: Array<LivenessSkipStep>
+            metadata?: Record<string, any>
+            threshold?: number
+        }
+    ): VerificationConfig;
+
+    static withExternalId(
+        externalId: string,
+        options?: {
+            copyright?: boolean
+            cameraSwitchEnabled?: boolean
+            closeButtonEnabled?: boolean
+            torchButtonEnabled?: boolean
+            vibrateOnSteps?: boolean
+            cameraPositionAndroid?: number
+            cameraPositionIOS?: CameraPosition
+            screenOrientation?: Array<ScreenOrientation>
+            locationTrackingEnabled?: boolean
+            preventScreenRecording?: boolean
+            attemptsCount?: number
+            recordingProcess?: RecordingProcess
+            livenessType?: LivenessType
+            tag?: string
+            skipStep?: Array<LivenessSkipStep>
+            metadata?: Record<string, any>
+            threshold?: number
+        }
+    ): VerificationConfig;
 }
