@@ -20,7 +20,7 @@ export class VerificationConfig {
     skipStep
     metadata
     personId
-    groupId
+    externalId
     threshold
 
     constructor(options) {
@@ -41,8 +41,20 @@ export class VerificationConfig {
         this.skipStep = options?.skipStep ?? []
         this.metadata = options?.metadata
         this.personId = options?.personId
-        this.groupId = options?.groupId
+        this.externalId = options?.externalId
         this.threshold = options?.threshold
+    }
+
+    static withPersonId(personId, options) {
+        const result = new VerificationConfig(options)
+        result.personId = personId
+        return result
+    }
+
+    static withExternalId(externalId, options) {
+        const result = new VerificationConfig(options)
+        result.externalId = externalId
+        return result
     }
 
     static fromJson(jsonObject) {
@@ -66,7 +78,7 @@ export class VerificationConfig {
         result.skipStep = jsonObject["skipStep"]
         result.metadata = jsonObject["metadata"]
         result.personId = jsonObject["personId"]
-        result.groupId = jsonObject["groupId"]
+        result.externalId = jsonObject["externalId"]
         result.threshold = jsonObject["threshold"]
 
         return result
@@ -91,7 +103,7 @@ export class VerificationConfig {
             "skipStep": this.skipStep,
             "metadata": this.metadata,
             "personId": this.personId,
-            "groupId": this.groupId,
+            "externalId": this.externalId,
             "threshold": this.threshold,
         }
     }

@@ -98,15 +98,13 @@ export {
 
 import { LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep } from './liveness/liveness_config'
 import { EnrollmentConfig } from './liveness/enrollment_config'
-import { EnrollmentRequest } from './liveness/enrollment_request'
 import { VerificationConfig } from './liveness/verification_config'
 import { LivenessBackendException, LivenessBackendErrorCode } from './liveness/liveness_backend_exception'
 import { LivenessException, LivenessErrorCode } from './liveness/liveness_exception'
 import { LivenessResponse, LivenessStatus } from './liveness/liveness_response'
 import { LivenessNotification, LivenessProcessStatus, LivenessNotificationCompletion } from './liveness/liveness_notification'
-import { ErrorResponse } from './liveness/error_response'
 import { EnrollmentResponse } from './liveness/enrollment_response'
-import { VerifyMatchResponse } from './liveness/verify_match_response'
+import { VerificationMatchResponse } from './liveness/verification_match_response'
 import { VerificationResponse } from './liveness/verification_response'
 export {
     LivenessBackendException,
@@ -123,11 +121,9 @@ export {
     LivenessResponse,
     LivenessStatus,
     EnrollmentConfig,
-    EnrollmentRequest,
     VerificationConfig,
-    ErrorResponse,
     EnrollmentResponse,
-    VerifyMatchResponse,
+    VerificationMatchResponse,
     VerificationResponse,
 }
 
@@ -168,6 +164,7 @@ import { Person } from './person_database/person'
 import { SearchPersonDetection } from './person_database/search_person_detection'
 import { SearchPersonImage } from './person_database/search_person_image'
 import { SearchPersonRequest } from './person_database/search_person_request'
+import { SearchPersonFilter } from './person_database/search_person_filter'
 import { SearchPerson } from './person_database/search_person'
 export {
     EditGroupPersonsRequest,
@@ -180,6 +177,7 @@ export {
     SearchPersonDetection,
     SearchPersonImage,
     SearchPersonRequest,
+    SearchPersonFilter,
     SearchPerson,
 }
 
@@ -298,8 +296,6 @@ export class FaceSDK {
             cameraSwitchCallback?: CameraSwitchCallback,
         }
     ): Promise<[LivenessResponse, VerificationResponse | null]>
-
-    enrollWithTrustedPhoto(request: EnrollmentRequest): Promise<EnrollmentResponse>
 
     stopLiveness(): void
 

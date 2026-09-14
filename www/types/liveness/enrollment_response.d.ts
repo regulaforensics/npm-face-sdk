@@ -1,9 +1,10 @@
-import { ErrorResponse } from './error_response'
+import { Person } from '../person_database/person'
+import { SearchPerson } from '../person_database/search_person'
 
 export class EnrollmentResponse {
-    readonly personId?: string
-    readonly externalId?: string
-    readonly error?: ErrorResponse
+    readonly enrolled: boolean
+    readonly person: Person | null
+    readonly searchPersons: Array<SearchPerson> | null
 
     private constructor()
 }

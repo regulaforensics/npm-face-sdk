@@ -34,9 +34,15 @@ private var this: RNFaceSDK?
 
 func sendEvent(_ event: String, _ data: Any? = nil) {
     guard let plugin = this, hasListeners else { return }
-    DispatchQueue.main.async {
-        plugin.sendEvent(withName: event, body: data.toSendable())
-    }
+    runAsync { _ in plugin.sendEvent(withName: event, body: data.toSendable()) }
 }
 
-let rootViewController: () -> UIViewController? = { return RCTPresentedViewController() }
+func runAsync(_ action: @escaping (UIViewController) -> Void) {
+    DispatchQueue.main.async {
+        if let presenter = RCTPresentedViewController() {
+            action(presenter)
+            return
+        }
+        print("REGULA: Cannot present Face SDK UI: no presenter available.")
+    }
+}
