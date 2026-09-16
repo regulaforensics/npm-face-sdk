@@ -1,5 +1,6 @@
 import {
     exec,
+    serializeInterface,
     _setVideoEncoderCompletion,
     _setLivenessNotificationCompletion,
     _setCameraSwitchCallback,
@@ -259,7 +260,7 @@ export class FaceSDK {
     }
 
     async initialize(options) {
-        var response = await exec("initialize", [options?.config])
+        var response = await exec("initialize", [options?.config?.toJson()])
 
         var jsonObject = JSON.parse(response)
         var success = jsonObject["success"]
@@ -276,7 +277,7 @@ export class FaceSDK {
 
     async startFaceCapture(options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
-        var response = await exec("startFaceCapture", [options?.config])
+        var response = await exec("startFaceCapture", [options?.config?.toJson()])
         return FaceCaptureResponse.fromJson(JSON.parse(response))
     }
 
@@ -287,14 +288,14 @@ export class FaceSDK {
     async startLiveness(options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
         _setLivenessNotificationCompletion(options?.notificationCompletion)
-        var response = await exec("startLiveness", [options?.config])
+        var response = await exec("startLiveness", [options?.config?.toJson()])
         return LivenessResponse.fromJson(JSON.parse(response))
     }
 
     async startEnrollment(config, options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
         _setLivenessNotificationCompletion(options?.notificationCompletion)
-        var response = JSON.parse(await exec("startEnrollment", [config]))
+        var response = JSON.parse(await exec("startEnrollment", [serializeInterface(config, EnrollmentConfig)]))
         var lr = LivenessResponse.fromJson(response["livenessResponse"]);
         var er = EnrollmentResponse.fromJson(response["enrollmentResponse"]);
         return [lr, er];
@@ -303,7 +304,7 @@ export class FaceSDK {
     async startVerification(config, options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
         _setLivenessNotificationCompletion(options?.notificationCompletion)
-        var response = JSON.parse(await exec("startVerification", [config]))
+        var response = JSON.parse(await exec("startVerification", [config.toJson()]))
         var lr = LivenessResponse.fromJson(response["livenessResponse"]);
         var er = VerificationResponse.fromJson(response["verificationResponse"]);
         return [lr, er];
@@ -314,17 +315,17 @@ export class FaceSDK {
     }
 
     async matchFaces(request, options) {
-        var response = await exec("matchFaces", [request, options?.config])
+        var response = await exec("matchFaces", [request.toJson(), options?.config?.toJson()])
         return MatchFacesResponse.fromJson(JSON.parse(response))
     }
 
     async splitComparedFaces(facesPairs, similarityThreshold) {
-        var response = await exec("splitComparedFaces", [facesPairs, similarityThreshold])
+        var response = await exec("splitComparedFaces", [facesPairs.map(item => item.toJson()), similarityThreshold])
         return ComparedFacesSplit.fromJson(JSON.parse(response))
     }
 
     async detectFaces(request) {
-        var response = await exec("detectFaces", [request])
+        var response = await exec("detectFaces", [request.toJson()])
         return DetectFacesResponse.fromJson(JSON.parse(response))
     }
 
