@@ -2572,7 +2572,7 @@ class FaceSDK {
     }
 
     async initialize(options) {
-        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("initialize", [options?.config])
+        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("initialize", [options?.config?.toJson()])
 
         var jsonObject = JSON.parse(response)
         var success = jsonObject["success"]
@@ -2589,7 +2589,7 @@ class FaceSDK {
 
     async startFaceCapture(options) {
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
-        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startFaceCapture", [options?.config])
+        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startFaceCapture", [options?.config?.toJson()])
         return _face_capture_face_capture_response__WEBPACK_IMPORTED_MODULE_24__.FaceCaptureResponse.fromJson(JSON.parse(response))
     }
 
@@ -2600,14 +2600,14 @@ class FaceSDK {
     async startLiveness(options) {
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
-        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startLiveness", [options?.config])
+        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startLiveness", [options?.config?.toJson()])
         return _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessResponse.fromJson(JSON.parse(response))
     }
 
     async startEnrollment(config, options) {
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
-        var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startEnrollment", [config]))
+        var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startEnrollment", [(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.serializeInterface)(config, _liveness_enrollment_config__WEBPACK_IMPORTED_MODULE_36__.EnrollmentConfig)]))
         var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessResponse.fromJson(response["livenessResponse"]);
         var er = _liveness_enrollment_response__WEBPACK_IMPORTED_MODULE_42__.EnrollmentResponse.fromJson(response["enrollmentResponse"]);
         return [lr, er];
@@ -2616,7 +2616,7 @@ class FaceSDK {
     async startVerification(config, options) {
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setCameraSwitchCallback)(options?.cameraSwitchCallback)
         ;(0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__._setLivenessNotificationCompletion)(options?.notificationCompletion)
-        var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startVerification", [config]))
+        var response = JSON.parse(await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("startVerification", [config.toJson()]))
         var lr = _liveness_liveness_response__WEBPACK_IMPORTED_MODULE_40__.LivenessResponse.fromJson(response["livenessResponse"]);
         var er = _liveness_verification_response__WEBPACK_IMPORTED_MODULE_44__.VerificationResponse.fromJson(response["verificationResponse"]);
         return [lr, er];
@@ -2627,17 +2627,17 @@ class FaceSDK {
     }
 
     async matchFaces(request, options) {
-        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("matchFaces", [request, options?.config])
+        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("matchFaces", [request.toJson(), options?.config?.toJson()])
         return _match_faces_match_faces_response__WEBPACK_IMPORTED_MODULE_55__.MatchFacesResponse.fromJson(JSON.parse(response))
     }
 
     async splitComparedFaces(facesPairs, similarityThreshold) {
-        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("splitComparedFaces", [facesPairs, similarityThreshold])
+        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("splitComparedFaces", [facesPairs.map(item => item.toJson()), similarityThreshold])
         return _match_faces_compared_faces_split__WEBPACK_IMPORTED_MODULE_47__.ComparedFacesSplit.fromJson(JSON.parse(response))
     }
 
     async detectFaces(request) {
-        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("detectFaces", [request])
+        var response = await (0,_internal_bridge__WEBPACK_IMPORTED_MODULE_0__.exec)("detectFaces", [request.toJson()])
         return _detect_faces_detect_faces_response__WEBPACK_IMPORTED_MODULE_19__.DetectFacesResponse.fromJson(JSON.parse(response))
     }
 
@@ -2899,7 +2899,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   _setLivenessNotificationCompletion: () => (/* binding */ _setLivenessNotificationCompletion),
 /* harmony export */   _setVideoEncoderCompletion: () => (/* binding */ _setVideoEncoderCompletion),
 /* harmony export */   dateToString: () => (/* binding */ dateToString),
-/* harmony export */   exec: () => (/* binding */ exec)
+/* harmony export */   exec: () => (/* binding */ exec),
+/* harmony export */   serializeInterface: () => (/* binding */ serializeInterface)
 /* harmony export */ });
 /* harmony import */ var _liveness_liveness_notification__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../liveness/liveness_notification */ "./src/liveness/liveness_notification.js");
 /* harmony import */ var _cordova__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cordova */ "./src/internal/cordova.js");
@@ -2911,6 +2912,13 @@ var eventManager = new _cordova__WEBPACK_IMPORTED_MODULE_1__.NativeEventEmitter(
 
 async function exec(name, options) {
     return RNFaceSDK.exec(name, options)
+}
+
+function serializeInterface(value, ctor) {
+    if (value === undefined) return undefined
+    if (value === null) return null
+    if (value instanceof ctor) return value.toJson()
+    return (new ctor(value)).toJson()
 }
 
 function _setEvent(id, completion, fromJson) {
