@@ -65,8 +65,9 @@ class RNFaceSDKModule(reactContext: ReactApplicationContext) : ReactContextBaseJ
         args = JSONArray(arguments.toArrayList())
         try {
             methodCall(method) { data -> promise.resolve(data.toSendable()) }
-        } catch (error: Exception) {
-            Log.e("REGULA", "Caught exception in \"$method\" function:", error)
+        } catch (error: Throwable) {
+            Log.e("REGULA", "Caught an exception in \"$method\" function:", error)
+            promise.reject(Throwable("Unexpected error, check logs for details"))
         }
     }
 

@@ -774,7 +774,7 @@ public extension URL {
 public extension PersonDatabase.Person {
     static func decode(_ it: Any?) -> PersonDatabase.Person? {
         guard let it = it as? [String: Any] else { return nil }
-        let result = PersonDatabase.Person.emptyInit() as PersonDatabase.Person
+        let result = PersonDatabase.Person()
         result.setValue(Date.decode(it["updatedAt"]), forKey: "updatedAt")
         result.setValue(Date.decode(it["createdAt"]), forKey: "createdAt")
         result.setValue(it["name"] as Any?, forKey: "name")
@@ -787,7 +787,6 @@ public extension PersonDatabase.Person {
         return result
     }
     func encode() -> [String: Any?]? {
-        if (self.itemId == nil) { return nil }
         return [
             "updatedAt": self.updatedAt.encode(),
             "createdAt": self.createdAt.encode(),
