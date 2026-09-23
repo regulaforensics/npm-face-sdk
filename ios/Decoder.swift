@@ -788,8 +788,8 @@ public extension PersonDatabase.Person {
     }
     func encode() -> [String: Any?]? {
         return [
-            "updatedAt": self.updatedAt.encode(),
-            "createdAt": self.createdAt.encode(),
+            "updatedAt": self.updatedAt?.encode(),
+            "createdAt": self.createdAt?.encode(),
             "name": self.name,
             "groups": self.groups,
             "id": self.itemId,
@@ -821,7 +821,7 @@ public extension PersonDatabase.PersonImage {
     func encode() -> [String: Any?] {
         return [
             "url": self.url.encode(),
-            "createdAt": self.createdAt.encode(),
+            "createdAt": self.createdAt?.encode(),
             "path": self.path,
             "contentType": self.contentType,
             "id": self.itemId,
@@ -856,7 +856,7 @@ public extension PersonDatabase.PersonGroup {
     }
     func encode() -> [String: Any?] {
         return [
-            "createdAt": self.createdAt.encode(),
+            "createdAt": self.createdAt?.encode(),
             "name": self.name,
             "id": self.itemId,
             "metadata": self.metadata,
@@ -952,7 +952,7 @@ public extension PersonDatabase.SearchPersonImage {
     func encode2() -> [String: Any?] {
         return [
             "url": self.url.encode(),
-            "createdAt": self.createdAt.encode(),
+            "createdAt": self.createdAt?.encode(),
             "similarity": self.similarity,
             "distance": self.distance,
             "path": self.path,
@@ -984,8 +984,8 @@ public extension PersonDatabase.SearchPerson {
         return [
             "detection": self.detection.encode(),
             "images": self.images.compactMap({ $0.encode2() }),
-            "createdAt": self.createdAt.encode(),
-            "updatedAt": self.updatedAt.encode(),
+            "createdAt": self.createdAt?.encode(),
+            "updatedAt": self.updatedAt?.encode(),
             "name": self.name,
             "groups": self.groups,
             "id": self.itemId,
