@@ -3,10 +3,12 @@ set -e
 
 if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
     open ios/Face.xcworkspace
-    # Check Metro for this product on port 8082.
-    if [[ "$(curl --silent --max-time 2 http://localhost:8082/status)" != "packager-status:running" ]]; then
+    # Check if Metro is running at app's port.
+    if [[ "$(curl --silent --max-time 2 http://localhost:${npm_package_config_metroPort}/status)" != "packager-status:running" ]]; then
         npm start
+    else
+        echo "Metro is already running on port ${npm_package_config_metroPort}."
     fi
 else
-    npx expo run:ios --device --port 8082
+    npx expo run:ios --device --port ${npm_package_config_metroPort}
 fi

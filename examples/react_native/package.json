@@ -5,10 +5,10 @@
     "setup": "scripts/setup.sh",
     "ios": "scripts/ios.sh",
     "android": "scripts/android.sh",
-    "start": "expo start --port 8082"
+    "start": "expo start --port \"$npm_package_config_metroPort\""
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.4.1402-beta",
+    "@regulaforensics/face-sdk": "8.4.1403-beta",
     "@regulaforensics/face-core-basic": "8.4.854-beta",
     "react-native": "0.88.0-rc.0",
     "react-native-fs": "^2.20.0",
@@ -28,5 +28,8 @@
     "expo-custom-assets": {
       "expo": "$expo"
     }
+  },
+  "config": {
+    "metroPort": 8082
   }
 }

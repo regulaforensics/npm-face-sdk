@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
-adb reverse tcp:8082 tcp:8082 >/dev/null || :
+adb reverse tcp:${npm_package_config_metroPort} tcp:${npm_package_config_metroPort} >/dev/null || :
 if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
     open -a 'Android Studio' android
-    # Check Metro for this product on port 8082.
-    if [[ "$(curl --silent --max-time 2 http://localhost:8082/status)" != "packager-status:running" ]]; then
+    # Check if Metro is running at app's port.
+    if [[ "$(curl --silent --max-time 2 http://localhost:${npm_package_config_metroPort}/status)" != "packager-status:running" ]]; then
         npm start
+    else
+        echo "Metro is already running on port ${npm_package_config_metroPort}."
     fi
 else
-    expo run:android --device --port 8082
+    expo run:android --device --port ${npm_package_config_metroPort}
 fi
