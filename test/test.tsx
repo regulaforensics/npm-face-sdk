@@ -108,7 +108,6 @@ import {
     size,
     enrollmentConfig,
     verificationConfig,
-    verificationConfig2,
     enrollmentResponse,
     verificationMatchResponse,
     verificationResponse,
@@ -148,7 +147,6 @@ compare('faceCaptureResponse', faceCaptureResponse, FaceCaptureResponse.fromJson
 compare('livenessConfig', livenessConfig, LivenessConfig.fromJson);
 compare('enrollmentConfig', enrollmentConfig, EnrollmentConfig.fromJson);
 compare('verificationConfig', verificationConfig, VerificationConfig.fromJson);
-compare('verificationConfig2', verificationConfig2, VerificationConfig.fromJson);
 compare('livenessBackendException', livenessBackendException, LivenessBackendException.fromJson);
 compare('livenessException', livenessException, LivenessException.fromJson);
 compare('livenessResponse', livenessResponse, LivenessResponse.fromJson);
