@@ -34,10 +34,10 @@ private var this: RNFaceSDK?
 
 func sendEvent(_ event: String, _ data: Any? = nil) {
     guard let plugin = this, hasListeners else { return }
-    runAsync { _ in plugin.sendEvent(withName: event, body: data.toSendable()) }
+    DispatchQueue.main.async { plugin.sendEvent(withName: event, body: data.toSendable()) }
 }
 
-func runAsync(_ action: @escaping (UIViewController) -> Void) {
+func withPresenter(_ action: @escaping (UIViewController) -> Void) {
     DispatchQueue.main.async {
         if let presenter = RCTPresentedViewController() {
             action(presenter)

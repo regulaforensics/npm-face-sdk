@@ -1,3 +1,8 @@
+#if canImport(Cordova)
+import Cordova
+#endif
+import UIKit
+
 @objc(CDVFaceSDK)
 class CDVFaceSDK: CDVPlugin {
     @objc(exec:)
@@ -33,7 +38,7 @@ func sendEvent(_ event: String, _ data: Any? = "") {
     this!.commandDelegate.send(result!, callbackId: callbackId)
 }
 
-func runAsync(_ action: @escaping (UIViewController) -> Void) {
+func withPresenter(_ action: @escaping (UIViewController) -> Void) {
     DispatchQueue.main.async {
         let windows = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.filter { $0.activationState == .foregroundActive || $0.activationState == .foregroundInactive }.flatMap { $0.windows }
         let candidates = windows.filter { $0.isKeyWindow } + windows.filter { !$0.isKeyWindow && !$0.isHidden && $0.alpha > 0 && $0.windowLevel == .normal }

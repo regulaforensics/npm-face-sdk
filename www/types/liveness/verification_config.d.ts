@@ -89,9 +89,7 @@ export class VerificationConfig {
 
     threshold?: number
 
-    private constructor();
-
-    static withPersonId(
+    constructor(
         personId: string,
         options?: {
             copyright?: boolean
@@ -112,28 +110,5 @@ export class VerificationConfig {
             metadata?: Record<string, any>
             threshold?: number
         }
-    ): VerificationConfig;
-
-    static withExternalId(
-        externalId: string,
-        options?: {
-            copyright?: boolean
-            cameraSwitchEnabled?: boolean
-            closeButtonEnabled?: boolean
-            torchButtonEnabled?: boolean
-            vibrateOnSteps?: boolean
-            cameraPositionAndroid?: number
-            cameraPositionIOS?: CameraPosition
-            screenOrientation?: Array<ScreenOrientation>
-            locationTrackingEnabled?: boolean
-            preventScreenRecording?: boolean
-            attemptsCount?: number
-            recordingProcess?: RecordingProcess
-            livenessType?: LivenessType
-            tag?: string
-            skipStep?: Array<LivenessSkipStep>
-            metadata?: Record<string, any>
-            threshold?: number
-        }
-    ): VerificationConfig;
+    )
 }
