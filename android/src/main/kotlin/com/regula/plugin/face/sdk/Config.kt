@@ -1,6 +1,6 @@
 @file:Suppress("EnumValuesSoftDeprecate")
 
-package com.regula.plugin.facesdk
+package com.regula.plugin.face.sdk
 
 import com.regula.facesdk.configuration.Customization
 import com.regula.facesdk.configuration.EnrollmentConfiguration
