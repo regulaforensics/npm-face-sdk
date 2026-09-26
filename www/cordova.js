@@ -2985,11 +2985,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   NativeEventEmitter: () => (/* binding */ NativeEventEmitter),
 /* harmony export */   NativeModules: () => (/* binding */ NativeModules)
 /* harmony export */ });
-var _exec = (completion, options) => cordova.exec(completion, null, "FaceSDK", "exec", options)
+var _exec = (completion, params, errorCallback = null) => cordova.exec(completion, errorCallback, "FaceSDK", "exec", params)
 
 const NativeModules = {
     RNFaceSDK: {
-        exec: async (name, options) => new Promise((resolve, _) => _exec(data => resolve(data), [name, ...options]))
+        exec: async (name, params) => new Promise((resolve, reject) => _exec(resolve, [name, ...params], error => reject(new Error(error))))
     }
 }
 
@@ -3566,10 +3566,10 @@ class VerificationConfig {
     skipStep
     metadata
     personId
-    externalId
     threshold
 
-    constructor(options) {
+    constructor(personId, options) {
+        this.personId = personId
         this.copyright = options?.copyright ?? true
         this.cameraSwitchEnabled = options?.cameraSwitchEnabled ?? false
         this.closeButtonEnabled = options?.closeButtonEnabled ?? true
@@ -3586,21 +3586,7 @@ class VerificationConfig {
         this.tag = options?.tag
         this.skipStep = options?.skipStep ?? []
         this.metadata = options?.metadata
-        this.personId = options?.personId
-        this.externalId = options?.externalId
         this.threshold = options?.threshold
-    }
-
-    static withPersonId(personId, options) {
-        const result = new VerificationConfig(options)
-        result.personId = personId
-        return result
-    }
-
-    static withExternalId(externalId, options) {
-        const result = new VerificationConfig(options)
-        result.externalId = externalId
-        return result
     }
 
     static fromJson(jsonObject) {
@@ -3624,7 +3610,6 @@ class VerificationConfig {
         result.skipStep = jsonObject["skipStep"]
         result.metadata = jsonObject["metadata"]
         result.personId = jsonObject["personId"]
-        result.externalId = jsonObject["externalId"]
         result.threshold = jsonObject["threshold"]
 
         return result
@@ -3649,7 +3634,6 @@ class VerificationConfig {
             "skipStep": this.skipStep,
             "metadata": this.metadata,
             "personId": this.personId,
-            "externalId": this.externalId,
             "threshold": this.threshold,
         }
     }

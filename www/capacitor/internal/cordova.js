@@ -1,8 +1,8 @@
-var _exec = (completion, options) => cordova.exec(completion, null, "FaceSDK", "exec", options)
+var _exec = (completion, params, errorCallback = null) => cordova.exec(completion, errorCallback, "FaceSDK", "exec", params)
 
 export const NativeModules = {
     RNFaceSDK: {
-        exec: async (name, options) => new Promise((resolve, _) => _exec(data => resolve(data), [name, ...options]))
+        exec: async (name, params) => new Promise((resolve, reject) => _exec(resolve, [name, ...params], error => reject(new Error(error))))
     }
 }
 

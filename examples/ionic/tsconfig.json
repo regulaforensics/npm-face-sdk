@@ -9,6 +9,5 @@
     "experimentalDecorators": true,
     "target": "es2022",
     "jsx": "react-jsx",
-    "skipLibCheck": true, // Temp fix for https://github.com/ionic-team/ionic-framework/issues/30650
   }
 }

@@ -1,6 +1,9 @@
 # Regula Face SDK plugin
+
 Face SDK is a framework that is used for face matching, recognition and liveness detection.
 This plugin makes possible to use it with react-native, cordova and capacitor applications.
+
+Requires iOS 15+ & Android 7.0+ (API 24)
 
 ## Demo applications
 In the [examples](examples/) folder you can find 3 demo applications:
