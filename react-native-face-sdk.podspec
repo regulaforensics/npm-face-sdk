@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'react-native-face-sdk'
-  s.version      = '8.4.1405-rc'
+  s.version      = '8.3.1407-rc'
   s.summary      = 'Regula React Native plugin.'
   s.license      = 'commercial'
   s.authors      = { 'RegulaForensics' => 'support@regulaforensics.com' }
