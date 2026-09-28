@@ -8,7 +8,7 @@ export class SearchPersonFilter {
 
     constructor(options) {
         this.groups = options?.groups ?? []
-        this.threshold = options?.threshold ?? 0
+        this.threshold = options?.threshold
         this.limit = options?.limit ?? 1
     }
 

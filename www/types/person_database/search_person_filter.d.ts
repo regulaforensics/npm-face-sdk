@@ -1,6 +1,6 @@
 export class SearchPersonFilter {
     groups: string[]
-    threshold: number
+    threshold: number | null
     limit: number
     get fieldName(): string | null
     get fieldValues(): string[] | null
@@ -8,8 +8,8 @@ export class SearchPersonFilter {
 
     constructor(options?: {
         groups?: string[]
-        threshold?: number
         limit?: number
+        threshold?: number
     })
 
     filterField(fieldName: string, fieldValues: string[], options?: { exclude?: boolean }): void
