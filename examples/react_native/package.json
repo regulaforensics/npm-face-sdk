@@ -8,7 +8,7 @@
     "start": "expo start --port \"$npm_package_config_metroPort\""
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.3.1421-nightly",
+    "@regulaforensics/face-sdk": "8.4.1422-nightly",
     "@regulaforensics/face-core-basic": "8.4.864-nightly",
     "react-native": "0.88.0-rc.0",
     "react-native-fs": "^2.20.0",
