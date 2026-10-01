@@ -990,9 +990,8 @@ fun generateSearchPersonDetection(input: Detection?) = input?.let {
         "landmarks" to it.landmarks.toJson(::generatePoint),
         "rect" to generateRect(it.rect),
         "crop" to it.cropImage,
-        // In 6.1 getting NaN from getRotationAngle() on valid request
-        // Putting NaN in JSONObject throws an error
-        "rotationAngle" to if (!it.rotationAngle.isNaN()) it.rotationAngle else null,
+        // Missing scores/angles in duplicate results can be NaN; JSON requires finite numbers.
+        "rotationAngle" to (it.rotationAngle.takeIf { value -> value.isFinite() } ?: -1.0),
     ).toJson()
 }
 
@@ -1005,8 +1004,8 @@ fun searchPersonImageFromJSON(input: JSONObject): SearchPersonImage = input.let 
 }
 
 fun generateSearchPersonImage(it: SearchPersonImage) = mapOf(
-    "similarity" to it.similarity,
-    "distance" to it.distance,
+    "similarity" to (it.similarity.takeIf { value -> value.isFinite() } ?: -1.0),
+    "distance" to (it.distance.takeIf { value -> value.isFinite() } ?: -1.0),
     "path" to it.path,
     "url" to it.url,
     "contentType" to it.contentType,
