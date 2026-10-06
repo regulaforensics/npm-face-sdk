@@ -40,7 +40,6 @@ export class VerificationConfig {
         this.tag = options?.tag
         this.skipStep = options?.skipStep ?? []
         this.metadata = options?.metadata
-        this.personId = options?.personId
         this.threshold = options?.threshold
     }
 
