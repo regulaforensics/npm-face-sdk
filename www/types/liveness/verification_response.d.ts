@@ -1,10 +1,10 @@
-import { VerifyMatchResponse } from './verify_match_response'
-import { ErrorResponse } from './error_response'
+import { VerificationMatchResponse } from './verification_match_response'
+import { Person } from '../person_database/person'
 
 export class VerificationResponse {
-    readonly passed: boolean
-    readonly match?: VerifyMatchResponse
-    readonly error?: ErrorResponse
+    readonly verified: boolean
+    readonly person?: Person
+    readonly match?: VerificationMatchResponse
 
     private constructor()
 }

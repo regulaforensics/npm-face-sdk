@@ -1,7 +1,0 @@
-{
-  "name": "FaceSDK",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react-vite"
-}

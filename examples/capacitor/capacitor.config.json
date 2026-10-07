@@ -1,0 +1,15 @@
+{
+  "appId": "com.regula.example.face.capacitor",
+  "appName": "Face",
+  "webDir": "www",
+  "cordova": {
+    "preferences": {
+      "GradlePluginKotlinVersion": "2.4.20"
+    }
+  },
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "disable"
+    }
+  }
+}

@@ -2,9 +2,5 @@
 set -e
 
 npm install
-ionic cap sync ios || {
-    cd ios/App
-    pod update
-}
-
-exit 0
+vite build
+npx cap sync

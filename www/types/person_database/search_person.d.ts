@@ -27,5 +27,11 @@ export class SearchPerson {
     
     get createdAt(): Date
 
+    externalId?: string | null
+
+    expireAt?: Date | null
+
+    ttl?: number | null
+
     private constructor()
 }

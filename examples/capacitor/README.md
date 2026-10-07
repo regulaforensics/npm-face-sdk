@@ -1,5 +1,7 @@
 # Regula Face SDK Capacitor demo application
 
+Requires Node.js 22+, Xcode 26+, Android Studio with JDK 21+ and Android SDK 37.
+
 ## How to build demo application
 1. Download or the clone current repository using the command `git clone https://github.com/regulaforensics/npm-face-sdk.git`.
 

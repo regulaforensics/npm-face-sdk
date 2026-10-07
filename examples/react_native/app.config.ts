@@ -16,7 +16,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     package: 'com.regula.example.face.react',
-    edgeToEdgeEnabled: true
   },
   plugins: [
     '@regulaforensics/face-sdk',

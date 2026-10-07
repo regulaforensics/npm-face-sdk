@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
-    ionic cap run ios --open
-else
-    ionic cap run ios
-fi
-
-exit 0
+vite build
+npx cap sync ios
+[[ " $* " == *" --open "* || " $* " == *" -o "* ]] &&
+    npx cap open ios ||
+    npx cap run ios --no-sync

@@ -6,7 +6,7 @@ var image1: MatchFacesImage | null
 var image2: MatchFacesImage | null
 
 async function init() {
-  if (!await initializeReader()) return
+  if (!await initialize()) return
   setStatus("Ready")
 }
 
@@ -73,7 +73,7 @@ function setImage(base64: string, type: number, position: number) {
 
 // If 'regula.license' exists, init using license(enables offline match)
 // otherwise init without license.
-async function initializeReader() {
+async function initialize() {
   setStatus("Initializing...")
 
   var license = await loadAssetIfExists("regula.license")

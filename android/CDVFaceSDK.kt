@@ -1,4 +1,4 @@
-package com.regula.plugin.facesdk
+package com.regula.plugin.face.sdk
 
 import android.app.Activity
 import android.content.Context
@@ -21,9 +21,10 @@ fun sendEvent(callbackId: String, data: Any? = "") {
     val pluginResult = when (data) {
         is Int -> PluginResult(PluginResult.Status.OK, data)
         is Boolean -> PluginResult(PluginResult.Status.OK, data)
+        is Throwable -> PluginResult(PluginResult.Status.ERROR, data.message)
         else -> PluginResult(PluginResult.Status.OK, data.toSendable() as String?)
     }
-    pluginResult.keepCallback = true
+    pluginResult.keepCallback = data !is Throwable
     binding.webView.sendPluginResult(pluginResult, eventCallbackIds[callbackId] ?: callbackId)
 }
 
@@ -43,8 +44,9 @@ class CDVFaceSDK : CordovaPlugin() {
         if (method == "setEvent") eventCallbackIds[args(0)] = callbackContext.callbackId
         try {
             methodCall(method) { data: Any? -> sendEvent(callbackContext.callbackId, data) }
-        } catch (error: Exception) {
-            Log.e("REGULA", "Caught exception in \"$method\" function:", error)
+        } catch (error: Throwable) {
+            Log.e("REGULA", "Caught an exception in \"$method\" function:", error)
+            sendEvent(callbackContext.callbackId, Throwable("Unexpected error, check logs for details"))
         }
         return true
     }

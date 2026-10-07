@@ -1,5 +1,6 @@
 import {
     exec,
+    serializeInterface,
     _setVideoEncoderCompletion,
     _setLivenessNotificationCompletion,
     _setCameraSwitchCallback,
@@ -104,15 +105,13 @@ export {
 
 import { LivenessConfig, RecordingProcess, LivenessType, LivenessSkipStep } from './liveness/liveness_config'
 import { EnrollmentConfig } from './liveness/enrollment_config'
-import { EnrollmentRequest } from './liveness/enrollment_request'
 import { VerificationConfig } from './liveness/verification_config'
 import { LivenessBackendException, LivenessBackendErrorCode } from './liveness/liveness_backend_exception'
 import { LivenessException, LivenessErrorCode } from './liveness/liveness_exception'
 import { LivenessResponse, LivenessStatus } from './liveness/liveness_response'
 import { LivenessNotification, LivenessProcessStatus } from './liveness/liveness_notification'
-import { ErrorResponse } from './liveness/error_response'
 import { EnrollmentResponse } from './liveness/enrollment_response'
-import { VerifyMatchResponse } from './liveness/verify_match_response'
+import { VerificationMatchResponse } from './liveness/verification_match_response'
 import { VerificationResponse } from './liveness/verification_response'
 export {
     LivenessBackendException,
@@ -128,11 +127,9 @@ export {
     LivenessResponse,
     LivenessStatus,
     EnrollmentConfig,
-    EnrollmentRequest,
     VerificationConfig,
-    ErrorResponse,
     EnrollmentResponse,
-    VerifyMatchResponse,
+    VerificationMatchResponse,
     VerificationResponse,
 }
 
@@ -173,6 +170,7 @@ import { Person } from './person_database/person'
 import { SearchPersonDetection } from './person_database/search_person_detection'
 import { SearchPersonImage } from './person_database/search_person_image'
 import { SearchPersonRequest } from './person_database/search_person_request'
+import { SearchPersonFilter } from './person_database/search_person_filter'
 import { SearchPerson } from './person_database/search_person'
 export {
     EditGroupPersonsRequest,
@@ -185,6 +183,7 @@ export {
     SearchPersonDetection,
     SearchPersonImage,
     SearchPersonRequest,
+    SearchPersonFilter,
     SearchPerson,
 }
 
@@ -261,7 +260,7 @@ export class FaceSDK {
     }
 
     async initialize(options) {
-        var response = await exec("initialize", [options?.config])
+        var response = await exec("initialize", [options?.config?.toJson()])
 
         var jsonObject = JSON.parse(response)
         var success = jsonObject["success"]
@@ -278,7 +277,7 @@ export class FaceSDK {
 
     async startFaceCapture(options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
-        var response = await exec("startFaceCapture", [options?.config])
+        var response = await exec("startFaceCapture", [options?.config?.toJson()])
         return FaceCaptureResponse.fromJson(JSON.parse(response))
     }
 
@@ -289,14 +288,14 @@ export class FaceSDK {
     async startLiveness(options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
         _setLivenessNotificationCompletion(options?.notificationCompletion)
-        var response = await exec("startLiveness", [options?.config])
+        var response = await exec("startLiveness", [options?.config?.toJson()])
         return LivenessResponse.fromJson(JSON.parse(response))
     }
 
     async startEnrollment(config, options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
         _setLivenessNotificationCompletion(options?.notificationCompletion)
-        var response = JSON.parse(await exec("startEnrollment", [config]))
+        var response = JSON.parse(await exec("startEnrollment", [serializeInterface(config, EnrollmentConfig)]))
         var lr = LivenessResponse.fromJson(response["livenessResponse"]);
         var er = EnrollmentResponse.fromJson(response["enrollmentResponse"]);
         return [lr, er];
@@ -305,15 +304,10 @@ export class FaceSDK {
     async startVerification(config, options) {
         _setCameraSwitchCallback(options?.cameraSwitchCallback)
         _setLivenessNotificationCompletion(options?.notificationCompletion)
-        var response = JSON.parse(await exec("startVerification", [config]))
+        var response = JSON.parse(await exec("startVerification", [config.toJson()]))
         var lr = LivenessResponse.fromJson(response["livenessResponse"]);
         var er = VerificationResponse.fromJson(response["verificationResponse"]);
         return [lr, er];
-    }
-
-    async enrollWithTrustedPhoto(request) {
-        var response = await exec("enrollWithTrustedPhoto", [request])
-        return EnrollmentResponse.fromJson(JSON.parse(response));
     }
 
     stopLiveness() {
@@ -321,17 +315,17 @@ export class FaceSDK {
     }
 
     async matchFaces(request, options) {
-        var response = await exec("matchFaces", [request, options?.config])
+        var response = await exec("matchFaces", [request.toJson(), options?.config?.toJson()])
         return MatchFacesResponse.fromJson(JSON.parse(response))
     }
 
     async splitComparedFaces(facesPairs, similarityThreshold) {
-        var response = await exec("splitComparedFaces", [facesPairs, similarityThreshold])
+        var response = await exec("splitComparedFaces", [facesPairs.map(item => item.toJson()), similarityThreshold])
         return ComparedFacesSplit.fromJson(JSON.parse(response))
     }
 
     async detectFaces(request) {
-        var response = await exec("detectFaces", [request])
+        var response = await exec("detectFaces", [request.toJson()])
         return DetectFacesResponse.fromJson(JSON.parse(response))
     }
 

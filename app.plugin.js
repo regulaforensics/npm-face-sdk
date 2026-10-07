@@ -1,12 +1,15 @@
-const { createRequire } = require('module'); // passing vulnerability checks
-const { withPodfile } = createRequire(process.cwd() + '/package.json')('@expo/config-plugins');
-
-const SOURCES = [
-  'https://github.com/CocoaPods/Specs.git',
-  'https://github.com/regulaforensics/podspecs.git',
-];
-
 module.exports = function withRegulaPodSources(config) {
+  const { createRequire } = require('module');
+  const { join } = require('path');
+  const projectRoot = config._internal?.projectRoot ?? process.cwd();
+  const appRequire = createRequire(join(projectRoot, 'package.json'));
+  const { withPodfile } = appRequire('expo/config-plugins');
+
+  const SOURCES = [
+    'https://github.com/CocoaPods/Specs.git',
+    'https://github.com/regulaforensics/podspecs.git',
+  ];
+
   return withPodfile(config, (config) => {
     let podfile = config.modResults.contents;
 

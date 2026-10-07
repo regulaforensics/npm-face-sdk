@@ -7,5 +7,3 @@ if [[ " $* " == *" --open "* ]] || [[ " $* " == *" -o "* ]]; then
 else
     ionic cordova run android
 fi
-
-exit 0

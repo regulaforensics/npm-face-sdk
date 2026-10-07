@@ -20,10 +20,10 @@ export class VerificationConfig {
     skipStep
     metadata
     personId
-    groupId
     threshold
 
-    constructor(options) {
+    constructor(personId, options) {
+        this.personId = personId
         this.copyright = options?.copyright ?? true
         this.cameraSwitchEnabled = options?.cameraSwitchEnabled ?? false
         this.closeButtonEnabled = options?.closeButtonEnabled ?? true
@@ -40,8 +40,6 @@ export class VerificationConfig {
         this.tag = options?.tag
         this.skipStep = options?.skipStep ?? []
         this.metadata = options?.metadata
-        this.personId = options?.personId
-        this.groupId = options?.groupId
         this.threshold = options?.threshold
     }
 
@@ -66,7 +64,6 @@ export class VerificationConfig {
         result.skipStep = jsonObject["skipStep"]
         result.metadata = jsonObject["metadata"]
         result.personId = jsonObject["personId"]
-        result.groupId = jsonObject["groupId"]
         result.threshold = jsonObject["threshold"]
 
         return result
@@ -91,7 +88,6 @@ export class VerificationConfig {
             "skipStep": this.skipStep,
             "metadata": this.metadata,
             "personId": this.personId,
-            "groupId": this.groupId,
             "threshold": this.threshold,
         }
     }

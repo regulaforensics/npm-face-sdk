@@ -8,6 +8,13 @@ export async function exec(name, options) {
     return RNFaceSDK.exec(name, options)
 }
 
+export function serializeInterface(value, ctor) {
+    if (value === undefined) return undefined
+    if (value === null) return null
+    if (value instanceof ctor) return value.toJson()
+    return (new ctor(value)).toJson()
+}
+
 function _setEvent(id, completion, fromJson) {
     eventManager.removeAllListeners(id)
     // if no fromJson provided, just call completion

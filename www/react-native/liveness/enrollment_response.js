@@ -1,26 +1,30 @@
-import { ErrorResponse } from './error_response'
+import { Person } from '../person_database/person'
+import { SearchPerson } from '../person_database/search_person'
 
 export class EnrollmentResponse {
-    personId
-    externalId
-    error
+    enrolled
+    person
+    searchPersons
 
     static fromJson(jsonObject) {
         if (jsonObject == null) return null
         const result = new EnrollmentResponse()
 
-        result.personId = jsonObject["personId"]
-        result.externalId = jsonObject["externalId"]
-        result.error = ErrorResponse.fromJson(jsonObject["error"])
+        result.enrolled = jsonObject["enrolled"]
+        result.person = Person.fromJson(jsonObject["person"])
+        result.searchPersons = []
+        if (jsonObject["searchPersons"] != null)
+            for (const item of jsonObject["searchPersons"])
+                result.searchPersons.push(SearchPerson.fromJson(item))
 
         return result
     }
 
     toJson() {
         return {
-            "personId": this.personId,
-            "externalId": this.externalId,
-            "error": this.error?.toJson(),
+            "enrolled": this.enrolled,
+            "person": this.person?.toJson(),
+            "searchPersons": this.searchPersons?.map(e => e.toJson()),
         }
     }
 }
