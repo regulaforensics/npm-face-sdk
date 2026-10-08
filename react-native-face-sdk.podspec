@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'react-native-face-sdk'
-  s.version      = '8.4.1442'
+  s.version      = '8.4.1444'
   s.summary      = 'Regula React Native plugin.'
   s.license      = 'commercial'
   s.authors      = { 'RegulaForensics' => 'support@regulaforensics.com' }
@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '15.0'
   s.source_files = [ 'ios/*.swift', 'ios/RN*.m' ]
   s.exclude_files = [ 'ios/CDVFaceSDK.swift' ]
-  s.dependency 'FaceSDK', '8.4.5057'
+  s.dependency 'FaceSDK', '8.4.5062'
   s.dependency 'React'
 end
