@@ -2285,6 +2285,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   FaceSDK: () => (/* binding */ FaceSDK),
 /* harmony export */   FaceSDKVersion: () => (/* reexport safe */ _init_face_sdk_version__WEBPACK_IMPORTED_MODULE_8__.FaceSDKVersion),
 /* harmony export */   Font: () => (/* reexport safe */ _customization_font__WEBPACK_IMPORTED_MODULE_6__.Font),
+/* harmony export */   FontStyle: () => (/* reexport safe */ _customization_font__WEBPACK_IMPORTED_MODULE_6__.FontStyle),
 /* harmony export */   ImageQualityCharacteristic: () => (/* reexport safe */ _image_quality_image_quality_characteristic__WEBPACK_IMPORTED_MODULE_31__.ImageQualityCharacteristic),
 /* harmony export */   ImageQualityCharacteristicName: () => (/* reexport safe */ _image_quality_image_quality_characteristic_name__WEBPACK_IMPORTED_MODULE_30__.ImageQualityCharacteristicName),
 /* harmony export */   ImageQualityGroup: () => (/* reexport safe */ _image_quality_image_quality_group__WEBPACK_IMPORTED_MODULE_32__.ImageQualityGroup),
