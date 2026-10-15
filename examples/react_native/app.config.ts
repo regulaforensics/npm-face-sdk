@@ -19,9 +19,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   plugins: [
     '@regulaforensics/face-sdk',
+    './scripts/withoutMetroServer',
     ['expo-custom-assets', { assetsPaths: ['./assets'] }],
     ['expo-build-properties', {
+      ios: { networkInspector: false },
       android: {
+        networkInspector: false,
         extraMavenRepos: [
           { url: 'https://maven.regulaforensics.com/RegulaDocumentReader' },
           { url: 'https://maven.regulaforensics.com/RegulaDocumentReader/Beta' },

@@ -4,35 +4,26 @@
   "scripts": {
     "setup": "scripts/setup.sh",
     "ios": "scripts/ios.sh",
-    "android": "scripts/android.sh",
-    "start": "expo start --port \"$npm_package_config_metroPort\""
+    "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.5.1472-nightly",
+    "@regulaforensics/face-sdk": "8.4.1482-nightly",
     "@regulaforensics/face-core-basic": "8.5.902-nightly",
-    "react-native": "0.88.0-rc.0",
+    "react-native": "0.88.0",
     "react-native-fs": "^2.20.0",
-    "react-native-image-picker": "^8.2.1",
+    "react-native-image-picker": "^8.3.0",
     "react-native-webview": "^14.0.1",
-    "react": "19.2.3",
-    "@types/react": "19.2.18",
-    "expo": "58.0.0-preview.3",
-    "expo-dev-client": "58.0.3",
+    "react": "19.3.1",
+    "@types/react": "19.3.0",
+    "expo": "~58.0.10",
     "expo-custom-assets": "^1.5.0",
-    "expo-build-properties": "58.0.3",
+    "expo-build-properties": "~58.0.10",
     "typescript": "^7.0.2",
-    "@expo/config-plugins": "58.0.0"
+    "@expo/config-plugins": "~58.0.9"
   },
   "overrides": {
-    "uuid": "^14.0.0",
-    "expo-custom-assets": {
-      "expo": "$expo"
-    },
-    "source-map-js": "^1.2.2",
-    "shell-quote": "^1.11.0",
-    "@expo/metro-file-map": "^58.0.4"
-  },
-  "config": {
-    "metroPort": 8082
+    "xcode": {
+      "uuid": "^11.1.1"
+    }
   }
 }
