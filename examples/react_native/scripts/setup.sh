@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Kill Metro instance at app's port.
-lsof -tiTCP:${npm_package_config_metroPort} -sTCP:LISTEN | xargs kill 2>/dev/null || true
-
 npm install
 npx expo prebuild --no-install
 (cd ios && (pod install || pod update))

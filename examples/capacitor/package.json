@@ -6,7 +6,7 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.5.1480-beta",
+    "@regulaforensics/face-sdk": "8.5.1481-beta",
     "@regulaforensics/face-core-basic": "8.4.884",
     "@capacitor/dialog": "^8.0.0",
     "@capacitor/cli": "^8.5.2",

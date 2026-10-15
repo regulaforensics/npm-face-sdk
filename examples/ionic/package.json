@@ -20,7 +20,7 @@
     "@awesome-cordova-plugins/camera": "^9.6.0",
     "@awesome-cordova-plugins/dialogs": "^9.6.0",
     "@awesome-cordova-plugins/file": "^9.6.0",
-    "@regulaforensics/face-sdk": "8.5.1480-beta",
+    "@regulaforensics/face-sdk": "8.5.1481-beta",
     "@regulaforensics/face-core-basic": "8.4.884",
     "cordova-android": "^15.1.0",
     "cordova-ios": "^8.1.1",
@@ -35,7 +35,7 @@
     "typescript": "~6.0.3"
   },
   "overrides": {
-    "serialize-javascript": "^7.1.1",
+    "serialize-javascript": "^7.1.2",
     "uuid": "^11.1.1",
     "source-map-js": "^1.2.2",
     "shell-quote": "^1.11.0"
