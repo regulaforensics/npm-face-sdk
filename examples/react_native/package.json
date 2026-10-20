@@ -7,8 +7,8 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.4.1495-nightly",
-    "@regulaforensics/face-core-basic": "8.5.911-nightly",
+    "@regulaforensics/face-sdk": "8.5.1496-nightly",
+    "@regulaforensics/face-core-basic": "8.5.912-nightly",
     "react-native": "0.88.0",
     "react-native-fs": "^2.20.0",
     "react-native-image-picker": "^8.3.0",
