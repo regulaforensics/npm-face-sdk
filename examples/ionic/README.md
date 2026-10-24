@@ -19,8 +19,8 @@ Requires Node.js 22+, Xcode 26+, Android Studio with JDK 17 and Android SDK 36.
 
 2. Change core with the following commands:
 ```bash
-ionic cordova plugin remove @regulaforensics/face-core-basic
-ionic cordova plugin add @regulaforensics/face-core-match
+npx ionic cordova plugin remove @regulaforensics/face-core-basic
+npx ionic cordova plugin add @regulaforensics/face-core-match
 ```
 
 3. Turn off the internet and run the app.
