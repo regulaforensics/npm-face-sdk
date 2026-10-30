@@ -10,7 +10,7 @@ let package = Package(
         .package(url: "https://github.com/apache/cordova-ios.git", branch: "master"),
         .package(
             url: "https://github.com/regulaforensics/FaceSDK-Swift-Package",
-            exact: "8.5.5185-rc"
+            exact: "8.5.5191-rc"
         )
     ],
     targets: [
