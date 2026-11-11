@@ -8,7 +8,7 @@
     "start": "expo start --port \"$npm_package_config_metroPort\""
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.4.1444",
+    "@regulaforensics/face-sdk": "8.4.1562",
     "@regulaforensics/face-core-basic": "8.4.884",
     "react-native": "0.88.0-rc.0",
     "react-native-fs": "^2.20.0",
@@ -27,7 +27,10 @@
     "uuid": "^14.0.0",
     "expo-custom-assets": {
       "expo": "$expo"
-    }
+    },
+    "source-map-js": "^1.2.2",
+    "shell-quote": "^1.11.0",
+    "@expo/metro-file-map": "^58.0.4"
   },
   "config": {
     "metroPort": 8082

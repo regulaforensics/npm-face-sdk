@@ -3,7 +3,7 @@ import { CustomizationColors } from './customization/customization_colors'
 import { CustomizationFonts } from './customization/customization_fonts'
 import { CustomizationImages } from './customization/customization_images'
 import { Customization, CustomButtonTappedCompletion } from './customization/customization'
-import { Font } from './customization/font'
+import { Font, FontStyle } from './customization/font'
 import { ScreenOrientation } from './customization/screen_orientation'
 export {
     CameraPosition,
@@ -13,6 +13,7 @@ export {
     Customization,
     CustomButtonTappedCompletion,
     Font,
+    FontStyle,
     ScreenOrientation,
 }
 
