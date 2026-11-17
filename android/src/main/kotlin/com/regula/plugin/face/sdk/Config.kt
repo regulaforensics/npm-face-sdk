@@ -28,9 +28,6 @@ fun setFaceCaptureConfig(builder: FaceCaptureConfiguration.Builder, config: JSON
             "detectOcclusion" -> builder.setDetectOcclusion(v as Boolean)
             "showFaceAnimation" -> builder.setShowFaceAnimation(v as Boolean)
             "preventScreenRecording" -> builder.setPreventScreenRecording(v as Boolean)
-            "usbCamera" -> builder.setUsbCamera(v as Boolean)
-            "usbCameraMirrorPreview" -> builder.setUsbCameraMirrorPreview(v as Boolean)
-            "rejectMultipleFaces" -> builder.setRejectMultipleFaces(v as Boolean)
             "cameraPositionAndroid" -> builder.setCameraId(v.toInt())
             "screenOrientation" -> builder.setScreenOrientation(*screenOrientationArrayFromJSON(v as JSONArray))
             "timeout" -> builder.setTimeout(v.toFloat())
@@ -47,9 +44,6 @@ fun getFaceCaptureConfig(input: FaceCaptureConfiguration) = mapOf(
     "detectOcclusion" to input.isDetectOcclusion,
     "showFaceAnimation" to input.isShowFaceAnimation,
     "preventScreenRecording" to input.doPreventScreenRecording(),
-    "usbCamera" to input.isUsbCamera,
-    "usbCameraMirrorPreview" to input.isUsbCameraMirrorPreview,
-    "rejectMultipleFaces" to input.isRejectMultipleFaces,
     "cameraPositionAndroid" to input.cameraId,
     "screenOrientation" to generateScreenOrientationArray(input.screenOrientation),
     "timeout" to input.timeout,
@@ -68,8 +62,6 @@ fun setLivenessConfig(builder: LivenessConfiguration.Builder, config: JSONObject
             "screenOrientation" -> builder.setScreenOrientation(*screenOrientationArrayFromJSON(v as JSONArray))
             "locationTrackingEnabled" -> builder.setLocationTrackingEnabled(v as Boolean)
             "preventScreenRecording" -> builder.setPreventScreenRecording(v as Boolean)
-            "usbCamera" -> builder.setUsbCamera(v as Boolean)
-            "usbCameraMirrorPreview" -> builder.setUsbCameraMirrorPreview(v as Boolean)
             "attemptsCount" -> builder.setAttemptsCount(v.toInt())
             "recordingProcess" -> builder.setRecordingProcess(RecordingProcess.values()[v.toInt()])
             "livenessType" -> builder.setType(LivenessType.values()[v.toInt()])
@@ -89,8 +81,6 @@ fun getLivenessConfig(input: LivenessConfiguration) = mapOf(
     "screenOrientation" to generateScreenOrientationArray(input.screenOrientation),
     "locationTrackingEnabled" to input.isLocationTrackingEnabled,
     "preventScreenRecording" to input.doPreventScreenRecording(),
-    "usbCamera" to input.isUsbCamera,
-    "usbCameraMirrorPreview" to input.isUsbCameraMirrorPreview,
     "attemptsCount" to input.attemptsCount,
     "recordingProcess" to input.recordingProcess.ordinal,
     "livenessType" to input.type.ordinal,
@@ -111,8 +101,6 @@ fun setEnrollmentConfig(builder: EnrollmentConfiguration.Builder, config: JSONOb
             "screenOrientation" -> builder.setScreenOrientation(*screenOrientationArrayFromJSON(v as JSONArray))
             "locationTrackingEnabled" -> builder.setLocationTrackingEnabled(v as Boolean)
             "preventScreenRecording" -> builder.setPreventScreenRecording(v as Boolean)
-            "usbCamera" -> builder.setUsbCamera(v as Boolean)
-            "usbCameraMirrorPreview" -> builder.setUsbCameraMirrorPreview(v as Boolean)
             "attemptsCount" -> builder.setAttemptsCount(v.toInt())
             "recordingProcess" -> builder.setRecordingProcess(RecordingProcess.values()[v.toInt()])
             "livenessType" -> builder.setType(LivenessType.values()[v.toInt()])
@@ -134,8 +122,6 @@ fun getEnrollmentConfig(input: EnrollmentConfiguration) = mapOf(
     "screenOrientation" to generateScreenOrientationArray(input.screenOrientation),
     "locationTrackingEnabled" to input.isLocationTrackingEnabled,
     "preventScreenRecording" to input.doPreventScreenRecording(),
-    "usbCamera" to input.isUsbCamera,
-    "usbCameraMirrorPreview" to input.isUsbCameraMirrorPreview,
     "attemptsCount" to input.attemptsCount,
     "recordingProcess" to input.recordingProcess.ordinal,
     "livenessType" to input.type.ordinal,
@@ -158,15 +144,13 @@ fun setVerificationConfig(builder: VerificationConfiguration.Builder, config: JS
             "screenOrientation" -> builder.setScreenOrientation(*screenOrientationArrayFromJSON(v as JSONArray))
             "locationTrackingEnabled" -> builder.setLocationTrackingEnabled(v as Boolean)
             "preventScreenRecording" -> builder.setPreventScreenRecording(v as Boolean)
-            "usbCamera" -> builder.setUsbCamera(v as Boolean)
-            "usbCameraMirrorPreview" -> builder.setUsbCameraMirrorPreview(v as Boolean)
             "attemptsCount" -> builder.setAttemptsCount(v.toInt())
             "recordingProcess" -> builder.setRecordingProcess(RecordingProcess.values()[v.toInt()])
             "livenessType" -> builder.setType(LivenessType.values()[v.toInt()])
             "tag" -> builder.setTag(v as String)
             "skipStep" -> builder.setSkipStep(*livenessSkipStepArrayFromJSON(v as JSONArray))
             "metadata" -> builder.setMetadata(v as JSONObject)
-            "personId" -> builder.setPrivateProperty("w", v as String)
+            "personId" -> builder.setPrivateProperty("u", v as String)
             "threshold" -> builder.setThreshold(v.toFloat())
         }
     }
@@ -181,8 +165,6 @@ fun getVerificationConfig(input: VerificationConfiguration) = mapOf(
     "screenOrientation" to generateScreenOrientationArray(input.screenOrientation),
     "locationTrackingEnabled" to input.isLocationTrackingEnabled,
     "preventScreenRecording" to input.doPreventScreenRecording(),
-    "usbCamera" to input.isUsbCamera,
-    "usbCameraMirrorPreview" to input.isUsbCameraMirrorPreview,
     "attemptsCount" to input.attemptsCount,
     "recordingProcess" to input.recordingProcess.ordinal,
     "livenessType" to input.type.ordinal,

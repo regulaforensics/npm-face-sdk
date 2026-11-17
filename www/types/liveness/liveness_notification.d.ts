@@ -26,10 +26,8 @@ export enum LivenessProcessStatus {
     FAILED,
     RETRY,
     SUCCESS,
-    REMOVE_OCCLUSION,
     BLINK,
     BAD_FACE_QUALITY,
-    TOO_MANY_FACES,
 }
 
 export type LivenessNotificationCompletion = (notification: LivenessNotification) => void

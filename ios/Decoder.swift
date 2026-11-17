@@ -150,7 +150,7 @@ public extension EnrollmentResponse {
         let result = EnrollmentResponse.emptyInit() as EnrollmentResponse
         result.setValue(it["enrolled"] as Any?, forKey: "enrolled")
         result.setValue(PersonDatabase.Person.decode(it["person"] as Any?), forKey: "person")
-        result.setValue((it["searchPersons"] as? [[String: Any]])?.map(PersonDatabase.SearchPerson.decode2), forKey: "searchPersons")
+        result.setValue((it["searchPersons"] as? [[String: Any]])?.compactMap { PersonDatabase.SearchPerson.decode2($0) }, forKey: "searchPersons")
         return result
     }
     func encode() -> [String: Any?] {
@@ -270,7 +270,7 @@ public extension OutputImageParams {
 public extension MatchFacesRequest {
     static func decode(_ it: Any?) -> Self {
         let it = it as! [String: Any]
-        let result = Self(images: (it["images"] as! [[String: Any?]]).compactMap(MatchFacesImage.decode))
+        let result = Self(images: (it["images"] as! [[String: Any?]]).compactMap { MatchFacesImage.decode($0) })
         result.metadata = it["metadata"] as? [String: Any]
         result.tag = it["tag"] as? String
         result.outputImageParams = OutputImageParams.decode(it["outputImageParams"])
@@ -325,7 +325,7 @@ public extension MatchFacesDetectionFace {
     static func decode(_ it: Any?) -> Self? {
         guard let it = it as? [String: Any] else { return nil }
         return Self(faceIndex: it["faceIndex"] as! NSNumber,
-                    landmarks: (it["landmarks"] as! [[String: Any?]]).map(Point.decode),
+                    landmarks: (it["landmarks"] as! [[String: Any?]]).compactMap { Point.decode($0) },
                     face: CGRect.decode(it["faceRect"]),
                     rotationAngle: it["rotationAngle"] as? NSNumber,
                     thumbnailImage: UIImage.decode(it["thumbnailImage"]),
@@ -355,7 +355,7 @@ public extension MatchFacesDetection {
                 alloc, sel,
                 it["imageIndex"],
                 MatchFacesImage.decode(it["image"]),
-                (it["faces"] as? [Any])?.map(MatchFacesDetectionFace.decode),
+                (it["faces"] as? [Any])?.map { MatchFacesDetectionFace.decode($0) },
                 nil
             )})
     }
@@ -411,14 +411,13 @@ public extension MatchFacesResponse {
     static func decode(_ it: Any?) -> MatchFacesResponse {
         let it = it as! [String: Any]
         let alloc = MatchFacesResponse.allocate()
-        let sel = "initWithResults:detections:transactionId:error:".selector()
+        let sel = "initWithResults:detections:error:".selector()
         let result = privateInit(alloc, sel, (@convention(c)(
             AnyObject, Selector,
-            Any?, Any?, Any?, Any?) -> Unmanaged<AnyObject>?).self, { f in f(
+            Any?, Any?, Any?) -> Unmanaged<AnyObject>?).self, { f in f(
                 alloc, sel,
-                (it["results"] as? [Any])?.map(MatchFacesComparedFacesPair.decode),
-                (it["detections"] as? [Any])?.map(MatchFacesDetection.decode),
-                it["transactionId"],
+                (it["results"] as? [Any])?.map { MatchFacesComparedFacesPair.decode($0) },
+                (it["detections"] as? [Any])?.map { MatchFacesDetection.decode($0) },
                 nil
             )}) as MatchFacesResponse
         result.setValue(it["tag"] as? String, forKey: "tag")
@@ -430,7 +429,6 @@ public extension MatchFacesResponse {
             "detections": self.detections.map { $0.encode() },
             "error": self.error?.encode(),
             "tag": self.tag,
-            "transactionId": self.transactionId,
         ]
     }
 }
@@ -555,7 +553,7 @@ public extension DetectFacesConfiguration {
     static func decode(_ it: Any?) -> Self {
         let it = it as! [String: Any]
         let result = Self()
-        result.customQuality = (it["customQuality"] as? [[String: Any]])?.map(ImageQualityCharacteristic.decode)
+        result.customQuality = (it["customQuality"] as? [[String: Any]])?.compactMap { ImageQualityCharacteristic.decode($0) }
         result.outputImageParams = OutputImageParams.decode(it["outputImageParams"])
         result.onlyCentralFace = it["onlyCentralFace"] as? Bool ?? false
         result.attributes = (it["attributes"] as? [String])?.compactMap { DetectFacesAttribute(rawValue: $0) }
@@ -666,11 +664,11 @@ public extension DetectFaceResult {
             Any, Selector,
             Any?, Any?, Any?, CGRect, Any?, CGRect) -> Unmanaged<AnyObject>?).self, { f in f(
                 alloc, sel,
-                (it["quality"] as? [Any])?.map(ImageQualityResult.decode),
-                (it["attributes"] as? [Any])?.map(DetectFacesAttributeResult.decode),
+                (it["quality"] as? [Any])?.map { ImageQualityResult.decode($0) },
+                (it["attributes"] as? [Any])?.map{ DetectFacesAttributeResult.decode($0) },
                 it["crop"],
                 CGRect.decode(it["faceRect"]),
-                (it["landmarks"] as? [Any])?.map(Point.decode),
+                (it["landmarks"] as? [Any])?.map{ Point.decode($0) },
                 CGRect.decode(it["originalRect"])
             )})
     }
@@ -691,14 +689,13 @@ public extension DetectFacesResponse {
     static func decode(_ it: Any?) -> Self {
         let it = it as! [String: Any]
         let alloc = DetectFacesResponse.allocate()
-        let sel = "initWithDetections:scenario:transactionId:error:".selector()
+        let sel = "initWithDetections:scenario:error:".selector()
         return privateInit(alloc, sel, (@convention(c)(
             Any, Selector,
-            Any?, Any?, Any?, Any?) -> Unmanaged<AnyObject>?).self, { f in f(
+            Any?, Any?, Any?) -> Unmanaged<AnyObject>?).self, { f in f(
                 alloc, sel,
-                (it["allDetections"] as? [Any])?.map(DetectFaceResult.decode),
+                (it["allDetections"] as? [Any])?.map { DetectFaceResult.decode($0) },
                 it["scenario"],
-                it["transactionId"],
                 nil
             )})
     }
@@ -708,7 +705,6 @@ public extension DetectFacesResponse {
             "error": self.error?.encode(),
             "allDetections": self.allDetections?.map { $0.encode() },
             "scenario": self.scenario,
-            "transactionId": self.transactionId,
         ]
     }
 }
@@ -746,10 +742,10 @@ public extension DBPageResponse<PersonDatabase.Person> {
     func encode() -> [String: Any?] { return encodeDBPageResponse(self, self.items?.compactMap{ $0.encode() }) }
 }
 public extension DBPageResponse<PersonDatabase.PersonImage> {
-    func encode() -> [String: Any?] { return encodeDBPageResponse(self, self.items?.map { $0.encode() }) }
+    func encode() -> [String: Any?] { return encodeDBPageResponse(self, self.items?.compactMap{ $0.encode() }) }
 }
 public extension DBPageResponse<PersonDatabase.PersonGroup> {
-    func encode() -> [String: Any?] { return encodeDBPageResponse(self, self.items?.map { $0.encode() }) }
+    func encode() -> [String: Any?] { return encodeDBPageResponse(self, self.items?.compactMap{ $0.encode() }) }
 }
 
 public extension Date {
@@ -924,14 +920,14 @@ public extension PersonDatabase.SearchPersonDetection {
             CGRect, Any?, Any?, Any?) -> Unmanaged<AnyObject>?).self, { f in f(
                 alloc, sel,
                 CGRect.decode(it["rect"]),
-                (it["landmarks"] as? [Any])?.map(Point.decode),
+                (it["landmarks"] as? [Any])?.map { Point.decode($0) },
                 UIImage.decode(it["crop"]),
                 it["rotationAngle"]
             )})
     }
     func encode() -> [String: Any?] {
         return [
-            "landmarks": self.landmarks.map { $0.encode() },
+            "landmarks": self.landmarks.compactMap({ $0.encode() }),
             "rect": self.rect.encode(),
             "crop": self.crop?.encode(),
             "rotationAngle": self.rotationAngle,
@@ -977,7 +973,7 @@ public extension PersonDatabase.SearchPerson {
         result.setValue(it["groups"] as Any?, forKey: "groups")
         result.setValue(it["id"] as Any?, forKey: "itemId")
         result.setValue((it["metadata"] as Any?) ?? NSNull(), forKey: "mutableMetadata")
-        result.setValue((it["images"] as? [Any])?.map(PersonDatabase.SearchPersonImage.decode2), forKey: "images")
+        result.setValue((it["images"] as? [Any])?.map { PersonDatabase.SearchPersonImage.decode2($0) }, forKey: "images")
         result.setValue(PersonDatabase.SearchPersonDetection.decode(it["detection"]), forKey: "detection")
         result.setValue(it["externalId"] as Any?, forKey: "externalId")
         result.setValue(Date.decode(it["expireAt"]), forKey: "expireAt")
@@ -987,7 +983,7 @@ public extension PersonDatabase.SearchPerson {
     func encode2() -> [String: Any?] {
         return [
             "detection": self.detection.encode(),
-            "images": self.images.map { $0.encode2() },
+            "images": self.images.compactMap({ $0.encode2() }),
             "createdAt": self.createdAt?.encode(),
             "updatedAt": self.updatedAt?.encode(),
             "name": self.name,

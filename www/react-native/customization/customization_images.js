@@ -109,12 +109,6 @@ export class CustomizationImages {
         this._set({ "retryScreenHintCovering": val })
     }
 
-    _retryScreenHintRejectMultipleFaces
-    set retryScreenHintRejectMultipleFaces(val) {
-        this._retryScreenHintRejectMultipleFaces = val
-        this._set({ "retryScreenHintRejectMultipleFaces": val })
-    }
-
     _processingScreenCloseButton
     set processingScreenCloseButton(val) {
         this._processingScreenCloseButton = val
@@ -148,7 +142,6 @@ export class CustomizationImages {
         result._retryScreenHintChangeBackground = jsonObject["retryScreenHintChangeBackground"]
         result._retryScreenHintFaceOcclusions = jsonObject["retryScreenHintFaceOcclusions"]
         result._retryScreenHintCovering = jsonObject["retryScreenHintCovering"]
-        result._retryScreenHintRejectMultipleFaces = jsonObject["retryScreenHintRejectMultipleFaces"]
         result._processingScreenCloseButton = jsonObject["processingScreenCloseButton"]
         result._successScreenImage = jsonObject["successScreenImage"]
 
@@ -175,7 +168,6 @@ export class CustomizationImages {
             "retryScreenHintChangeBackground": this._retryScreenHintChangeBackground,
             "retryScreenHintFaceOcclusions": this._retryScreenHintFaceOcclusions,
             "retryScreenHintCovering": this._retryScreenHintCovering,
-            "retryScreenHintRejectMultipleFaces": this._retryScreenHintRejectMultipleFaces,
             "processingScreenCloseButton": this._processingScreenCloseButton,
             "successScreenImage": this._successScreenImage,
         }

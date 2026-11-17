@@ -21,8 +21,8 @@
     "@awesome-cordova-plugins/camera": "^9.6.0",
     "@awesome-cordova-plugins/dialogs": "^9.6.0",
     "@awesome-cordova-plugins/file": "^9.6.0",
-    "@regulaforensics/face-sdk": "8.5.1575-rc",
-    "@regulaforensics/face-core-basic": "8.4.884",
+    "@regulaforensics/face-sdk": "8.5.1577-rc",
+    "@regulaforensics/face-core-basic": "8.5.934-rc",
     "cordova": "^13.0.0",
     "cordova-android": "^15.1.0",
     "cordova-ios": "^8.1.1",
@@ -41,24 +41,7 @@
     "serialize-javascript": "^7.1.2",
     "uuid": "^11.1.1",
     "source-map-js": "^1.2.2",
-    "shell-quote": "^1.11.0",
-    "glob@^13.0.0": "^14.0.3",
-    "minimatch@^10.0.0": "^11.0.4",
-    "@ionic/cli": {
-      "tar": "^7.5.22"
-    },
-    "get-uri": {
-      "basic-ftp": "^6.2.5"
-    },
-    "tmp@<0.2.6": "^0.2.7",
-    "@regulaforensics/face-sdk": {
-      "@expo/config-plugins": {
-        "glob": "^14.0.3"
-      }
-    },
-    "@ionic/cli-framework": {
-      "rimraf": "^6.1.4"
-    }
+    "shell-quote": "^1.11.0"
   },
   "cordova": {
     "plugins": {

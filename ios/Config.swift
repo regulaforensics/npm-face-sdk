@@ -11,7 +11,7 @@ func setCustomization(_ it: [String: [String: Any]]) {
         for (k, v) in value {
             switch key {
             case("colors"): dict[Int(k)!] = UIColor.decode(v)
-            case("fonts"): dict[CustomizationFont.fromDartKey(k) as Any] = UIFont.decode(v)
+            case("fonts"): dict[CustomizationFont.fromDartKey(k)] = UIFont.decode(v)
             case("images"): dict[k] = UIImage.decode(v)
             default: break
             }
@@ -51,7 +51,6 @@ public extension FaceCaptureConfiguration {
                 case("detectOcclusion"): builder.detectOcclusion = v as! Bool
                 case("showFaceAnimation"): builder.showFaceAnimation = v as! Bool
                 case("preventScreenRecording"): builder.isPreventScreenRecordingEnable = v as! Bool
-                case("rejectMultipleFaces"): builder.rejectMultipleFaces = v as! Bool
                 case("cameraPositionIOS"): builder.cameraPosition = CameraPosition(rawValue: v as! Int)!
                 case("screenOrientation"): builder.screenOrientation = RFSScreenOrientation.decode(v)
                 case("timeout"): builder.timeoutInterval = v as? NSNumber
@@ -71,7 +70,6 @@ public extension FaceCaptureConfiguration {
             "detectOcclusion": self.detectOcclusion,
             "showFaceAnimation": self.showFaceAnimation,
             "preventScreenRecording": self.isPreventScreenRecordingEnable,
-            "rejectMultipleFaces": self.rejectMultipleFaces,
             "cameraPositionIOS": self.cameraPosition.rawValue,
             "screenOrientation": self.screenOrientation.encode(),
             "timeout": self.timeoutInterval,
@@ -197,7 +195,7 @@ public extension LivenessConfiguration {
                  case("tag"): builder.tag = v as? String
                  case("skipStep"): builder.stepSkippingMask = RFSLivenessStepSkip.decode(v)
                  case("metadata"): builder.metadata = v as! [String: Any]
-                 case("personId"): builder.personId = v as? String
+                 case("personId"): builder.personId = v as! String
                  case("threshold"): builder.threshold = v as? NSNumber
                  default: break
                  }
@@ -254,34 +252,44 @@ extension UIColor {
     // Create from a hex integer; supports #RGB, #ARGB, #RRGGBB, #AARRGGBB semantics
     static func decode(_ it: Any?) -> Self? {
         guard let it = it as? Int else { return nil }
-        var hex = String(UInt32(truncatingIfNeeded: it), radix: 16, uppercase: true)
+        // Build hex string manually to preserve leading zeros when derived from integers
+        var value = UInt32(truncatingIfNeeded: it)
+        let digits = Array("0123456789ABCDEF")
+        var hex = ""
+        while value > 0 {
+            let d = Int(value % 16)
+            hex.insert(digits[d], at: hex.startIndex)
+            value /= 16
+        }
+        if hex.isEmpty { hex = "0" }
         // If length is 5 or 7, pad a leading 0 to restore a lost leading nibble
         if hex.count == 5 || hex.count == 7 { hex = "0" + hex }
+        let s = hex.uppercased()
         
         let a, r, g, b: CGFloat
-        switch hex.count {
+        switch s.count {
         case 3: // RGB
             a = 1.0
-            r = Self.component(from: hex, start: 0, length: 1)
-            g = Self.component(from: hex, start: 1, length: 1)
-            b = Self.component(from: hex, start: 2, length: 1)
+            r = Self.component(from: s, start: 0, length: 1)
+            g = Self.component(from: s, start: 1, length: 1)
+            b = Self.component(from: s, start: 2, length: 1)
         case 4: // ARGB
-            a = Self.component(from: hex, start: 0, length: 1)
-            r = Self.component(from: hex, start: 1, length: 1)
-            g = Self.component(from: hex, start: 2, length: 1)
-            b = Self.component(from: hex, start: 3, length: 1)
+            a = Self.component(from: s, start: 0, length: 1)
+            r = Self.component(from: s, start: 1, length: 1)
+            g = Self.component(from: s, start: 2, length: 1)
+            b = Self.component(from: s, start: 3, length: 1)
         case 6: // RRGGBB
             a = 1.0
-            r = Self.component(from: hex, start: 0, length: 2)
-            g = Self.component(from: hex, start: 2, length: 2)
-            b = Self.component(from: hex, start: 4, length: 2)
+            r = Self.component(from: s, start: 0, length: 2)
+            g = Self.component(from: s, start: 2, length: 2)
+            b = Self.component(from: s, start: 4, length: 2)
         case 8: // AARRGGBB
-            a = Self.component(from: hex, start: 0, length: 2)
-            r = Self.component(from: hex, start: 2, length: 2)
-            g = Self.component(from: hex, start: 4, length: 2)
-            b = Self.component(from: hex, start: 6, length: 2)
+            a = Self.component(from: s, start: 0, length: 2)
+            r = Self.component(from: s, start: 2, length: 2)
+            g = Self.component(from: s, start: 4, length: 2)
+            b = Self.component(from: s, start: 6, length: 2)
         default:
-            assertionFailure("Invalid color value: #\(hex). Expected #RGB, #ARGB, #RRGGBB, or #AARRGGBB")
+            assertionFailure("Invalid color value: #\(s). Expected #RGB, #ARGB, #RRGGBB, or #AARRGGBB")
             return nil
         }
         return Self(red: r, green: g, blue: b, alpha: a)

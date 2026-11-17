@@ -6,7 +6,6 @@ export class MatchFacesResponse {
     results
     detections
     tag
-    transactionId
     error
 
     static fromJson(jsonObject) {
@@ -22,7 +21,6 @@ export class MatchFacesResponse {
             for (const item of jsonObject["detections"])
                 result.detections.push(MatchFacesDetection.fromJson(item))
         result.tag = jsonObject["tag"]
-        result.transactionId = jsonObject["transactionId"]
         result.error = MatchFacesException.fromJson(jsonObject["error"])
 
         return result
@@ -33,7 +31,6 @@ export class MatchFacesResponse {
             "results": this.results?.map(e => e.toJson()),
             "detections": this.detections?.map(e => e.toJson()),
             "tag": this.tag,
-            "transactionId": this.transactionId,
             "error": this.error?.toJson(),
         }
     }

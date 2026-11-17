@@ -7,8 +7,6 @@ export class FaceCaptureConfig {
     closeButtonEnabled: boolean
     torchButtonEnabled: boolean
     vibrateOnSteps: boolean
-    /** Enables 'remove occlusion' animation & hint. */
-    detectOcclusion: boolean
     /**
      * Enables global face hint animation.
      */
@@ -18,15 +16,6 @@ export class FaceCaptureConfig {
      * Defaults to `false`.
      */
     preventScreenRecording: boolean
-
-    /** Android only. Defaults to `false`. */
-    usbCamera: boolean
-
-    /** Android only. Defaults to `true`. */
-    usbCameraMirrorPreview: boolean
-
-    /** Only single face in frame required. Defaults to `false`. */
-    rejectMultipleFaces: boolean
     /**
      * Android only.
      */
@@ -49,12 +38,8 @@ export class FaceCaptureConfig {
             closeButtonEnabled?: boolean
             torchButtonEnabled?: boolean
             vibrateOnSteps?: boolean
-            detectOcclusion?: boolean
             showFaceAnimation?: boolean
             preventScreenRecording?: boolean
-            usbCamera?: boolean
-            usbCameraMirrorPreview?: boolean
-            rejectMultipleFaces?: boolean
             cameraPositionAndroid?: number
             cameraPositionIOS?: CameraPosition
             screenOrientation?: Array<ScreenOrientation>
