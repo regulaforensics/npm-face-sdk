@@ -68,6 +68,7 @@ export var customizationImages = {
   "retryScreenHintChangeBackground": img1,
   "retryScreenHintFaceOcclusions": img2,
   "retryScreenHintCovering": img3,
+  "retryScreenHintRejectMultipleFaces": img2,
   "processingScreenCloseButton": img1,
   "successScreenImage": img2,
 };
@@ -159,6 +160,7 @@ export var detectFacesResponse = {
   "detection": detectFaceResult,
   "allDetections": [detectFaceResult, detectFaceResult, detectFaceResult],
   "scenario": "CropCentralFace",
+  "transactionId": "test0",
   "error": detectFacesException,
 };
 
@@ -171,6 +173,9 @@ export var faceCaptureConfig = {
   "detectOcclusion": false,
   "showFaceAnimation": true,
   "preventScreenRecording": false,
+  "usbCamera": false,
+  "usbCameraMirrorPreview": true,
+  "rejectMultipleFaces": true,
   "cameraPositionAndroid": 0,
   "cameraPositionIOS": 1,
   "screenOrientation": [0, 1],
@@ -222,6 +227,8 @@ export var livenessConfig = {
   "screenOrientation": [0, 1],
   "locationTrackingEnabled": true,
   "preventScreenRecording": false,
+  "usbCamera": false,
+  "usbCameraMirrorPreview": true,
   "attemptsCount": 2,
   "recordingProcess": 0,
   "livenessType": 1,
@@ -240,6 +247,8 @@ export var verificationConfig = {
   "screenOrientation": [0, 1],
   "locationTrackingEnabled": true,
   "preventScreenRecording": false,
+  "usbCamera": false,
+  "usbCameraMirrorPreview": true,
   "attemptsCount": 2,
   "recordingProcess": 0,
   "livenessType": 1,
@@ -331,6 +340,7 @@ export var matchFacesResponse = {
   "results": [comparedFacesPair, comparedFacesPair, comparedFacesPair],
   "detections": [matchFacesDetection, matchFacesDetection, matchFacesDetection],
   "tag": "test",
+  "transactionId": "test1",
   "error": matchFacesException,
 };
 export var comparedFacesSplit = {
@@ -427,6 +437,8 @@ export var enrollmentConfig = {
   "screenOrientation": [0, 1],
   "locationTrackingEnabled": true,
   "preventScreenRecording": false,
+  "usbCamera": false,
+  "usbCameraMirrorPreview": true,
   "attemptsCount": 2,
   "recordingProcess": 0,
   "livenessType": 1,

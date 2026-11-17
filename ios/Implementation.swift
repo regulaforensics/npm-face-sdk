@@ -83,7 +83,7 @@ func methodCall(_ method: String, _ callback: @escaping Callback) {
         configuration: MatchFacesConfiguration.decode(argsNullable(0)),
         completion: { callback($0.encode()) })
     case("splitComparedFaces"): callback(MatchFacesSimilarityThresholdSplit(
-        pairs: (args(0) as [[String: Any?]]).compactMap { MatchFacesComparedFacesPair.decode($0) },
+        pairs: (args(0) as [[String: Any?]]).map(MatchFacesComparedFacesPair.decode),
         bySimilarityThreshold: args(1)).encode())
     case("detectFaces"): face.detectFaces(
         by: DetectFacesRequest.decode(args(0)),
@@ -160,12 +160,12 @@ func methodCall(_ method: String, _ callback: @escaping Callback) {
         completion: { callback($0.encode()) })
     case("searchPerson"): db.searchPerson(
         searchRequest: PersonDatabase.SearchPersonRequest.decode(args(0)),
-        completion: { callback(encodeDBItemResponse($0.results?.compactMap{ $0.encode2() }, $0.error)) })
+        completion: { callback(encodeDBItemResponse($0.results?.map { $0.encode2() }, $0.error)) })
     default: break
     }
 }
 
-// MARK: - Implementation
+// MARK: - Delegates
 
 var headers: [String: String]?
 let headersDelegate = IURLRequestInterceptingDelegate()

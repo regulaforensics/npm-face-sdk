@@ -593,6 +593,12 @@ class CustomizationImages {
         this._set({ "retryScreenHintCovering": val })
     }
 
+    _retryScreenHintRejectMultipleFaces
+    set retryScreenHintRejectMultipleFaces(val) {
+        this._retryScreenHintRejectMultipleFaces = val
+        this._set({ "retryScreenHintRejectMultipleFaces": val })
+    }
+
     _processingScreenCloseButton
     set processingScreenCloseButton(val) {
         this._processingScreenCloseButton = val
@@ -626,6 +632,7 @@ class CustomizationImages {
         result._retryScreenHintChangeBackground = jsonObject["retryScreenHintChangeBackground"]
         result._retryScreenHintFaceOcclusions = jsonObject["retryScreenHintFaceOcclusions"]
         result._retryScreenHintCovering = jsonObject["retryScreenHintCovering"]
+        result._retryScreenHintRejectMultipleFaces = jsonObject["retryScreenHintRejectMultipleFaces"]
         result._processingScreenCloseButton = jsonObject["processingScreenCloseButton"]
         result._successScreenImage = jsonObject["successScreenImage"]
 
@@ -652,6 +659,7 @@ class CustomizationImages {
             "retryScreenHintChangeBackground": this._retryScreenHintChangeBackground,
             "retryScreenHintFaceOcclusions": this._retryScreenHintFaceOcclusions,
             "retryScreenHintCovering": this._retryScreenHintCovering,
+            "retryScreenHintRejectMultipleFaces": this._retryScreenHintRejectMultipleFaces,
             "processingScreenCloseButton": this._processingScreenCloseButton,
             "successScreenImage": this._successScreenImage,
         }
@@ -736,6 +744,8 @@ __webpack_require__.r(__webpack_exports__);
 const ScreenOrientation = {
     PORTRAIT: 0,
     LANDSCAPE: 1,
+    REVERSE_PORTRAIT: 2,
+    REVERSE_LANDSCAPE: 3,
 }
 
 /***/ },
@@ -1162,6 +1172,7 @@ __webpack_require__.r(__webpack_exports__);
 class DetectFacesResponse {
     detection
     scenario
+    transactionId
     error
     allDetections
 
@@ -1171,6 +1182,7 @@ class DetectFacesResponse {
 
         result.detection = _detect_face_result__WEBPACK_IMPORTED_MODULE_0__.DetectFaceResult.fromJson(jsonObject["detection"])
         result.scenario = jsonObject["scenario"]
+        result.transactionId = jsonObject["transactionId"]
         result.error = _detect_faces_exception__WEBPACK_IMPORTED_MODULE_1__.DetectFacesException.fromJson(jsonObject["error"])
         result.allDetections = []
         if (jsonObject["allDetections"] != null)
@@ -1185,6 +1197,7 @@ class DetectFacesResponse {
             "detection": this.detection?.toJson(),
             "allDetections": this.allDetections?.map(e => e.toJson()),
             "scenario": this.scenario,
+            "transactionId": this.transactionId,
             "error": this.error?.toJson(),
         }
     }
@@ -1239,6 +1252,9 @@ class FaceCaptureConfig {
     detectOcclusion
     showFaceAnimation
     preventScreenRecording
+    usbCamera
+    usbCameraMirrorPreview
+    rejectMultipleFaces
     cameraPositionIOS
     cameraPositionAndroid
     screenOrientation
@@ -1254,6 +1270,9 @@ class FaceCaptureConfig {
         this.detectOcclusion = options?.detectOcclusion ?? true
         this.showFaceAnimation = options?.showFaceAnimation ?? true
         this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.usbCamera = options?.usbCamera ?? false
+        this.usbCameraMirrorPreview = options?.usbCameraMirrorPreview ?? true
+        this.rejectMultipleFaces = options?.rejectMultipleFaces ?? false
         this.cameraPositionIOS = options?.cameraPositionIOS ?? _customization_camera_position__WEBPACK_IMPORTED_MODULE_0__.CameraPosition.FRONT
         this.cameraPositionAndroid = options?.cameraPositionAndroid
         this.screenOrientation = options?.screenOrientation ?? [_customization_screen_orientation__WEBPACK_IMPORTED_MODULE_1__.ScreenOrientation.PORTRAIT]
@@ -1273,6 +1292,9 @@ class FaceCaptureConfig {
         result.detectOcclusion = jsonObject["detectOcclusion"]
         result.showFaceAnimation = jsonObject["showFaceAnimation"]
         result.preventScreenRecording = jsonObject["preventScreenRecording"]
+        result.usbCamera = jsonObject["usbCamera"]
+        result.usbCameraMirrorPreview = jsonObject["usbCameraMirrorPreview"]
+        result.rejectMultipleFaces = jsonObject["rejectMultipleFaces"]
         result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
         result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
         result.screenOrientation = jsonObject["screenOrientation"]
@@ -1292,6 +1314,9 @@ class FaceCaptureConfig {
             "detectOcclusion": this.detectOcclusion,
             "showFaceAnimation": this.showFaceAnimation,
             "preventScreenRecording": this.preventScreenRecording,
+            "usbCamera": this.usbCamera,
+            "usbCameraMirrorPreview": this.usbCameraMirrorPreview,
+            "rejectMultipleFaces": this.rejectMultipleFaces,
             "cameraPositionAndroid": this.cameraPositionAndroid,
             "cameraPositionIOS": this.cameraPositionIOS,
             "screenOrientation": this.screenOrientation,
@@ -3038,6 +3063,8 @@ class EnrollmentConfig {
     screenOrientation
     locationTrackingEnabled
     preventScreenRecording
+    usbCamera
+    usbCameraMirrorPreview
     attemptsCount
     recordingProcess
     livenessType
@@ -3058,6 +3085,8 @@ class EnrollmentConfig {
         this.screenOrientation = options?.screenOrientation ?? [_customization_screen_orientation__WEBPACK_IMPORTED_MODULE_1__.ScreenOrientation.PORTRAIT]
         this.locationTrackingEnabled = options?.locationTrackingEnabled ?? true
         this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.usbCamera = options?.usbCamera ?? false
+        this.usbCameraMirrorPreview = options?.usbCameraMirrorPreview ?? true
         this.attemptsCount = options?.attemptsCount ?? 0
         this.recordingProcess = options?.recordingProcess ?? _liveness_config__WEBPACK_IMPORTED_MODULE_2__.RecordingProcess.ASYNCHRONOUS_UPLOAD
         this.livenessType = options?.livenessType ?? _liveness_config__WEBPACK_IMPORTED_MODULE_2__.LivenessType.ACTIVE
@@ -3082,6 +3111,8 @@ class EnrollmentConfig {
         result.screenOrientation = jsonObject["screenOrientation"]
         result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
         result.preventScreenRecording = jsonObject["preventScreenRecording"]
+        result.usbCamera = jsonObject["usbCamera"]
+        result.usbCameraMirrorPreview = jsonObject["usbCameraMirrorPreview"]
         result.attemptsCount = jsonObject["attemptsCount"]
         result.recordingProcess = jsonObject["recordingProcess"]
         result.livenessType = jsonObject["livenessType"]
@@ -3106,6 +3137,8 @@ class EnrollmentConfig {
             "screenOrientation": this.screenOrientation,
             "locationTrackingEnabled": this.locationTrackingEnabled,
             "preventScreenRecording": this.preventScreenRecording,
+            "usbCamera": this.usbCamera,
+            "usbCameraMirrorPreview": this.usbCameraMirrorPreview,
             "attemptsCount": this.attemptsCount,
             "recordingProcess": this.recordingProcess,
             "livenessType": this.livenessType,
@@ -3266,6 +3299,8 @@ class LivenessConfig {
     screenOrientation
     locationTrackingEnabled
     preventScreenRecording
+    usbCamera
+    usbCameraMirrorPreview
     attemptsCount
     recordingProcess
     livenessType
@@ -3284,6 +3319,8 @@ class LivenessConfig {
         this.screenOrientation = options?.screenOrientation ?? [_customization_screen_orientation__WEBPACK_IMPORTED_MODULE_1__.ScreenOrientation.PORTRAIT]
         this.locationTrackingEnabled = options?.locationTrackingEnabled ?? true
         this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.usbCamera = options?.usbCamera ?? false
+        this.usbCameraMirrorPreview = options?.usbCameraMirrorPreview ?? true
         this.attemptsCount = options?.attemptsCount ?? 0
         this.recordingProcess = options?.recordingProcess ?? RecordingProcess.ASYNCHRONOUS_UPLOAD
         this.livenessType = options?.livenessType ?? LivenessType.ACTIVE
@@ -3306,6 +3343,8 @@ class LivenessConfig {
         result.screenOrientation = jsonObject["screenOrientation"]
         result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
         result.preventScreenRecording = jsonObject["preventScreenRecording"]
+        result.usbCamera = jsonObject["usbCamera"]
+        result.usbCameraMirrorPreview = jsonObject["usbCameraMirrorPreview"]
         result.attemptsCount = jsonObject["attemptsCount"]
         result.recordingProcess = jsonObject["recordingProcess"]
         result.livenessType = jsonObject["livenessType"]
@@ -3328,6 +3367,8 @@ class LivenessConfig {
             "screenOrientation": this.screenOrientation,
             "locationTrackingEnabled": this.locationTrackingEnabled,
             "preventScreenRecording": this.preventScreenRecording,
+            "usbCamera": this.usbCamera,
+            "usbCameraMirrorPreview": this.usbCameraMirrorPreview,
             "attemptsCount": this.attemptsCount,
             "recordingProcess": this.recordingProcess,
             "livenessType": this.livenessType,
@@ -3470,8 +3511,10 @@ const LivenessProcessStatus = {
     FAILED: 12,
     RETRY: 13,
     SUCCESS: 14,
-    BLINK: 15,
-    BAD_FACE_QUALITY: 16,
+    REMOVE_OCCLUSION: 15,
+    BLINK: 16,
+    BAD_FACE_QUALITY: 17,
+    TOO_MANY_FACES: 18,
 }
 
 /***/ },
@@ -3560,6 +3603,8 @@ class VerificationConfig {
     screenOrientation
     locationTrackingEnabled
     preventScreenRecording
+    usbCamera
+    usbCameraMirrorPreview
     attemptsCount
     recordingProcess
     livenessType
@@ -3581,6 +3626,8 @@ class VerificationConfig {
         this.screenOrientation = options?.screenOrientation ?? [_customization_screen_orientation__WEBPACK_IMPORTED_MODULE_1__.ScreenOrientation.PORTRAIT]
         this.locationTrackingEnabled = options?.locationTrackingEnabled ?? true
         this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.usbCamera = options?.usbCamera ?? false
+        this.usbCameraMirrorPreview = options?.usbCameraMirrorPreview ?? true
         this.attemptsCount = options?.attemptsCount ?? 0
         this.recordingProcess = options?.recordingProcess ?? _liveness_config__WEBPACK_IMPORTED_MODULE_2__.RecordingProcess.ASYNCHRONOUS_UPLOAD
         this.livenessType = options?.livenessType ?? _liveness_config__WEBPACK_IMPORTED_MODULE_2__.LivenessType.ACTIVE
@@ -3604,6 +3651,8 @@ class VerificationConfig {
         result.screenOrientation = jsonObject["screenOrientation"]
         result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
         result.preventScreenRecording = jsonObject["preventScreenRecording"]
+        result.usbCamera = jsonObject["usbCamera"]
+        result.usbCameraMirrorPreview = jsonObject["usbCameraMirrorPreview"]
         result.attemptsCount = jsonObject["attemptsCount"]
         result.recordingProcess = jsonObject["recordingProcess"]
         result.livenessType = jsonObject["livenessType"]
@@ -3628,6 +3677,8 @@ class VerificationConfig {
             "screenOrientation": this.screenOrientation,
             "locationTrackingEnabled": this.locationTrackingEnabled,
             "preventScreenRecording": this.preventScreenRecording,
+            "usbCamera": this.usbCamera,
+            "usbCameraMirrorPreview": this.usbCameraMirrorPreview,
             "attemptsCount": this.attemptsCount,
             "recordingProcess": this.recordingProcess,
             "livenessType": this.livenessType,
@@ -4216,6 +4267,7 @@ class MatchFacesResponse {
     results
     detections
     tag
+    transactionId
     error
 
     static fromJson(jsonObject) {
@@ -4231,6 +4283,7 @@ class MatchFacesResponse {
             for (const item of jsonObject["detections"])
                 result.detections.push(_match_faces_detection__WEBPACK_IMPORTED_MODULE_1__.MatchFacesDetection.fromJson(item))
         result.tag = jsonObject["tag"]
+        result.transactionId = jsonObject["transactionId"]
         result.error = _match_faces_exception__WEBPACK_IMPORTED_MODULE_2__.MatchFacesException.fromJson(jsonObject["error"])
 
         return result
@@ -4241,6 +4294,7 @@ class MatchFacesResponse {
             "results": this.results?.map(e => e.toJson()),
             "detections": this.detections?.map(e => e.toJson()),
             "tag": this.tag,
+            "transactionId": this.transactionId,
             "error": this.error?.toJson(),
         }
     }

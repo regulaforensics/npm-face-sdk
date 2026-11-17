@@ -23,5 +23,8 @@ export class MatchFacesResponse {
      */
     get error(): MatchFacesException | null
 
+    /** Transaction identifier. */
+    get transactionId(): string | null
+
     private constructor()
 }

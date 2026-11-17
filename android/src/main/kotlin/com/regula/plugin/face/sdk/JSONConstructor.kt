@@ -171,12 +171,12 @@ fun generateScreenOrientationArray(input: Array<ScreenOrientation>) = input.let 
 // Exception ------------------------------
 
 fun faceCaptureExceptionFromJSON(input: JSONObject?) = input?.let {
-    FaceCaptureException(FaceCaptureErrorCode.values()[it.getInt("code")])
+    FaceCaptureException(FaceCaptureErrorCode.get(it.getInt("code")))
 }
 
 fun generateFaceCaptureException(input: FaceCaptureException?) = input?.let {
     mapOf(
-        "code" to it.errorCode.ordinal,
+        "code" to it.errorCode.value,
         "message" to it.message
     ).toJson()
 }
@@ -212,14 +212,14 @@ fun generateLicenseException(input: LicenseException?) = input?.let {
 
 fun livenessExceptionFromJSON(input: JSONObject?) = input?.let {
     LivenessErrorException(
-        LivenessErrorCode.values()[it.getInt("code")],
+        LivenessErrorCode.get(it.getInt("code")),
         livenessBackendExceptionFromJSON(it.getJSONObjectOrNull("underlyingError"))
     )
 }
 
 fun generateLivenessException(input: LivenessErrorException?) = input?.let {
     mapOf(
-        "code" to it.errorCode.ordinal,
+        "code" to it.errorCode.value,
         "message" to it.message,
         "underlyingError" to generateLivenessBackendException(it.underlyingException)
     ).toJson()
@@ -668,23 +668,20 @@ fun generateComparedFacesPair(it: MatchFacesComparedFacesPair) = mapOf(
 ).toJson()
 
 fun matchFacesResponseFromJSON(input: JSONObject) = input.let {
-    MatchFacesResponse::class.constructor(
-        ArrayList::class,
-        ArrayList::class,
-        String::class,
-        MatchFacesException::class
-    ).instantiate(
-        it.getJSONArrayOrNull("detections").toList(::matchFacesDetectionFromJSON).toArrayList(),
-        it.getJSONArrayOrNull("results").toList(::comparedFacesPairFromJSON).toArrayList(),
-        it.getStringOrNull("tag"),
-        matchFacesExceptionFromJSON(it.getJSONObjectOrNull("error")),
-    )
+    val result = MatchFacesResponse::class.constructor().instantiate()
+    result.setPrivateProperty("detections", it.getJSONArrayOrNull("detections").toList(::matchFacesDetectionFromJSON))
+    result.setPrivateProperty("results", it.getJSONArrayOrNull("results").toList(::comparedFacesPairFromJSON))
+    result.setPrivateProperty("tag", it.getStringOrNull("tag"))
+    result.setPrivateProperty("transactionId", it.getStringOrNull("transactionId"))
+    result.setPrivateProperty("exception", matchFacesExceptionFromJSON(it.getJSONObjectOrNull("error")))
+    result
 }
 
 fun generateMatchFacesResponse(it: MatchFacesResponse) = mapOf(
     "detections" to it.detections.toJson(::generateMatchFacesDetection),
     "results" to it.results.toJson(::generateComparedFacesPair),
     "tag" to it.tag,
+    "transactionId" to it.transactionId,
     "error" to generateMatchFacesException(it.exception)
 ).toJson()
 
@@ -829,17 +826,20 @@ fun detectFacesResponseFromJSON(input: JSONObject): DetectFacesResponse = input.
     DetectFacesResponse::class.constructor(
         String::class,
         List::class,
-        DetectFacesErrorException::class
+        DetectFacesErrorException::class,
+        String::class,
     ).instantiate(
         it.getStringOrNull("scenario"),
         it.getJSONArrayOrNull("allDetections").toList(::detectFaceResultFromJSON),
         detectFacesExceptionFromJSON(it.getJSONObjectOrNull("error")),
+        it.getStringOrNull("transactionId"),
     )
 }
 
 fun generateDetectFacesResponse(it: DetectFacesResponse) = mapOf(
     "detection" to generateDetectFaceResult(it.detection),
     "scenario" to it.scenario,
+    "transactionId" to it.transactionId,
     "error" to generateDetectFacesException(it.error),
     "allDetections" to it.allDetections.toJsonNullable(::generateDetectFaceResult)
 ).toJson()
