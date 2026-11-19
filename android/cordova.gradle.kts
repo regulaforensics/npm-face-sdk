@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     //noinspection GradleDependency
-    add("implementation", "com.regula.face:api:8.5.5707") {
+    add("implementation", "com.regula.face:api:8.4.5722") {
         isTransitive = true
     }
 }
