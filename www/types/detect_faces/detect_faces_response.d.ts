@@ -8,5 +8,8 @@ export class DetectFacesResponse {
     get scenario(): DetectFacesScenario | null
     get error(): DetectFacesException | null
 
+    /** Transaction identifier. */
+    get transactionId(): string | null
+
     private constructor()
 }

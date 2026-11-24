@@ -10,6 +10,9 @@ export class FaceCaptureConfig {
     detectOcclusion
     showFaceAnimation
     preventScreenRecording
+    usbCamera
+    usbCameraMirrorPreview
+    rejectMultipleFaces
     cameraPositionIOS
     cameraPositionAndroid
     screenOrientation
@@ -25,6 +28,9 @@ export class FaceCaptureConfig {
         this.detectOcclusion = options?.detectOcclusion ?? true
         this.showFaceAnimation = options?.showFaceAnimation ?? true
         this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.usbCamera = options?.usbCamera ?? false
+        this.usbCameraMirrorPreview = options?.usbCameraMirrorPreview ?? true
+        this.rejectMultipleFaces = options?.rejectMultipleFaces ?? false
         this.cameraPositionIOS = options?.cameraPositionIOS ?? CameraPosition.FRONT
         this.cameraPositionAndroid = options?.cameraPositionAndroid
         this.screenOrientation = options?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
@@ -44,6 +50,9 @@ export class FaceCaptureConfig {
         result.detectOcclusion = jsonObject["detectOcclusion"]
         result.showFaceAnimation = jsonObject["showFaceAnimation"]
         result.preventScreenRecording = jsonObject["preventScreenRecording"]
+        result.usbCamera = jsonObject["usbCamera"]
+        result.usbCameraMirrorPreview = jsonObject["usbCameraMirrorPreview"]
+        result.rejectMultipleFaces = jsonObject["rejectMultipleFaces"]
         result.cameraPositionAndroid = jsonObject["cameraPositionAndroid"]
         result.cameraPositionIOS = jsonObject["cameraPositionIOS"]
         result.screenOrientation = jsonObject["screenOrientation"]
@@ -63,6 +72,9 @@ export class FaceCaptureConfig {
             "detectOcclusion": this.detectOcclusion,
             "showFaceAnimation": this.showFaceAnimation,
             "preventScreenRecording": this.preventScreenRecording,
+            "usbCamera": this.usbCamera,
+            "usbCameraMirrorPreview": this.usbCameraMirrorPreview,
+            "rejectMultipleFaces": this.rejectMultipleFaces,
             "cameraPositionAndroid": this.cameraPositionAndroid,
             "cameraPositionIOS": this.cameraPositionIOS,
             "screenOrientation": this.screenOrientation,
