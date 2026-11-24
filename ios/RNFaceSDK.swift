@@ -4,13 +4,13 @@ import React
 public class RNFaceSDK: RCTEventEmitter {
     override public func startObserving() { hasListeners = true }
     override public func stopObserving() { hasListeners = false }
-    override public func supportedEvents()->[String] {
+    override public func supportedEvents() -> [String] {
         return [cameraSwitchEvent,
                 livenessNotificationEvent,
                 videoEncoderCompletionEvent,
-                onCustomButtonTappedEvent];
+                onCustomButtonTappedEvent]
     }
-    
+
     @objc
     func exec(
         _ method: String,
@@ -18,22 +18,25 @@ public class RNFaceSDK: RCTEventEmitter {
         resolve: @escaping RCTPromiseResolveBlock,
         reject: @escaping RCTPromiseRejectBlock
     ) {
-        this = self
+        plugin = self
         args = newArgs
-        methodCall(method, { data in
-            if firedCallbacks.contains(where: { ($0 as AnyObject) === (resolve as AnyObject) }) { return }
-            firedCallbacks.append(resolve)
-            resolve(data.toSendable())
-        })
+        var didResolve = false
+        let lock = NSLock()
+        methodCall(method) { data in
+            lock.lock()
+            let alreadyResolved = didResolve
+            didResolve = true
+            lock.unlock()
+            if !alreadyResolved { resolve(data.toSendable()) }
+        }
     }
 }
 
-private var firedCallbacks: [RCTResponseSenderBlock] = []
-private var hasListeners: Bool = false
-private var this: RNFaceSDK?
+private var hasListeners = false
+private weak var plugin: RNFaceSDK?
 
 func sendEvent(_ event: String, _ data: Any? = nil) {
-    guard let plugin = this, hasListeners else { return }
+    guard let plugin, hasListeners else { return }
     DispatchQueue.main.async { plugin.sendEvent(withName: event, body: data.toSendable()) }
 }
 

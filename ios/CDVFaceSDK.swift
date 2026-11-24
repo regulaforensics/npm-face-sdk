@@ -3,39 +3,35 @@ import Cordova
 #endif
 import UIKit
 
+private weak var plugin: CDVFaceSDK?
+private var eventCallbackIds: [String: String] = [:]
+
 @objc(CDVFaceSDK)
 class CDVFaceSDK: CDVPlugin {
     @objc(exec:)
     func exec(_ command: CDVInvokedUrlCommand) {
-        this = self
+        plugin = self
         let method = command.arguments.first as! String
         args = Array(command.arguments.dropFirst())
-        
         if method == "setEvent" {
-            eventCallbackIds[args.first as! String] = command.callbackId
+            eventCallbackIds[args[0] as! String] = command.callbackId
             return
         }
-        
-        methodCall(method, { data in sendEvent(command.callbackId, data) })
+        methodCall(method) { data in sendEvent(command.callbackId, data) }
     }
 }
 
-var this: CDVFaceSDK?
-var eventCallbackIds: [String: String] = [:]
-func sendEvent(_ event: String, _ data: Any? = "") {
-    var callbackId = event
-    let eventId = eventCallbackIds[event]
-    if eventId != nil { callbackId = eventId! }
-    
-    // In this section unreasonable casts and optionals are made to
-    // ensure that this code works with both cordova-ios@7 and cordova-ios@8.
-    var sendable = data.toSendable()
-    if sendable is NSNull { sendable = "" }
-    let message = sendable as! String
-    let result: CDVPluginResult? = CDVPluginResult(status: CDVCommandStatus.ok, messageAs: message)
-    result!.setKeepCallbackAs(true)
-    
-    this!.commandDelegate.send(result!, callbackId: callbackId)
+func sendEvent(_ event: String, _ data: Any? = nil) {
+    let result: CDVPluginResult?
+    switch data.toSendable() {
+    case let value as String: result = CDVPluginResult(status: .ok, messageAs: value)
+    case let value as NSNumber where CFGetTypeID(value) == CFBooleanGetTypeID(): result = CDVPluginResult(status: .ok, messageAs: value.boolValue)
+    case let value as NSNumber: result = CDVPluginResult(status: .ok, messageAs: value.doubleValue)
+    default: result = CDVPluginResult(status: .ok)
+    }
+    guard let result else { return }
+    result.setKeepCallbackAs(true)
+    plugin?.commandDelegate.send(result, callbackId: eventCallbackIds[event] ?? event)
 }
 
 func withPresenter(_ action: @escaping (UIViewController) -> Void) {

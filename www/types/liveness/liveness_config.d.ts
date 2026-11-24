@@ -61,6 +61,12 @@ export class LivenessConfig {
      */
     preventScreenRecording: boolean
 
+    /** Android only. Defaults to `false`. */
+    usbCamera: boolean
+
+    /** Android only. Defaults to `true`. */
+    usbCameraMirrorPreview: boolean
+
     /**
      * The number of attempts to pass the Liveness before completing with error. Defaults to `0`.
      * When set to `0`  the Liveness will always ask to retry on error.
@@ -102,6 +108,8 @@ export class LivenessConfig {
             screenOrientation?: Array<ScreenOrientation>
             locationTrackingEnabled?: boolean
             preventScreenRecording?: boolean
+            usbCamera?: boolean
+            usbCameraMirrorPreview?: boolean
             attemptsCount?: number
             recordingProcess?: RecordingProcess
             livenessType?: LivenessType

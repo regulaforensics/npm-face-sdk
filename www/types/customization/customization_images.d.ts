@@ -17,6 +17,7 @@ export class CustomizationImages {
     set retryScreenHintChangeBackground(val: string)
     set retryScreenHintFaceOcclusions(val: string)
     set retryScreenHintCovering(val: string)
+    set retryScreenHintRejectMultipleFaces(val: string)
     set processingScreenCloseButton(val: string)
     set successScreenImage(val: string)
 

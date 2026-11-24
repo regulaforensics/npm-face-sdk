@@ -38,6 +38,8 @@ export const LivenessProcessStatus = {
     FAILED: 12,
     RETRY: 13,
     SUCCESS: 14,
-    BLINK: 15,
-    BAD_FACE_QUALITY: 16,
+    REMOVE_OCCLUSION: 15,
+    BLINK: 16,
+    BAD_FACE_QUALITY: 17,
+    TOO_MANY_FACES: 18,
 }
