@@ -7,7 +7,7 @@
     "android": "scripts/android.sh"
   },
   "dependencies": {
-    "@regulaforensics/face-sdk": "8.5.1593-rc",
+    "@regulaforensics/face-sdk": "8.4.1596-rc",
     "@regulaforensics/face-core-basic": "8.5.940-rc",
     "react-native": "0.88.1",
     "react-native-fs": "^2.20.0",
