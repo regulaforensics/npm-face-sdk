@@ -53,4 +53,5 @@ export const LivenessBackendErrorCode = {
     PRINTED_FACE_DETECTED: 255,
     BLOCKED_REQUEST: 256,
     CORRUPTED_REQUEST: 257,
+    MULTIPLE_FACES_DETECTED: 263,
 }

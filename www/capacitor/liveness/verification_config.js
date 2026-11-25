@@ -13,6 +13,8 @@ export class VerificationConfig {
     screenOrientation
     locationTrackingEnabled
     preventScreenRecording
+    usbCamera
+    usbCameraMirrorPreview
     attemptsCount
     recordingProcess
     livenessType
@@ -34,6 +36,8 @@ export class VerificationConfig {
         this.screenOrientation = options?.screenOrientation ?? [ScreenOrientation.PORTRAIT]
         this.locationTrackingEnabled = options?.locationTrackingEnabled ?? true
         this.preventScreenRecording = options?.preventScreenRecording ?? false
+        this.usbCamera = options?.usbCamera ?? false
+        this.usbCameraMirrorPreview = options?.usbCameraMirrorPreview ?? true
         this.attemptsCount = options?.attemptsCount ?? 0
         this.recordingProcess = options?.recordingProcess ?? RecordingProcess.ASYNCHRONOUS_UPLOAD
         this.livenessType = options?.livenessType ?? LivenessType.ACTIVE
@@ -57,6 +61,8 @@ export class VerificationConfig {
         result.screenOrientation = jsonObject["screenOrientation"]
         result.locationTrackingEnabled = jsonObject["locationTrackingEnabled"]
         result.preventScreenRecording = jsonObject["preventScreenRecording"]
+        result.usbCamera = jsonObject["usbCamera"]
+        result.usbCameraMirrorPreview = jsonObject["usbCameraMirrorPreview"]
         result.attemptsCount = jsonObject["attemptsCount"]
         result.recordingProcess = jsonObject["recordingProcess"]
         result.livenessType = jsonObject["livenessType"]
@@ -81,6 +87,8 @@ export class VerificationConfig {
             "screenOrientation": this.screenOrientation,
             "locationTrackingEnabled": this.locationTrackingEnabled,
             "preventScreenRecording": this.preventScreenRecording,
+            "usbCamera": this.usbCamera,
+            "usbCameraMirrorPreview": this.usbCameraMirrorPreview,
             "attemptsCount": this.attemptsCount,
             "recordingProcess": this.recordingProcess,
             "livenessType": this.livenessType,

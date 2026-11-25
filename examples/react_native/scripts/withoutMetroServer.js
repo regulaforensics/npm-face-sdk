@@ -1,15 +1,18 @@
 const { withAppDelegate, withAppBuildGradle, withMainApplication, withXcodeProject } = require('expo/config-plugins')
 
-function replaceRequired(contents, pattern, replacement, description) {
-    if (!pattern.test(contents)) throw new Error(`Standalone build: cannot find ${description}`)
-    return contents.replace(pattern, replacement)
+function replaceRequired(contents, search, replacement, description, endMarker) {
+    const start = contents.indexOf(search)
+    if (start === -1) throw new Error(`Standalone build: cannot find ${description}`)
+    const end = endMarker ? contents.indexOf(endMarker, start + search.length) : start + search.length
+    if (end === -1) throw new Error(`Standalone build: cannot find end of ${description}`)
+    return contents.slice(0, start) + replacement + contents.slice(end + (endMarker ? endMarker.length : 0))
 }
 
 module.exports = config => {
     config = withAppDelegate(config, config => {
         let contents = config.modResults.contents
         if (!contents.includes('// Standalone demo: no development menu.')) {
-            contents = replaceRequired(contents, /let factory = ExpoReactNativeFactory\(delegate: delegate\)/,
+            contents = replaceRequired(contents, 'let factory = ExpoReactNativeFactory(delegate: delegate)',
                 `let factory = ExpoReactNativeFactory(delegate: delegate)
     // Standalone demo: no development menu.
 #if DEBUG
@@ -18,10 +21,10 @@ module.exports = config => {
 #endif`, 'React Native factory')
         }
         contents = replaceRequired(contents,
-            /override func bundleURL\(\) -> URL\? \{[\s\S]*?\n  \}/,
+            'override func bundleURL() -> URL? {',
             `override func bundleURL() -> URL? {
     return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
-  }`, 'bundleURL method')
+  }`, 'bundleURL method', '\n  }')
         config.modResults.contents = contents
         return config
     })
@@ -56,14 +59,14 @@ cp -R images "$DEST/web/"
     config = withMainApplication(config, config => {
         if (!config.modResults.contents.includes('useDevSupport = false')) {
             config.modResults.contents = replaceRequired(config.modResults.contents,
-                /context = applicationContext,/, 'context = applicationContext,\n      useDevSupport = false,', 'Android ReactHost context')
+                'context = applicationContext,', 'context = applicationContext,\n      useDevSupport = false,', 'Android ReactHost context')
         }
         return config
     })
 
     config = withAppBuildGradle(config, config => {
         if (!config.modResults.contents.includes('// Standalone demo: embed JS in Debug.')) {
-            config.modResults.contents = replaceRequired(config.modResults.contents, /react \{/,
+            config.modResults.contents = replaceRequired(config.modResults.contents, 'react {',
                 `react {
     // Standalone demo: embed JS in Debug.
     debuggableVariants = []

@@ -4,6 +4,7 @@ import { DetectFacesException } from './detect_faces_exception'
 export class DetectFacesResponse {
     detection
     scenario
+    transactionId
     error
     allDetections
 
@@ -13,6 +14,7 @@ export class DetectFacesResponse {
 
         result.detection = DetectFaceResult.fromJson(jsonObject["detection"])
         result.scenario = jsonObject["scenario"]
+        result.transactionId = jsonObject["transactionId"]
         result.error = DetectFacesException.fromJson(jsonObject["error"])
         result.allDetections = []
         if (jsonObject["allDetections"] != null)
@@ -27,6 +29,7 @@ export class DetectFacesResponse {
             "detection": this.detection?.toJson(),
             "allDetections": this.allDetections?.map(e => e.toJson()),
             "scenario": this.scenario,
+            "transactionId": this.transactionId,
             "error": this.error?.toJson(),
         }
     }

@@ -35,6 +35,8 @@ export enum LivenessErrorCode {
     CAMERA_NO_PERMISSION,
     /** Processing finished by bad frame size. */
     BAD_FRAME_SIZE,
+    /** Processing finished because multiple faces were detected. */
+    MULTIPLE_FACES_DETECTED,
     /**
      * Application context is null.
      * 
@@ -53,4 +55,10 @@ export enum LivenessErrorCode {
      * Android only.
      */
     ZOOM_NOT_SUPPORTED,
+    /**
+     * USB camera library is missing.
+     *
+     * Android only.
+     */
+    USB_LIBRARY_MISSING,
 }
