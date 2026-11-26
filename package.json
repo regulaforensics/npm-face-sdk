@@ -1,6 +1,6 @@
 {
   "name": "@regulaforensics/face-sdk",
-  "version": "8.5.1597-rc",
+  "version": "8.4.1601-rc",
   "description": "This is an npm module for Regula Face SDK. It allows you to easily compaire faces using your phone's camera.",
   "main": "www/react-native/index.js",
   "module": "www/capacitor/index.js",
@@ -30,7 +30,7 @@
   "license": "commercial",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/regulaforensics/npm-face-sdk.git"
+    "url": "git+https://github.com/regulaforensics/npm-trusted-publisher.git"
   },
   "homepage": "https://mobile.regulaforensics.com",
   "publishConfig": {
